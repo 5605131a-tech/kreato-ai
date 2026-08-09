@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KREATO.AI — Automatyzacja AI dla Twojego biznesu</title>
-<meta name="description" content="Agenci AI, zdjęcia AI, wideo AI, strony WWW i klony głosu. Twój biznes działa 24/7 bez dodatkowych pracowników.">
+<title>KREATO.AI — Strony WWW i Agenci AI dla polskich firm</title>
+<meta name="description" content="Buduję strony które sprzedają i agentów AI którzy odpowiadają klientom 24/7. Wycena w 2 godziny, gotowe w 48h.">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -51,13 +51,14 @@ nav {
 .nav-cta { background:var(--accent); color:#0A0A0A; border:none; border-radius:8px; padding:10px 18px; font-size:14px; font-weight:800; cursor:pointer; text-decoration:none; transition:opacity .2s; white-space:nowrap; }
 .nav-cta:hover { opacity:.88; }
 
-.hero { max-width:1200px; margin:0 auto; padding:96px 32px 80px; display:grid; grid-template-columns:1fr 380px; gap:72px; align-items:center; }
-.eyebrow { display:inline-flex; align-items:center; gap:8px; background:var(--accent-dim); border:1px solid rgba(202,255,69,.2); color:var(--accent); font-size:12px; font-weight:700; padding:5px 14px; border-radius:100px; margin-bottom:24px; letter-spacing:.04em; }
-.eyebrow::before { content:'●'; font-size:7px; }
-.hero h1 { font-size:clamp(40px,5.5vw,70px); font-weight:900; line-height:1.04; letter-spacing:-2.5px; margin-bottom:24px; }
+/* HERO */
+.hero { max-width:1200px; margin:0 auto; padding:96px 32px 80px; display:grid; grid-template-columns:1fr 360px; gap:64px; align-items:center; }
+.hero-intro { display:flex; align-items:center; gap:14px; margin-bottom:28px; }
+.hero-avatar { width:52px; height:52px; border-radius:50%; background:var(--accent-dim); border:2px solid rgba(202,255,69,.3); display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+.hero-name { font-size:15px; font-weight:700; color:var(--text); }
+.hero-role { font-size:13px; color:var(--muted); margin-top:1px; }
+.hero h1 { font-size:clamp(38px,5vw,66px); font-weight:900; line-height:1.05; letter-spacing:-2.5px; margin-bottom:22px; }
 .hero h1 .acc { color:var(--accent); }
-.hero h1 .strike { position:relative; color:var(--dim); }
-.hero h1 .strike::after { content:''; position:absolute; left:0; right:0; top:52%; height:3px; background:var(--red); transform:rotate(-2deg); }
 .hero-sub { font-size:17px; color:var(--muted); line-height:1.65; margin-bottom:36px; max-width:500px; }
 .hero-sub strong { color:var(--text); font-weight:600; }
 .hero-actions { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
@@ -72,20 +73,7 @@ nav {
 .stat-num { font-size:38px; font-weight:900; letter-spacing:-2px; color:var(--accent); line-height:1; }
 .stat-label { font-size:13px; color:var(--muted); margin-top:3px; }
 
-.sec { padding:80px 32px; }
-.sec-inner { max-width:1200px; margin:0 auto; }
-.sec-alt { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-.tag { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); margin-bottom:14px; }
-.sec-h { font-size:clamp(26px,3.5vw,44px); font-weight:900; letter-spacing:-1.5px; line-height:1.08; }
-.sec-sub { font-size:16px; color:var(--muted); margin-top:10px; }
-
-.pain-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px; }
-.pain-card { background:var(--bg); border:1px solid var(--border); border-radius:var(--rl); padding:28px; position:relative; overflow:hidden; }
-.pain-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--red); }
-.pain-icon { font-size:26px; margin-bottom:14px; }
-.pain-card h3 { font-size:16px; font-weight:800; margin-bottom:8px; letter-spacing:-.3px; }
-.pain-card p { font-size:14px; color:var(--muted); line-height:1.6; }
-
+/* TOOLS */
 .tools-strip { padding:40px 32px; border-bottom:1px solid var(--border); }
 .tools-inner { max-width:1200px; margin:0 auto; }
 .tools-label { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); text-align:center; margin-bottom:24px; }
@@ -94,10 +82,18 @@ nav {
 .tool-chip:hover { border-color:rgba(202,255,69,.35); color:var(--text); }
 .tool-chip .dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
 
+/* SECTIONS */
+.sec { padding:80px 32px; }
+.sec-inner { max-width:1200px; margin:0 auto; }
+.sec-alt { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.tag { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); margin-bottom:14px; }
+.sec-h { font-size:clamp(26px,3.5vw,44px); font-weight:900; letter-spacing:-1.5px; line-height:1.08; }
+.sec-sub { font-size:16px; color:var(--muted); margin-top:10px; }
+
+/* SERVICES */
 .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:44px; }
 .svc { background:var(--bg2); border:1px solid var(--border); border-radius:var(--rl); padding:28px; transition:border-color .2s,transform .2s; }
 .svc:hover { border-color:rgba(202,255,69,.35); transform:translateY(-3px); }
-.svc-wide { grid-column:1/-1; display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; }
 .svc-icon { font-size:28px; margin-bottom:16px; }
 .svc h3 { font-size:18px; font-weight:800; letter-spacing:-.4px; margin-bottom:8px; }
 .svc p { font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:16px; }
@@ -105,6 +101,15 @@ nav {
 .svc-price { margin-top:18px; padding-top:18px; border-top:1px solid var(--border); font-size:20px; font-weight:900; color:var(--accent); letter-spacing:-.4px; }
 .svc-price span { font-size:13px; font-weight:500; color:var(--muted); }
 
+/* WHAT I DO */
+.approach-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:44px; }
+.approach-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--r); padding:24px; display:flex; gap:16px; align-items:flex-start; transition:border-color .2s; }
+.approach-card:hover { border-color:rgba(202,255,69,.3); }
+.approach-num { font-size:11px; font-weight:700; color:var(--accent); background:var(--accent-dim); border-radius:6px; padding:4px 9px; letter-spacing:.04em; flex-shrink:0; white-space:nowrap; }
+.approach-card h4 { font-size:15px; font-weight:800; margin-bottom:5px; letter-spacing:-.2px; }
+.approach-card p { font-size:13px; color:var(--muted); line-height:1.6; }
+
+/* PORTFOLIO */
 .portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:44px; }
 .browser { border-radius:var(--rl); overflow:hidden; border:1px solid var(--border); background:var(--bg); transition:transform .25s,border-color .25s; }
 .browser:hover { transform:translateY(-6px); border-color:rgba(202,255,69,.3); }
@@ -171,6 +176,7 @@ nav {
 .ss-num { font-size:12px; font-weight:900; color:#00AAFF; line-height:1; }
 .ss-lbl { font-size:5px; color:rgba(255,255,255,.3); margin-top:2px; }
 
+/* HOW */
 .how-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; margin-top:48px; }
 .how-steps::before { content:''; position:absolute; top:27px; left:12%; right:12%; height:1px; background:var(--border); z-index:0; }
 .how-step { padding:0 20px; position:relative; z-index:1; }
@@ -178,13 +184,7 @@ nav {
 .how-step h4 { font-size:15px; font-weight:800; margin-bottom:6px; letter-spacing:-.2px; }
 .how-step p { font-size:13px; color:var(--muted); line-height:1.6; }
 
-.lessons-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:44px; }
-.lesson-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--r); padding:24px; display:flex; gap:16px; align-items:flex-start; transition:border-color .2s; }
-.lesson-card:hover { border-color:rgba(202,255,69,.3); }
-.lesson-num { font-size:11px; font-weight:700; color:var(--accent); background:var(--accent-dim); border-radius:6px; padding:4px 9px; letter-spacing:.04em; flex-shrink:0; white-space:nowrap; }
-.lesson-card h4 { font-size:15px; font-weight:800; margin-bottom:5px; letter-spacing:-.2px; }
-.lesson-card p { font-size:13px; color:var(--muted); line-height:1.6; }
-
+/* PRICING */
 .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:44px; }
 .plan { background:var(--bg2); border:1px solid var(--border); border-radius:var(--rl); padding:32px; position:relative; }
 .plan.feat { background:var(--accent-dim2); border-color:rgba(202,255,69,.35); }
@@ -202,6 +202,7 @@ nav {
 .cta-g { border:1px solid var(--border); color:var(--text); }
 .cta-g:hover { border-color:var(--accent); color:var(--accent); }
 
+/* CONTACT */
 .contact-box { max-width:880px; margin:0 auto; background:var(--bg2); border:1px solid var(--border); border-radius:24px; padding:60px; text-align:center; }
 .contact-box h2 { font-size:clamp(30px,4vw,54px); font-weight:900; letter-spacing:-2px; margin-bottom:14px; line-height:1.05; }
 .contact-box h2 .acc { color:var(--accent); }
@@ -233,8 +234,7 @@ footer p { font-size:12px; color:var(--dim); }
   nav { padding:0 20px; }
   .nav-links { display:none; }
   .hero { grid-template-columns:1fr; gap:36px; padding:60px 20px 50px; }
-  .pain-grid,.services-grid,.portfolio-grid,.pricing-grid,.lessons-grid { grid-template-columns:1fr; }
-  .svc-wide { grid-template-columns:1fr; }
+  .services-grid,.portfolio-grid,.pricing-grid,.approach-grid { grid-template-columns:1fr; }
   .how-steps { grid-template-columns:1fr 1fr; gap:28px; }
   .how-steps::before { display:none; }
   .contact-box { padding:36px 20px; }
@@ -243,7 +243,6 @@ footer p { font-size:12px; color:var(--dim); }
   .tools-strip { padding:32px 20px; }
   footer { flex-direction:column; text-align:center; }
 }
-@media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; animation:none!important; } }
 </style>
 </head>
 <body>
@@ -251,27 +250,35 @@ footer p { font-size:12px; color:var(--dim); }
 <nav>
   <a href="#" class="nav-logo">KREATO<span>.AI</span></a>
   <ul class="nav-links">
-    <li><a href="#services">Usługi</a></li>
+    <li><a href="#services">Uslugi</a></li>
     <li><a href="#portfolio">Realizacje</a></li>
     <li><a href="#pricing">Cennik</a></li>
     <li><a href="#contact">Kontakt</a></li>
   </ul>
-  <a href="https://t.me/+48733245757" class="nav-cta">Napisz WYCENA →</a>
+  <a href="https://t.me/+48733245757" class="nav-cta">Wycena w 2h →</a>
 </nav>
 
+<!-- HERO -->
 <section>
   <div class="hero">
     <div>
-      <div class="eyebrow">AI Agencja · Polska · od 800 zł</div>
+      <div class="hero-intro">
+        <div class="hero-avatar">👋</div>
+        <div>
+          <div class="hero-name">Anatol Romanchyshen</div>
+          <div class="hero-role">Freelancer · Strony WWW &amp; Agenci AI · Polska</div>
+        </div>
+      </div>
       <h1>
-        Twój klient napisał<br>
-        o 23:00.<br>
-        <span class="strike">Nikt nie odpisał.</span><br>
-        <span class="acc">Już tak nie będzie.</span>
+        Strony które<br>
+        <span class="acc">sprzedają.</span><br>
+        Agenci AI którzy<br>
+        <span class="acc">nie śpią.</span>
       </h1>
       <p class="hero-sub">
-        Budujemy <strong>agentów AI, strony WWW i wideo</strong> które pracują 24/7.
-        Twój biznes odpowiada, sprzedaje i pozyskuje klientów — nawet gdy śpisz.
+        Buduję strony i agentów AI którzy <strong>odpowiadają klientom 24/7</strong>,
+        zbierają leady i automatyzują powtarzalne zadania.
+        Bez agencji — bezpośrednio ze mną.
       </p>
       <div class="hero-actions">
         <a href="https://t.me/+48733245757" class="btn-p">Napisz WYCENA → Telegram</a>
@@ -279,140 +286,275 @@ footer p { font-size:12px; color:var(--dim); }
       </div>
     </div>
     <div class="hero-card">
-      <div class="stat-row"><div class="stat-num">48h</div><div class="stat-label">od rozmowy do działającego agenta AI</div></div>
-      <div class="stat-row"><div class="stat-num">24/7</div><div class="stat-label">agent odpowiada klientom bez przerwy</div></div>
-      <div class="stat-row"><div class="stat-num">od 800 zł</div><div class="stat-label">cena startowa, bez ukrytych kosztów</div></div>
+      <div class="stat-row"><div class="stat-num">48h</div><div class="stat-label">od rozmowy do gotowego systemu</div></div>
+      <div class="stat-row"><div class="stat-num">24/7</div><div class="stat-label">agent AI odpowiada zamiast Ciebie</div></div>
+      <div class="stat-row"><div class="stat-num">od 800 zł</div><div class="stat-label">bez ukrytych kosztów, bez agencji</div></div>
     </div>
   </div>
 </section>
 
-<section class="sec sec-alt">
-  <div class="sec-inner">
-    <div class="tag">Problem</div>
-    <div class="sec-h">Co kosztuje Cię brak automatyzacji?</div>
-    <div class="pain-grid">
-      <div class="pain-card"><div class="pain-icon">🕐</div><h3>Tracisz leady w nocy i weekendy</h3><p>Klient pisze, nie dostaje odpowiedzi — idzie do konkurencji. Każda minuta bez odpowiedzi to mniejsza szansa na zamówienie.</p></div>
-      <div class="pain-card"><div class="pain-icon">📸</div><h3>Zdjęcia od fotografa: 1 500 zł i 2 tygodnie</h3><p>Sesje zdjęciowe są drogie i trzeba je powtarzać. AI robi profesjonalne zdjęcia produktów w 24h bez sesji fotograficznej.</p></div>
-      <div class="pain-card"><div class="pain-icon">📹</div><h3>Brak wideo = niewidoczny profil</h3><p>Instagram i Facebook premiują Reels. Bez wideo AI Twój profil jest niewidoczny — choćbyś miał najlepszą ofertę w mieście.</p></div>
-    </div>
-  </div>
-</section>
-
+<!-- TOOLS -->
 <div class="tools-strip">
   <div class="tools-inner">
-    <div class="tools-label">Narzędzia AI których używamy w projektach</div>
+    <div class="tools-label">Narzędzia których używam w projektach</div>
     <div class="tools-row">
-      <div class="tool-chip"><span class="dot"></span>Chatplace.io</div>
-      <div class="tool-chip"><span class="dot"></span>HeyGen avatary</div>
-      <div class="tool-chip"><span class="dot"></span>ViralFindr</div>
-      <div class="tool-chip"><span class="dot"></span>Virale AI Reels</div>
-      <div class="tool-chip"><span class="dot"></span>ElevenLabs głos</div>
-      <div class="tool-chip"><span class="dot"></span>Google Omniflash</div>
-      <div class="tool-chip"><span class="dot"></span>Kling 3.0 wideo</div>
-      <div class="tool-chip"><span class="dot"></span>Make.com auto-post</div>
       <div class="tool-chip"><span class="dot"></span>n8n automatyzacja</div>
       <div class="tool-chip"><span class="dot"></span>Supabase CRM</div>
+      <div class="tool-chip"><span class="dot"></span>Claude AI</div>
+      <div class="tool-chip"><span class="dot"></span>Telegram Bot</div>
+      <div class="tool-chip"><span class="dot"></span>Make.com</div>
+      <div class="tool-chip"><span class="dot"></span>Netlify / Vercel</div>
+      <div class="tool-chip"><span class="dot"></span>ElevenLabs glos</div>
+      <div class="tool-chip"><span class="dot"></span>Chatplace.io</div>
+      <div class="tool-chip"><span class="dot"></span>HeyGen avatary</div>
+      <div class="tool-chip"><span class="dot"></span>Vapi telefon AI</div>
     </div>
   </div>
 </div>
 
+<!-- SERVICES -->
 <section class="sec" id="services">
   <div class="sec-inner">
-    <div class="tag">Usługi</div>
-    <div class="sec-h">Co budujemy dla Ciebie</div>
+    <div class="tag">Uslugi</div>
+    <div class="sec-h">Co moge dla Ciebie zbudowac</div>
+    <div class="sec-sub">Trzy rzeczy w których jestem naprawde dobry.</div>
     <div class="services-grid">
-      <div class="svc"><div class="svc-icon">🤖</div><h3>AI Agenci</h3><p>Bot na Telegram i Instagram który odpowiada klientom, zbiera dane i wysyła oferty — 24/7 bez Twojej obecności.</p><div class="svc-tools">Chatplace.io · Telegram Bot · Instagram DM</div><div class="svc-price">od 800 zł <span>/ jednorazowo</span></div></div>
-      <div class="svc"><div class="svc-icon">🖼️</div><h3>Zdjęcia AI</h3><p>Profesjonalne zdjęcia produktów i kreacje reklamowe. Gotowe w 24h — zamiast 2 tygodni i 1 500 zł u fotografa.</p><div class="svc-tools">Produkty · Reklamy · Social media · Wizytówki</div><div class="svc-price">od 800 zł <span>/ pakiet</span></div></div>
-      <div class="svc"><div class="svc-icon">🎬</div><h3>Wideo AI</h3><p>Reels, awatary mówiące Twoim głosem i tłumaczenia wideo. Algorytmy Instagrama faworyzują wideo — bądź widoczny.</p><div class="svc-tools">HeyGen avatary · Virale Reels · ViralFindr · Kling 3.0</div><div class="svc-price">od 800 zł <span>/ projekt</span></div></div>
-      <div class="svc"><div class="svc-icon">🎙️</div><h3>Klon Głosu AI</h3><p>Twój głos sklonowany z 30 sekund nagrania. Używaj go do reklam i contentu w 29 językach bez studia nagrań.</p><div class="svc-tools">ElevenLabs · 29 języków · 30 sek próbki</div><div class="svc-price">od 800 zł <span>/ klon</span></div></div>
-      <div class="svc"><div class="svc-icon">📲</div><h3>Auto-publikacja postów</h3><p>Wyślij głosówkę lub tekst do bota — a on sam opublikuje post na Facebooku, Instagramie i Telegramie z emoji i hashtagami.</p><div class="svc-tools">Make.com Lekcja 4 · n8n · FB + IG + TG</div><div class="svc-price">od 800 zł <span>/ konfiguracja</span></div></div>
-      <div class="svc svc-wide"><div><div class="svc-icon">🏗️</div><h3>Strona WWW + Agencja pod klucz</h3><p>Strona która sprzedaje, zintegrowana z AI agentem, formularzem leadów i CRM. Jeden dostawca — zero koordynacji między firmami.</p><div class="svc-tools">Strona · AI Bot · CRM · Formularze · Analytics · 1 miesiąc wsparcia</div><div class="svc-price">od 2 000 zł <span>/ kompletny pakiet</span></div></div><a href="https://t.me/+48733245757" class="btn-p" style="white-space:nowrap;padding:18px 26px;align-self:center;">Zapytaj o cenę →</a></div>
+      <div class="svc">
+        <div class="svc-icon">🏗️</div>
+        <h3>Strona WWW</h3>
+        <p>Prosta, szybka strona ktora sprzedaje. Kalkulator wyceny, formularz leadow, integracja z Telegram — wszystko pod klucz. Bez WordPress, bez pluginow — czysty kod.</p>
+        <div class="svc-tools">HTML/CSS/JS · Netlify · Formularze · Kalkulator</div>
+        <div class="svc-price">od 800 zl <span>/ jednorazowo</span></div>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">🤖</div>
+        <h3>Agent AI 24/7</h3>
+        <p>Bot na Telegram lub Instagram ktory odpowiada klientom, zbiera dane i wysyla oferty — bez Twojej obecnosci. Buduje na n8n + Claude AI, dziala bez przerwy.</p>
+        <div class="svc-tools">n8n · Claude AI · Telegram Bot · Supabase CRM</div>
+        <div class="svc-price">od 800 zl <span>/ jednorazowo</span></div>
+      </div>
+      <div class="svc">
+        <div class="svc-icon">⚙️</div>
+        <h3>Automatyzacja</h3>
+        <p>Laczyc to co juz masz: CRM, email, formularze, Telegram, arkusze Google. Powiadamiania, raporty, auto-odpowiedzi — bez zatrudniania dodatkowych osob.</p>
+        <div class="svc-tools">n8n · Make.com · Google Sheets · Webhook · API</div>
+        <div class="svc-price">od 1 200 zl <span>/ jednorazowo</span></div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- PORTFOLIO -->
 <section class="sec sec-alt" id="portfolio">
   <div class="sec-inner">
     <div class="tag">Realizacje</div>
-    <div class="sec-h">Przykłady naszych stron</div>
-    <div class="sec-sub">Każdy projekt dostosowany do branży i charakteru biznesu.</div>
+    <div class="sec-h">Projekty ktore dzialaja</div>
+    <div class="sec-sub">Kazdy projekt ma cel: strona sprzedaje, bot odpowiada, system dziala sam.</div>
     <div class="portfolio-grid">
-      <div class="browser"><div class="b-bar"><div class="b-dots"><span class="dr"></span><span class="dy"></span><span class="dg"></span></div><div class="b-url">pepel.pl</div></div><div class="b-preview p-pepel"><div class="pp-nav"><div class="pp-logo">PEPEL</div><div class="pp-nav-lines"><span></span><span></span><span></span></div></div><div class="pp-body"><div class="pp-sub">Sklep internetowy · Handmade</div><div class="pp-h">Unikalny styl —<br>stworzony z popiołu</div><div class="pp-desc">Rękodzieło inspirowane naturą. Każdy produkt jedyny w swoim rodzaju.</div><div class="pp-btn">ODKRYJ KOLEKCJĘ →</div><div class="pp-prods"><div class="pp-prod"><div class="pp-prod-lbl">Biżuteria</div></div><div class="pp-prod"><div class="pp-prod-lbl">Ceramika</div></div><div class="pp-prod hot"><div class="pp-prod-lbl">Nowość ✦</div></div></div></div></div><div class="b-meta"><h4>Pepel — Sklep handmade</h4><p>Strona e-commerce z galerią, koszykiem i płatnościami online dla marki rękodzieła.</p><span class="b-tag">E-commerce</span></div></div>
-      <div class="browser"><div class="b-bar"><div class="b-dots"><span class="dr"></span><span class="dy"></span><span class="dg"></span></div><div class="b-url">braber-shop.pl</div></div><div class="b-preview p-barber"><div class="bb-hero"><div class="bb-bg"></div><div class="bb-line"></div><div class="bb-c"><div class="bb-top"><div class="bb-logo">BRABER</div><div class="bb-navs"><span>Usługi</span><span>Cennik</span><span>Booking</span></div></div><div class="bb-ey">Premium Barber · Poznań</div><div class="bb-h">Klasyczny styl.<br><em>Nowoczesny</em><br>charakter.</div><div class="bb-d">Rezerwuj wizytę online — wybierz mistrza, godzinę i przyjdź gotowy na zmianę.</div><div class="bb-btns"><div class="bb-g">REZERWUJ TERAZ</div><div class="bb-o">CENNIK</div></div><div class="bb-badges"><div class="bb-badge">⭐ 4.9/5</div><div class="bb-badge">320+ klientów</div><div class="bb-badge">Od 2019</div></div></div></div></div><div class="b-meta"><h4>Braber Shop — Barber</h4><p>Strona z systemem rezerwacji online, cennikiem i integracją z Google Calendar.</p><span class="b-tag">Booking + Usługi</span></div></div>
-      <div class="browser"><div class="b-bar"><div class="b-dots"><span class="dr"></span><span class="dy"></span><span class="dg"></span></div><div class="b-url">stalsystem-polska.netlify.app</div></div><div class="b-preview p-stal"><div class="ss-nav"><div class="ss-logo">STALSYSTEM</div><div class="ss-navs"><span>Ogrodzenia</span><span>Bramy</span><span>Wycena</span></div></div><div class="ss-body"><div class="ss-c1"></div><div class="ss-c2"></div><div class="ss-tag">Ogrodzenia 3D · Polska</div><div class="ss-h">Płot który chroni i zdobi — od 12 lat</div><div class="ss-sub">Oblicz cenę ogrodzenia w 60 sekund. Gwarancja 12 lat.</div><div class="ss-btn">OBLICZ WYCENĘ →</div><div class="ss-cards"><div class="ss-card"><div class="ss-num">12</div><div class="ss-lbl">lat gwarancji</div></div><div class="ss-card"><div class="ss-num">56zł</div><div class="ss-lbl">od /mb</div></div><div class="ss-card"><div class="ss-num">500+</div><div class="ss-lbl">realizacji</div></div></div></div></div><div class="b-meta"><h4>StalSystem — Ogrodzenia</h4><p>Strona z kalkulatorem wyceny i AI agentem który zbiera leady 24/7.</p><span class="b-tag">Lead Gen + AI Agent</span></div></div>
+      <div class="browser">
+        <div class="b-bar"><div class="b-dots"><span class="dr"></span><span class="dy"></span><span class="dg"></span></div><div class="b-url">pepel.pl</div></div>
+        <div class="b-preview p-pepel">
+          <div class="pp-nav"><div class="pp-logo">PEPEL</div><div class="pp-nav-lines"><span></span><span></span><span></span></div></div>
+          <div class="pp-body">
+            <div class="pp-sub">Sklep internetowy · Handmade</div>
+            <div class="pp-h">Unikalny styl —<br>stworzony z popiolu</div>
+            <div class="pp-desc">Rekodzielo inspirowane natura. Kazdy produkt jedyny w swoim rodzaju.</div>
+            <div class="pp-btn">ODKRYJ KOLEKCJE →</div>
+            <div class="pp-prods">
+              <div class="pp-prod"><div class="pp-prod-lbl">Bizuteria</div></div>
+              <div class="pp-prod"><div class="pp-prod-lbl">Ceramika</div></div>
+              <div class="pp-prod hot"><div class="pp-prod-lbl">Nowosc</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="b-meta"><h4>Pepel — Sklep handmade</h4><p>Strona e-commerce z galeria, koszykiem i platnosciami online dla marki rekodziela.</p><span class="b-tag">E-commerce</span></div>
+      </div>
+
+      <div class="browser">
+        <div class="b-bar"><div class="b-dots"><span class="dr"></span><span class="dy"></span><span class="dg"></span></div><div class="b-url">braber-shop.pl</div></div>
+        <div class="b-preview p-barber">
+          <div class="bb-hero">
+            <div class="bb-bg"></div><div class="bb-line"></div>
+            <div class="bb-c">
+              <div class="bb-top"><div class="bb-logo">BRABER</div><div class="bb-navs"><span>Uslugi</span><span>Cennik</span><span>Booking</span></div></div>
+              <div class="bb-ey">Premium Barber · Poznan</div>
+              <div class="bb-h">Klasyczny styl.<br><em>Nowoczesny</em><br>charakter.</div>
+              <div class="bb-d">Rezerwuj wizyte online — wybierz mistrza i godzine.</div>
+              <div class="bb-btns"><div class="bb-g">REZERWUJ</div><div class="bb-o">CENNIK</div></div>
+              <div class="bb-badges"><div class="bb-badge">4.9/5</div><div class="bb-badge">320+ klientow</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="b-meta"><h4>Braber Shop — Barber</h4><p>Strona z systemem rezerwacji online, cennikiem i integracja z Google Calendar.</p><span class="b-tag">Booking + Uslugi</span></div>
+      </div>
+
+      <div class="browser">
+        <div class="b-bar"><div class="b-dots"><span class="dr"></span><span class="dy"></span><span class="dg"></span></div><div class="b-url">stalsystem-polska.netlify.app</div></div>
+        <div class="b-preview p-stal">
+          <div class="ss-nav"><div class="ss-logo">STALSYSTEM</div><div class="ss-navs"><span>Ogrodzenia</span><span>Bramy</span><span>Wycena</span></div></div>
+          <div class="ss-body">
+            <div class="ss-c1"></div><div class="ss-c2"></div>
+            <div class="ss-tag">Ogrodzenia 3D · Polska</div>
+            <div class="ss-h">Plot ktory chroni i zdobi — od 12 lat</div>
+            <div class="ss-sub">Oblicz cene ogrodzenia w 60 sekund. Gwarancja 12 lat.</div>
+            <div class="ss-btn">OBLICZ WYCENE →</div>
+            <div class="ss-cards">
+              <div class="ss-card"><div class="ss-num">12</div><div class="ss-lbl">lat gwarancji</div></div>
+              <div class="ss-card"><div class="ss-num">56zl</div><div class="ss-lbl">od /mb</div></div>
+              <div class="ss-card"><div class="ss-num">80+</div><div class="ss-lbl">realizacji</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="b-meta"><h4>StalSystem — Ogrodzenia</h4><p>Strona z kalkulatorem wyceny, agentem AI na Telegram i automatyczna obsluga leadow 24/7.</p><span class="b-tag">Lead Gen + AI Agent</span></div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- HOW I WORK -->
 <section class="sec">
   <div class="sec-inner">
-    <div class="tag">Co stosujemy w projektach</div>
-    <div class="sec-h">Metody z najlepszych kursów AI 2026</div>
-    <div class="sec-sub">Każdy projekt budujemy według sprawdzonych technik z NeuroPulse AI Club i aktualnych narzędzi.</div>
-    <div class="lessons-grid">
-      <div class="lesson-card"><div class="lesson-num">Lekcja 4</div><div><h4>Auto-publikacja z głosu</h4><p>Wysyłasz głosówkę do bota — on transkrybuje, formatuje i publikuje na FB, IG i TG z emoji i hashtagami. Make.com + n8n.</p></div></div>
-      <div class="lesson-card"><div class="lesson-num">Lekcja 5</div><div><h4>Auto-odpowiedzi na komentarze IG</h4><p>Bot reaguje na każdy komentarz pod postem — pyta o kontakt, zapisuje do CRM i wysyła ofertę w DM. Klient nie czeka.</p></div></div>
-      <div class="lesson-card"><div class="lesson-num">ViralFindr</div><div><h4>Analiza wideo konkurencji</h4><p>Parsujemy wirusowe wideo Twoich konkurentów na Instagramie i budujemy scenariusze Reels które mają szansę na zasięg.</p></div></div>
-      <div class="lesson-card"><div class="lesson-num">HeyGen</div><div><h4>Awatar AI Twoją twarzą i głosem</h4><p>Ze zdjęcia i 30 sekund nagrania głosu tworzymy avatara który mówi w Twoim imieniu po polsku, angielsku i 29 innych językach.</p></div></div>
+    <div class="tag">Jak pracuje</div>
+    <div class="sec-h">Od rozmowy do dzialajacego systemu w 48h</div>
+    <div class="how-steps">
+      <div class="how-step"><div class="step-n">1</div><h4>Piszesz WYCENA</h4><p>Na Telegram lub telefon. Odpowiadam w 2h z konkretnymi pytaniami o Twoj biznes.</p></div>
+      <div class="how-step"><div class="step-n">2</div><h4>Ustalamy zakres</h4><p>30 minut rozmowy — czego potrzebujesz, co chcesz zautomatyzowac, jaki masz cel.</p></div>
+      <div class="how-step"><div class="step-n">3</div><h4>Buduje i testuje</h4><p>Strona lub agent AI gotowe w 48h. Testujesz, dajesz feedback — poprawiam do skutku.</p></div>
+      <div class="how-step"><div class="step-n">4</div><h4>Twoj biznes 24/7</h4><p>Wdrozenie na zywo. System dziala sam — Ty zajmujesz sie sprzedaza, nie technikalia.</p></div>
     </div>
   </div>
 </section>
 
+<!-- APPROACH -->
 <section class="sec sec-alt">
   <div class="sec-inner">
-    <div class="tag">Jak działamy</div>
-    <div class="sec-h">Od rozmowy do działającego AI w 48 godzin</div>
-    <div class="how-steps">
-      <div class="how-step"><div class="step-n">1</div><h4>Piszesz WYCENA</h4><p>Na Telegram lub telefon. Odpowiadamy w 2h z konkretnymi pytaniami o Twój biznes.</p></div>
-      <div class="how-step"><div class="step-n">2</div><h4>Ustalamy zakres</h4><p>30 minut rozmowy — czego potrzebujesz, ile klientów tracisz, jakie masz cele sprzedażowe.</p></div>
-      <div class="how-step"><div class="step-n">3</div><h4>Budujemy i testujemy</h4><p>Agent AI, strona lub wideo — gotowe w 48h. Testujesz, dajesz feedback. Poprawiamy do skutku.</p></div>
-      <div class="how-step"><div class="step-n">4</div><h4>Twój biznes 24/7</h4><p>Wdrożenie na żywo. Ty dostajesz pierwszych klientów złapanych przez AI — my monitorujemy system.</p></div>
+    <div class="tag">Moje podejscie</div>
+    <div class="sec-h">Nie agencja — jeden czlowiek, pelna odpowiedzialnosc</div>
+    <div class="sec-sub">Rozmawiasz ze mna, nie z project managerem. Kod pisze ja, nie junior.</div>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="approach-num">Szybkosc</div>
+        <div><h4>Dzialajacy MVP w 48 godzin</h4><p>Nie planuje tygodniami — buduję, testuję, wdrazam. Jesli cos nie dziala na zywo, dowiem sie w 48h, nie po miesiacu.</p></div>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">Realne dane</div>
+        <div><h4>Testy na prawdziwych klientach</h4><p>Weryfikuje czy bot odpowiada, czy formularz wysyla, czy kalkulator liczy prawidlowo — przed oddaniem projektu, nie po.</p></div>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">Prostosc</div>
+        <div><h4>Zero zbednej zlozonosci</h4><p>Buduję tylko to czego potrzebujesz. Bez pluginow ktore sie psuja, bez systemow ktore trzeba obslugiwac.</p></div>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">Ciaglosc</div>
+        <div><h4>Wsparcie po wdrozeniu</h4><p>Po oddaniu projektu jestes w kontakcie ze mna. Cos nie dziala — odpisuję tego samego dnia.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- PRICING -->
 <section class="sec" id="pricing">
   <div class="sec-inner">
     <div class="tag">Cennik</div>
     <div class="sec-h">Przejrzyste ceny, zero niespodzianek</div>
-    <div class="sec-sub">Wybierz pakiet lub zamów pojedynczą usługę. Wycena w 2 godziny.</div>
+    <div class="sec-sub">Wycena indywidualna w 2 godziny. Platnosc po oddaniu projektu.</div>
     <div class="pricing-grid">
-      <div class="plan"><div class="plan-name">Start</div><div class="plan-price">800 <span>zł</span></div><div class="plan-from">jednorazowo</div><ul class="plan-feats"><li>1 agent AI (Telegram lub Instagram)</li><li>5 zdjęć AI produktowych</li><li>Wdrożenie i konfiguracja</li><li>2 tygodnie wsparcia</li><li>Gotowe w 48h</li></ul><a href="https://t.me/+48733245757" class="plan-cta cta-g">Napisz START →</a></div>
-      <div class="plan feat"><div class="feat-badge">⚡ Najczęściej wybierany</div><div class="plan-name">Pro</div><div class="plan-price">2 000 <span>zł</span></div><div class="plan-from">jednorazowo</div><ul class="plan-feats"><li>2 agentów AI + auto-publikacja postów</li><li>20 zdjęć AI w różnych formatach</li><li>3 Reels / wideo AI do social media</li><li>Strona WWW lub landing page</li><li>1 miesiąc wsparcia technicznego</li></ul><a href="https://t.me/+48733245757" class="plan-cta cta-p">Napisz PRO →</a></div>
-      <div class="plan"><div class="plan-name">Agency</div><div class="plan-price">4 500 <span>zł</span></div><div class="plan-from">jednorazowo</div><ul class="plan-feats"><li>Pełna automatyzacja biznesu AI</li><li>Unlimited zdjęcia + 8 wideo Reels</li><li>Awatar AI Twoim głosem i twarzą</li><li>CRM + leady + raporty tygodniowe</li><li>3 miesiące wsparcia priorytetowego</li></ul><a href="https://t.me/+48733245757" class="plan-cta cta-g">Napisz AGENCY →</a></div>
+      <div class="plan">
+        <div class="plan-name">Start</div>
+        <div class="plan-price">800 <span>zl</span></div>
+        <div class="plan-from">jednorazowo</div>
+        <ul class="plan-feats">
+          <li>Strona WWW lub Agent AI (jedno)</li>
+          <li>Kalkulator lub formularz leadow</li>
+          <li>Wdrozenie i konfiguracja</li>
+          <li>2 tygodnie wsparcia</li>
+          <li>Gotowe w 48h</li>
+        </ul>
+        <a href="https://t.me/+48733245757" class="plan-cta cta-g">Napisz START →</a>
+      </div>
+      <div class="plan feat">
+        <div class="feat-badge">Najczesciej wybierany</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">2 000 <span>zl</span></div>
+        <div class="plan-from">jednorazowo</div>
+        <ul class="plan-feats">
+          <li>Strona WWW + Agent AI na Telegram</li>
+          <li>CRM w Supabase — zapis leadow</li>
+          <li>Automatyczne powiadomienia</li>
+          <li>Kalkulator wyceny na stronie</li>
+          <li>1 miesiac wsparcia technicznego</li>
+        </ul>
+        <a href="https://t.me/+48733245757" class="plan-cta cta-p">Napisz PRO →</a>
+      </div>
+      <div class="plan">
+        <div class="plan-name">Business</div>
+        <div class="plan-price">4 500 <span>zl</span></div>
+        <div class="plan-from">jednorazowo</div>
+        <ul class="plan-feats">
+          <li>Pelna automatyzacja: strona + bot + CRM</li>
+          <li>Agent AI telefoniczny (Vapi)</li>
+          <li>Integracja z istniejacymi systemami</li>
+          <li>Raporty tygodniowe na Telegram</li>
+          <li>3 miesiace wsparcia priorytetowego</li>
+        </ul>
+        <a href="https://t.me/+48733245757" class="plan-cta cta-g">Napisz BUSINESS →</a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="sec sec-alt" id="contact">
   <div class="sec-inner">
     <div class="contact-box">
-      <h2>Gotowy przestać<br><span class="acc">tracić leady?</span></h2>
-      <p>Napisz słowo <strong>"WYCENA"</strong> na Telegram — odpowiadamy w ciągu 2 godzin z konkretną propozycją i ceną.</p>
+      <h2>Gotowy na<br><span class="acc">pierwszego leada z AI?</span></h2>
+      <p>Napisz slowo <strong>"WYCENA"</strong> na Telegram — odpowiadam w ciagu 2 godzin z konkretna propozycja i cena.</p>
       <div class="cta-row">
-        <a href="https://t.me/+48733245757" class="tg-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.008 9.461c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.127 14.39 4.17 13.48c-.638-.202-.65-.638.136-.943l10.87-4.19c.533-.193.998.13.386.901z"/></svg>Napisz na Telegram</a>
-        <a href="tel:+48733245757" class="ph-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 2 .18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>+48 733 245 757</a>
+        <a href="https://t.me/+48733245757" class="tg-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.008 9.461c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.127 14.39 4.17 13.48c-.638-.202-.65-.638.136-.943l10.87-4.19c.533-.193.998.13.386.901z"/></svg>
+          Napisz na Telegram
+        </a>
+        <a href="tel:+48733245757" class="ph-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 2 .18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+          +48 733 245 757
+        </a>
       </div>
-      <div class="divider">lub wypełnij formularz</div>
+      <div class="divider">lub wypelnij formularz</div>
       <form class="form" onsubmit="handleF(event)">
-        <div class="fr"><div class="ff"><label>Imię</label><input type="text" placeholder="Jan" required></div><div class="ff"><label>Telefon</label><input type="tel" placeholder="+48 ..." required></div></div>
-        <div class="ff"><label>Czego potrzebujesz?</label><select required><option value="">Wybierz usługę...</option><option>AI Agent (Telegram / Instagram)</option><option>Zdjęcia AI</option><option>Wideo AI / Reels</option><option>Auto-publikacja postów</option><option>Klon głosu AI</option><option>Strona WWW + AI</option><option>Pakiet Pro / Agency</option></select></div>
-        <button type="submit" class="fsub">Wyślij zapytanie →</button>
+        <div class="fr">
+          <div class="ff"><label>Imie</label><input type="text" placeholder="Jan" required></div>
+          <div class="ff"><label>Telefon</label><input type="tel" placeholder="+48 ..." required></div>
+        </div>
+        <div class="ff">
+          <label>Czego potrzebujesz?</label>
+          <select required>
+            <option value="">Wybierz...</option>
+            <option>Strona WWW</option>
+            <option>Agent AI (bot Telegram / Instagram)</option>
+            <option>Automatyzacja procesow</option>
+            <option>Strona WWW + Agent AI (pakiet Pro)</option>
+            <option>Pelna automatyzacja (pakiet Business)</option>
+          </select>
+        </div>
+        <button type="submit" class="fsub">Wyslij zapytanie →</button>
       </form>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 KREATO.AI — Agencja automatyzacji AI dla polskich firm</p>
-  <div class="foot-links"><a href="https://t.me/+48733245757">Telegram</a><a href="tel:+48733245757">+48 733 245 757</a></div>
+  <p>© 2026 KREATO.AI — Anatol Romanchyshen · Freelancer AI &amp; Web · Polska</p>
+  <div class="foot-links">
+    <a href="https://t.me/+48733245757">Telegram</a>
+    <a href="tel:+48733245757">+48 733 245 757</a>
+  </div>
 </footer>
 
 <script>
 function handleF(e) {
   e.preventDefault();
   const b = e.target.querySelector('.fsub');
-  b.textContent = '✓ Wysłano! Oddzwonimy w ciągu 2h';
+  b.textContent = 'Wyslano! Oddzwonie w ciagu 2h';
   b.style.opacity = '.7'; b.disabled = true;
 }
 </script>
