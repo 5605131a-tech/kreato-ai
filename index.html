@@ -778,6 +778,105 @@ footer{
 
 /* ══ SECTION CTA ROW ══ */
 .section-cta-row{text-align:center;margin-top:40px}
+
+/* TRUST STRIP */
+#trust-strip{padding:24px;background:var(--bg1);border-bottom:1px solid var(--border)}
+.trust-inner{max-width:1120px;margin:0 auto;text-align:center}
+.trust-top{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:14px}
+.trust-logos{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.trust-pill{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:6px 16px;font-size:13px;color:var(--text2);transition:border-color .2s}
+.trust-pill:hover{border-color:var(--border-a)}
+
+/* ROI CALCULATOR */
+#roi-calc{background:var(--bg)}
+.roi-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:40px;margin-top:48px;max-width:760px;margin-left:auto;margin-right:auto}
+.roi-sliders{display:flex;flex-direction:column;gap:24px;margin-bottom:32px}
+.roi-lbl{display:flex;justify-content:space-between;font-size:14px;color:var(--text2);margin-bottom:8px}
+.roi-lbl strong{color:var(--text)}
+.roi-card input[type=range]{width:100%;accent-color:var(--purple);cursor:pointer}
+.roi-result{background:var(--grad-soft);border:1px solid var(--border-a);border-radius:var(--r-sm);padding:24px;text-align:center;margin-bottom:24px}
+.roi-desc{font-size:13px;color:var(--text2);margin-bottom:6px}
+.roi-big{font-size:46px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1}
+.roi-sub{font-size:12px;color:var(--text3);margin-top:4px}
+.roi-split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.roi-mini{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px;text-align:center}
+.roi-mini .rm-val{font-size:22px;font-weight:900;color:var(--green)}
+.roi-mini .rm-lbl{font-size:11px;color:var(--text3);margin-top:2px}
+@media(max-width:500px){.roi-split{grid-template-columns:1fr}}
+
+/* COMPARISON TABLE */
+#compare{background:var(--bg1)}
+.cmp-wrap{overflow-x:auto;margin-top:48px;border-radius:var(--r);border:1px solid var(--border)}
+table.cmp{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+table.cmp thead th{padding:14px 20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border);background:var(--bg2);text-align:left}
+table.cmp thead th.cmp-us{color:var(--purple);background:rgba(139,92,246,.08)}
+table.cmp tbody td{padding:13px 20px;border-bottom:1px solid var(--border);vertical-align:middle}
+table.cmp tbody tr:last-child td{border-bottom:none}
+table.cmp tbody td.cmp-us{background:rgba(139,92,246,.03)}
+table.cmp .ok{color:var(--green);font-weight:700}
+table.cmp .bad{color:#ef4444}
+table.cmp tbody tr:hover td{background:rgba(255,255,255,.02)}
+table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
+
+/* FOUNDER */
+#founder{background:var(--bg)}
+.founder-grid{display:grid;grid-template-columns:110px 1fr;gap:40px;align-items:center;margin-top:48px;max-width:760px;margin-left:auto;margin-right:auto}
+.founder-av{width:96px;height:96px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;color:#fff;box-shadow:0 0 40px var(--glow)}
+.founder-name{font-size:22px;font-weight:900;margin-bottom:3px}
+.founder-role{font-size:14px;color:var(--purple);font-weight:700;margin-bottom:14px}
+.founder-bio{color:var(--text2);font-size:15px;line-height:1.8;font-weight:300}
+.founder-bio strong{color:var(--text);font-weight:700}
+.founder-facts{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap}
+.ff-item .ff-num{font-size:22px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ff-item .ff-lbl{font-size:11px;color:var(--text3);margin-top:1px}
+@media(max-width:600px){.founder-grid{grid-template-columns:1fr;text-align:center}.founder-av{margin:0 auto}.founder-facts{justify-content:center}}
+
+/* LEAD MAGNET STRIP */
+#lead-magnet{padding:60px 24px;background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(59,130,246,.06)),var(--bg1)}
+.lm-inner{max-width:640px;margin:0 auto;text-align:center}
+.lm-title{font-size:clamp(20px,3vw,30px);font-weight:900;margin-bottom:10px}
+.lm-sub{color:var(--text2);font-size:15px;font-weight:300;line-height:1.7;margin-bottom:28px}
+.lm-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.lm-input{flex:1;min-width:220px;max-width:320px;background:var(--card);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px 16px;font-size:14px;font-family:var(--font);color:var(--text);outline:none;transition:border-color .2s}
+.lm-input:focus{border-color:var(--purple)}
+.lm-success{display:none;color:var(--green);font-size:15px;font-weight:700;padding:16px}
+.lm-items{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.lm-item{font-size:12px;color:var(--text3);display:flex;align-items:center;gap:4px}
+.lm-item::before{content:'✓';color:var(--green);font-weight:700}
+
+/* AUDIO DEMO */
+.audio-demo-row{margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+.audio-btn{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border-a);border-radius:100px;padding:11px 22px;font-family:var(--font);font-size:13px;font-weight:700;color:var(--text);cursor:pointer;transition:all .2s}
+.audio-btn:hover{border-color:var(--purple);box-shadow:0 0 20px var(--glow)}
+.audio-icon{width:28px;height:28px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px}
+.audio-note{font-size:12px;color:var(--text3);margin-top:8px}
+
+/* EXIT INTENT POPUP */
+#exit-popup{display:none;position:fixed;inset:0;z-index:10000;background:rgba(7,11,20,.92);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:24px}
+#exit-popup.show{display:flex}
+.exit-card{background:var(--card);border:1px solid var(--border-a);border-radius:20px;padding:40px;max-width:460px;width:100%;position:relative;animation:exitFadeIn .3s ease}
+@keyframes exitFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.exit-card h3{font-size:24px;font-weight:900;margin-bottom:10px}
+.exit-card p{color:var(--text2);font-size:14px;line-height:1.7;font-weight:300;margin-bottom:24px}
+.exit-row{display:flex;gap:8px;flex-wrap:wrap}
+.exit-input{flex:1;min-width:180px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px 14px;font-size:14px;font-family:var(--font);color:var(--text);outline:none}
+.exit-input:focus{border-color:var(--purple)}
+.exit-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text3);font-size:22px;cursor:pointer;line-height:1}
+.exit-close:hover{color:var(--text)}
+
+/* DESKTOP STICKY */
+#desk-sticky{position:fixed;bottom:0;left:0;right:0;z-index:89;background:rgba(7,11,20,.96);backdrop-filter:blur(16px);border-top:1px solid var(--border);padding:10px 24px;display:none;align-items:center;justify-content:space-between;gap:16px}
+#desk-sticky.ds-on{display:flex}
+.ds-msg{font-size:14px;color:var(--text2);flex:1}
+.ds-msg strong{color:var(--text)}
+@media(max-width:768px){#desk-sticky{display:none!important}}
+
+/* MOBILE STICKY 2 BUTTONS */
+.sticky-2{display:flex;gap:8px}
+.sticky-2 a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;color:#fff!important;text-decoration:none;border-radius:var(--r-sm);padding:12px 8px;font-family:var(--font);font-weight:700;font-size:13px}
+.sticky-2 .s2-call{background:var(--grad)}
+.sticky-2 .s2-wa{background:#25D366}
+
 </style>
 </head>
 <body>
@@ -823,10 +922,16 @@ footer{
 
 <!-- ══ STICKY BAR ══ -->
 <div class="sticky-bar">
-  <a href="tel:+48733245757">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.28-1.28a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-    Zadzwoń — bezpłatna konsultacja
-  </a>
+  <div class="sticky-2">
+    <a href="tel:+48733245757" class="s2-call">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.28-1.28a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Zadzwoń
+    </a>
+    <a href="https://wa.me/48733245757?text=Dzień%20dobry!%20Chcę%20dowiedzieć%20się%20więcej%20o%20KREATO.AI" target="_blank" class="s2-wa">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.133.557 4.133 1.529 5.864L.057 23.882l6.18-1.618A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.988-1.362l-.358-.213-3.672.961.979-3.578-.233-.369A9.82 9.82 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/></svg>
+      WhatsApp (5 min)
+    </a>
+  </div>
 </div>
 
 <!-- ══ NAV ══ -->
@@ -890,6 +995,23 @@ footer{
   </div>
 </section>
 
+<!-- ══ TRUST STRIP ══ -->
+<div id="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-top">Zaufali nam firmy z branż</div>
+    <div class="trust-logos">
+      <div class="trust-pill"><span>🦷</span> Stomatologia</div>
+      <div class="trust-pill"><span>🛒</span> E-commerce</div>
+      <div class="trust-pill"><span>🏗️</span> Budownictwo</div>
+      <div class="trust-pill"><span>🏠</span> Nieruchomości</div>
+      <div class="trust-pill"><span>⚖️</span> Kancelarie</div>
+      <div class="trust-pill"><span>🏥</span> Przychodnie</div>
+      <div class="trust-pill"><span>📦</span> Logistyka</div>
+    </div>
+  </div>
+</div>
+
+
 <!-- ══ PROBLEMS ══ -->
 <section id="problems">
   <div class="inner reveal">
@@ -942,6 +1064,37 @@ footer{
   </div>
 </section>
 
+<!-- ══ COMPARE ══ -->
+<section id="compare">
+  <div class="inner reveal">
+    <div class="section-label">Porównanie</div>
+    <h2>KREATO.AI vs <span class="grad-text">alternatywy</span></h2>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th style="width:30%">Kryterium</th>
+            <th class="cmp-us">KREATO.AI</th>
+            <th>Call center</th>
+            <th>Platforma SaaS</th>
+            <th>Software house</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Koszt miesięczny</td><td class="cmp-us"><span class="ok">od 299 zł</span></td><td><span class="bad">40–60 zł/h</span></td><td><span class="bad">300–2 000 zł</span></td><td><span class="bad">brak</span></td></tr>
+          <tr><td>Czas wdrożenia</td><td class="cmp-us"><span class="ok">1–2 dni</span></td><td><span class="bad">2–4 tygodnie</span></td><td><span class="bad">1–2 tygodnie</span></td><td><span class="bad">2–6 miesięcy</span></td></tr>
+          <tr><td>Dostępność</td><td class="cmp-us"><span class="ok">24/7/365</span></td><td><span class="bad">8–20h, pn–pt</span></td><td><span class="ok">24/7</span></td><td>—</td></tr>
+          <tr><td>Język polski</td><td class="cmp-us"><span class="ok">naturalny, bez akcentu</span></td><td><span class="ok">tak</span></td><td><span class="bad">często ograniczony</span></td><td>zależnie</td></tr>
+          <tr><td>Własny kod / serwer</td><td class="cmp-us"><span class="ok">tak — Twój kod</span></td><td>—</td><td><span class="bad">nie, vendor lock-in</span></td><td><span class="ok">tak</span></td></tr>
+          <tr><td>Koszt wdrożenia</td><td class="cmp-us"><span class="ok">bezpłatny prototyp</span></td><td><span class="bad">1 000–5 000 zł</span></td><td>0</td><td><span class="bad">30 000–80 000 zł</span></td></tr>
+          <tr><td>Integracja z CRM/ERP</td><td class="cmp-us"><span class="ok">tak, pełna</span></td><td><span class="bad">ograniczona</span></td><td>częściowa</td><td><span class="ok">tak</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
 <!-- ══ WHY ══ -->
 <section id="why">
   <div class="inner reveal">
@@ -956,6 +1109,41 @@ footer{
     <div class="section-cta-row"><a href="#cta" class="btn btn-primary">Umów bezpłatną konsultację →</a></div>
   </div>
 </section>
+
+<!-- ══ ROI CALCULATOR ══ -->
+<section id="roi-calc">
+  <div class="inner reveal">
+    <div class="section-label">Kalkulator ROI</div>
+    <h2>Ile tracisz na <span class="grad-text">nieodebranych telefonach</span>?</h2>
+    <div class="roi-card">
+      <div class="roi-sliders">
+        <div class="roi-row">
+          <div class="roi-lbl"><span>Telefonów dziennie</span><strong id="v-calls">30</strong></div>
+          <input type="range" min="5" max="100" value="30" id="r-calls" oninput="calcRoi()">
+        </div>
+        <div class="roi-row">
+          <div class="roi-lbl"><span>Nieodebranych (%)</span><strong id="v-miss">25%</strong></div>
+          <input type="range" min="5" max="60" value="25" id="r-miss" oninput="calcRoi()">
+        </div>
+        <div class="roi-row">
+          <div class="roi-lbl"><span>Wartość klienta</span><strong id="v-val">800 zł</strong></div>
+          <input type="range" min="200" max="10000" step="100" value="800" id="r-val" oninput="calcRoi()">
+        </div>
+      </div>
+      <div class="roi-result">
+        <div class="roi-desc">Tracisz miesięcznie na nieodebranych telefonach</div>
+        <div class="roi-big" id="roi-loss">18 000 zł</div>
+        <div class="roi-sub">przy założeniu, że 30% nieodebranych = utracony klient</div>
+      </div>
+      <div class="roi-split">
+        <div class="roi-mini"><div class="rm-val" id="roi-saved">17 701 zł</div><div class="rm-lbl">potencjalny zysk/mies. z voicebotem</div></div>
+        <div class="roi-mini"><div class="rm-val" id="roi-payback">&lt;1 mies.</div><div class="rm-lbl">zwrot z inwestycji</div></div>
+      </div>
+      <a href="#cta" class="btn btn-primary" style="width:100%;justify-content:center">Chcę odzyskać te pieniądze →</a>
+    </div>
+  </div>
+</section>
+
 
 <!-- ══ PROCESS ══ -->
 <section id="process">
@@ -1063,6 +1251,14 @@ footer{
         <h2>Nie wierz nam na słowo — <span class="grad-text">przetestuj teraz</span></h2>
         <p>Zadaj pytanie naszemu asystentowi AI i przekonaj się, jak działa narzędzie, które możemy zbudować dla Twojej firmy — na Twoich danych i procesach.</p>
         <div class="demo-note">To uproszczona wersja demonstracyjna. Docelowy asystent zna Twoją ofertę, cennik i procedury — dokładnie tak jak Twój najlepszy pracownik.</div>
+        <div class="audio-demo-row">
+        <p style="font-size:13px;color:var(--text3);margin-bottom:10px">Słyszysz jak brzmi nasz asystent?</p>
+        <button class="audio-btn" onclick="playKarolina()" id="audioBtn">
+          <div class="audio-icon">&#9654;</div>
+          <span>Posłuchaj Karoliny — 30 sek</span>
+        </button>
+        <p class="audio-note">Odtwarzanie przez Twój przeglądarkę · język polski · naturalny głos</p>
+      </div>
         <a href="#cta" class="btn btn-primary" style="margin-top:24px">Chcę taki asystent dla mojej firmy →</a>
         <p style="color:var(--text3);font-size:12px;margin-top:12px">To demo demonstracyjne. Twój asystent będzie znał Twoją ofertę, cennik i procedury.</p>
       </div>
@@ -1270,6 +1466,56 @@ footer{
     </div>
   </div>
 </section>
+
+<!-- ══ FOUNDER ══ -->
+<section id="founder" style="background:var(--bg1)">
+  <div class="inner reveal">
+    <div class="section-label">Kim jesteśmy</div>
+    <h2>Kupujesz od <span class="grad-text">człowieka</span> — nie od korporacji</h2>
+    <div class="founder-grid">
+      <div class="founder-av">AR</div>
+      <div>
+        <div class="founder-name">Anatol Romanchyshen</div>
+        <div class="founder-role">Założciel KREATO.AI</div>
+        <p class="founder-bio">
+          Przez <strong>10 lat</strong> budowniczy systemów automatyzacji dla firm w Polsce i Ukrainie.
+          Wdrożyłem ponad <strong>80 projektów AI i n8n</strong> — od małych gabinetow po
+          sieci klinik. Sam odbieram telefon pod <strong>+48 733 245 757</strong> —
+          bo wiem, że za każdym biznesem stoi człowiek, który chce po prostu żeby działało.
+        </p>
+        <div class="founder-facts">
+          <div class="ff-item"><div class="ff-num">80+</div><div class="ff-lbl">wdrożeń AI</div></div>
+          <div class="ff-item"><div class="ff-num">10 lat</div><div class="ff-lbl">w automatyzacji</div></div>
+          <div class="ff-item"><div class="ff-num">24/7</div><div class="ff-lbl">dostępny</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ LEAD MAGNET ══ -->
+<section id="lead-magnet">
+  <div class="lm-inner reveal">
+    <div class="badge"><span class="badge-dot"></span>Bezpłatnie · natychmiastowy dostęp</div>
+    <h2 class="lm-title">Pobierz: <span class="grad-text">7 procesów do automatyzacji</span><br>w Twojej firmie</h2>
+    <p class="lm-sub">Przykłady z klinik, e-commerce i B2B — z konkretnymi wyliczeniami czasu i pieniędzy. Widzisz które procesy są do automatyzacji i co zyskujesz.</p>
+    <div id="lmWrap">
+      <div class="lm-row">
+        <input class="lm-input" type="email" placeholder="Twój e-mail" id="lmEmail">
+        <button class="btn btn-primary" onclick="submitLead()">Wyślij PDF →</button>
+      </div>
+      <div class="lm-items">
+        <span class="lm-item">7 gotowych przykładów</span>
+        <span class="lm-item">Wyliczenia ROI</span>
+        <span class="lm-item">Bez spamu</span>
+        <span class="lm-item">Odstąp kiedy chcesz</span>
+      </div>
+    </div>
+    <div class="lm-success" id="lmSuccess">Gotowe! Sprawdź skrzynkę — PDF już leci. Do zobaczenia!</div>
+  </div>
+</section>
+
 
 <!-- ══ CTA + FORM ══ -->
 <section id="cta">
@@ -1552,6 +1798,150 @@ sectionEls.forEach(s=>scrollSpy.observe(s));
 })();
 function cookieAccept(){ localStorage.setItem('cookieConsent','accepted'); var b=document.getElementById('cookieBanner'); if(b) b.style.display='none'; /* loadTrackers(); */ }
 function cookieDecline(){ localStorage.setItem('cookieConsent','declined'); var b=document.getElementById('cookieBanner'); if(b) b.style.display='none'; }
+
+
+/* ── ROI CALCULATOR ── */
+function calcRoi(){
+  const calls = +document.getElementById('r-calls').value;
+  const miss = +document.getElementById('r-miss').value;
+  const val = +document.getElementById('r-val').value;
+  document.getElementById('v-calls').textContent = calls;
+  document.getElementById('v-miss').textContent = miss + '%';
+  document.getElementById('v-val').textContent = val.toLocaleString('pl') + ' zł';
+  const missedPerDay = Math.round(calls * miss / 100);
+  const converted = Math.round(missedPerDay * 0.3);
+  const lossMonth = Math.round(converted * val * 22);
+  const savedMonth = Math.round(lossMonth - 299);
+  document.getElementById('roi-loss').textContent = lossMonth.toLocaleString('pl') + ' zł';
+  document.getElementById('roi-saved').textContent = savedMonth.toLocaleString('pl') + ' zł';
+  const months = lossMonth > 0 ? (299 / lossMonth * 30).toFixed(0) : '?';
+  document.getElementById('roi-payback').textContent = months + ' dni';
+}
+
+/* ── AUDIO DEMO (Web Speech API) ── */
+function playKarolina(){
+  const btn = document.getElementById('audioBtn');
+  if(window.speechSynthesis && window.speechSynthesis.speaking){
+    window.speechSynthesis.cancel();
+    btn.querySelector('span').textContent = 'Posłuchaj Karoliny — 30 sek';
+    btn.querySelector('.audio-icon').innerHTML = '&#9654;';
+    return;
+  }
+  if(!window.speechSynthesis){ alert('Twój przeglądarka nie obsługuje odtwarzania mowy. Spróbuj Chrome.'); return; }
+  const text = 'Dzień dobry, tu Karolina, asystentka firmy. Jak mogę pomóc? Rozumiem, chce Pan umówić wizytę. Mamy wolne terminy w czwartek o czternastej lub w piątek o dziesiątej trzydzieści. Który termin Panu odpowiada? Imię i numer kontaktowy proszę. Dziękuję. Potwierdzenie SMS wysyłam od razu.';
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'pl-PL'; u.rate = 0.88; u.pitch = 1.05;
+  const loadVoices = ()=>{
+    const voices = window.speechSynthesis.getVoices();
+    const pl = voices.find(v=>v.lang.startsWith('pl'));
+    if(pl) u.voice = pl;
+  };
+  loadVoices();
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+  btn.querySelector('span').textContent = 'Zatrzymaj odtwarzanie';
+  btn.querySelector('.audio-icon').innerHTML = '&#9646;&#9646;';
+  u.onend = ()=>{ btn.querySelector('span').textContent = 'Posłuchaj Karoliny — 30 sek'; btn.querySelector('.audio-icon').innerHTML = '&#9654;'; };
+  window.speechSynthesis.speak(u);
+}
+
+/* ── LEAD MAGNET ── */
+async function submitLead(){
+  const email = document.getElementById('lmEmail').value.trim();
+  if(!email || !email.includes('@')){ document.getElementById('lmEmail').style.borderColor='#ef4444'; return; }
+  try{
+    const fd = new FormData();
+    fd.append('email', email);
+    fd.append('_subject', 'Lead Magnet — KREATO.AI PDF');
+    fd.append('source', 'lead-magnet-strip');
+    await fetch('https://formsubmit.co/ajax/biuro.stalsystem.pl@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:fd});
+  }catch(e){}
+  document.getElementById('lmWrap').style.display='none';
+  document.getElementById('lmSuccess').style.display='block';
+}
+
+/* ── EXIT INTENT ── */
+function closeExit(){ document.getElementById('exit-popup').classList.remove('show'); }
+async function submitExit(){
+  const email = document.getElementById('exitEmail').value.trim();
+  if(!email || !email.includes('@')){ document.getElementById('exitEmail').style.borderColor='#ef4444'; return; }
+  try{
+    const fd = new FormData();
+    fd.append('email', email);
+    fd.append('_subject', 'Exit Popup Lead — KREATO.AI');
+    fd.append('source', 'exit-popup');
+    await fetch('https://formsubmit.co/ajax/biuro.stalsystem.pl@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:fd});
+  }catch(e){}
+  document.getElementById('exitFormWrap').style.display='none';
+  document.getElementById('exitSuccess').style.display='block';
+  setTimeout(closeExit, 2500);
+}
+let exitDone = false;
+document.addEventListener('mouseleave', e=>{
+  if(e.clientY < 5 && !exitDone && !sessionStorage.getItem('exitSeen')){
+    exitDone = true; sessionStorage.setItem('exitSeen','1');
+    setTimeout(()=>document.getElementById('exit-popup').classList.add('show'), 300);
+  }
+});
+document.getElementById('exit-popup').addEventListener('click', e=>{ if(e.target===document.getElementById('exit-popup')) closeExit(); });
+
+/* ── SMART DESKTOP STICKY ── */
+(function(){
+  const sticky = document.getElementById('desk-sticky');
+  const msg = document.getElementById('dsMsg');
+  const sectionMsgs = [
+    {id:'problems', txt:'<strong>Rozpoznajesz te problemy?</strong> Porozmawiajmy —'},
+    {id:'compare', txt:'<strong>KREATO.AI wygrywa w każdej kategorii.</strong> Przekonaj się —'},
+    {id:'why', txt:'<strong>5–10× tańszy od etatu,</strong> dostępny 24/7 —'},
+    {id:'roi-calc', txt:'<strong>Policz ile tracisz.</strong> Prototyp zwraca się w tydzień —'},
+    {id:'services', txt:'<strong>Voicebot, chatbot lub automatyzacja</strong> — dopasujemy —'},
+    {id:'cases', txt:'<strong>Chcesz podobne wyniki?</strong> Bezpłatna analiza —'},
+    {id:'testimonials', txt:'<strong>Dołącz do zadowolonych klientów</strong> —'},
+    {id:'pricing', txt:'<strong>Zacznij od bezpłatnego prototypu.</strong> Bez ryzyka —'},
+  ];
+  let scrolled = false;
+  window.addEventListener('scroll', ()=>{
+    const y = window.scrollY;
+    if(y > 300){ sticky.classList.add('ds-on'); scrolled = true; } else { sticky.classList.remove('ds-on'); }
+    if(!scrolled) return;
+    const cta = document.getElementById('cta');
+    if(cta){
+      const r = cta.getBoundingClientRect();
+      if(r.top < window.innerHeight && r.bottom > 0){ sticky.classList.remove('ds-on'); return; }
+    }
+    for(let i = sectionMsgs.length-1; i>=0; i--){
+      const el = document.getElementById(sectionMsgs[i].id);
+      if(el && el.getBoundingClientRect().top < window.innerHeight/2){
+        msg.innerHTML = sectionMsgs[i].txt; break;
+      }
+    }
+  });
+})();
+
 </script>
+
+<!-- DESKTOP STICKY -->
+<div id="desk-sticky">
+  <span class="ds-msg" id="dsMsg"><strong>Twoja firma nigdy nie straci klienta.</strong> Sprawdź za darmo —</span>
+  <a href="#cta" class="btn btn-primary" style="font-size:13px;padding:10px 20px;white-space:nowrap">Bezpłatna konsultacja →</a>
+</div>
+
+<!-- EXIT INTENT POPUP -->
+<div id="exit-popup">
+  <div class="exit-card">
+    <button class="exit-close" onclick="closeExit()">&times;</button>
+    <div class="badge" style="margin-bottom:16px"><span class="badge-dot"></span>Zanim wyjdziesz</div>
+    <h3>Wyślemy Ci <span class="grad-text">bezpłatny plan</span><br>automatyzacji</h3>
+    <p>Zostaw e-mail — odeślemy konkretny plan tego, co można zautomatyzować w firmie z Twojej branży. Zero zobowiązań, odpiszemy w 2 godziny.</p>
+    <div id="exitFormWrap">
+      <div class="exit-row">
+        <input class="exit-input" type="email" placeholder="Twój e-mail" id="exitEmail">
+        <button class="btn btn-primary" onclick="submitExit()">Wyślij →</button>
+      </div>
+      <p style="font-size:12px;color:var(--text3);margin-top:10px">Lub zadzwoń teraz: <a href="tel:+48733245757" style="color:var(--purple)">+48 733 245 757</a></p>
+    </div>
+    <div id="exitSuccess" style="display:none;color:var(--green);font-weight:700;font-size:15px;padding:12px 0">Dziękujemy! Odezwiemy się w ciągu 2 godzin.</div>
+  </div>
+</div>
+
 </body>
 </html>
