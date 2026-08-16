@@ -877,6 +877,67 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
 .sticky-2 .s2-call{background:var(--grad)}
 .sticky-2 .s2-wa{background:#25D366}
 
+
+/* ═══ V5 ADDITIONS ═══ */
+
+/* 1. Scarcity strip */
+.scarce-strip{display:inline-flex;align-items:center;gap:8px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);border-radius:100px;padding:5px 14px;font-size:12px;font-weight:600;color:#f87171;margin-bottom:16px}
+.scarce-dot{width:6px;height:6px;border-radius:50%;background:#ef4444;animation:pulsedot 1s ease-in-out infinite;flex-shrink:0}
+
+/* 2. Social proof toasts */
+#toast-area{position:fixed;bottom:96px;left:20px;z-index:2000;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+.toast{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;max-width:260px;font-size:12px;color:var(--text2);box-shadow:0 4px 24px rgba(0,0,0,.4);animation:toastin .4s ease forwards;pointer-events:auto}
+.toast-av{width:30px;height:30px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;flex-shrink:0}
+.toast b{color:var(--text)}
+.toast-x{margin-left:auto;cursor:pointer;color:var(--text3);font-size:15px;line-height:1;flex-shrink:0}
+@keyframes toastin{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:none}}
+@keyframes toastout{from{opacity:1}to{opacity:0;transform:translateX(-20px)}}
+
+/* 3. Integration logos */
+#integrations{background:var(--bg1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:22px 0}
+.integ-inner{max-width:1100px;margin:0 auto;padding:0 40px}
+.integ-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:16px}
+.integ-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.integ-pill{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;color:var(--text2)}
+.integ-icon{width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;flex-shrink:0}
+@media(max-width:760px){.integ-inner{padding:0 20px}}
+
+/* 4. Callback float button */
+#callback-float{position:fixed;right:20px;bottom:96px;z-index:1500;background:var(--grad);color:#fff;border:none;border-radius:100px;padding:11px 20px;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(139,92,246,.5);align-items:center;gap:8px;transition:transform .2s;font-family:var(--font);display:none}
+#callback-float:hover{transform:scale(1.04)}
+@media(min-width:761px){#callback-float{display:flex}}
+
+/* 5. Callback modal */
+#cb-modal{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;padding:20px}
+#cb-modal.open{display:flex}
+.cb-box{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);padding:36px;max-width:370px;width:100%}
+.cb-box h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.cb-desc{color:var(--text2);font-size:14px;margin-bottom:24px;line-height:1.6}
+.cb-inp{width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-size:15px;font-family:var(--font);outline:none;box-sizing:border-box;margin-bottom:12px}
+.cb-inp:focus{border-color:var(--purple)}
+.cb-btn{width:100%;background:var(--grad);color:#fff;border:none;border-radius:8px;padding:13px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--font)}
+.cb-close-btn{float:right;background:none;border:none;color:var(--text3);font-size:22px;cursor:pointer;line-height:1;margin:-4px -4px 0 0}
+.cb-ok{color:var(--green);font-size:14px;font-weight:600;margin-top:12px;display:none;text-align:center}
+
+/* 6. Industry tabs */
+.testi-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 -20px}
+.testi-tab{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:7px 18px;font-size:13px;font-weight:600;cursor:pointer;color:var(--text2);transition:background .2s,color .2s,border-color .2s;font-family:var(--font)}
+.testi-tab.active,.testi-tab:hover{background:var(--grad);color:#fff;border-color:transparent}
+.testi-item.hidden{display:none!important}
+
+/* 7. Price promo badges */
+.price-setup-badge{display:inline-block;font-size:11px;font-weight:700;background:rgba(16,185,129,.12);color:var(--green);border:1px solid rgba(16,185,129,.3);border-radius:100px;padding:3px 10px;margin-bottom:6px}
+.price-countdown-line{font-size:11px;color:var(--text3);margin-bottom:8px}
+.price-ctd{font-weight:700;color:#f87171}
+
+/* 8. WhatsApp in demo chat */
+.hc-wa{display:inline-flex;align-items:center;gap:5px;background:#25D366;color:#fff;border:none;border-radius:100px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;text-decoration:none;font-family:var(--font);transition:opacity .2s;white-space:nowrap;flex-shrink:0}
+.hc-wa:hover{opacity:.85}
+
+/* 9. Footer B2B row */
+.footer-b2b{font-size:11px;color:var(--text3);margin-bottom:10px;display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.footer-b2b span+span::before{content:'· '}
+
 </style>
 </head>
 <body>
@@ -959,6 +1020,7 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
   <div class="hero-inner">
     <div class="reveal">
       <div class="badge"><span class="badge-dot"></span>MŚP · kliniki · e-commerce · Prototyp w 48h</div>
+      <div class="scarce-strip"><span class="scarce-dot"></span>Zostało <strong>2 wolne miejsca</strong> w sierpniu</div>
       <h1>Twoja firma <span class="grad-text">nigdy nie straci</span> klienta — nawet o 22:00.</h1>
       <p class="hero-sub">Klient dzwoni po godzinach, w weekend, gdy jesteś zajęty — i idzie do konkurencji. Budujemy <strong>voiceboty, chatboty i agentów AI</strong>, które odbierają telefony, odpowiadają na pytania i obsługują klientów 24/7 — od 299 zł/mies.</p>
       <div class="hero-btns">
@@ -988,6 +1050,7 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
         <div class="hc-typing"><span></span><span></span><span></span></div>
         <div class="hc-footer">
           <div class="hc-input">Wizyta potwierdzona → SMS + CRM + Telegram…</div>
+          <a href="https://wa.me/48733245757?text=Chc%C4%99%20si%C4%99%20dowiedzie%C4%87%20wi%C4%99cej%20o%20automatyzacji%20AI" class="hc-wa" target="_blank" rel="noopener">📱 WhatsApp</a>
           <div class="hc-send"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
         </div>
       </div>
@@ -1011,6 +1074,24 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
   </div>
 </div>
 
+
+<!-- ══ INTEGRATIONS ══ -->
+<div id="integrations">
+  <div class="integ-inner">
+    <div class="integ-label">Integrujemy z narzędziami, których już używasz</div>
+    <div class="integ-logos">
+      <div class="integ-pill"><div class="integ-icon" style="background:#4285f4">G</div>Google Calendar</div>
+      <div class="integ-pill"><div class="integ-icon" style="background:#25D366">W</div>WhatsApp Business</div>
+      <div class="integ-pill"><div class="integ-icon" style="background:#9b59b6">P</div>Proassist</div>
+      <div class="integ-pill"><div class="integ-icon" style="background:#1abc9c">Z</div>Znany Lekarz</div>
+      <div class="integ-pill"><div class="integ-icon" style="background:#96588a">W</div>WooCommerce</div>
+      <div class="integ-pill"><div class="integ-icon" style="background:#e74c3c">B</div>BaseLinker</div>
+      <div class="integ-pill"><div class="integ-icon" style="background:#1a73a8">P</div>Pipedrive</div>
+      <div class="integ-pill"><div class="integ-icon" style="background:#3b82f6">Z</div>Zapier</div>
+      <div class="integ-pill"><div class="integ-icon" style="background:#0088cc">T</div>Telegram</div>
+    </div>
+  </div>
+</div>
 
 <!-- ══ PROBLEMS ══ -->
 <section id="problems">
@@ -1333,8 +1414,14 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
   <div class="inner reveal">
     <div class="section-label">Opinie klientów</div>
     <h2>Co mówią firmy, <span class="grad-text">które już korzystają</span></h2>
+    <div class="testi-tabs">
+      <button class="testi-tab active" onclick="filterTesti(this,'all')">Wszystkie</button>
+      <button class="testi-tab" onclick="filterTesti(this,'klinika')">Kliniki</button>
+      <button class="testi-tab" onclick="filterTesti(this,'ecommerce')">E-commerce</button>
+      <button class="testi-tab" onclick="filterTesti(this,'budowlanka')">Budowlanka</button>
+    </div>
     <div class="testi-grid">
-      <div class="testi-card">
+      <div class="testi-card testi-item" data-industry="klinika">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">„Karolina odbiera wszystkie telefony — nawet w niedzielę wieczorem. Recepcja przestała siedzieć przy słuchawce, pacjenci dostają SMS z potwierdzeniem w ciągu minuty. Wdrożenie trwało 2 dni robocze.”</p>
         <div class="testi-author">
@@ -1342,7 +1429,7 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
           <div><div class="testi-name">Marek K.</div><div class="testi-role">Właściciel, Klinika Dentystyczna, Poznań</div></div>
         </div>
       </div>
-      <div class="testi-card">
+      <div class="testi-card testi-item" data-industry="ecommerce">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">„Chatbot rozwiązuje 80% zapytań o status zamówienia automatycznie. Konsultant zajmuje się tylko reklamacjami. Czas odpowiedzi: z 4 godzin do 2 minut. Klienci są zachwyceni.”</p>
         <div class="testi-author">
@@ -1350,7 +1437,7 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
           <div><div class="testi-name">Anna N.</div><div class="testi-role">CEO, sklep e-commerce, Warszawa</div></div>
         </div>
       </div>
-      <div class="testi-card">
+      <div class="testi-card testi-item" data-industry="budowlanka">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">„Raport tygodniowy przychodził do Telegram co poniedziałek o 8:00. Oszczędzamy 4 godziny tygodniowo na ręcznym zbieraniu danych. Polecam każdej firmie budowlanej.”</p>
         <div class="testi-author">
@@ -1406,6 +1493,8 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
     <div class="price-grid">
       <div class="price-card">
         <div class="price-tier">Starter</div>
+        <div class="price-setup-badge">Setup GRATIS w sierpniu — oszczędzasz 1 500 zł</div>
+        <div class="price-countdown-line">Oferta wygaśa za: <span class="price-ctd" id="priceTimer">--:--:--</span></div>
         <div class="price-amt">299 <span style="font-size:20px;font-weight:400">zł</span></div>
         <div class="price-unit">/mies. + setup od 1 500 zł</div>
         <ul class="price-feats">
@@ -1632,7 +1721,8 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 KREATO.AI · Polska · <a href="tel:+48733245757" style="color:var(--text3);text-decoration:none">+48 733 245 757</a></div>
+    <div class="footer-b2b"><span>Faktura VAT</span><span>Umowa miesiączna bez lock-in</span><span>RODO-compliant</span><span>Działalność gospodarcza PL</span></div>
+  <div class="footer-copy">© 2026 KREATO.AI · Polska · <a href="tel:+48733245757" style="color:var(--text3);text-decoration:none">+48 733 245 757</a></div>
     <a href="#" class="back-to-top" aria-label="Powrót na górę">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
     </a>
@@ -1943,5 +2033,88 @@ document.getElementById('exit-popup').addEventListener('click', e=>{ if(e.target
   </div>
 </div>
 
+
+<!-- Toast area -->
+<div id="toast-area"></div>
+
+<!-- Callback float -->
+<button id="callback-float" onclick="openCb()">📞 Zadzwonimy w 30 min</button>
+
+<!-- Callback modal -->
+<div id="cb-modal">
+  <div class="cb-box">
+    <button class="cb-close-btn" onclick="closeCb()">×</button>
+    <h3>Oddzwonimy do Ciebie</h3>
+    <p class="cb-desc">Zostaw numer — konsultant zadzwoni w ciągu 30 minut (pon–pt, 8:00–17:00).</p>
+    <form id="cb-form" onsubmit="submitCb(event)">
+      <input class="cb-inp" type="tel" id="cb-phone" placeholder="+48 700 000 000" required />
+      <button class="cb-btn" type="submit">Zadzwóńcie do mnie →</button>
+    </form>
+    <div class="cb-ok" id="cb-ok">✓ Otrzymaliśmy Twój numer — oddzwonimy wkrótce!</div>
+  </div>
+</div>
+
+<script>
+// Callback
+function openCb(){document.getElementById("cb-modal").classList.add("open")}
+function closeCb(){document.getElementById("cb-modal").classList.remove("open")}
+document.getElementById("cb-modal").addEventListener("click",function(e){if(e.target===this)closeCb()})
+function submitCb(e){
+  e.preventDefault();
+  var ph=document.getElementById("cb-phone").value;
+  fetch("https://formsubmit.co/ajax/biuro.stalsystem.pl@gmail.com",{
+    method:"POST",
+    headers:{"Content-Type":"application/json","Accept":"application/json"},
+    body:JSON.stringify({_subject:"KREATO Callback",telefon:ph,_template:"table"})
+  }).catch(function(){});
+  document.getElementById("cb-form").style.display="none";
+  document.getElementById("cb-ok").style.display="block";
+  setTimeout(closeCb,2800);
+}
+setTimeout(function(){
+  if(window.innerWidth>=761){
+    var f=document.getElementById("callback-float");
+    if(f)f.style.display="flex";
+  }
+},18000);
+
+// Social proof toasts
+var _td=[{av:"AK",name:"Agnieszka K.",msg:"zapisała się na konsultację · przed chwilą"},
+{av:"MJ",name:"Marek J.",msg:"zamówił voicebota AI · 2 minuty temu"},
+{av:"KW",name:"Klinika Wrocław",msg:"wdrożyła chatbota · 12 minut temu"},
+{av:"EP",name:"E-sklep Gdańsk",msg:"automatyzuje obsługę 24/7 · 38 min temu"},
+{av:"PB",name:"Piotr B.",msg:"pyta o prototyp · przed chwilą"},
+{av:"NM",name:"Firma Poznań",msg:"podpisała umowę · 1 godz. temu"}];
+var _ti=0;
+function _showToast(){
+  var t=_td[_ti%_td.length];_ti++;
+  var area=document.getElementById("toast-area");
+  if(!area)return;
+  var el=document.createElement("div");el.className="toast";
+  el.innerHTML='<div class="toast-av">'+t.av+'</div><div><b>'+t.name+'</b><br>'+t.msg+'</div><span class="toast-x" onclick="this.parentNode.remove()">×</span>';
+  area.appendChild(el);
+  setTimeout(function(){el.style.animation="toastout .4s ease forwards";setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el)},400)},6500);
+}
+setTimeout(function(){_showToast();setInterval(_showToast,38000)},9000);
+
+// Industry tabs filter
+function filterTesti(btn,ind){
+  document.querySelectorAll(".testi-tab").forEach(function(t){t.classList.remove("active")});
+  btn.classList.add("active");
+  document.querySelectorAll(".testi-item").forEach(function(c){
+    c.classList.toggle("hidden",ind!=="all"&&c.dataset.industry!==ind);
+  });
+}
+
+// Price countdown to end of month
+function _updTimer(){
+  var now=new Date(),end=new Date(now.getFullYear(),now.getMonth()+1,1,0,0,0);
+  var d=end-now;if(d<0)d=0;
+  var h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
+  var el=document.getElementById("priceTimer");
+  if(el)el.textContent=(h>9?h:"0"+h)+":"+(m>9?m:"0"+m)+":"+(s>9?s:"0"+s);
+}
+_updTimer();setInterval(_updTimer,1000);
+</script>
 </body>
 </html>
