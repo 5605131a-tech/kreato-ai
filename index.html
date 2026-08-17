@@ -37,6 +37,7 @@
   --r:14px;
   --r-sm:8px;
   --font:'Lato',system-ui,sans-serif;
+  --font-display:'Plus Jakarta Sans','Lato',system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -180,7 +181,7 @@ section{padding:80px 24px}
   font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   color:var(--purple);margin-bottom:12px;
 }
-h1,h2,h3{line-height:1.15;letter-spacing:-.01em;font-weight:900}
+h1,h2,h3{line-height:1.12;letter-spacing:-.03em;font-weight:900;font-family:var(--font-display);text-wrap:balance}
 h1{font-size:clamp(36px,6vw,70px)}
 h2{font-size:clamp(28px,4vw,46px)}
 h3{font-size:18px;font-weight:700}
@@ -227,7 +228,7 @@ h3{font-size:18px;font-weight:700}
   gap:60px;align-items:center;
 }
 .hero-sub{
-  color:var(--text2);font-size:17px;line-height:1.75;font-weight:300;
+  color:var(--text2);font-size:17px;line-height:1.62;font-weight:400;
   margin:20px 0 36px;max-width:500px;
 }
 .hero-sub strong{font-weight:700;color:var(--text)}
@@ -324,7 +325,7 @@ h3{font-size:18px;font-weight:700}
 .prob-card:hover{border-color:var(--border-a);transform:translateY(-2px)}
 .prob-icon{font-size:28px;margin-bottom:14px;display:block}
 .prob-card h3{color:var(--text);margin-bottom:8px;font-size:16px}
-.prob-card p{color:var(--text2);font-size:14px;line-height:1.75;font-weight:300}
+.prob-card p{color:var(--text2);font-size:14px;line-height:1.62;font-weight:300}
 @media(max-width:640px){.problems-grid{grid-template-columns:1fr}}
 
 /* ══ SOLUTION ══ */
@@ -586,7 +587,7 @@ h3{font-size:18px;font-weight:700}
   padding:0 24px;
 }
 .faq-item.open .faq-a{max-height:300px;padding-bottom:20px}
-.faq-a p{color:var(--text2);font-size:14px;line-height:1.75;font-weight:300}
+.faq-a p{color:var(--text2);font-size:14px;line-height:1.62;font-weight:300}
 .faq-a a{color:var(--purple);text-decoration:none;font-weight:700}
 
 /* ══ OBJECTIONS ══ */
@@ -956,6 +957,7 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
 .footer-b2b span+span::before{content:'· '}
 
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9QH1CPDDS"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-B9QH1CPDDS');</script>
