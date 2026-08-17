@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bezpłatna Diagnoza AI — KREATO.AI</title>
+<meta name="description" content="Sprawdź w 2 minuty, ile traciłeś bez AI. Bezpłatna diagnoza automatyzacji dla Twojej firmy. Dowiedz się, które agenty AI przyniosą Ci największy zwrot.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Bezpłatna Diagnoza AI — KREATO.AI">
+<meta property="og:description" content="5 pytań → spersonalizowany raport automatyzacji z konkretnymi rekomendacjami.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;
+  --purple:#8b5cf6;--purple-d:#7c3aed;--blue:#3b82f6;--green:#10b981;--red:#ef4444;
+  --grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);
+  --grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);
+  --text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;
+  --border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;
+  --font:'Lato',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;min-height:100vh}
+nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-size:18px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-back{color:var(--text2);text-decoration:none;font-size:13px;font-weight:400;display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back:hover{color:var(--text)}
+.wrap{max-width:640px;margin:0 auto;padding:48px 24px 80px}
+
+/* ── Progress ── */
+.prog-bar{background:var(--card);border-radius:100px;height:4px;margin-bottom:40px;overflow:hidden}
+.prog-fill{height:100%;background:var(--grad);border-radius:100px;transition:width .5s ease}
+.prog-label{text-align:center;font-size:12px;color:var(--text3);letter-spacing:.08em;margin-bottom:12px}
+
+/* ── Steps ── */
+.step{display:none;animation:fadeIn .35s ease}
+.step.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.step-q{font-size:clamp(20px,4vw,26px);font-weight:900;line-height:1.2;margin-bottom:8px}
+.step-sub{font-size:14px;color:var(--text2);margin-bottom:28px;line-height:1.5}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.answers{grid-template-columns:1fr}}
+.ans{
+  background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);
+  padding:16px 18px;cursor:pointer;transition:all .2s;text-align:left;
+  display:flex;align-items:flex-start;gap:12px;
+}
+.ans:hover{border-color:var(--border-a);background:var(--card-h)}
+.ans.selected{border-color:var(--purple);background:rgba(139,92,246,.1);box-shadow:0 0 0 1px var(--purple)}
+.ans-icon{width:36px;height:36px;border-radius:8px;background:var(--grad-soft);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;margin-top:1px}
+.ans-text strong{display:block;font-size:14px;font-weight:700;margin-bottom:3px}
+.ans-text span{font-size:12px;color:var(--text2)}
+
+/* ── Report ── */
+.report{display:none}
+.report.active{display:block;animation:fadeIn .4s ease}
+.rep-title{font-size:clamp(22px,4vw,30px);font-weight:900;margin-bottom:6px}
+.rep-sub{font-size:14px;color:var(--text2);margin-bottom:32px}
+
+.score-wrap{display:flex;align-items:center;gap:24px;margin-bottom:32px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px}
+.gauge{width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative}
+.gauge-svg{width:110px;height:110px;transform:rotate(-90deg)}
+.gauge-bg{fill:none;stroke:rgba(255,255,255,.06);stroke-width:8}
+.gauge-fill{fill:none;stroke:url(#gg);stroke-width:8;stroke-linecap:round;transition:stroke-dasharray 1.2s ease}
+.gauge-label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.gauge-pct{font-size:22px;font-weight:900;line-height:1}
+.gauge-pct-sign{font-size:13px;color:var(--text2)}
+.score-info h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.score-info p{font-size:13px;color:var(--text2);line-height:1.5}
+
+.rep-section{margin-bottom:24px}
+.rep-section-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:12px}
+.metrics-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:480px){.metrics-row{grid-template-columns:1fr}}
+.metric-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px 16px}
+.metric-card strong{display:block;font-size:18px;font-weight:900;margin-bottom:3px}
+.metric-card.green strong{color:var(--green)}
+.metric-card.blue strong{color:var(--blue)}
+.metric-card span{font-size:12px;color:var(--text2)}
+
+.agents-list{display:flex;flex-direction:column;gap:8px}
+.agent-pill{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--r-sm);
+  padding:12px 14px;display:flex;align-items:center;gap:12px;
+}
+.agent-pill-icon{width:36px;height:36px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:17px}
+.agent-pill-text strong{font-size:14px;font-weight:700;display:block}
+.agent-pill-text span{font-size:12px;color:var(--text2)}
+.agent-pill-badge{margin-left:auto;font-size:11px;font-weight:700;color:var(--green);background:rgba(16,185,129,.08);padding:3px 9px;border-radius:100px;white-space:nowrap}
+
+.plan-card{background:rgba(139,92,246,.07);border:1.5px solid rgba(139,92,246,.3);border-radius:var(--r);padding:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.plan-name{font-size:17px;font-weight:900}
+.plan-price strong{font-size:22px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.plan-price span{font-size:12px;color:var(--text2);display:block;margin-top:2px;text-align:right}
+
+/* ── Lead Form ── */
+.form-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-top:32px}
+.form-box h3{font-size:18px;font-weight:900;margin-bottom:6px}
+.form-box p{font-size:13px;color:var(--text2);margin-bottom:20px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12px;font-weight:700;color:var(--text2);margin-bottom:6px;letter-spacing:.03em}
+.field input{
+  width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-sm);
+  padding:13px 14px;color:var(--text);font-family:var(--font);font-size:14px;outline:none;
+  transition:border-color .2s;
+}
+.field input:focus{border-color:var(--purple)}
+.field input::placeholder{color:var(--text3)}
+.btn-submit{
+  width:100%;background:var(--grad);color:#fff;border:none;border-radius:var(--r-sm);
+  padding:16px;font-family:var(--font);font-size:15px;font-weight:700;cursor:pointer;
+  transition:all .2s;margin-top:4px;
+}
+.btn-submit:hover{opacity:.88;transform:translateY(-1px);box-shadow:0 8px 30px rgba(139,92,246,.4)}
+.form-note{font-size:11px;color:var(--text3);text-align:center;margin-top:10px}
+.form-success{text-align:center;padding:32px 16px;display:none}
+.form-success h3{font-size:20px;font-weight:900;margin-bottom:8px;color:var(--green)}
+.form-success p{font-size:14px;color:var(--text2)}
+
+/* ── Footer ── */
+.diag-footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text3);border-top:1px solid var(--border)}
+.diag-footer a{color:var(--text3);text-decoration:none}
+.diag-footer a:hover{color:var(--text2)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">KREATO.AI</a>
+    <a href="index.html" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Strona główna
+    </a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- Header -->
+  <div style="text-align:center;margin-bottom:40px">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block"></span>
+      Bezpłatna · Bez rejestracji · 2 minuty
+    </div>
+    <h1 style="font-size:clamp(24px,5vw,36px);font-weight:900;line-height:1.15;margin-bottom:10px">Ile tracisz <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">bez AI</span> w firmie?</h1>
+    <p style="font-size:15px;color:var(--text2);max-width:420px;margin:0 auto;line-height:1.6">5 pytań → spersonalizowany Raport Automatyzacji z konkretnymi rekomendacjami dla Twojej firmy</p>
+  </div>
+
+  <!-- Progress -->
+  <div id="progWrap">
+    <div class="prog-label" id="progLabel">Pytanie 1 z 5</div>
+    <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:20%"></div></div>
+  </div>
+
+  <!-- ═══ STEP 1 ═══ -->
+  <div class="step active" id="s1">
+    <p class="step-q">Ile połączeń/zapytań miesięcznie tracisz po godzinach pracy?</p>
+    <p class="step-sub">Klienci dzwonią, piszą, czekają — a Ty nie możesz odebrać</p>
+    <div class="answers">
+      <div class="ans" onclick="pick(1,'a',this)">
+        <div class="ans-icon">😌</div>
+        <div class="ans-text"><strong>Mniej niż 10</strong><span>Rzadki problem</span></div>
+      </div>
+      <div class="ans" onclick="pick(1,'b',this)">
+        <div class="ans-icon">😟</div>
+        <div class="ans-text"><strong>10–50 miesięcznie</strong><span>Kilka tygodniowo</span></div>
+      </div>
+      <div class="ans" onclick="pick(1,'c',this)">
+        <div class="ans-icon">😰</div>
+        <div class="ans-text"><strong>50–100 miesięcznie</strong><span>Codziennie coś ucieka</span></div>
+      </div>
+      <div class="ans" onclick="pick(1,'d',this)">
+        <div class="ans-icon">🔥</div>
+        <div class="ans-text"><strong>Ponad 100</strong><span>Ogromna skala strat</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 2 ═══ -->
+  <div class="step" id="s2">
+    <p class="step-q">Ile czasu tygodniowo tracisz na powtarzalne zadania?</p>
+    <p class="step-sub">Oferty, dokumenty, odpowiadanie na te same pytania, wysyłka przypomnień</p>
+    <div class="answers">
+      <div class="ans" onclick="pick(2,'a',this)">
+        <div class="ans-icon">⏱️</div>
+        <div class="ans-text"><strong>Mniej niż 2h</strong><span>Masz to pod kontrolą</span></div>
+      </div>
+      <div class="ans" onclick="pick(2,'b',this)">
+        <div class="ans-icon">📋</div>
+        <div class="ans-text"><strong>2–5 godzin</strong><span>Utykasz, ale dajesz radę</span></div>
+      </div>
+      <div class="ans" onclick="pick(2,'c',this)">
+        <div class="ans-icon">😤</div>
+        <div class="ans-text"><strong>5–10 godzin</strong><span>To już bolące 1-2 dni</span></div>
+      </div>
+      <div class="ans" onclick="pick(2,'d',this)">
+        <div class="ans-icon">🚨</div>
+        <div class="ans-text"><strong>Ponad 10 godzin</strong><span>Cały tydzień na papierkach</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 3 ═══ -->
+  <div class="step" id="s3">
+    <p class="step-q">Co najbardziej hamuje wzrost Twojej firmy?</p>
+    <p class="step-sub">Wybierz główny problem — dostosujemy agenty do Twojej sytuacji</p>
+    <div class="answers">
+      <div class="ans" onclick="pick(3,'a',this)">
+        <div class="ans-icon">🌙</div>
+        <div class="ans-text"><strong>Brak obsługi po godzinach</strong><span>Klienci idą do konkurencji</span></div>
+      </div>
+      <div class="ans" onclick="pick(3,'b',this)">
+        <div class="ans-icon">📄</div>
+        <div class="ans-text"><strong>Za wolne ofertowanie</strong><span>Klient czeka, traci cierpliwość</span></div>
+      </div>
+      <div class="ans" onclick="pick(3,'c',this)">
+        <div class="ans-icon">🔄</div>
+        <div class="ans-text"><strong>Brak follow-up z klientami</strong><span>Leady przepadają po pierwszym kontakcie</span></div>
+      </div>
+      <div class="ans" onclick="pick(3,'d',this)">
+        <div class="ans-icon">💀</div>
+        <div class="ans-text"><strong>Wszystkie powyższe</strong><span>Firma gubi klientów na każdym etapie</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 4 ═══ -->
+  <div class="step" id="s4">
+    <p class="step-q">Jaki rodzaj firmy prowadzisz?</p>
+    <p class="step-sub">Dobieramy konkretnych agentów pod Twój sektor</p>
+    <div class="answers">
+      <div class="ans" onclick="pick(4,'a',this)">
+        <div class="ans-icon">🏥</div>
+        <div class="ans-text"><strong>Klinika / Gabinet</strong><span>Medycyna, stomatologia, fizjo, weterynaria</span></div>
+      </div>
+      <div class="ans" onclick="pick(4,'b',this)">
+        <div class="ans-icon">🛒</div>
+        <div class="ans-text"><strong>E-commerce / Sklep</strong><span>Sprzedaż online, dropshipping, marketplace</span></div>
+      </div>
+      <div class="ans" onclick="pick(4,'c',this)">
+        <div class="ans-icon">🤝</div>
+        <div class="ans-text"><strong>Usługi B2B</strong><span>Agencje, consulting, IT, usługi dla firm</span></div>
+      </div>
+      <div class="ans" onclick="pick(4,'d',this)">
+        <div class="ans-icon">🏗️</div>
+        <div class="ans-text"><strong>Handel / Produkcja</strong><span>Budowlanka, instalacje, import/export, rzemiosło</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 5 ═══ -->
+  <div class="step" id="s5">
+    <p class="step-q">Jaki budżet miesięcznie możesz przeznaczyć na AI?</p>
+    <p class="step-sub">Zaprojektujemy rozwiązanie pasujące do Twoich możliwości</p>
+    <div class="answers">
+      <div class="ans" onclick="pick(5,'a',this)">
+        <div class="ans-icon">💳</div>
+        <div class="ans-text"><strong>Do 299 zł/mies.</strong><span>Zaczynam ostrożnie</span></div>
+      </div>
+      <div class="ans" onclick="pick(5,'b',this)">
+        <div class="ans-icon">📈</div>
+        <div class="ans-text"><strong>299–599 zł/mies.</strong><span>Gotów inwestować w wzrost</span></div>
+      </div>
+      <div class="ans" onclick="pick(5,'c',this)">
+        <div class="ans-icon">🚀</div>
+        <div class="ans-text"><strong>600–1000 zł/mies.</strong><span>Chcę pełną automatyzację</span></div>
+      </div>
+      <div class="ans" onclick="pick(5,'d',this)">
+        <div class="ans-icon">🏆</div>
+        <div class="ans-text"><strong>Powyżej 1000 zł</strong><span>Zależy mi na efektach, nie cenie</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ REPORT ═══ -->
+  <div class="report" id="report">
+    <p class="rep-title">Twój Raport Automatyzacji AI</p>
+    <p class="rep-sub">Na podstawie Twoich odpowiedzi przygotowaliśmy spersonalizowaną diagnozę</p>
+
+    <!-- Score -->
+    <div class="score-wrap">
+      <div class="gauge">
+        <svg class="gauge-svg" viewBox="0 0 110 110">
+          <defs>
+            <linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#8b5cf6"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+          <circle class="gauge-bg" cx="55" cy="55" r="46"/>
+          <circle class="gauge-fill" id="gaugeFill" cx="55" cy="55" r="46" stroke-dasharray="0 289" stroke-dashoffset="0"/>
+        </svg>
+        <div class="gauge-label">
+          <div class="gauge-pct" id="gaugePct">0</div>
+          <div class="gauge-pct-sign">%</div>
+        </div>
+      </div>
+      <div class="score-info">
+        <h3>Potencjał automatyzacji</h3>
+        <p id="scoreDesc">Na podstawie analizy Twoich odpowiedzi...</p>
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="rep-section">
+      <div class="rep-section-label">Szacowane korzyści miesięcznie</div>
+      <div class="metrics-row">
+        <div class="metric-card green">
+          <strong id="metricSavings">~30h</strong>
+          <span>Czas odzyskany na ważne sprawy</span>
+        </div>
+        <div class="metric-card blue">
+          <strong id="metricClients">10–50</strong>
+          <span>Klientów więcej dzięki 24/7</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommended agents -->
+    <div class="rep-section">
+      <div class="rep-section-label">Rekomendowani agenci AI dla Twojej firmy</div>
+      <div class="agents-list" id="agentsList">
+        <!-- filled by JS -->
+      </div>
+    </div>
+
+    <!-- Plan -->
+    <div class="rep-section">
+      <div class="rep-section-label">Sugerowany plan startowy</div>
+      <div class="plan-card">
+        <div>
+          <div class="plan-name" id="planName">Plan Pro</div>
+          <div style="font-size:13px;color:var(--text2);margin-top:4px" id="planDesc">2–3 agenty dopasowane do Twojego sektora</div>
+        </div>
+        <div class="plan-price">
+          <strong id="planPrice">599 zł</strong>
+          <span>/miesiąc</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lead Form -->
+    <div class="form-box">
+      <h3>Dostań pełny raport na email</h3>
+      <p>Wyślemy Ci szczegółową analizę + harmonogram wdrożenia. Bezpłatna konsultacja w 24h.</p>
+      <form id="diagForm">
+        <div class="field"><label>Imię i nazwisko</label><input type="text" name="name" placeholder="Jan Kowalski" required></div>
+        <div class="field"><label>Email firmowy</label><input type="email" name="email" placeholder="jan@firma.pl" required></div>
+        <div class="field"><label>Telefon (opcjonalnie)</label><input type="tel" name="phone" placeholder="+48 xxx xxx xxx"></div>
+        <input type="hidden" name="_subject" value="KREATO.AI — Nowa diagnoza AI">
+        <input type="hidden" name="source" value="diagnosta">
+        <input type="hidden" id="hiddenScore" name="score" value="">
+        <input type="hidden" id="hiddenAgents" name="agents" value="">
+        <input type="hidden" id="hiddenPlan" name="plan" value="">
+        <button type="submit" class="btn-submit">Wyślij mi raport bezpłatnie →</button>
+        <p class="form-note">🔒 Żadnego spamu. Dane bezpieczne zgodnie z RODO. Oddzwonimy w ciągu 24h.</p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div style="font-size:48px;margin-bottom:12px">✅</div>
+        <h3>Raport wysłany!</h3>
+        <p>Sprawdź skrzynkę email. Nasz specjalista zadzwoni do Ciebie w ciągu 24 godzin.</p>
+        <a href="agenci.html" style="display:inline-block;margin-top:20px;color:var(--purple);font-size:14px;font-weight:700;text-decoration:none">Zobacz wszystkich agentów AI →</a>
+      </div>
+    </div>
+
+    <!-- Back to quiz link -->
+    <div style="text-align:center;margin-top:24px">
+      <a href="diagnosta.html" style="color:var(--text3);font-size:13px;text-decoration:none">Powtórz diagnozę od początku →</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="diag-footer">
+  &copy; 2026 KREATO.AI &middot; <a href="index.html">Strona główna</a> &middot; <a href="polityka-prywatnosci.html">Polityka prywatności</a> &middot; <a href="tel:+48733245757">+48 733 245 757</a>
+</div>
+
+<script>
+const answers = {q1:null,q2:null,q3:null,q4:null,q5:null};
+let currentStep = 1;
+
+function pick(step, val, el) {
+  // Clear selection in this step
+  const stepEl = document.getElementById('s'+step);
+  stepEl.querySelectorAll('.ans').forEach(a => a.classList.remove('selected'));
+  el.classList.add('selected');
+  answers['q'+step] = val;
+
+  setTimeout(() => {
+    if(step < 5) {
+      goStep(step + 1);
+    } else {
+      showReport();
+    }
+  }, 380);
+}
+
+function goStep(n) {
+  document.getElementById('s'+currentStep).classList.remove('active');
+  currentStep = n;
+  document.getElementById('s'+n).classList.add('active');
+  updateProg(n);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function updateProg(n) {
+  document.getElementById('progFill').style.width = (n/5*100)+'%';
+  document.getElementById('progLabel').textContent = 'Pytanie '+n+' z 5';
+}
+
+function showReport() {
+  document.getElementById('progWrap').style.display = 'none';
+  document.getElementById('s5').classList.remove('active');
+  const report = document.getElementById('report');
+  report.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  buildReport();
+}
+
+function calcScore() {
+  let s = 42;
+  const q1m = {a:0,b:10,c:20,d:30};
+  const q2m = {a:0,b:8,c:16,d:24};
+  const q3m = {a:12,b:8,c:8,d:18};
+  s += (q1m[answers.q1]||0) + (q2m[answers.q2]||0) + (q3m[answers.q3]||0);
+  return Math.min(s, 97);
+}
+
+const agentData = {
+  a: [
+    {icon:'🎙️',name:'Karolina — Voicebot 24/7',desc:'Odbiera telefony, umawia wizyty, wysyła przypomnienia',badge:'Najważniejszy'},
+    {icon:'⭐',name:'Ania — Agent Opinii',desc:'Zbiera recenzje Google po każdej wizycie automatycznie',badge:'Polecany'},
+    {icon:'📄',name:'Marek — Agent Dokumentów',desc:'Generuje skierowania, zgody i formularze w sekundy',badge:'Oszczędność'}
+  ],
+  b: [
+    {icon:'📱',name:'Marta — Agent WhatsApp',desc:'Obsługuje klientów 24/7, odpowiada na pytania o produkty',badge:'Najważniejszy'},
+    {icon:'🎯',name:'Kasia — Kwalifikator Leadów',desc:'Filtruje zapytania i przekazuje tylko gotowych kupujących',badge:'Polecany'},
+    {icon:'🔄',name:'Tomek — Agent Follow-up',desc:'Odzyskuje porzucone koszyki i reaktywuje klientów',badge:'ROI 8×'}
+  ],
+  c: [
+    {icon:'✉️',name:'Emil — Agent Email',desc:'Wysyła spersonalizowane oferty B2B i sekwencje follow-up',badge:'Najważniejszy'},
+    {icon:'🔄',name:'Tomek — Agent Follow-up',desc:'Przypomina o ofercie, negocjuje termin decyzji',badge:'Polecany'},
+    {icon:'🎙️',name:'Karolina — Voicebot 24/7',desc:'Obsługuje przychodzące zapytania klientów przez telefon',badge:'24/7'}
+  ],
+  d: [
+    {icon:'🎙️',name:'Karolina — Voicebot 24/7',desc:'Odbiera zamówienia i zapytania przez całą dobę',badge:'Najważniejszy'},
+    {icon:'📱',name:'Marta — Agent WhatsApp',desc:'Odpowiada na pytania o dostępność i terminy realizacji',badge:'Polecany'},
+    {icon:'✉️',name:'Emil — Agent Email',desc:'Wysyła oferty hurtowe i potwierdzenia zamówień',badge:'B2B'}
+  ]
+};
+
+const savingsData = {
+  savings: {aa:15,ab:18,ac:22,ad:28,ba:18,bb:22,bc:28,bd:35,ca:22,cb:28,cc:35,cd:45,da:28,db:35,dc:45,dd:55},
+  clients: {a:'5–10',b:'10–50',c:'50–100',d:'100–200'}
+};
+
+const planData = {
+  a:{name:'Starter',desc:'1 agent AI — Karolina lub chatbot',price:'299 zł'},
+  b:{name:'Pro',desc:'2–3 agenty dopasowane do sektora',price:'599 zł'},
+  c:{name:'Pro+',desc:'Pełna automatyzacja 3+ agentów + setup gratis',price:'599 zł'},
+  d:{name:'Custom',desc:'Dedykowany AI stack bez limitu agentów',price:'Wycena'}
+};
+
+function buildReport() {
+  const score = calcScore();
+
+  // Animate gauge
+  const circumference = 2 * Math.PI * 46; // ~289
+  const fill = document.getElementById('gaugeFill');
+  const pctEl = document.getElementById('gaugePct');
+  const target = circumference * score / 100;
+  setTimeout(() => {
+    fill.style.strokeDasharray = target + ' ' + (circumference - target);
+    let c = 0;
+    const inc = setInterval(() => {
+      c += 2;
+      if(c >= score) { c = score; clearInterval(inc); }
+      pctEl.textContent = c;
+    }, 25);
+  }, 200);
+
+  // Score desc
+  const desc = score >= 85
+    ? 'Twoja firma ma ogromny potencjał — AI odblokuje wzrost w ciągu kilku tygodni.'
+    : score >= 70
+    ? 'Solidny potencjał automatyzacji. Kilka agentów znacząco poprawi efektywność.'
+    : 'Już kilka zmian przyniesie realną oszczędność czasu i pieniędzy.';
+  document.getElementById('scoreDesc').textContent = desc;
+
+  // Savings
+  const key = (answers.q1||'a') + (answers.q2||'a');
+  const h = savingsData.savings[key] || 20;
+  document.getElementById('metricSavings').textContent = '~'+h+'h';
+  document.getElementById('metricClients').textContent = savingsData.clients[answers.q1||'a'];
+
+  // Agents
+  const sector = answers.q4 || 'c';
+  const agentList = agentData[sector] || agentData.c;
+  const al = document.getElementById('agentsList');
+  al.innerHTML = agentList.map(a => `
+    <div class="agent-pill">
+      <div class="agent-pill-icon" style="background:rgba(139,92,246,.1)">${a.icon}</div>
+      <div class="agent-pill-text"><strong>${a.name}</strong><span>${a.desc}</span></div>
+      <div class="agent-pill-badge">${a.badge}</div>
+    </div>
+  `).join('');
+
+  // Plan
+  const budget = answers.q5 || 'b';
+  const plan = planData[budget];
+  document.getElementById('planName').textContent = plan.name;
+  document.getElementById('planDesc').textContent = plan.desc;
+  document.getElementById('planPrice').textContent = plan.price;
+
+  // Hidden form fields
+  document.getElementById('hiddenScore').value = score+'%';
+  document.getElementById('hiddenAgents').value = agentList.map(a=>a.name).join(', ');
+  document.getElementById('hiddenPlan').value = plan.name+' — '+plan.price+'/mies.';
+}
+
+// Form submit
+document.getElementById('diagForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.btn-submit');
+  btn.textContent = 'Wysyłam...';
+  btn.disabled = true;
+  try {
+    const fd = new FormData(this);
+    await fetch('https://formsubmit.co/ajax/biuro.stalsystem.pl%40gmail.com', {
+      method:'POST',
+      body:fd,
+      headers:{Accept:'application/json'}
+    });
+  } catch(err){}
+  this.style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+});
+</script>
+</body>
+</html>
