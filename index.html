@@ -944,7 +944,6 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
 
 /* 7. Price promo badges */
 .price-setup-badge{display:inline-block;font-size:11px;font-weight:700;background:rgba(16,185,129,.12);color:var(--green);border:1px solid rgba(16,185,129,.3);border-radius:100px;padding:3px 10px;margin-bottom:6px}
-.price-countdown-line{font-size:11px;color:var(--text3);margin-bottom:8px}
 .price-ctd{font-weight:700;color:#f87171}
 
 /* 8. WhatsApp in demo chat */
@@ -1046,7 +1045,7 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
   <div class="hero-inner">
     <div class="reveal">
       <div class="badge"><span class="badge-dot"></span>MŚP · kliniki · e-commerce · Prototyp w 48h</div>
-      <div class="scarce-strip"><span class="scarce-dot"></span>Zostało <strong>2 wolne miejsca</strong> w sierpniu</div>
+      <div class="scarce-strip"><span class="scarce-dot"></span>Zostało <strong>2 wolne miejsca</strong> w tym miesiącu</div>
       <h1>Twoja firma <span class="grad-text">nigdy nie straci</span> klienta — nawet o 22:00.</h1>
       <p class="hero-sub">Klient dzwoni po godzinach, w weekend, gdy jesteś zajęty — i idzie do konkurencji. Budujemy <strong>voiceboty, chatboty i agentów AI</strong>, które odbierają telefony, odpowiadają na pytania i obsługują klientów 24/7 — od 299 zł/mies.</p>
       <div class="hero-btns">
@@ -1530,8 +1529,7 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
     <div class="price-grid">
       <div class="price-card">
         <div class="price-tier">Starter</div>
-        <div class="price-setup-badge">Setup GRATIS w sierpniu — oszczędzasz 1 500 zł</div>
-        <div class="price-countdown-line">Oferta wygaśa za: <span class="price-ctd" id="priceTimer">--:--:--</span></div>
+        <div class="price-setup-badge">Setup GRATIS &#x2014; oszczędzasz 1 500 zł</div>
         <div class="price-amt">299 <span style="font-size:20px;font-weight:400">zł</span></div>
         <div class="price-unit">/mies. + setup od 1 500 zł</div>
         <ul class="price-feats">
@@ -2178,15 +2176,7 @@ function filterTesti(btn,ind){
   });
 }
 
-// Price countdown to end of month
-function _updTimer(){
-  var now=new Date(),end=new Date(now.getFullYear(),now.getMonth()+1,1,0,0,0);
-  var d=end-now;if(d<0)d=0;
-  var h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
-  var el=document.getElementById("priceTimer");
-  if(el)el.textContent=(h>9?h:"0"+h)+":"+(m>9?m:"0"+m)+":"+(s>9?s:"0"+s);
-}
-_updTimer();setInterval(_updTimer,1000);
+
 </script>
 </body>
 </html>
