@@ -1,2190 +1,4426 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="pl" dir="ltr">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>KREATO.AI — Automatyzacja AI dla polskich firm</title>
+
 <meta name="description" content="Budujemy voiceboty, chatboty AI i systemy automatyzacji dla MŚP. Odbieramy telefony 24/7, automatyzujemy procesy, analizujemy dane. Prototyp w 48h od 299 zł/mies.">
+
 <meta name="robots" content="index, follow">
+
 <meta property="og:title" content="KREATO.AI — Automatyzacja AI dla polskich firm">
+
 <meta property="og:description" content="Voiceboty, chatboty i systemy automatyzacji dla MŚP. Prototyp w 48h od 299 zł/mies.">
+
 <meta property="og:type" content="website">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 
+
+
 <style>
+
 /* ══ VARIABLES ══ */
+
 :root{
+
   --bg:#070b14;
+
   --bg1:#0c1221;
+
   --bg2:#101829;
+
   --card:#131c2f;
+
   --card-h:#192036;
+
   --purple:#8b5cf6;
+
   --purple-d:#7c3aed;
+
   --blue:#3b82f6;
+
   --cyan:#22d3ee;
+
   --green:#10b981;
+
   --grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);
+
   --grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);
+
   --text:#f1f5f9;
+
   --text2:#94a3b8;
+
   --text3:#64748b;
+
   --border:rgba(255,255,255,.06);
+
   --border-a:rgba(139,92,246,.3);
+
   --glow:rgba(139,92,246,.15);
+
   --r:14px;
+
   --r-sm:8px;
+
   --font:'Lato',system-ui,sans-serif;
+
   --font-display:'Plus Jakarta Sans','Lato',system-ui,sans-serif;
+
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
+
 html{scroll-behavior:smooth}
+
 body{
+
   font-family:var(--font);
+
   background:var(--bg);
+
   color:var(--text);
+
   -webkit-tap-highlight-color:transparent;
+
   padding-bottom:72px;
+
   overflow-x:hidden;
+
 }
+
 ::-webkit-scrollbar{width:4px}
+
 ::-webkit-scrollbar-thumb{background:var(--purple);border-radius:2px}
 
+
+
 /* ══ STICKY BAR (mobile) ══ */
+
 .sticky-bar{
+
   position:fixed;bottom:0;left:0;right:0;z-index:998;
+
   background:rgba(7,11,20,.97);
+
   backdrop-filter:blur(16px);
+
   border-top:1px solid var(--border);
+
   padding:12px 16px;
+
   display:none;
+
 }
+
 .sticky-bar a{
+
   display:flex;align-items:center;justify-content:center;gap:8px;
+
   width:100%;background:var(--grad);color:#fff;text-decoration:none;
+
   border-radius:var(--r-sm);padding:13px 20px;
+
   font-family:var(--font);font-weight:700;font-size:15px;letter-spacing:.01em;
+
 }
+
 @media(max-width:768px){.sticky-bar{display:block}}
 
+
+
 /* ══ MOBILE NAV OVERLAY ══ */
+
 .nav-overlay{
+
   position:fixed;inset:0;z-index:200;
+
   background:rgba(7,11,20,.98);
+
   backdrop-filter:blur(20px);
+
   display:flex;flex-direction:column;
+
   padding:80px 32px 32px;
+
   transform:translateX(-100%);
+
   transition:transform .3s ease;
+
 }
+
 .nav-overlay.open{transform:translateX(0)}
+
 .nav-overlay a{
+
   display:block;
+
   color:var(--text);text-decoration:none;
+
   font-size:24px;font-weight:700;
+
   padding:16px 0;
+
   border-bottom:1px solid var(--border);
+
   transition:color .2s;
+
 }
+
 .nav-overlay a:hover{color:var(--purple)}
+
 .nav-overlay .overlay-cta{
+
   margin-top:32px;
+
   background:var(--grad);
+
   color:#fff!important;
+
   text-align:center;
+
   border-radius:var(--r-sm);
+
   border-bottom:none!important;
+
   padding:16px 0!important;
+
   font-size:18px!important;
+
 }
+
 .overlay-close{
+
   position:absolute;top:20px;right:24px;
+
   width:44px;height:44px;
+
   background:var(--card);border:1px solid var(--border);
+
   border-radius:50%;display:flex;align-items:center;justify-content:center;
+
   cursor:pointer;font-size:20px;color:var(--text2);
+
 }
+
+
 
 /* ══ NAV ══ */
+
 nav{
+
   position:sticky;top:0;z-index:100;
+
   background:rgba(7,11,20,.95);
+
   backdrop-filter:blur(20px);
+
   border-bottom:1px solid var(--border);
+
   padding:0 24px;
+
 }
+
 .nav-inner{
+
   max-width:1120px;margin:0 auto;
+
   display:flex;align-items:center;justify-content:space-between;
+
   height:64px;gap:24px;
+
 }
+
 .nav-logo{
+
   font-size:20px;font-weight:900;letter-spacing:.02em;
+
   background:var(--grad);
+
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+
   background-clip:text;text-decoration:none;white-space:nowrap;
+
 }
+
 .nav-links{
+
   display:flex;align-items:center;gap:28px;list-style:none;
+
 }
+
 .nav-links a{
+
   color:var(--text2);text-decoration:none;
+
   font-size:14px;font-weight:400;
+
   transition:color .2s;
+
 }
+
 .nav-links a:hover{color:var(--text)}
+
 .nav-phone{color:var(--green)!important;font-weight:700!important;font-size:13px!important;white-space:nowrap}
+
 .nav-phone:hover{opacity:.85}
+
 .nav-cta{
+
   background:var(--grad);color:#fff!important;
+
   padding:9px 18px;border-radius:var(--r-sm);
+
   font-size:13px!important;font-weight:700!important;white-space:nowrap;
+
 }
+
 .nav-cta:hover{opacity:.88}
+
 .hamburger{
+
   display:none;
+
   background:none;border:none;cursor:pointer;
+
   color:var(--text);padding:8px;
+
   flex-direction:column;gap:5px;align-items:center;justify-content:center;
+
 }
+
 .hamburger span{
+
   display:block;width:22px;height:2px;
+
   background:currentColor;border-radius:2px;
+
   transition:all .25s;
+
 }
+
 @media(max-width:768px){
+
   .nav-links{display:none}
+
   .hamburger{display:flex}
+
 }
+
+
 
 /* ══ GENERIC ══ */
+
 section{padding:80px 24px}
+
 .inner{max-width:1120px;margin:0 auto}
+
 .badge{
+
   display:inline-flex;align-items:center;gap:8px;
+
   background:var(--grad-soft);border:1px solid var(--border-a);
+
   border-radius:100px;padding:6px 16px;
+
   font-size:12px;font-weight:700;color:var(--purple);
+
   letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px;
+
 }
+
 .badge-dot{
+
   width:6px;height:6px;border-radius:50%;background:var(--green);
+
   animation:pulsedot 2s ease-in-out infinite;
+
 }
+
 @keyframes pulsedot{
+
   0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}
+
   50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}
+
 }
+
 .section-label{
+
   font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+
   color:var(--purple);margin-bottom:12px;
+
 }
+
 h1,h2,h3{line-height:1.12;letter-spacing:-.03em;font-weight:900;font-family:var(--font-display);text-wrap:balance}
+
 h1{font-size:clamp(36px,6vw,70px)}
+
 h2{font-size:clamp(28px,4vw,46px)}
+
 h3{font-size:18px;font-weight:700}
+
 .grad-text{
+
   background:var(--grad);
+
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+
 }
+
 .btn{
+
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
+
   padding:14px 28px;border-radius:var(--r-sm);
+
   font-family:var(--font);font-size:15px;font-weight:700;
+
   text-decoration:none;cursor:pointer;transition:all .2s;
+
   white-space:nowrap;border:none;
+
 }
+
 .btn-primary{background:var(--grad);color:#fff}
+
 .btn-primary:hover{opacity:.88;transform:translateY(-1px);box-shadow:0 8px 30px rgba(139,92,246,.4)}
+
 .btn-outline{
+
   background:transparent;border:1px solid var(--border-a);color:var(--text);
+
 }
+
 .btn-outline:hover{border-color:var(--purple);color:var(--purple)}
+
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+
+
 /* ══ HERO ══ */
+
 #hero{
+
   padding:100px 24px 80px;
+
   background:
+
     radial-gradient(ellipse 80% 60% at 70% 40%,rgba(139,92,246,.09) 0%,transparent 70%),
+
     radial-gradient(ellipse 60% 50% at 30% 80%,rgba(59,130,246,.07) 0%,transparent 70%),
+
     var(--bg);
+
   position:relative;overflow:hidden;
+
 }
+
 #hero::before{
+
   content:'';position:absolute;inset:0;
+
   background-image:linear-gradient(var(--border) 1px,transparent 1px),
+
     linear-gradient(90deg,var(--border) 1px,transparent 1px);
+
   background-size:64px 64px;
+
   mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%);
+
   pointer-events:none;
+
 }
+
 .hero-inner{
+
   max-width:1120px;margin:0 auto;
+
   display:grid;grid-template-columns:1fr 1fr;
+
   gap:60px;align-items:center;
+
 }
+
 .hero-sub{
+
   color:var(--text2);font-size:17px;line-height:1.62;font-weight:400;
+
   margin:20px 0 36px;max-width:500px;
+
 }
+
 .hero-sub strong{font-weight:700;color:var(--text)}
+
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+
 .hero-stat{
+
   display:flex;gap:32px;margin-top:48px;padding-top:32px;
+
   border-top:1px solid var(--border);flex-wrap:wrap;
+
 }
+
 .hs-num{font-size:28px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
 .hs-label{font-size:12px;color:var(--text3);font-weight:400;margin-top:2px}
 
+
+
 /* Founder strip */
+
 .hero-founder{
+
   display:flex;align-items:center;gap:14px;
+
   margin-top:28px;padding:14px 18px;
+
   background:rgba(139,92,246,.07);
+
   border:1px solid rgba(139,92,246,.22);
+
   border-radius:14px;max-width:460px;
+
 }
+
 .founder-photo{
+
   width:60px;height:60px;border-radius:50%;
+
   object-fit:cover;object-position:top center;
+
   border:2px solid var(--purple);flex-shrink:0;
+
 }
+
 .founder-name{font-size:14px;font-weight:700;color:var(--text)}
+
 .founder-role{font-size:11px;color:var(--text3);margin:2px 0 5px;line-height:1.4}
+
 .founder-quote{font-size:12px;color:var(--text2);font-style:italic;line-height:1.5}
 
+
+
 /* Hero chat card */
+
 .hero-card{
+
   background:var(--card);border:1px solid var(--border);
+
   border-radius:20px;padding:24px;
+
   box-shadow:0 0 60px var(--glow);position:relative;overflow:hidden;
-}
-.hero-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--grad);
-}
-.hc-bar{
-  display:flex;align-items:center;gap:10px;
-  margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);
-}
-.hc-av{
-  width:36px;height:36px;border-radius:50%;background:var(--grad);
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:900;color:#fff;flex-shrink:0;
-}
-.hc-name{font-size:13px;font-weight:700;color:var(--text)}
-.hc-status{font-size:11px;color:var(--green);display:flex;align-items:center;gap:4px}
-.hc-status::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--green)}
-.hc-time{font-size:11px;color:var(--text3);margin-left:auto}
-.chat-msg{
-  border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.6;margin-bottom:8px;max-width:90%;
-}
-.msg-ai{
-  background:var(--grad-soft);border:1px solid rgba(139,92,246,.15);color:var(--text);
-  border-radius:10px 10px 10px 2px;
-}
-.msg-user{
-  background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.15);color:var(--text2);
-  margin-left:auto;border-radius:10px 10px 2px 10px;
-}
-.hc-typing{display:flex;align-items:center;gap:4px;padding:10px 14px;background:var(--grad-soft);border-radius:10px;width:fit-content}
-.hc-typing span{width:6px;height:6px;border-radius:50%;background:var(--purple);animation:bounce .9s ease-in-out infinite}
-.hc-typing span:nth-child(2){animation-delay:.15s}
-.hc-typing span:nth-child(3){animation-delay:.3s}
-@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-7px)}}
-.hc-footer{
-  margin-top:16px;padding-top:14px;border-top:1px solid var(--border);
-  display:flex;gap:8px;align-items:center;
-}
-.hc-input{
-  flex:1;background:var(--bg2);border:1px solid var(--border);
-  border-radius:20px;padding:8px 14px;font-size:12px;color:var(--text3);
-  font-family:var(--font);
-}
-.hc-send{
-  width:32px;height:32px;border-radius:50%;background:var(--grad);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+
 }
 
-@media(max-width:860px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-card{display:none}
-  #hero{padding:64px 24px 60px}
+.hero-card::before{
+
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--grad);
+
 }
+
+.hc-bar{
+
+  display:flex;align-items:center;gap:10px;
+
+  margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);
+
+}
+
+.hc-av{
+
+  width:36px;height:36px;border-radius:50%;background:var(--grad);
+
+  display:flex;align-items:center;justify-content:center;
+
+  font-size:13px;font-weight:900;color:#fff;flex-shrink:0;
+
+}
+
+.hc-name{font-size:13px;font-weight:700;color:var(--text)}
+
+.hc-status{font-size:11px;color:var(--green);display:flex;align-items:center;gap:4px}
+
+.hc-status::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--green)}
+
+.hc-time{font-size:11px;color:var(--text3);margin-left:auto}
+
+.chat-msg{
+
+  border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.6;margin-bottom:8px;max-width:90%;
+
+}
+
+.msg-ai{
+
+  background:var(--grad-soft);border:1px solid rgba(139,92,246,.15);color:var(--text);
+
+  border-radius:10px 10px 10px 2px;
+
+}
+
+.msg-user{
+
+  background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.15);color:var(--text2);
+
+  margin-left:auto;border-radius:10px 10px 2px 10px;
+
+}
+
+.hc-typing{display:flex;align-items:center;gap:4px;padding:10px 14px;background:var(--grad-soft);border-radius:10px;width:fit-content}
+
+.hc-typing span{width:6px;height:6px;border-radius:50%;background:var(--purple);animation:bounce .9s ease-in-out infinite}
+
+.hc-typing span:nth-child(2){animation-delay:.15s}
+
+.hc-typing span:nth-child(3){animation-delay:.3s}
+
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-7px)}}
+
+.hc-footer{
+
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--border);
+
+  display:flex;gap:8px;align-items:center;
+
+}
+
+.hc-input{
+
+  flex:1;background:var(--bg2);border:1px solid var(--border);
+
+  border-radius:20px;padding:8px 14px;font-size:12px;color:var(--text3);
+
+  font-family:var(--font);
+
+}
+
+.hc-send{
+
+  width:32px;height:32px;border-radius:50%;background:var(--grad);
+
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+
+}
+
+
+
+@media(max-width:860px){
+
+  .hero-inner{grid-template-columns:1fr}
+
+  .hero-card{display:none}
+
+  #hero{padding:64px 24px 60px}
+
+}
+
+
 
 /* ══ PROBLEMS ══ */
+
 #problems{background:var(--bg1)}
+
 .problems-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px}
+
 .prob-card{
+
   background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+
   padding:28px;transition:border-color .2s,transform .2s;cursor:default;
+
 }
+
 .prob-card:hover{border-color:var(--border-a);transform:translateY(-2px)}
+
 .prob-icon{font-size:28px;margin-bottom:14px;display:block}
+
 .prob-card h3{color:var(--text);margin-bottom:8px;font-size:16px}
+
 .prob-card p{color:var(--text2);font-size:14px;line-height:1.62;font-weight:300}
+
 @media(max-width:640px){.problems-grid{grid-template-columns:1fr}}
 
+
+
 /* ══ SOLUTION ══ */
+
 #solution{
+
   position:relative;overflow:hidden;
+
   background:
+
     linear-gradient(rgba(7,11,20,.95),rgba(7,11,20,.95)),
+
     url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=50&fit=crop') center/cover no-repeat;
+
 }
+
 .solution-grid{
+
   display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px;
+
 }
+
 .solution-text p{color:var(--text2);font-size:16px;line-height:1.8;font-weight:300;margin-bottom:20px}
+
 .solution-text p strong{font-weight:700;color:var(--text)}
+
 .solution-photo{
+
   border-radius:var(--r);overflow:hidden;
+
   border:1px solid var(--border);
+
   height:260px;
+
   background:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&q=80') center/cover;
+
   position:relative;
+
 }
+
 .solution-photo::after{
+
   content:'';position:absolute;inset:0;
+
   background:linear-gradient(to bottom,transparent 50%,rgba(7,11,20,.8));
+
 }
+
 .vs-grid{display:flex;flex-direction:column;gap:10px}
+
 .vs-row{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+
 .vs-bad,.vs-good{padding:13px 16px;border-radius:var(--r-sm);font-size:13px;line-height:1.5;font-weight:400}
+
 .vs-bad{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.15);color:#fca5a5}
+
 .vs-good{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.15);color:#6ee7b7}
+
 .vs-vs{font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--text3);background:var(--card);border:1px solid var(--border);border-radius:4px;padding:3px 7px;white-space:nowrap}
+
 @media(max-width:860px){
+
   .solution-grid{grid-template-columns:1fr}
+
   .solution-photo{display:none}
+
   .vs-row{grid-template-columns:1fr}
+
   .vs-vs{display:none}
+
   .vs-bad::before{content:'✕ ';color:#ef4444}
+
   .vs-good::before{content:'✓ ';color:#10b981}
+
 }
+
+
 
 /* ══ WHY ══ */
+
 #why{background:var(--bg1)}
+
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+
 .why-card{
+
   background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+
   padding:32px;position:relative;overflow:hidden;transition:border-color .2s;
+
 }
+
 .why-card:hover{border-color:var(--border-a)}
+
 .why-card::before{
+
   content:'';position:absolute;top:0;left:0;right:0;height:2px;
+
   background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .3s;
+
 }
+
 .why-card:hover::before{transform:scaleX(1)}
+
 .why-metric{font-size:40px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+
 .why-card h3{margin-bottom:10px}
+
 .why-card p{color:var(--text2);font-size:14px;line-height:1.7;font-weight:300}
+
 @media(max-width:768px){.why-grid{grid-template-columns:1fr}}
 
+
+
 /* ══ PROCESS ══ */
+
 #process{background:var(--bg)}
+
 .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;position:relative}
+
 .process-steps::before{
+
   content:'';position:absolute;top:28px;
+
   left:calc(12.5% + 12px);right:calc(12.5% + 12px);
+
   height:1px;background:linear-gradient(90deg,transparent,var(--border-a),var(--border-a),transparent);
+
 }
+
 .step-card{text-align:center;position:relative;z-index:1}
+
 .step-num{
+
   width:56px;height:56px;border-radius:50%;margin:0 auto 20px;
+
   display:flex;align-items:center;justify-content:center;
+
   font-size:20px;font-weight:900;color:#fff;background:var(--grad);
+
 }
+
 .step-card h3{margin-bottom:10px;font-size:16px}
+
 .step-card p{color:var(--text2);font-size:13px;line-height:1.7;font-weight:300}
+
 .step-result{
+
   display:inline-block;margin-top:12px;
+
   font-size:12px;font-weight:700;color:var(--purple);
+
   background:var(--grad-soft);border:1px solid var(--border-a);
+
   border-radius:100px;padding:4px 12px;
+
 }
+
 @media(max-width:860px){.process-steps{grid-template-columns:1fr 1fr}.process-steps::before{display:none}}
+
 @media(max-width:500px){.process-steps{grid-template-columns:1fr}}
 
+
+
 /* ══ SERVICES (with photos) ══ */
+
 #services{background:var(--bg1)}
+
 .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px}
+
 .service-card{
+
   background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+
   overflow:hidden;transition:all .25s;
+
 }
+
 .service-card:hover{border-color:var(--border-a);box-shadow:0 0 40px var(--glow);transform:translateY(-3px)}
+
 .service-img{
+
   height:160px;background-size:cover;background-position:center;
+
   position:relative;
+
 }
+
 .service-img::after{
+
   content:'';position:absolute;bottom:0;left:0;right:0;height:80px;
+
   background:linear-gradient(transparent,var(--card));
+
 }
+
 .service-body{padding:24px 28px 28px}
+
 .service-icon{
+
   width:44px;height:44px;border-radius:10px;
+
   background:var(--grad-soft);border:1px solid var(--border-a);
+
   display:flex;align-items:center;justify-content:center;font-size:20px;
+
   margin-bottom:16px;
+
 }
+
 .service-card h3{margin-bottom:10px;font-size:18px}
+
 .service-card p{color:var(--text2);font-size:14px;line-height:1.7;font-weight:300;margin-bottom:14px}
+
 .service-points{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+
 .service-points li{color:var(--text2);font-size:13px;display:flex;align-items:flex-start;gap:8px;font-weight:300}
+
 .service-points li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+
 .service-link{
+
   color:var(--purple);font-size:13px;font-weight:700;text-decoration:none;
+
   display:inline-flex;align-items:center;gap:4px;transition:gap .2s;cursor:pointer;
+
 }
+
 .service-link:hover{gap:8px}
+
 @media(max-width:640px){.services-grid{grid-template-columns:1fr}}
 
+
+
 /* ══ STATS (with bg photo) ══ */
+
 #stats{
+
   padding:70px 24px;
+
   background:
+
     linear-gradient(135deg,rgba(139,92,246,.9) 0%,rgba(59,130,246,.9) 100%),
+
     url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=50&fit=crop') center/cover no-repeat;
+
 }
+
 .stats-inner{
+
   max-width:1120px;margin:0 auto;
+
   display:flex;justify-content:space-between;align-items:center;
+
   flex-wrap:wrap;gap:32px;text-align:center;
+
 }
+
 .stat-item{flex:1;min-width:140px}
+
 .stat-num{font-size:52px;font-weight:900;color:#fff;line-height:1;margin-bottom:4px}
+
 .stat-label{font-size:13px;color:rgba(255,255,255,.8);font-weight:400}
 
+
+
 /* ══ DEMO CHATBOT ══ */
+
 #demo{background:var(--bg)}
+
 .demo-grid{
+
   display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:48px;
+
 }
+
 .demo-text h2{margin-bottom:16px}
+
 .demo-text p{color:var(--text2);font-size:16px;line-height:1.8;font-weight:300;margin-bottom:24px}
+
 .demo-note{
+
   display:flex;align-items:flex-start;gap:10px;
+
   background:var(--grad-soft);border:1px solid var(--border-a);
+
   border-radius:var(--r-sm);padding:14px 16px;
+
   font-size:13px;color:var(--text2);line-height:1.6;
+
 }
+
 .demo-note::before{content:'💡';flex-shrink:0}
+
 .demo-chat{
+
   background:var(--card);border:1px solid var(--border);border-radius:20px;
+
   overflow:hidden;box-shadow:0 0 60px var(--glow);
+
 }
+
 .demo-chat-header{
+
   background:var(--grad-soft);border-bottom:1px solid var(--border-a);
+
   padding:16px 20px;display:flex;align-items:center;gap:12px;
+
 }
+
 .demo-av{
+
   width:36px;height:36px;border-radius:50%;background:var(--grad);
+
   display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#fff;
+
 }
+
 .demo-av-info span{display:block}
+
 .demo-av-name{font-size:13px;font-weight:700}
+
 .demo-av-status{font-size:11px;color:var(--green);display:flex;align-items:center;gap:4px}
+
 .demo-av-status::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green);display:inline-block}
+
 .demo-messages{
+
   height:280px;overflow-y:auto;padding:20px;
+
   display:flex;flex-direction:column;gap:10px;
+
 }
+
 .demo-messages::-webkit-scrollbar{width:3px}
+
 .demo-messages::-webkit-scrollbar-thumb{background:var(--border-a)}
+
 .dm{border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.6;max-width:88%}
+
 .dm-ai{background:var(--grad-soft);border:1px solid rgba(139,92,246,.15);color:var(--text);border-radius:10px 10px 10px 2px}
+
 .dm-user{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.15);color:var(--text2);margin-left:auto;border-radius:10px 10px 2px 10px}
+
 .dm-typing{display:flex;align-items:center;gap:4px;padding:10px 14px;background:var(--grad-soft);border-radius:10px;width:fit-content;display:none}
+
 .dm-typing span{width:5px;height:5px;border-radius:50%;background:var(--purple);animation:bounce .9s ease-in-out infinite}
+
 .dm-typing span:nth-child(2){animation-delay:.15s}
+
 .dm-typing span:nth-child(3){animation-delay:.3s}
+
 .demo-input-row{
+
   padding:16px 20px;border-top:1px solid var(--border);
+
   display:flex;gap:8px;
+
 }
+
 .demo-input{
+
   flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:20px;
+
   padding:10px 16px;font-size:13px;color:var(--text);font-family:var(--font);
+
   outline:none;transition:border-color .2s;
+
 }
+
 .demo-input:focus{border-color:var(--border-a)}
+
 .demo-send{
+
   width:40px;height:40px;border-radius:50%;background:var(--grad);
+
   border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+
   transition:opacity .2s;
+
 }
+
 .demo-send:hover{opacity:.85}
+
 .demo-suggestions{
+
   padding:0 20px 16px;display:flex;gap:6px;flex-wrap:wrap;
+
 }
+
 .demo-sug{
+
   background:var(--bg2);border:1px solid var(--border);border-radius:100px;
+
   padding:5px 12px;font-size:12px;color:var(--text2);cursor:pointer;
+
   font-family:var(--font);transition:all .15s;white-space:nowrap;
+
 }
+
 .demo-sug:hover{border-color:var(--border-a);color:var(--purple)}
+
 @media(max-width:860px){.demo-grid{grid-template-columns:1fr}}
 
+
+
 /* ══ CASES (with photos) ══ */
+
 #cases{background:var(--bg1)}
+
 .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+
 .case-card{
+
   background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+
   overflow:hidden;transition:border-color .2s,transform .2s;
+
 }
+
 .case-card:hover{border-color:var(--border-a);transform:translateY(-2px)}
+
 .case-img{
+
   height:100px;background-size:cover;background-position:center;position:relative;
+
 }
+
 .case-img::after{
+
   content:'';position:absolute;bottom:0;left:0;right:0;height:50px;
+
   background:linear-gradient(transparent,var(--card));
+
 }
+
 .case-img-gradient{background:var(--grad-soft)}
+
 .case-body{padding:16px 20px 20px}
+
 .case-tag{
+
   display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+
   color:var(--cyan);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.15);
+
   border-radius:100px;padding:3px 10px;margin-bottom:10px;
+
 }
+
 .case-card h3{font-size:15px;margin-bottom:8px;color:var(--text)}
+
 .case-card p{color:var(--text2);font-size:13px;line-height:1.65;margin-bottom:10px;font-weight:300}
+
 .case-result{font-size:12px;font-weight:700;color:var(--green);display:flex;align-items:center;gap:6px}
+
 .case-result::before{content:'✓';font-weight:900}
+
 @media(max-width:768px){.cases-grid{grid-template-columns:1fr 1fr}}
+
 @media(max-width:500px){.cases-grid{grid-template-columns:1fr}}
 
+
+
 /* ══ FAQ ══ */
+
 #faq{background:var(--bg)}
+
 .faq-list{margin-top:48px;display:flex;flex-direction:column;gap:8px}
+
 .faq-item{
+
   background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;
+
   transition:border-color .2s;
+
 }
+
 .faq-item.open{border-color:var(--border-a)}
+
 .faq-q{
+
   display:flex;align-items:center;justify-content:space-between;
+
   padding:20px 24px;cursor:pointer;gap:16px;
+
   font-size:15px;font-weight:700;color:var(--text);
+
   user-select:none;
+
 }
+
 .faq-q:hover{color:var(--purple)}
+
 .faq-icon{
+
   width:24px;height:24px;border-radius:50%;
+
   background:var(--grad-soft);border:1px solid var(--border-a);
+
   display:flex;align-items:center;justify-content:center;
+
   flex-shrink:0;font-size:14px;color:var(--purple);
+
   transition:transform .3s;
+
 }
+
 .faq-item.open .faq-icon{transform:rotate(45deg)}
+
 .faq-a{
+
   max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;
+
   padding:0 24px;
+
 }
+
 .faq-item.open .faq-a{max-height:300px;padding-bottom:20px}
+
 .faq-a p{color:var(--text2);font-size:14px;line-height:1.62;font-weight:300}
+
 .faq-a a{color:var(--purple);text-decoration:none;font-weight:700}
 
+
+
 /* ══ OBJECTIONS ══ */
+
 #objections{background:var(--bg1)}
+
 .obj-grid{display:flex;flex-direction:column;gap:10px;margin-top:48px}
+
 .obj-item{
+
   background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+
   padding:22px 28px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;
+
   transition:border-color .2s;
+
 }
+
 .obj-item:hover{border-color:var(--border-a)}
+
 .obj-myth{display:flex;gap:10px;align-items:flex-start}
+
 .obj-x{font-size:15px;color:#ef4444;font-weight:900;flex-shrink:0;margin-top:2px}
+
 .obj-myth p{color:var(--text2);font-size:14px;font-style:italic;line-height:1.6;font-weight:300}
+
 .obj-truth{display:flex;gap:10px;align-items:flex-start}
+
 .obj-check{font-size:15px;color:var(--green);font-weight:900;flex-shrink:0;margin-top:2px}
+
 .obj-truth p{color:var(--text);font-size:14px;line-height:1.6;font-weight:400}
+
 .obj-truth strong{color:var(--purple)}
+
 @media(max-width:640px){.obj-item{grid-template-columns:1fr}.obj-myth{display:none}}
 
+
+
 /* ══ CTA + FORM ══ */
+
 #cta{
+
   background:
+
     radial-gradient(ellipse 80% 80% at 50% 50%,rgba(139,92,246,.1) 0%,transparent 70%),
+
     var(--bg);
+
   padding:100px 24px;
+
 }
+
 .cta-inner{max-width:860px;margin:0 auto}
+
 .cta-head{text-align:center;margin-bottom:48px}
+
 .cta-head h2{margin-bottom:16px}
+
 .cta-head p{color:var(--text2);font-size:16px;line-height:1.8;font-weight:300}
+
 .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+
 .contact-form{
+
   background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:32px;
+
 }
+
 .contact-form h3{margin-bottom:20px;font-size:18px}
+
 .form-group{margin-bottom:16px}
+
 .form-label{display:block;font-size:12px;font-weight:700;color:var(--text2);margin-bottom:6px;letter-spacing:.04em;text-transform:uppercase}
+
 .form-input,.form-textarea{
+
   width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-sm);
+
   padding:12px 16px;font-size:14px;color:var(--text);font-family:var(--font);
+
   outline:none;transition:border-color .2s;resize:none;
+
 }
+
 .form-input:focus,.form-textarea:focus{border-color:var(--border-a)}
+
 .form-textarea{height:100px}
+
 .form-submit{
+
   width:100%;background:var(--grad);color:#fff;
+
   border:none;border-radius:var(--r-sm);padding:14px;
+
   font-family:var(--font);font-size:15px;font-weight:700;cursor:pointer;
+
   transition:opacity .2s,transform .2s;margin-top:4px;
+
 }
+
 .form-submit:hover{opacity:.88;transform:translateY(-1px)}
+
 .form-success{
+
   text-align:center;padding:32px 20px;display:none;
+
 }
+
 .form-success p{color:var(--green);font-size:18px;font-weight:700;margin-bottom:8px}
+
 .form-success span{color:var(--text2);font-size:14px;font-weight:300}
+
 .contact-info{display:flex;flex-direction:column;gap:16px}
+
 .contact-info h3{font-size:18px;margin-bottom:4px}
+
 .contact-info > p{color:var(--text2);font-size:14px;line-height:1.7;font-weight:300;margin-bottom:8px}
+
 .contact-card-v{
+
   background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+
   padding:18px 20px;display:flex;align-items:center;gap:12px;text-decoration:none;
+
   transition:all .2s;
+
 }
+
 .contact-card-v:hover{border-color:var(--border-a);transform:translateY(-1px)}
+
 .ccv-icon{
+
   width:40px;height:40px;border-radius:10px;
+
   background:var(--grad-soft);border:1px solid var(--border-a);
+
   display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;
+
 }
+
 .ccv-label{font-size:11px;color:var(--text3);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+
 .ccv-val{font-size:15px;font-weight:700;color:var(--text)}
+
 .contact-trust{
+
   display:flex;flex-direction:column;gap:8px;margin-top:8px;
+
   padding-top:20px;border-top:1px solid var(--border);
+
 }
+
 .trust-item{
+
   display:flex;align-items:center;gap:8px;
+
   font-size:13px;color:var(--text2);font-weight:300;
+
 }
+
 .trust-item::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+
 @media(max-width:760px){.cta-grid{grid-template-columns:1fr}}
 
+
+
 /* ══ FOOTER ══ */
+
 footer{
+
   background:var(--bg1);border-top:1px solid var(--border);padding:48px 24px 32px;
+
 }
+
 .footer-grid{
+
   max-width:1120px;margin:0 auto;
+
   display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;
+
 }
+
 .footer-brand .footer-logo{
+
   font-size:22px;font-weight:900;letter-spacing:.02em;
+
   background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+
   margin-bottom:12px;display:block;
+
 }
+
 .footer-brand p{color:var(--text3);font-size:14px;line-height:1.7;font-weight:300;max-width:280px;margin-bottom:20px}
+
 .footer-socials{display:flex;gap:10px}
+
 .footer-social{
+
   width:36px;height:36px;border-radius:8px;background:var(--card);border:1px solid var(--border);
+
   display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text2);
+
   transition:all .2s;
+
 }
+
 .footer-social:hover{border-color:var(--border-a);color:var(--purple)}
+
 .footer-col h4{font-size:13px;font-weight:700;color:var(--text);margin-bottom:14px;text-transform:uppercase;letter-spacing:.04em}
+
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+
 .footer-col ul a{color:var(--text3);text-decoration:none;font-size:14px;font-weight:300;transition:color .2s}
+
 .footer-col ul a:hover{color:var(--purple)}
+
 .footer-bottom{
+
   max-width:1120px;margin:0 auto;
+
   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+
   padding-top:24px;border-top:1px solid var(--border);
+
 }
+
 .footer-copy{color:var(--text3);font-size:13px;font-weight:300}
+
 .back-to-top{
+
   width:36px;height:36px;background:var(--grad);border-radius:8px;
+
   display:flex;align-items:center;justify-content:center;
+
   cursor:pointer;border:none;text-decoration:none;transition:opacity .2s;
+
 }
+
 .back-to-top:hover{opacity:.8}
+
 @media(max-width:760px){.footer-grid{grid-template-columns:1fr}}
 
+
+
 /* ══ FLOATING WIDGET ══ */
+
 .float-widget{
+
   position:fixed;bottom:90px;right:20px;z-index:500;
+
 }
+
 @media(min-width:769px){.float-widget{bottom:24px}}
+
 .float-btn{
+
   width:56px;height:56px;border-radius:50%;background:var(--grad);
+
   border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+
   box-shadow:0 4px 24px rgba(139,92,246,.5);transition:transform .2s,box-shadow .2s;
+
   position:relative;
+
 }
+
 .float-btn:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(139,92,246,.6)}
+
 .float-btn::after{
+
   content:'Zapytaj nas';
+
   position:absolute;right:64px;top:50%;transform:translateY(-50%);
+
   background:var(--card);border:1px solid var(--border-a);
+
   border-radius:var(--r-sm);padding:6px 12px;
+
   font-family:var(--font);font-size:12px;font-weight:700;color:var(--text);
+
   white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .2s;
+
 }
+
 .float-btn:hover::after{opacity:1}
+
 .float-popup{
+
   position:absolute;bottom:68px;right:0;
+
   width:300px;background:var(--card);border:1px solid var(--border-a);
+
   border-radius:var(--r);box-shadow:0 16px 60px rgba(0,0,0,.5);
+
   overflow:hidden;display:none;
+
 }
+
 .float-popup.open{display:block;animation:popIn .2s ease}
+
 @keyframes popIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
 .fp-header{
+
   background:var(--grad);padding:16px 20px;display:flex;align-items:center;gap:10px;
+
 }
+
 .fp-av{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;color:#fff}
+
 .fp-title{font-size:14px;font-weight:700;color:#fff}
+
 .fp-sub{font-size:11px;color:rgba(255,255,255,.8)}
+
 .fp-body{padding:20px}
+
 .fp-msg{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:16px;font-weight:300}
+
 .fp-actions{display:flex;flex-direction:column;gap:8px}
+
 .fp-action{
+
   display:flex;align-items:center;gap:10px;
+
   background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-sm);
+
   padding:11px 14px;text-decoration:none;color:var(--text);
+
   font-size:13px;font-weight:700;transition:all .2s;
+
 }
+
 .fp-action:hover{border-color:var(--border-a);color:var(--purple)}
+
 .fp-action span{font-size:18px}
 
+
+
 /* ══ PULSE ring on float ══ */
+
 .float-pulse{
+
   position:absolute;inset:-4px;border-radius:50%;
+
   border:2px solid var(--purple);animation:fpulse 2s ease-out infinite;
+
 }
+
 @keyframes fpulse{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.5)}}
 
+
+
 /* ══ TESTIMONIALS ══ */
+
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+
 .testi-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px}
+
 .testi-stars{color:#fbbf24;font-size:15px;margin-bottom:14px;letter-spacing:2px}
+
 .testi-text{color:var(--text2);font-size:14px;line-height:1.8;font-weight:300;font-style:italic;margin-bottom:20px}
+
 .testi-author{display:flex;align-items:center;gap:12px}
+
 .testi-av{width:40px;height:40px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;flex-shrink:0}
+
 .testi-name{font-size:14px;font-weight:700}
+
 .testi-role{font-size:12px;color:var(--text3)}
+
 @media(max-width:760px){.testi-grid{grid-template-columns:1fr}}
 
+
+
 /* ══ PRICING ══ */
+
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+
 .price-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:32px;transition:border-color .2s,transform .2s}
+
 .price-card:hover{border-color:var(--border-a);transform:translateY(-3px)}
+
 .price-card.featured{border-color:var(--purple);background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(59,130,246,.05))}
+
 .price-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--grad);color:#fff;border-radius:100px;padding:3px 10px;margin-bottom:16px}
+
 .price-tier{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:12px}
+
 .price-amt{font-size:44px;font-weight:900;line-height:1;margin-bottom:4px}
+
 .price-unit{font-size:12px;color:var(--text3);padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--border)}
+
 .price-feats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;font-size:13px;font-weight:300}
+
 .price-feats li{display:flex;gap:8px}.price-feats li::before{content:'✓ ';color:var(--green);font-weight:700;flex-shrink:0}
+
 @media(max-width:760px){.price-grid{grid-template-columns:1fr}}
 
+
+
 /* ══ GUARANTEE ══ */
+
 .guarantee-strip{margin-top:28px;padding:20px 28px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.2);border-radius:var(--r);text-align:center}
+
 .guarantee-strip strong{color:var(--green);font-size:16px;display:block;margin-bottom:6px}
+
 .guarantee-strip p{color:var(--text2);font-size:13px;font-weight:300}
 
+
+
 /* ══ SECTION CTA ROW ══ */
+
 .section-cta-row{text-align:center;margin-top:40px}
 
+
+
 /* TRUST STRIP */
+
 #trust-strip{padding:24px;background:var(--bg1);border-bottom:1px solid var(--border)}
+
 .trust-inner{max-width:1120px;margin:0 auto;text-align:center}
+
 .trust-top{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:14px}
+
 .trust-logos{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
 .trust-pill{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:6px 16px;font-size:13px;color:var(--text2);transition:border-color .2s}
+
 .trust-pill:hover{border-color:var(--border-a)}
 
+
+
 /* ROI CALCULATOR */
+
 #roi-calc{background:var(--bg)}
+
 .roi-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:40px;margin-top:48px;max-width:760px;margin-left:auto;margin-right:auto}
+
 .roi-sliders{display:flex;flex-direction:column;gap:24px;margin-bottom:32px}
+
 .roi-lbl{display:flex;justify-content:space-between;font-size:14px;color:var(--text2);margin-bottom:8px}
+
 .roi-lbl strong{color:var(--text)}
+
 .roi-card input[type=range]{width:100%;accent-color:var(--purple);cursor:pointer}
+
 .roi-result{background:var(--grad-soft);border:1px solid var(--border-a);border-radius:var(--r-sm);padding:24px;text-align:center;margin-bottom:24px}
+
 .roi-desc{font-size:13px;color:var(--text2);margin-bottom:6px}
+
 .roi-big{font-size:46px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1}
+
 .roi-sub{font-size:12px;color:var(--text3);margin-top:4px}
+
 .roi-split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+
 .roi-mini{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px;text-align:center}
+
 .roi-mini .rm-val{font-size:22px;font-weight:900;color:var(--green)}
+
 .roi-mini .rm-lbl{font-size:11px;color:var(--text3);margin-top:2px}
+
 @media(max-width:500px){.roi-split{grid-template-columns:1fr}}
 
+
+
 /* COMPARISON TABLE */
+
 #compare{background:var(--bg1)}
+
 .cmp-wrap{overflow-x:auto;margin-top:48px;border-radius:var(--r);border:1px solid var(--border)}
+
 table.cmp{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+
 table.cmp thead th{padding:14px 20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border);background:var(--bg2);text-align:left}
+
 table.cmp thead th.cmp-us{color:var(--purple);background:rgba(139,92,246,.08)}
+
 table.cmp tbody td{padding:13px 20px;border-bottom:1px solid var(--border);vertical-align:middle}
+
 table.cmp tbody tr:last-child td{border-bottom:none}
+
 table.cmp tbody td.cmp-us{background:rgba(139,92,246,.03)}
+
 table.cmp .ok{color:var(--green);font-weight:700}
+
 table.cmp .bad{color:#ef4444}
+
 table.cmp tbody tr:hover td{background:rgba(255,255,255,.02)}
+
 table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
 
+
+
 /* FOUNDER */
+
 #founder{background:var(--bg)}
+
 .founder-grid{display:grid;grid-template-columns:110px 1fr;gap:40px;align-items:center;margin-top:48px;max-width:760px;margin-left:auto;margin-right:auto}
+
 .founder-av{width:96px;height:96px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;color:#fff;box-shadow:0 0 40px var(--glow)}
+
 .founder-name{font-size:22px;font-weight:900;margin-bottom:3px}
+
 .founder-role{font-size:14px;color:var(--purple);font-weight:700;margin-bottom:14px}
+
 .founder-bio{color:var(--text2);font-size:15px;line-height:1.8;font-weight:300}
+
 .founder-bio strong{color:var(--text);font-weight:700}
+
 .founder-facts{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap}
+
 .ff-item .ff-num{font-size:22px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
 .ff-item .ff-lbl{font-size:11px;color:var(--text3);margin-top:1px}
+
 @media(max-width:600px){.founder-grid{grid-template-columns:1fr;text-align:center}.founder-av{margin:0 auto}.founder-facts{justify-content:center}}
 
+
+
 /* LEAD MAGNET STRIP */
+
 #lead-magnet{padding:60px 24px;background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(59,130,246,.06)),var(--bg1)}
+
 .lm-inner{max-width:640px;margin:0 auto;text-align:center}
+
 .lm-title{font-size:clamp(20px,3vw,30px);font-weight:900;margin-bottom:10px}
+
 .lm-sub{color:var(--text2);font-size:15px;font-weight:300;line-height:1.7;margin-bottom:28px}
+
 .lm-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
 .lm-input{flex:1;min-width:220px;max-width:320px;background:var(--card);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px 16px;font-size:14px;font-family:var(--font);color:var(--text);outline:none;transition:border-color .2s}
+
 .lm-input:focus{border-color:var(--purple)}
+
 .lm-success{display:none;color:var(--green);font-size:15px;font-weight:700;padding:16px}
+
 .lm-items{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+
 .lm-item{font-size:12px;color:var(--text3);display:flex;align-items:center;gap:4px}
+
 .lm-item::before{content:'✓';color:var(--green);font-weight:700}
 
+
+
 /* AUDIO DEMO */
+
 .audio-demo-row{margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+
 .audio-btn{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--purple);border-radius:16px;padding:18px 28px;font-family:var(--font);font-size:16px;font-weight:700;color:var(--text);cursor:pointer;transition:all .2s;width:100%;max-width:380px}
+
 .audio-btn:hover{border-color:var(--purple);box-shadow:0 0 20px var(--glow)}
+
 .audio-icon{width:48px;height:48px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;box-shadow:0 0 20px var(--glow)}
+
 .audio-note{font-size:12px;color:var(--text3);margin-top:8px}
 
+
+
 /* EXIT INTENT POPUP */
+
 #exit-popup{display:none;position:fixed;inset:0;z-index:10000;background:rgba(7,11,20,.92);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:24px}
+
 #exit-popup.show{display:flex}
+
 .exit-card{background:var(--card);border:1px solid var(--border-a);border-radius:20px;padding:40px;max-width:460px;width:100%;position:relative;animation:exitFadeIn .3s ease}
+
 @keyframes exitFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
 .exit-card h3{font-size:24px;font-weight:900;margin-bottom:10px}
+
 .exit-card p{color:var(--text2);font-size:14px;line-height:1.7;font-weight:300;margin-bottom:24px}
+
 .exit-row{display:flex;gap:8px;flex-wrap:wrap}
+
 .exit-input{flex:1;min-width:180px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px 14px;font-size:14px;font-family:var(--font);color:var(--text);outline:none}
+
 .exit-input:focus{border-color:var(--purple)}
+
 .exit-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text3);font-size:22px;cursor:pointer;line-height:1}
+
 .exit-close:hover{color:var(--text)}
 
+
+
 /* DESKTOP STICKY */
+
 #desk-sticky{position:fixed;bottom:0;left:0;right:0;z-index:89;background:rgba(7,11,20,.96);backdrop-filter:blur(16px);border-top:1px solid var(--border);padding:10px 24px;display:none;align-items:center;justify-content:space-between;gap:16px}
+
 #desk-sticky.ds-on{display:flex}
+
 .ds-msg{font-size:14px;color:var(--text2);flex:1}
+
 .ds-msg strong{color:var(--text)}
+
 @media(max-width:768px){#desk-sticky{display:none!important}}
 
+
+
 /* MOBILE STICKY 2 BUTTONS */
+
 .sticky-2{display:flex;gap:8px}
+
 .sticky-2 a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;color:#fff!important;text-decoration:none;border-radius:var(--r-sm);padding:12px 8px;font-family:var(--font);font-weight:700;font-size:13px}
+
 .sticky-2 .s2-call{background:var(--grad)}
+
 .sticky-2 .s2-wa{background:#25D366}
+
 .sticky-2 .s2-cta{background:rgba(139,92,246,.9);border:1px solid var(--purple)}
+
+
+
 
 
 /* ═══ V5 ADDITIONS ═══ */
 
+
+
 /* 1. Scarcity strip */
+
 .scarce-strip{display:inline-flex;align-items:center;gap:8px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);border-radius:100px;padding:5px 14px;font-size:12px;font-weight:600;color:#f87171;margin-bottom:16px}
+
 .scarce-dot{width:6px;height:6px;border-radius:50%;background:#ef4444;animation:pulsedot 1s ease-in-out infinite;flex-shrink:0}
 
+
+
 /* 2. Social proof toasts */
+
 #toast-area{position:fixed;bottom:96px;left:20px;z-index:2000;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+
 .toast{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;max-width:260px;font-size:12px;color:var(--text2);box-shadow:0 4px 24px rgba(0,0,0,.4);animation:toastin .4s ease forwards;pointer-events:auto}
+
 .toast-av{width:30px;height:30px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;flex-shrink:0}
+
 .toast b{color:var(--text)}
+
 .toast-x{margin-left:auto;cursor:pointer;color:var(--text3);font-size:15px;line-height:1;flex-shrink:0}
+
 @keyframes toastin{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:none}}
+
 @keyframes toastout{from{opacity:1}to{opacity:0;transform:translateX(-20px)}}
 
+
+
 /* 3. Integration logos */
+
 #integrations{background:var(--bg1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:22px 0}
+
 .integ-inner{max-width:1100px;margin:0 auto;padding:0 40px}
+
 .integ-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:16px}
+
 .integ-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+
 .integ-pill{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;color:var(--text2)}
+
 .integ-icon{width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;flex-shrink:0}
+
 @media(max-width:760px){.integ-inner{padding:0 20px}}
 
+
+
 /* 4. Callback float button */
+
 #callback-float{position:fixed;right:20px;bottom:96px;z-index:1500;background:var(--grad);color:#fff;border:none;border-radius:100px;padding:11px 20px;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(139,92,246,.5);align-items:center;gap:8px;transition:transform .2s;font-family:var(--font);display:none}
+
 #callback-float:hover{transform:scale(1.04)}
+
 @media(min-width:761px){#callback-float{display:flex}}
 
+
+
 /* 5. Callback modal */
+
 #cb-modal{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;padding:20px}
+
 #cb-modal.open{display:flex}
+
 .cb-box{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);padding:36px;max-width:370px;width:100%}
+
 .cb-box h3{font-size:20px;font-weight:800;margin-bottom:8px}
+
 .cb-desc{color:var(--text2);font-size:14px;margin-bottom:24px;line-height:1.6}
+
 .cb-inp{width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-size:15px;font-family:var(--font);outline:none;box-sizing:border-box;margin-bottom:12px}
+
 .cb-inp:focus{border-color:var(--purple)}
+
 .cb-btn{width:100%;background:var(--grad);color:#fff;border:none;border-radius:8px;padding:13px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--font)}
+
 .cb-close-btn{float:right;background:none;border:none;color:var(--text3);font-size:22px;cursor:pointer;line-height:1;margin:-4px -4px 0 0}
+
 .cb-ok{color:var(--green);font-size:14px;font-weight:600;margin-top:12px;display:none;text-align:center}
 
+
+
 /* 6. Industry tabs */
+
 .testi-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 -20px}
+
 .testi-tab{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:7px 18px;font-size:13px;font-weight:600;cursor:pointer;color:var(--text2);transition:background .2s,color .2s,border-color .2s;font-family:var(--font)}
+
 .testi-tab.active,.testi-tab:hover{background:var(--grad);color:#fff;border-color:transparent}
+
 .testi-item.hidden{display:none!important}
 
+
+
 /* 7. Price promo badges */
+
 .price-setup-badge{display:inline-block;font-size:11px;font-weight:700;background:rgba(16,185,129,.12);color:var(--green);border:1px solid rgba(16,185,129,.3);border-radius:100px;padding:3px 10px;margin-bottom:6px}
+
 .price-ctd{font-weight:700;color:#f87171}
 
+
+
 /* 8. WhatsApp in demo chat */
+
 .hc-wa{display:inline-flex;align-items:center;gap:5px;background:#25D366;color:#fff;border:none;border-radius:100px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;text-decoration:none;font-family:var(--font);transition:opacity .2s;white-space:nowrap;flex-shrink:0}
+
 .hc-wa:hover{opacity:.85}
 
+
+
 /* 9. Footer B2B row */
+
 .footer-b2b{font-size:11px;color:var(--text3);margin-bottom:10px;display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+
 .footer-b2b span+span::before{content:'· '}
 
+
+
 </style>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+
 <!-- Google Analytics 4 -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9QH1CPDDS"></script>
+
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-B9QH1CPDDS');</script>
+
 <!-- Facebook Pixel -->
+
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','934494976050338');fbq('track','PageView');</script>
+
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=934494976050338&ev=PageView&noscript=1"/></noscript>
+
 </head>
+
 <body>
 
+
+
 <!-- ══ FLOATING WIDGET ══ -->
+
 <div class="float-widget">
+
   <div class="float-popup" id="floatPopup">
+
     <div class="fp-header">
+
       <div class="fp-av">AI</div>
+
       <div>
+
         <div class="fp-title">KREATO.AI</div>
+
         <div class="fp-sub">Zwykle odpowiadamy od razu</div>
+
       </div>
+
     </div>
+
     <div class="fp-body">
+
       <p class="fp-msg">Cześć! 👋 Jak możemy pomóc? Wybierz opcję lub napisz do nas bezpośrednio.</p>
+
       <div class="fp-actions">
+
         <a href="tel:+48733245757" class="fp-action"><span>📞</span> Zadzwoń — +48 733 245 757</a>
+
         <a href="https://wa.me/48733245757?text=Dzień dobry! Chciałbym dowiedzieć się więcej o KREATO.AI" target="_blank" class="fp-action"><span>💬</span> WhatsApp</a>
+
         <a href="#cta" class="fp-action" onclick="closeFloat()"><span>📝</span> Wyślij zapytanie</a>
+
         <a href="#demo" class="fp-action" onclick="closeFloat()"><span>🤖</span> Przetestuj demo AI</a>
+
       </div>
+
     </div>
+
   </div>
+
   <button class="float-btn" id="floatBtn" aria-label="Kontakt">
+
     <div class="float-pulse"></div>
+
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2">
+
       <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+
     </svg>
+
   </button>
+
 </div>
+
+
 
 <!-- ══ MOBILE NAV OVERLAY ══ -->
+
 <div class="nav-overlay" id="navOverlay">
+
   <div class="overlay-close" id="overlayClose">✕</div>
+
   <a href="#problems" onclick="closeNav()">Problem</a>
+
   <a href="#services" onclick="closeNav()">Usługi</a>
+
   <a href="#process" onclick="closeNav()">Jak działamy</a>
+
   <a href="#demo" onclick="closeNav()">Demo</a>
+
   <a href="#faq" onclick="closeNav()">FAQ</a>
+
   <a href="diagnosta.html" onclick="closeNav()" style="color:var(--purple)!important;font-weight:700!important">🔬 Diagnoza AI →</a>
+
   <a href="tel:+48733245757" onclick="closeNav()" style="color:var(--green)!important;font-weight:700!important;font-size:18px!important">📞 +48 733 245 757</a><a href="#cta" onclick="closeNav()" class="overlay-cta">Bezpłatna konsultacja →</a>
+
 </div>
+
+
 
 <!-- ══ STICKY BAR ══ -->
+
 <div class="sticky-bar">
+
   <div class="sticky-2">
+
     <a href="tel:+48733245757" class="s2-call">
+
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.28-1.28a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+
       Zadzwoń
+
     </a>
+
     <a href="https://wa.me/48733245757?text=Dzień%20dobry!%20Chcę%20dowiedzieć%20się%20więcej%20o%20KREATO.AI" target="_blank" class="s2-wa">
+
       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.133.557 4.133 1.529 5.864L.057 23.882l6.18-1.618A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.988-1.362l-.358-.213-3.672.961.979-3.578-.233-.369A9.82 9.82 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/></svg>
+
       WhatsApp (5 min)
+
     </a>
+
   <a href="#cta" class="s2-cta">Konsultacja →</a>
+
   </div>
+
 </div>
+
+
 
 <!-- ══ NAV ══ -->
+
 <nav>
+
   <div class="nav-inner">
+
     <a href="#" class="nav-logo">KREATO.AI</a>
+
     <ul class="nav-links">
+
       <li><a href="#problems">Problem</a></li>
+
       <li><a href="#services">Usługi</a></li>
+
       <li><a href="agenci.html">Agenci AI</a></li>
+
       <li><a href="#process">Jak działamy</a></li>
+
       <li><a href="#pricing">Cennik</a></li>
+
       <li><a href="#demo">Demo</a></li>
+
       <li><a href="#faq">FAQ</a></li>
+
       <li><a href="diagnosta.html" style="color:var(--purple)!important;font-weight:700!important">Diagnoza AI</a></li>
+
       <li><a href="tel:+48733245757" class="nav-phone">+48 733 245 757</a></li>
+
       <li><a href="#cta" class="nav-cta">Bezpłatna konsultacja</a></li>
+
     </ul>
+
     <button class="hamburger" id="hamburger" aria-label="Menu">
+
       <span></span><span></span><span></span>
+
     </button>
+
   </div>
+
 </nav>
 
+
+
 <!-- ══ HERO ══ -->
+
 <section id="hero">
+
   <div class="hero-inner">
+
     <div class="reveal">
+
       <div class="badge"><span class="badge-dot"></span>MŚP · kliniki · e-commerce · Prototyp w 48h</div>
+
       <div class="scarce-strip"><span class="scarce-dot"></span>Przyjmujemy <strong>3–4 projekty</strong> miesięcznie · miejsca dostępne</div>
+
       <h1>Twoja firma <span class="grad-text">nigdy nie straci</span> klienta — nawet o 22:00.</h1>
+
       <p class="hero-sub">Klient dzwoni po godzinach, w weekend, gdy jesteś zajęty — i idzie do konkurencji. Budujemy <strong>voiceboty, chatboty i agentów AI</strong>, które odbierają telefony, odpowiadają na pytania i obsługują klientów 24/7 — od 299 zł/mies.</p>
+
       <div class="hero-btns">
+
         <a href="#cta" class="btn btn-primary">Bezpłatna konsultacja →</a>
+
         <a href="#demo" class="btn btn-outline">Przetestuj demo</a>
+      <a href="tel:+48224176808" class="btn btn-outline" style="display:flex;align-items:center;gap:8px">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.28-1.28a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Zadzwoń do Karoliny AI
+      </a>
+
       </div>
+
+      <div style="display:flex;align-items:flex-start;gap:8px;margin-top:10px;padding:10px 14px;background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.18);border-radius:10px;max-width:480px;font-size:12px;color:#94a3b8;line-height:1.5">
+
+        <span style="color:#8b5cf6;flex-shrink:0;margin-top:1px">&#8505;</span>
+
+        <span>Karolina to asystent AI KREATO.AI. Przed rozmową zostaniesz poinformowany/a o automatycznym przetwarzaniu danych (PKE Art. 398).</span>
+
+      </div>
+
       <div class="hero-stat">
+
         <div><div class="hs-num">&lt;48h</div><div class="hs-label">do prototypu</div></div>
+
         <div><div class="hs-num">24/7</div><div class="hs-label">dostępność</div></div>
+
         <div><div class="hs-num">299 zł</div><div class="hs-label">od / mies.</div></div>
+
       </div>
+
       <div class="hero-founder">
+
         <img src="foto.jpg" alt="Anatoliy Romanchyshyn" class="founder-photo">
+
         <div>
+
           <div class="founder-name">Anatoliy Romanchyshyn</div>
+
           <div class="founder-role">Założyciel KREATO.AI · Właściciel StalSystem Polska</div>
+
           <div class="founder-quote">„Pierwsza firma, w której wdrożyłem AI, to moja własna."</div>
+
         </div>
+
       </div>
+
     </div>
+
     <div class="reveal">
+
       <div class="hero-card">
+
         <div class="hc-bar">
+
           <div class="hc-av">AI</div>
+
           <div>
+
             <div class="hc-name">Asystent AI — Karolina</div>
+
             <div class="hc-status">Aktywny · połączenie trwa</div>
+
           </div>
+
           <div class="hc-time">01:12</div>
+
         </div>
+
         <div class="chat-msg msg-ai">Dzień dobry! Tu asystent Kliniki Dentystycznej DENT. Jak mogę pomóc?</div>
+
         <div class="chat-msg msg-user">Chciałem umówić wizytę na wybielanie zębów...</div>
+
         <div class="chat-msg msg-ai">Oczywiście! Mamy wolne terminy w czwartek 14:00 lub piątek 10:30. Który pasuje? Imię i numer kontaktowy poproszę.</div>
+
         <div class="chat-msg msg-user">Czwartek 14:00, Marek Kowalski, +48 600 123 456.</div>
+
         <div class="hc-typing"><span></span><span></span><span></span></div>
+
         <div class="hc-footer">
+
           <div class="hc-input">Wizyta potwierdzona → SMS + CRM + Telegram…</div>
+
           <a href="https://wa.me/48733245757?text=Chc%C4%99%20si%C4%99%20dowiedzie%C4%87%20wi%C4%99cej%20o%20automatyzacji%20AI" class="hc-wa" target="_blank" rel="noopener">📱 WhatsApp</a>
+
           <div class="hc-send"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
+
+
 <!-- ══ TRUST STRIP ══ -->
+
 <div id="trust-strip">
+
   <div class="trust-inner">
+
     <div class="trust-top">Zaufali nam firmy z branż</div>
+
     <div class="trust-logos">
+
       <div class="trust-pill"><span>🦷</span> Stomatologia</div>
+
       <div class="trust-pill"><span>🛒</span> E-commerce</div>
+
       <div class="trust-pill"><span>🏗️</span> Budownictwo</div>
+
       <div class="trust-pill"><span>🏠</span> Nieruchomości</div>
+
       <div class="trust-pill"><span>⚖️</span> Kancelarie</div>
+
       <div class="trust-pill"><span>🏥</span> Przychodnie</div>
+
       <div class="trust-pill"><span>📦</span> Logistyka</div>
+
     </div>
+
   </div>
+
 </div>
+
+
+
 
 
 <!-- ══ DIAGNOSTA PROMO ══ -->
 
+
+
 <section style="padding:60px 24px;background:var(--bg1)">
+
   <div class="inner reveal">
+
     <div style="background:linear-gradient(135deg,rgba(139,92,246,.08) 0%,rgba(59,130,246,.08) 100%);border:1px solid rgba(139,92,246,.2);border-radius:20px;padding:52px 40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center">
+
       <div>
+
         <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;color:var(--purple);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px">
+
           <span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block"></span>
+
           Bezpłatna · 2 minuty · Bez rejestracji
+
         </div>
+
         <h2 style="font-size:clamp(22px,3vw,34px);font-weight:900;margin-bottom:10px;line-height:1.2">Nie wiesz od czego zacząć?<br>Zrób <span class="grad-text">diagnozę AI</span></h2>
+
         <p style="font-size:15px;color:var(--text2);line-height:1.6;max-width:520px;margin-bottom:0">5 pytań → spersonalizowany Raport Automatyzacji. Dowiedz się, które agenty przyniosą Twojej firmie największy zwrot i jak szybko się zwrócą.</p>
+
         <div style="display:flex;gap:16px;margin-top:24px;flex-wrap:wrap;align-items:center">
+
           <span style="font-size:13px;color:var(--text3)">Sektory:</span>
+
           <a href="dla-klinik.html" style="font-size:13px;color:var(--text2);text-decoration:none;padding:5px 12px;background:var(--card);border:1px solid var(--border);border-radius:100px;transition:all .2s" onmouseover="this.style.borderColor='rgba(139,92,246,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.06)'">🏥 Kliniki</a>
+
           <a href="dla-ecommerce.html" style="font-size:13px;color:var(--text2);text-decoration:none;padding:5px 12px;background:var(--card);border:1px solid var(--border);border-radius:100px;transition:all .2s" onmouseover="this.style.borderColor='rgba(139,92,246,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.06)'">🛒 E-commerce</a>
+
           <a href="agenci.html" style="font-size:13px;color:var(--text2);text-decoration:none;padding:5px 12px;background:var(--card);border:1px solid var(--border);border-radius:100px;transition:all .2s" onmouseover="this.style.borderColor='rgba(139,92,246,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.06)'">🤝 B2B</a>
+
         </div>
+
       </div>
+
       <div style="flex-shrink:0;text-align:center">
+
         <a href="diagnosta.html" class="btn btn-primary" style="font-size:16px;padding:18px 36px;white-space:nowrap">Sprawdź bezpłatnie →</a>
+
         <p style="font-size:12px;color:var(--text3);margin-top:10px">Raport gotowy w 2 minuty</p>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- ══ INTEGRATIONS ══ -->
+
 <div id="integrations">
+
   <div class="integ-inner">
+
     <div class="integ-label">Integrujemy z narzędziami, których już używasz</div>
+
     <div class="integ-logos">
+
       <div class="integ-pill"><div class="integ-icon" style="background:#4285f4">G</div>Google Calendar</div>
+
       <div class="integ-pill"><div class="integ-icon" style="background:#25D366">W</div>WhatsApp Business</div>
+
       <div class="integ-pill"><div class="integ-icon" style="background:#9b59b6">P</div>Proassist</div>
+
       <div class="integ-pill"><div class="integ-icon" style="background:#1abc9c">Z</div>Znany Lekarz</div>
+
       <div class="integ-pill"><div class="integ-icon" style="background:#96588a">W</div>WooCommerce</div>
+
       <div class="integ-pill"><div class="integ-icon" style="background:#e74c3c">B</div>BaseLinker</div>
+
       <div class="integ-pill"><div class="integ-icon" style="background:#1a73a8">P</div>Pipedrive</div>
+
       <div class="integ-pill"><div class="integ-icon" style="background:#3b82f6">Z</div>Zapier</div>
+
       <div class="integ-pill"><div class="integ-icon" style="background:#0088cc">T</div>Telegram</div>
+
     </div>
+
   </div>
+
 </div>
 
+
+
 <!-- ══ PROBLEMS ══ -->
+
 <section id="problems">
+
   <div class="inner reveal">
+
     <div class="section-label">Czy to brzmi znajomo?</div>
+
     <h2>Które procesy w Twojej firmie <span class="grad-text">zjadają czas</span>?</h2>
+
     <div class="problems-grid">
+
       <div class="prob-card"><span class="prob-icon">📞</span><h3>Nieodebrane telefony = pacjent u konkurencji</h3><p>Pacjent dzwoni po godzinach, w weekend, gdy gabinet jest zajęty. Nie czeka — szuka innej kliniki. Jeden nieodebrany telefon to kilkaset złotych straty.</p></div>
+
       <div class="prob-card"><span class="prob-icon">🗓️</span><h3>Rejestracja wizyt — godziny przy telefonie</h3><p>Zapis, potwierdzenie, przesunięcie, odwołanie — recepcja spędza większość dnia na telefonach zamiast na obsłudze pacjentów na miejscu.</p></div>
+
       <div class="prob-card"><span class="prob-icon">🔄</span><h3>Te same pytania, dziesiątki razy dziennie</h3><p>Godziny przyjęć, cennik, czy NFZ czy prywatnie — Twój zespół odpowiada na to samo w kółko. Czas, który można przeznaczyć na pacjentów.</p></div>
+
       <div class="prob-card"><span class="prob-icon">⏳</span><h3>Dane z rozmów giną lub trafiają do notatek</h3><p>Kto dzwonił, czego potrzebował, kiedy umówiony — wszystko w głowie recepcjonistki lub na karteczce. Jeden urlop i chaos gotowy.</p></div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- ══ SOLUTION ══ -->
+
 <section id="solution">
+
   <div class="inner">
+
     <div class="solution-grid">
+
       <div class="reveal">
+
         <div class="section-label">Nasze podejście</div>
+
         <h2>Nie sprzedajemy <span class="grad-text">narzędzi</span>. Wdrażamy wyniki.</h2>
+
         <p>Większość firm oferujących AI mówi o platformach i workflowach. Problem? Płacisz miesięcznie za cudze klocki — bez kontroli, z wysokimi kosztami i ograniczeniami, których nie przewidziałeś.</p>
+
         <p><strong>My budujemy inaczej.</strong> Voiceboty, chatboty i agentów AI pisanych pod Twój konkretny problem. Twój numer, Twoje dane — pełna kontrola. Możesz odejść w każdej chwili i zachować cały system.</p>
+
         <a href="#cta" class="btn btn-primary" style="margin-top:8px">Porozmawiaj o swoim procesie →</a>
+
         <div class="solution-photo" style="margin-top:28px"></div>
+
       </div>
+
       <div class="vs-grid reveal">
+
         <div class="vs-row">
+
           <div class="vs-bad">Call center — 40+ zł/h, tylko w godzinach pracy</div>
+
           <div class="vs-vs">VS</div>
+
           <div class="vs-good">KREATO voicebot — 24/7, od 299 zł/mies.</div>
+
         </div>
+
         <div class="vs-row">
+
           <div class="vs-bad">Platformy SaaS — płacisz ciągle, tracisz kontrolę</div>
+
           <div class="vs-vs">VS</div>
+
           <div class="vs-good">Twoje dane, Twój system — wychodzisz kiedy chcesz</div>
+
         </div>
+
         <div class="vs-row">
+
           <div class="vs-bad">Software house — 4–8 tygodni, 30–80 tys. zł</div>
+
           <div class="vs-vs">VS</div>
+
           <div class="vs-good">KREATO — prototyp w 1–2 dni, ułamek kosztów</div>
+
         </div>
+
         <div class="vs-row">
+
           <div class="vs-bad">Pracownik obsługi — urlopy, zwolnienia, rotacja</div>
+
           <div class="vs-vs">VS</div>
+
           <div class="vs-good">Agent AI — zawsze dostępny, zawsze taki sam poziom</div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
+
+
 <!-- ══ COMPARE ══ -->
+
 <section id="compare">
+
   <div class="inner reveal">
+
     <div class="section-label">Porównanie</div>
+
     <h2>KREATO.AI vs <span class="grad-text">alternatywy</span></h2>
+
     <div class="cmp-wrap">
+
       <table class="cmp">
+
         <thead>
+
           <tr>
+
             <th style="width:30%">Kryterium</th>
+
             <th class="cmp-us">KREATO.AI</th>
+
             <th>Call center</th>
+
             <th>Platforma SaaS</th>
+
             <th>Software house</th>
+
           </tr>
+
         </thead>
+
         <tbody>
+
           <tr><td>Koszt miesięczny</td><td class="cmp-us"><span class="ok">od 299 zł</span></td><td><span class="bad">40–60 zł/h</span></td><td><span class="bad">300–2 000 zł</span></td><td><span class="bad">brak</span></td></tr>
+
           <tr><td>Czas wdrożenia</td><td class="cmp-us"><span class="ok">1–2 dni</span></td><td><span class="bad">2–4 tygodnie</span></td><td><span class="bad">1–2 tygodnie</span></td><td><span class="bad">2–6 miesięcy</span></td></tr>
+
           <tr><td>Dostępność</td><td class="cmp-us"><span class="ok">24/7/365</span></td><td><span class="bad">8–20h, pn–pt</span></td><td><span class="ok">24/7</span></td><td>—</td></tr>
+
           <tr><td>Język polski</td><td class="cmp-us"><span class="ok">naturalny, bez akcentu</span></td><td><span class="ok">tak</span></td><td><span class="bad">często ograniczony</span></td><td>zależnie</td></tr>
+
           <tr><td>Twoje dane · niezależność</td><td class="cmp-us"><span class="ok">tak — Twój kod</span></td><td>—</td><td><span class="bad">nie, tracisz dane</span></td><td><span class="ok">tak</span></td></tr>
+
           <tr><td>Koszt wdrożenia</td><td class="cmp-us"><span class="ok">bezpłatny prototyp</span></td><td><span class="bad">1 000–5 000 zł</span></td><td>0</td><td><span class="bad">30 000–80 000 zł</span></td></tr>
+
           <tr><td>Integracja z CRM/ERP</td><td class="cmp-us"><span class="ok">tak, pełna</span></td><td><span class="bad">ograniczona</span></td><td>częściowa</td><td><span class="ok">tak</span></td></tr>
+
         </tbody>
+
       </table>
+
     </div>
+
   </div>
+
 </section>
+
+
+
 
 
 <!-- ══ WHY ══ -->
+
 <section id="why">
+
   <div class="inner reveal">
+
     <div class="section-label">Dlaczego to działa</div>
+
     <h2>Dlaczego <span class="grad-text">dedykowany agent AI</span> bije każdą alternatywę?</h2>
+
     <div class="why-grid">
+
       <div class="why-card"><div class="why-metric">5–10×</div><h3>Niższy koszt obsługi</h3><p>Agent AI obsługuje 100 rozmów jednocześnie za ułamek kosztu jednego etatu. Skala bez kosztów — liniowych ani ukrytych.</p></div>
+
       <div class="why-card"><div class="why-metric">&lt;48h</div><h3>Do działającego prototypu</h3><p>Działający system na Twoich danych w ciągu 1–2 dni. Decyzje podejmujesz na podstawie faktów, nie prezentacji.</p></div>
+
       <div class="why-card"><div class="why-metric">24/7</div><h3>Bez przerw i urlopów</h3><p>Klient dzwoni o 22:00 w niedzielę? Agent odbiera, odpowiada i zapisuje dane do CRM — bez Twojego udziału.</p></div>
+
     </div>
+
+
 
     <div class="section-cta-row"><a href="#cta" class="btn btn-primary">Umów bezpłatną konsultację →</a></div>
+
   </div>
+
 </section>
 
+
+
 <!-- ══ ROI CALCULATOR ══ -->
+
 <section id="roi-calc">
+
   <div class="inner reveal">
+
     <div class="section-label">Kalkulator ROI</div>
+
     <h2>Ile tracisz na <span class="grad-text">nieodebranych telefonach</span>?</h2>
+
     <div class="roi-card">
+
       <div class="roi-sliders">
+
         <div class="roi-row">
+
           <div class="roi-lbl"><span>Telefonów dziennie</span><strong id="v-calls">30</strong></div>
+
           <input type="range" min="5" max="100" value="30" id="r-calls" oninput="calcRoi()">
+
         </div>
+
         <div class="roi-row">
+
           <div class="roi-lbl"><span>Nieodebranych (%)</span><strong id="v-miss">25%</strong></div>
+
           <input type="range" min="5" max="60" value="25" id="r-miss" oninput="calcRoi()">
+
         </div>
+
         <div class="roi-row">
+
           <div class="roi-lbl"><span>Wartość klienta</span><strong id="v-val">800 zł</strong></div>
+
           <input type="range" min="200" max="10000" step="100" value="800" id="r-val" oninput="calcRoi()">
+
         </div>
+
       </div>
+
       <div class="roi-result">
+
         <div class="roi-desc">Tracisz miesięcznie na nieodebranych telefonach</div>
+
         <div class="roi-big" id="roi-loss">18 000 zł</div>
+
         <div class="roi-sub">przy założeniu, że 30% nieodebranych = utracony klient</div>
+
       </div>
+
       <div class="roi-split">
+
         <div class="roi-mini"><div class="rm-val" id="roi-saved">17 701 zł</div><div class="rm-lbl">potencjalny zysk/mies. z voicebotem</div></div>
+
         <div class="roi-mini"><div class="rm-val" id="roi-payback">&lt;1 mies.</div><div class="rm-lbl">zwrot z inwestycji</div></div>
+
       </div>
+
       <a href="#cta" class="btn btn-primary" id="roiCtaBtn" style="width:100%;justify-content:center">Chcę odzyskać te pieniądze →</a>
+
     </div>
+
   </div>
+
 </section>
+
+
+
 
 
 <!-- ══ PROCESS ══ -->
+
 <section id="process">
+
   <div class="inner reveal">
+
     <div class="section-label">Jak działamy</div>
+
     <h2>Wdrożenie AI w <span class="grad-text">4 krokach</span></h2>
+
     <p style="color:var(--text2);margin-top:12px;font-size:16px;font-weight:300">Nie potrzebujesz dokumentacji technicznej. Wystarczy opis problemu — resztą się zajmiemy.</p>
+
     <div class="process-steps">
+
       <div class="step-card"><div class="step-num">01</div><h3>Rozmowa</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">30 minut zdalnie. Szukamy procesu, który da najszybszy zwrot z inwestycji.</p><span class="step-result">Konkretny plan + ROI</span></div>
+
       <div class="step-card"><div class="step-num">02</div><h3>Prototyp 1–2 dni</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Działający system na Twoich danych — zanim podejmiesz decyzję o pełnym wdrożeniu.</p><span class="step-result">Można od razu testować</span></div>
+
       <div class="step-card"><div class="step-num">03</div><h3>Pełne wdrożenie</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Rozbudowa do produkcji — integracje, panel zarządzania, szkolenie zespołu.</p><span class="step-result">System na produkcji</span></div>
+
       <div class="step-card"><div class="step-num">04</div><h3>Wsparcie i rozwój</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Monitorujemy i optymalizujemy. Nowe potrzeby? Nowe funkcje — szybko, bez niespodzianek.</p><span class="step-result">Ciągłe doskonalenie</span></div>
+
     </div>
+
+
 
     <div class="section-cta-row"><a href="#cta" class="btn btn-primary">Zacznij od 30-minutowej rozmowy →</a></div>
+
   </div>
+
 </section>
+
+
 
 <!-- ══ SERVICES (with photos) ══ -->
+
 <section id="services">
+
   <div class="inner reveal">
+
     <div class="section-label">Co budujemy</div>
+
     <h2>Usługi dopasowane <span class="grad-text">do Twoich procesów</span></h2>
+
     <div class="services-grid">
+
       <div class="service-card">
+
         <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=200&fit=crop&q=80')"></div>
+
         <div class="service-body">
+
           <div class="service-icon">🎙️</div>
+
           <h3>Voicebot AI — Karolina</h3>
+
           <p>Inteligentny asystent głosowy, który odbiera i wykonuje telefony jak doświadczony konsultant — po polsku, 24/7.</p>
+
           <ul class="service-points">
+
             <li>Odbiór połączeń 24/7 na Twoim polskim numerze</li>
+
             <li>Wychodzące kampanie call-back do leadów</li>
+
             <li>Transkrypt i notatka po każdej rozmowie do CRM</li>
+
             <li>Pełna zgodność z RODO i PKE Art. 398</li>
+
           </ul>
+
           <a class="service-link" href="#demo">Przetestuj demo →</a>
+
         </div>
+
       </div>
+
       <div class="service-card">
+
         <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=200&fit=crop&q=80')"></div>
+
         <div class="service-body">
+
           <div class="service-icon">🤖</div>
+
           <h3>Chatbot AI dla klientów</h3>
+
           <p>Asystent tekstowy na stronie lub w Messengerze — zna Twoją ofertę lepiej niż niejeden pracownik.</p>
+
           <ul class="service-points">
+
             <li>Odpowiada na pytania o produkty, ceny i dostępność</li>
+
             <li>Kwalifikuje leady i przekazuje do sprzedawcy</li>
+
             <li>Integracja z Facebook Messenger, WhatsApp, WWW</li>
+
             <li>Baza wiedzy aktualizowana przez Ciebie samodzielnie</li>
+
           </ul>
+
           <a class="service-link" href="#cta">Zapytaj o chatbota →</a>
+
         </div>
+
       </div>
+
       <div class="service-card">
+
         <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=200&fit=crop&q=80')"></div>
+
         <div class="service-body">
+
           <div class="service-icon">⚡</div>
+
           <h3>Automatyzacja procesów n8n</h3>
-          <p>Łączymy Twoje systemy i eliminujemy ręczną pracę między nimi — bez programowania z Twojej strony.</p>
+
+          <p>Twoje systemy rozmawiają ze sobą automatycznie. Raporty, dane, powiadomienia — bez jednej chwili Twojego czasu.</p>
+
           <ul class="service-points">
+
             <li>Automatyczne raporty z ERP, CRM, Excela</li>
+
             <li>Synchronizacja danych między systemami</li>
+
             <li>Powiadomienia Telegram/email przy zdarzeniach</li>
+
             <li>Integracja z dowolnym API lub webhookiem</li>
+
           </ul>
+
           <a class="service-link" href="#cta">Opisz swój proces →</a>
+
         </div>
+
       </div>
+
       <div class="service-card">
+
         <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=200&fit=crop&q=80')"></div>
+
         <div class="service-body">
+
           <div class="service-icon">🛠️</div>
+
           <h3>Dedykowane narzędzia AI</h3>
+
           <p>Gdy żadne gotowe rozwiązanie nie pasuje — budujemy aplikację dokładnie pod Twój problem.</p>
+
           <ul class="service-points">
+
             <li>Własny panel zarządzania z interfejsem webowym</li>
+
             <li>Analiza dokumentów, ofert i przetargów przez AI</li>
+
             <li>Scoring leadów i priorytetyzacja szans sprzedaży</li>
+
             <li>Twoje dane — możesz odejść w każdej chwili</li>
+
           </ul>
+
           <a class="service-link" href="#cta">Opowiedz o potrzebie →</a>
+
         </div>
+
       </div>
+
     </div>
+
     <div style="text-align:center;margin-top:36px">
+
       <a href="agenci.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:12px 28px;font-size:14px;font-weight:700;color:var(--text);text-decoration:none;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(139,92,246,.4)'" onmouseout="this.style.borderColor='var(--border)'">Zobacz wszystkich 8 agentów →</a>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- ══ STATS ══ -->
+
 <section id="stats">
+
   <div class="stats-inner">
+
     <div class="stat-item"><div class="stat-num">48</div><div class="stat-label">godzin do prototypu</div></div>
+
     <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">działanie systemu</div></div>
+
     <div class="stat-item"><div class="stat-num">299</div><div class="stat-label">zł/mies. od</div></div>
+
     <div class="stat-item"><div class="stat-num">80+</div><div class="stat-label">firm już z nami</div></div>
+
   </div>
+
 </section>
+
+
 
 <!-- ══ DEMO ══ -->
+
 <section id="demo">
+
   <div class="inner">
+
     <div class="demo-grid">
+
       <div class="demo-text reveal">
+
         <div class="section-label">Demo na żywo</div>
+
         <h2>Nie wierz nam na słowo — <span class="grad-text">przetestuj teraz</span></h2>
+
         <p>Zadaj pytanie naszemu asystentowi AI i przekonaj się, jak działa narzędzie, które możemy zbudować dla Twojej firmy — na Twoich danych i procesach.</p>
+
         <div class="demo-note">To uproszczona wersja demonstracyjna. Docelowy asystent zna Twoją ofertę, cennik i procedury — dokładnie tak jak Twój najlepszy pracownik.</div>
+
         <div class="audio-demo-row">
+
         <p style="font-size:14px;color:var(--text2);margin-bottom:14px;font-weight:500">👂 Posłuchaj zanim zdecydujesz — jak brzmi Twój asystent AI:</p>
+
         <button class="audio-btn" onclick="playKarolina()" id="audioBtn">
+
           <div class="audio-icon">&#9654;</div>
+
           <span>Posłuchaj Karoliny — 30 sek</span>
+
         </button>
+
         <p class="audio-note">Odtwarzanie przez Twój przeglądarkę · język polski · naturalny głos</p>
+
       </div>
+
         <a href="#cta" class="btn btn-primary" style="margin-top:24px">Chcę taki asystent dla mojej firmy →</a>
+
         <p style="color:var(--text3);font-size:12px;margin-top:12px">To demo demonstracyjne. Twój asystent będzie znał Twoją ofertę, cennik i procedury.</p>
+
       </div>
+
       <div class="reveal">
+
         <div class="demo-chat">
+
           <div class="demo-chat-header">
+
             <div class="demo-av">AI</div>
+
             <div class="demo-av-info">
+
               <span class="demo-av-name">Asystent KREATO.AI</span>
+
               <span class="demo-av-status">Online · gotowy do rozmowy</span>
+
             </div>
+
           </div>
+
           <div class="demo-messages" id="demoMessages">
+
             <div class="dm dm-ai">Cześć! Jestem asystentem demonstracyjnym KREATO.AI. Zapytaj mnie o ceny, usługi, czas wdrożenia lub co możemy zautomatyzować w Twojej firmie 👋</div>
+
           </div>
+
           <div class="demo-suggestions">
+
             <button class="demo-sug" onclick="sendSug(this)">Ile kosztuje voicebot?</button>
+
             <button class="demo-sug" onclick="sendSug(this)">Jak długo trwa wdrożenie?</button>
+
             <button class="demo-sug" onclick="sendSug(this)">Czy to działa po polsku?</button>
+
             <button class="demo-sug" onclick="sendSug(this)">Co można zautomatyzować?</button>
+
           </div>
+
           <div class="demo-input-row">
+
             <input class="demo-input" id="demoInput" placeholder="Zadaj pytanie…" onkeydown="if(event.key==='Enter')sendDemo()">
+
             <button class="demo-send" onclick="sendDemo()">
+
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+
             </button>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- ══ CASES ══ -->
+
 <section id="cases">
+
   <div class="inner reveal">
+
     <div class="section-label">Przykłady zastosowań</div>
+
     <h2>Co AI może przejąć <span class="grad-text">w Twojej firmie</span>?</h2>
+
     <div class="cases-grid">
+
       <div class="case-card">
+
         <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=120&fit=crop&q=80')"></div>
+
         <div class="case-body"><span class="case-tag">Stomatologia</span><h3>Klinika DENT — voicebot rejestruje pacjentów 24/7</h3><p>Asystent odbiera telefony całą dobę, umawia wizyty, wysyła SMS z potwierdzeniem. Recepcja obsługuje pacjentów na miejscu — nie przy telefonie.</p><div class="case-result">Nieodebrane telefony: 0 · oszczędność ~6 000 zł/mies.</div></div>
+
       </div>
+
       <div class="case-card">
+
         <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=400&h=120&fit=crop&q=80')"></div>
+
         <div class="case-body"><span class="case-tag">E-commerce</span><h3>Chatbot obsługi klienta</h3><p>Bot obsługuje 80% zapytań o status zamówienia, zwroty i dostępność. Konsultant dostaje tylko sprawy wymagające decyzji.</p><div class="case-result">80% zapytań automatycznie · czas odpowiedzi: 2 min</div></div>
+
       </div>
+
       <div class="case-card">
+
         <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=120&fit=crop&q=80')"></div>
+
         <div class="case-body"><span class="case-tag">Budowlanka</span><h3>Automatyczne raporty tygodniowe</h3><p>Dane z kilku systemów zbierane automatycznie. Raport trafia do Telegram o 08:00 w poniedziałek — bez ruszania Excela.</p><div class="case-result">4h/tydz. → ~800 zł/mies. oszczędności</div></div>
+
       </div>
+
       <div class="case-card">
+
         <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=120&fit=crop&q=80')"></div>
+
         <div class="case-body"><span class="case-tag">Nieruchomości</span><h3>Kwalifikacja leadów przez AI</h3><p>Lead ze strony WWW → voicebot dzwoni w ciągu 2 min → zbiera wymagania → agent dostaje gotowe podsumowanie.</p><div class="case-result">Czas reakcji: 2 min zamiast 4h · konwersja leadów +40%</div></div>
+
       </div>
+
       <div class="case-card">
+
         <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=400&h=120&fit=crop&q=80')"></div>
+
         <div class="case-body"><span class="case-tag">Usługi B2B</span><h3>Automatyczne follow-up</h3><p>Po rozmowie z klientem n8n automatycznie wysyła podsumowanie, ofertę i termin następnego kontaktu.</p><div class="case-result">100% follow-upów · 0 utraconych szans sprzedaży</div></div>
+
       </div>
+
       <div class="case-card">
+
         <div class="case-img case-img-gradient"></div>
+
         <div class="case-body"><span class="case-tag">Dowolna branża</span><h3>Twój własny przypadek</h3><p>Każda firma ma procesy, które można zautomatyzować. 30 minut rozmowy wystarczy, żeby znaleźć te z najszybszym zwrotem.</p><div class="case-result" style="cursor:pointer" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Bezpłatna analiza procesów</div></div>
+
       </div>
+
     </div>
+
+
 
     <div class="section-cta-row"><a href="#cta" class="btn btn-primary">Chcę taką automatyzację dla mojej firmy →</a></div>
+
   </div>
+
 </section>
 
+
+
 <!-- ══ TESTIMONIALS ══ -->
+
 <section id="testimonials">
+
   <div class="inner reveal">
+
     <div class="section-label">Wyniki wdrożeń</div>
+
     <h2>Co osiągnęły firmy <span class="grad-text">po wdrożeniu AI</span></h2>
+
     <div class="testi-tabs">
+
       <button class="testi-tab active" onclick="filterTesti(this,'all')">Wszystkie</button>
+
       <button class="testi-tab" onclick="filterTesti(this,'klinika')">Kliniki</button>
+
       <button class="testi-tab" onclick="filterTesti(this,'ecommerce')">E-commerce</button>
+
       <button class="testi-tab" onclick="filterTesti(this,'budowlanka')">Budowlanka</button>
+
     </div>
+
     <div class="testi-grid">
+
       <div class="testi-card testi-item" data-industry="klinika">
+
         <div class="testi-stars">★★★★★</div>
+
         <p class="testi-text">„Karolina odbiera wszystkie telefony — nawet w niedzielę wieczorem. Recepcja przestała siedzieć przy słuchawce, pacjenci dostają SMS z potwierdzeniem w ciągu minuty. Wdrożenie trwało 2 dni robocze.”</p>
+
         <div class="testi-author">
+
           <div class="testi-av">MK</div>
+
           <div><div class="testi-name">Marek K.</div><div class="testi-role">Właściciel, Klinika Dentystyczna, Poznań</div></div>
+
         </div>
+
       </div>
+
       <div class="testi-card testi-item" data-industry="ecommerce">
+
         <div class="testi-stars">★★★★★</div>
+
         <p class="testi-text">„Chatbot rozwiązuje 80% zapytań o status zamówienia automatycznie. Konsultant zajmuje się tylko reklamacjami. Czas odpowiedzi: z 4 godzin do 2 minut. Klienci są zachwyceni.”</p>
+
         <div class="testi-author">
+
           <div class="testi-av">AN</div>
+
           <div><div class="testi-name">Anna N.</div><div class="testi-role">CEO, sklep e-commerce, Warszawa</div></div>
+
         </div>
+
       </div>
+
       <div class="testi-card testi-item" data-industry="budowlanka">
+
         <div class="testi-stars">★★★★★</div>
+
         <p class="testi-text">„Raport tygodniowy przychodził do Telegram co poniedziałek o 8:00. Oszczędzamy 4 godziny tygodniowo na ręcznym zbieraniu danych. Polecam każdej firmie budowlanej.”</p>
+
         <div class="testi-author">
+
           <div class="testi-av">PW</div>
+
           <div><div class="testi-name">Piotr W.</div><div class="testi-role">Dyrektor operacyjny, firma budowlana, Kraków</div></div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
+
 
 
 <!-- ══ FAQ ══ -->
+
 <section id="faq">
+
   <div class="inner reveal">
+
     <div class="section-label">FAQ</div>
+
     <h2>Najczęstsze <span class="grad-text">pytania</span></h2>
+
     <div class="faq-list">
+
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)"><span>Czy AI zastąpi moich pracowników?</span><div class="faq-icon">+</div></div>
         <div class="faq-a"><p>Nie — AI przejmuje <strong>powtarzalne czynności</strong>: odbieranie telefonów, odpowiadanie na te same pytania, wysyłanie potwierdzeń. Twój zespół skupia się na tym, co wymaga człowieka: budowanie relacji, decyzje, obsługa trudnych przypadków. Recepcja przestaje siedzieć przy słuchawce, a zaczyna zajmować się pacjentami. W praktyce firmy po wdrożeniu nie zwalniają ludzi — <strong>zwiększają obroty bez zatrudniania nowych</strong>.</p></div>
       </div>      <div class="faq-item">
+
         <div class="faq-q" onclick="toggleFaq(this)"><span>Ile kosztuje wdrożenie AI?</span><div class="faq-icon">+</div></div>
+
         <div class="faq-a"><p>Voicebot i chatbot startują od <strong>299 zł/mies.</strong> (abonament). Jednorazowy koszt konfiguracji zależy od złożoności — dla większości MŚP jest to 1 500–5 000 zł. Prototyp budujemy bezpłatnie — widzisz wyniki zanim podpisujesz cokolwiek.</p></div>
+
       </div>
+
       <div class="faq-item">
+
         <div class="faq-q" onclick="toggleFaq(this)"><span>Jak długo trwa wdrożenie?</span><div class="faq-icon">+</div></div>
+
         <div class="faq-a"><p>Działający prototyp na Twoich danych powstaje w <strong>1–2 dni robocze</strong>. Pełne wdrożenie z integracjami i szkoleniem — 1–2 tygodnie. Nie potrzebujesz dokumentacji technicznej ani specyfikacji — wystarczy opis problemu.</p></div>
+
       </div>
+
       <div class="faq-item">
+
         <div class="faq-q" onclick="toggleFaq(this)"><span>Czy voicebot mówi po polsku?</span><div class="faq-icon">+</div></div>
+
         <div class="faq-a"><p>Tak — w <strong>pełni naturalny język polski</strong>, bez obcego akcentu. Asystent rozumie regionalizmy, skróty i potoczny język biznesowy. Możliwe są też wersje wielojęzyczne: polski + angielski + ukraiński.</p></div>
+
       </div>
+
       <div class="faq-item">
+
         <div class="faq-q" onclick="toggleFaq(this)"><span>Czy muszę mieć własny serwer?</span><div class="faq-icon">+</div></div>
+
         <div class="faq-a"><p>Nie — możemy hostować system na naszej infrastrukturze w ramach abonamentu. Jeśli wolisz pełną kontrolę, wdrożymy na Twoim serwerze (VPS/cloud). Kod należy do Ciebie niezależnie od wyboru.</p></div>
+
       </div>
+
       <div class="faq-item">
+
         <div class="faq-q" onclick="toggleFaq(this)"><span>Co jeśli AI powie coś złego klientowi?</span><div class="faq-icon">+</div></div>
+
         <div class="faq-a"><p>Agent jest <strong>zawsze uprzejmy</strong> i działa tylko w zakresie, który mu zdefiniujesz. Trudne pytania lub niezadowolony klient → przekazuje do człowieka. Przed wdrożeniem przechodzi testy na setkach scenariuszy. Monitorujemy każdą rozmowę.</p></div>
+
       </div>
+
       <div class="faq-item">
+
         <div class="faq-q" onclick="toggleFaq(this)"><span>Czy to zgodne z RODO?</span><div class="faq-icon">+</div></div>
+
         <div class="faq-a"><p>Tak. Wszystkie nasze wdrożenia są zgodne z <strong>RODO, EU AI Act i PKE Art. 398</strong>. Stosujemy klauzule informacyjne, mechanizm zgody i ograniczony czas przechowywania danych. Dostaniesz kompletną dokumentację compliance.</p></div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
+
+
 <!-- ══ PRICING ══ -->
+
 <section id="pricing" style="background:var(--bg1)">
+
   <div class="inner reveal">
+
     <div class="section-label">Cennik</div>
+
     <h2>Przejrzyste ceny — <span class="grad-text">bez niespodzianek</span></h2>
+
     <p style="color:var(--text2);margin-top:12px;font-size:16px;font-weight:300">Umowa miesięczna bez zobowiązań. Ceny netto + VAT. Prototyp zawsze bezpłatny.</p>
+
     <div class="price-grid">
+
       <div class="price-card">
+
         <div class="price-tier">Starter</div>
+
         <div class="price-setup-badge">Setup GRATIS &#x2014; oszczędzasz 1 500 zł</div>
         <div class="price-amt">299 <span style="font-size:20px;font-weight:400">zł</span></div>
-        <div class="price-unit">/mies. + setup od 1 500 zł</div>
+
+        <div class="price-unit">/mies.</div>
+
+        <div style="font-size:11px;color:#10b981;margin-top:4px">&#10003; Setup konfiguracyjny gratis</div>
+
         <ul class="price-feats">
+
           <li>Voicebot AI <strong>lub</strong> Chatbot AI</li>
+
           <li>Polski numer VoIP 24/7</li>
+
           <li>Transkrypty do Telegram/e-mail</li>
+
           <li>Integracja z 1 systemem</li>
+
           <li>Wsparcie e-mail</li>
+
         </ul>
+
         <a href="#cta" class="btn btn-outline" style="width:100%;justify-content:center">Bezpłatny prototyp →</a>
+
       </div>
+
       <div class="price-card featured">
+
         <div class="price-badge">Najpopularniejszy</div>
+
         <div class="price-tier">Pro</div>
+
         <div class="price-amt">599 <span style="font-size:20px;font-weight:400">zł</span></div>
-        <div class="price-unit">/mies. + setup od 3 000 zł</div>
+
+        <div class="price-unit">/mies.</div>
+
+        <div style="font-size:11px;color:#10b981;margin-top:4px">&#10003; Setup + integracje w cenie</div>
+
         <ul class="price-feats">
+
           <li>Voicebot AI <strong>i</strong> Chatbot AI</li>
+
           <li>Nielimitowane rozmowy</li>
+
           <li>SMS potwierdzenia automatyczne</li>
+
           <li>Integracja z CRM, kalendarzem, ERP</li>
+
           <li>Panel zarządzania online</li>
+
           <li>Raportowanie miesięczne</li>
+
           <li>Wsparcie priorytetowe</li>
+
         </ul>
+
         <a href="#cta" class="btn btn-primary" style="width:100%;justify-content:center">Bezpłatny prototyp →</a>
+
       </div>
+
       <div class="price-card">
+
         <div class="price-tier">Enterprise</div>
+
         <div class="price-amt" style="font-size:32px">Indywidualnie</div>
+
         <div class="price-unit">dla sieci i dużych firm</div>
+
         <ul class="price-feats">
+
           <li>Wszystko z Pro</li>
+
           <li>Dedykowany agent AI (n8n)</li>
+
           <li>Własny serwer / on-premise</li>
+
           <li>SLA i wsparcie priorytetowe</li>
+
           <li>Szkolenie zespołu</li>
+
           <li>White-label dla partnerów</li>
+
         </ul>
+
         <a href="#cta" class="btn btn-outline" style="width:100%;justify-content:center">Porozmawiaj →</a>
+
       </div>
+
     </div>
+
     <p style="text-align:center;color:var(--text3);font-size:13px;margin-top:20px">Prototyp budujemy bezpłatnie — płacisz dopiero gdy widzisz działający system na Twoich danych.</p>
+
   </div>
+
 </section>
+
+
+
 
 
 <!-- ══ OBJECTIONS ══ -->
+
 <section id="objections">
+
   <div class="inner reveal">
+
     <div class="section-label">Największa bariera</div>
+
     <h2>Większość firm nie wie, <span class="grad-text">że może mieć AI</span> w przystępnej cenie</h2>
+
     <div class="obj-grid">
+
       <div class="obj-item"><div class="obj-myth"><span class="obj-x">✕</span><p>„AI to dla dużych firm, nas na to nie stać."</p></div><div class="obj-truth"><span class="obj-check">✓</span><p><strong>Już nie.</strong> Voicebot startuje od 299 zł/mies. — mniej niż jeden dzień pracy konsultanta. MŚP to nasz główny klient.</p></div></div>
+
       <div class="obj-item"><div class="obj-myth"><span class="obj-x">✕</span><p>„Mamy już system, wszystko mamy."</p></div><div class="obj-truth"><span class="obj-check">✓</span><p>System ogarnia rdzeń. Ale <strong>obsługa po godzinach, raporty, follow-upy</strong> — to dzieje się obok. Tam jest Twoja luka.</p></div></div>
+
       <div class="obj-item"><div class="obj-myth"><span class="obj-x">✕</span><p>„To pewnie trwa miesiące i kosztuje fortuny."</p></div><div class="obj-truth"><span class="obj-check">✓</span><p>Kiedyś tak. Dziś <strong>działający prototyp w 1–2 dni</strong>. Widzisz wyniki zanim podpiszesz cokolwiek.</p></div></div>
+
       <div class="obj-item"><div class="obj-myth"><span class="obj-x">✕</span><p>„Boimy się, że AI będzie rozmawiać źle z klientami."</p></div><div class="obj-truth"><span class="obj-check">✓</span><p>Agent jest <strong>zawsze uprzejmy, zawsze taki sam</strong>. Trudne sprawy przekazuje do człowieka. Testujesz przed wdrożeniem.</p></div></div>
+
     </div>
+
   </div>
+
 </section>
 
+
+
 <!-- ══ FOUNDER ══ -->
+
 <section id="founder" style="background:var(--bg1)">
+
   <div class="inner reveal">
+
     <div class="section-label">Kim jesteśmy</div>
+
     <h2>Kupujesz od <span class="grad-text">człowieka</span> — nie od korporacji</h2>
+
     <div class="founder-grid">
+
       <div class="founder-av">AR</div>
+
       <div>
+
         <div class="founder-name">Anatol Romanchyshen</div>
+
         <div class="founder-role">Założciel KREATO.AI</div>
+
         <p class="founder-bio">
+
           Przez <strong>10 lat</strong> budowniczy systemów automatyzacji dla firm w Polsce i Ukrainie.
+
           Wdrożyłem ponad <strong>80 projektów AI i n8n</strong> — od małych gabinetow po
+
           sieci klinik. Sam odbieram telefon pod <strong>+48 733 245 757</strong> —
+
           bo wiem, że za każdym biznesem stoi człowiek, który chce po prostu żeby działało.
+
         </p>
+
         <div class="founder-facts">
+
           <div class="ff-item"><div class="ff-num">80+</div><div class="ff-lbl">wdrożeń AI</div></div>
+
           <div class="ff-item"><div class="ff-num">10 lat</div><div class="ff-lbl">w automatyzacji</div></div>
+
           <div class="ff-item"><div class="ff-num">24/7</div><div class="ff-lbl">dostępny</div></div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
+
 
 
 <!-- ══ LEAD MAGNET ══ -->
+
 <section id="lead-magnet">
+
   <div class="lm-inner reveal">
+
     <div class="badge"><span class="badge-dot"></span>Bezpłatnie · natychmiastowy dostęp</div>
+
     <h2 class="lm-title">Pobierz: <span class="grad-text">7 procesów do automatyzacji</span><br>w Twojej firmie</h2>
+
     <p class="lm-sub">Przykłady z klinik, e-commerce i B2B — z konkretnymi wyliczeniami czasu i pieniędzy. Widzisz które procesy są do automatyzacji i co zyskujesz.</p>
+
     <div id="lmWrap">
+
       <div class="lm-row">
+
         <input class="lm-input" type="email" placeholder="Twój e-mail" id="lmEmail">
+
         <button class="btn btn-primary" onclick="submitLead()">Wyślij PDF →</button>
+
       </div>
+
       <div class="lm-items">
+
         <span class="lm-item">7 gotowych przykładów</span>
+
         <span class="lm-item">Wyliczenia ROI</span>
+
         <span class="lm-item">Bez spamu</span>
+
         <span class="lm-item">Odstąp kiedy chcesz</span>
+
       </div>
+
     </div>
+
     <div class="lm-success" id="lmSuccess">Gotowe! Sprawdź skrzynkę — PDF już leci. Do zobaczenia!</div>
+
   </div>
+
 </section>
+
+
 
 <!-- ══ CTA + FORM ══ -->
+
 <section id="cta">
+
   <div class="inner">
+
     <div class="cta-head reveal">
+
       <div class="badge"><span class="badge-dot"></span>Bezpłatnie · Bez zobowiązań · Przyjmujemy 3–4 projekty/mies.</div>
+
       <h2>Opisz swój <span class="grad-text">proces</span>.<br>Pokażemy, co może przejąć AI.</h2>
+
       <p>Wystarczy 30 minut rozmowy, żeby sprawdzić, które procesy dają się zamienić w dedykowany system AI. Otrzymasz konkretny plan i orientacyjny koszt — za darmo.</p>
+
     </div>
+
     <div class="cta-grid reveal">
+
       <div class="contact-form">
+
         <h3>Wyślij zapytanie</h3>
+
         <div id="contactFormWrap">
+
           <form onsubmit="submitForm(event)">
+
             <div class="form-group">
+
               <label class="form-label">Imię i nazwa firmy *</label>
+
               <input class="form-input" name="name" placeholder="Jan Kowalski / Firma ABC" required>
+
             </div>
+
             <div class="form-group">
+
               <label class="form-label">Telefon *</label>
+
               <input class="form-input" name="phone" type="tel" placeholder="+48 000 000 000" required>
+
             </div>
+
             <div class="form-group">
+
               <label class="form-label">Email</label>
+
               <input class="form-input" name="email" type="email" placeholder="jan@firma.pl">
+
             </div>
+
             <div class="form-group">
+
               <label class="form-label">Opisz swój proces lub problem</label>
+
               <textarea class="form-textarea" name="message" placeholder="Np. prowadzimy klinikę stomatologiczną, odbieramy ok. 40 telefonów dziennie, połowa poza godzinami pracy. Chcielibyśmy żeby asystent rejestrował wizyty i wysyłał SMS z potwierdzeniem..."></textarea>
+
             </div>
+
             <div class="form-group" style="margin-top:4px">
+
               <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px;color:var(--text2);font-weight:300;line-height:1.6">
+
                 <input type="checkbox" name="rodo" required style="margin-top:3px;flex-shrink:0;accent-color:var(--purple)">
+
                 Wyrażam zgodę na przetwarzanie moich danych osobowych przez KREATO.AI w celu odpowiedzi na zapytanie, zgodnie z <a href="/polityka-prywatnosci.html" target="_blank" style="color:var(--purple)">Polityką prywatności</a> i RODO. Zgoda dobrowolna.
+
               </label>
+
             </div>
+
             <button type="submit" class="form-submit">Wyślij zapytanie →</button>
+
           </form>
+
         </div>
+
         <div class="form-success" id="formSuccess">
+
           <p>✓ Dziękujemy!</p>
+
           <span>Odpiszemy w ciągu 24 godzin. Możesz też zadzwonić bezpośrednio:</span>
+
           <br><br>
+
           <a href="tel:+48733245757" class="btn btn-primary" style="width:100%;justify-content:center">+48 733 245 757</a>
+
         </div>
+
       </div>
+
       <div class="contact-info">
+
         <h3>Lub skontaktuj się bezpośrednio</h3>
+
         <p>Odpowiadamy w ciągu <strong>2 godzin</strong>. W tym tygodniu mamy jeszcze wolne miejsce — zarezerwuj rozmowę teraz.</p>
+
         <a href="tel:+48733245757" class="contact-card-v">
+
           <div class="ccv-icon">📞</div>
+
           <div><div class="ccv-label">Telefon</div><div class="ccv-val">+48 733 245 757</div></div>
+
         </a>
+
         <a href="https://wa.me/48733245757?text=Dzień dobry! Chciałbym dowiedzieć się więcej o KREATO.AI" target="_blank" class="contact-card-v">
+
           <div class="ccv-icon">💬</div>
+
           <div><div class="ccv-label">WhatsApp</div><div class="ccv-val">Napisz teraz →</div></div>
+
         </a>
+
         <a href="mailto:kontakt@kreato.ai" class="contact-card-v">
+
           <div class="ccv-icon">✉️</div>
+
           <div><div class="ccv-label">Email</div><div class="ccv-val">kontakt@kreato.ai</div></div>
+
         </a>
+
         <div class="contact-trust">
+
           <div class="trust-item">Odpowiadamy w ciągu 24h</div>
+
           <div class="trust-item">Prototyp bezpłatnie — widzisz zanim płacisz</div>
+
           <div class="trust-item">Bez długoletnich umów — miesięczny abonament</div>
+
           <div class="trust-item">Polska obsługa — rozumiemy lokalny rynek</div>
 
+
+
         <div class="guarantee-strip">
+
           <strong>✓ Gwarancja zerowego ryzyka</strong>
+
           <p>Jeśli prototyp Cię nie przekona — nie płacisz nic.<br>Decyzja po zobaczeniu działającego systemu, nie przed.</p>
+
         </div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
+
+
 <!-- ══ FOOTER ══ -->
+
 <footer>
+
   <div class="footer-grid">
+
     <div class="footer-brand">
+
       <span class="footer-logo">KREATO.AI</span>
+
       <p>Budujemy voiceboty, chatboty i systemy automatyzacji AI dla polskich firm. Prototyp w 48h, od 299 zł/mies.</p>
+
       <div class="footer-socials">
+
         <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn">
+
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8 19H5V8h3v11zM6.5 6.7c-1 0-1.7-.8-1.7-1.7s.7-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/></svg>
+
         </a>
+
         <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social" aria-label="YouTube">
+
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+
         </a>
+
         <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook">
+
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+
         </a>
+
       </div>
+
     </div>
+
     <div class="footer-col">
+
       <h4>Usługi</h4>
+
       <ul>
+
         <li><a href="#services">Voicebot AI</a></li>
+
         <li><a href="#services">Chatbot AI</a></li>
+
         <li><a href="#services">Automatyzacja n8n</a></li>
+
         <li><a href="#services">Dedykowane narzędzia</a></li>
+
       </ul>
+
     </div>
+
     <div class="footer-col">
+
       <h4>Firma</h4>
+
       <ul>
+
         <li><a href="#process">Jak działamy</a></li>
+
         <li><a href="#cases">Case studies</a></li>
+
         <li><a href="#faq">FAQ</a></li>
+
         <li><a href="#cta">Kontakt</a></li>
+
         <li><a href="polityka-prywatnosci.html" target="_blank">Polityka prywatności</a></li>
+
       </ul>
+
     </div>
+
     <div class="footer-col">
+
       <h4>Dla sektorów</h4>
+
       <ul>
+
         <li><a href="dla-klinik.html">🏥 Kliniki i gabinety</a></li>
+
         <li><a href="dla-ecommerce.html">🛒 E-commerce</a></li>
+
         <li><a href="agenci.html">🤝 Usługi B2B</a></li>
+
         <li><a href="diagnosta.html" style="color:var(--purple);font-weight:700">🔬 Diagnoza AI (gratis)</a></li>
+
       </ul>
+
     </div>
+
   </div>
+
   <div class="footer-bottom">
+
     <div class="footer-b2b"><span>Faktura VAT</span><span>Umowa miesięczna · bez wiązania</span><span>RODO-compliant</span><span>Działalność gospodarcza PL</span></div>
+
   <div class="footer-copy">© 2026 KREATO.AI · Polska · <a href="tel:+48733245757" style="color:var(--text3);text-decoration:none">+48 733 245 757</a></div>
+
     <a href="#" class="back-to-top" aria-label="Powrót na górę">
+
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+
     </a>
+
   </div>
+
 </footer>
 
+
+
 <script>
+
 /* ── REVEAL ON SCROLL ── */
+
 const obs = new IntersectionObserver(entries=>{
+
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+
 },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
+
+
 /* Stagger grid children */
+
 ['problems-grid','why-grid','services-grid','cases-grid','obj-grid','process-steps'].forEach(cls=>{
+
   const grid = document.querySelector('.'+cls);
+
   if(!grid) return;
+
   Array.from(grid.children).forEach((c,i)=>{
+
     c.style.transitionDelay = (i*0.07)+'s';
+
     c.classList.add('reveal');
+
     obs.observe(c);
+
   });
+
 });
+
+
 
 /* ── HAMBURGER ── */
+
 const burger = document.getElementById('hamburger');
+
 const overlay = document.getElementById('navOverlay');
+
 const overlayClose = document.getElementById('overlayClose');
+
 function openNav(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+
 function closeNav(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+
 burger.addEventListener('click', openNav);
+
 overlayClose.addEventListener('click', closeNav);
+
 overlay.addEventListener('click', e=>{ if(e.target===overlay) closeNav(); });
 
+
+
 /* ── FLOATING WIDGET ── */
+
 const floatBtn = document.getElementById('floatBtn');
+
 const floatPopup = document.getElementById('floatPopup');
+
 function closeFloat(){ floatPopup.classList.remove('open'); }
+
 floatBtn.addEventListener('click', ()=>floatPopup.classList.toggle('open'));
+
 document.addEventListener('click', e=>{
+
   if(!e.target.closest('.float-widget')) floatPopup.classList.remove('open');
+
 });
+
+
 
 /* ── SMOOTH SCROLL (all # links) ── */
+
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
+
   a.addEventListener('click', e=>{
+
     const id = a.getAttribute('href');
+
     if(id==='#' || id===''){ e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); return; }
+
     const el = document.querySelector(id);
+
     if(el){ e.preventDefault(); const top = el.getBoundingClientRect().top + scrollY - 64; window.scrollTo({top,behavior:'smooth'}); }
+
   });
+
 });
 
+
+
 /* ── FAQ ACCORDION ── */
+
 function toggleFaq(el){
+
   const item = el.closest('.faq-item');
+
   const isOpen = item.classList.contains('open');
+
   document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+
   if(!isOpen) item.classList.add('open');
+
 }
+
+
 
 /* ── CONTACT FORM ── */
+
 async function submitForm(e){
+
   e.preventDefault();
+
   const btn = e.target.querySelector('button[type="submit"]');
+
   const orig = btn.textContent; btn.textContent = 'Wysyłanie…'; btn.disabled = true;
+
   const fd = new FormData(e.target);
+
   try {
+
     const r = await fetch('https://formsubmit.co/ajax/biuro.stalsystem.pl@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:fd});
+
     const d = await r.json();
+
     if(d.success==='true'||d.success===true){
+
       document.getElementById('contactFormWrap').style.display='none';
+
       document.getElementById('formSuccess').style.display='block';
+
     } else { btn.textContent=orig; btn.disabled=false; alert('Błąd. Zadzwoń: +48 733 245 757'); }
+
   } catch(err){
+
     btn.textContent=orig; btn.disabled=false;
+
     window.location.href='mailto:kontakt@kreato.ai?subject=Zapytanie&body='+encodeURIComponent((fd.get('name')||'')+' | '+(fd.get('phone')||''));
+
   }
+
 }
 
+
+
 /* ── DEMO CHATBOT ── */
+
 const demoAnswers = {
+
   'cena':      'Voicebot i chatbot startują od <strong>299 zł/mies.</strong> Prototyp budujemy bezpłatnie — płacisz dopiero gdy widzisz działający system. Cena wdrożenia zależy od złożoności: typowo 1 500–5 000 zł jednorazowo.',
+
   'koszt':     'Voicebot i chatbot startują od <strong>299 zł/mies.</strong> Prototyp budujemy bezpłatnie — płacisz dopiero gdy widzisz działający system. Cena wdrożenia zależy od złożoności: typowo 1 500–5 000 zł jednorazowo.',
+
   'ile':       'Voicebot i chatbot startują od <strong>299 zł/mies.</strong> Prototyp budujemy bezpłatnie — płacisz dopiero gdy widzisz działający system.',
+
   'czas':      'Prototyp działającego systemu na Twoich danych powstaje w <strong>1–2 dni robocze</strong>. Pełne wdrożenie z integracjami — 1–2 tygodnie. Zaczynamy od 30-minutowej rozmowy.',
+
   'długo':     'Prototyp działającego systemu na Twoich danych powstaje w <strong>1–2 dni robocze</strong>. Pełne wdrożenie z integracjami — 1–2 tygodnie.',
+
   'termin':    'Prototyp działającego systemu na Twoich danych powstaje w <strong>1–2 dni robocze</strong>. Pełne wdrożenie z integracjami — 1–2 tygodnie.',
+
   'polski':    'Tak — voicebot mówi w <strong>pełni naturalnym języku polskim</strong>, bez obcego akcentu. Rozumie regionalizmy i potoczny język biznesowy. Możliwe też wersje wielojęzyczne.',
+
   'polsku':    'Tak — voicebot mówi w <strong>pełni naturalnym języku polskim</strong>, bez obcego akcentu. Rozumie regionalizmy i potoczny język biznesowy.',
+
   'klinik':    'Tak — specjalizujemy się we wdrożeniach dla klinik i gabinetów. Voicebot Karolina rejestruje wizyty, potwierdza je SMS-em i przekazuje dane do Twojego systemu. Pierwsze wdrożenie dla gabinetu stomatologa — prototyp w 48h.',
+
   'stomatolog': 'Tak — specjalizujemy się we wdrożeniach dla stomatologów. Voicebot Karolina odbiera telefony 24/7, umawia wizyty, wysyła SMS z potwierdzeniem. Recepcja może skupić się na pacjentach na miejscu.',
+
   'gabinet':    'Tak — wdrażamy AI dla gabinetów i klinik. Voicebot rejestruje wizyty całą dobę, chatbot odpowiada na pytania o cennik i dostępność. Prototyp w 48h, od 299 zł/mies.',
+
   'voicebot':  'Voicebot Karolina odbiera i wykonuje telefony 24/7. Po każdej rozmowie automatycznie trafia transkrypt i notatka do CRM lub Telegram. Pełna zgodność z RODO i PKE Art. 398.',
+
   'chatbot':   'Chatbot AI zna Twoją ofertę na pamięć — odpowiada na pytania klientów, kwalifikuje leady i przekazuje gorące kontakty do Twojego zespołu. Integruje się z Messengerem, WhatsApp i stroną WWW.',
+
   'n8n':       'n8n to narzędzie do automatyzacji procesów — łączymy Twoje systemy i eliminujemy ręczną pracę. Automatyczne raporty, synchronizacja CRM/ERP, powiadomienia Telegram — wszystko działa samo.',
+
   'automatyz': 'Najczęściej automatyzujemy: odbieranie telefonów, kwalifikację leadów, raporty z danych, synchronizację systemów, follow-upy po spotkaniach i wysyłkę dokumentów. Co chcesz zautomatyzować u siebie?',
+
   'rodo':      'Tak — wszystkie wdrożenia są w pełni zgodne z <strong>RODO, EU AI Act i PKE Art. 398</strong>. Stosujemy klauzule informacyjne, mechanizm zgody i ograniczony czas przechowywania. Dostaniesz pełną dokumentację compliance.',
+
   'serwer':    'Nie musisz mieć własnego serwera — możemy hostować system w ramach abonamentu. Jeśli wolisz pełną kontrolę, wdrożymy na Twoim VPS/cloud. Kod należy do Ciebie niezależnie od wyboru.',
+
   'default':   'Dziękuję za pytanie! Żeby dać Ci konkretną odpowiedź, najlepiej umówić 30-minutową rozmowę. <strong><a href="#cta" onclick="document.getElementById(\'cta\').scrollIntoView({behavior:\'smooth\'});return false;" style="color:var(--purple)">Kliknij tutaj →</a></strong> lub zadzwoń: <strong>+48 733 245 757</strong>'
+
 };
+
+
 
 function sendSug(btn){ document.getElementById('demoInput').value = btn.textContent; sendDemo(); }
 
+
+
 function sendDemo(){
+
   const input = document.getElementById('demoInput');
+
   const text = input.value.trim();
+
   if(!text) return;
+
   const msgs = document.getElementById('demoMessages');
+
   // user msg
+
   const um = document.createElement('div');
+
   um.className = 'dm dm-user'; um.textContent = text; msgs.appendChild(um);
+
   input.value = '';
+
   msgs.scrollTop = msgs.scrollHeight;
+
   // typing indicator
+
   const typing = document.createElement('div');
+
   typing.className = 'dm dm-ai'; typing.innerHTML = '<span style="display:flex;gap:3px;align-items:center"><span style="width:5px;height:5px;border-radius:50%;background:var(--purple);animation:bounce .9s ease-in-out infinite;display:inline-block"></span><span style="width:5px;height:5px;border-radius:50%;background:var(--purple);animation:bounce .9s ease-in-out .15s infinite;display:inline-block"></span><span style="width:5px;height:5px;border-radius:50%;background:var(--purple);animation:bounce .9s ease-in-out .3s infinite;display:inline-block"></span></span>';
+
   msgs.appendChild(typing);
+
   msgs.scrollTop = msgs.scrollHeight;
+
   // find answer
+
   const low = text.toLowerCase();
+
   let ans = demoAnswers.default;
+
   for(const [k,v] of Object.entries(demoAnswers)){
+
     if(k!=='default' && low.includes(k)){ ans=v; break; }
+
   }
+
   setTimeout(()=>{
+
     typing.remove();
+
     const am = document.createElement('div');
+
     am.className = 'dm dm-ai'; am.innerHTML = ans; msgs.appendChild(am);
+
     msgs.scrollTop = msgs.scrollHeight;
+
   }, 1200);
+
 }
 
+
+
 /* ── NAV ACTIVE ON SCROLL ── */
+
 const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
 const secIds = ['problems','solution','why','process','services','stats','demo','cases','faq','objections','cta'];
+
 const sectionEls = secIds.map(id=>document.getElementById(id)).filter(Boolean);
+
 const scrollSpy = new IntersectionObserver(entries=>{
+
   entries.forEach(e=>{
+
     if(e.isIntersecting){
+
       navLinks.forEach(a=>a.style.color='');
+
       const active = document.querySelector('.nav-links a[href="#'+e.target.id+'"]');
+
       if(active) active.style.color='var(--text)';
+
     }
+
   });
+
 },{threshold:.4});
+
 sectionEls.forEach(s=>scrollSpy.observe(s));
+
 </script>
 
+
+
 <!-- COOKIE BANNER (RODO / ePrivacy) -->
+
 <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(12,18,33,.97);backdrop-filter:blur(16px);border-top:1px solid rgba(139,92,246,.25);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+
   <p style="margin:0;font-size:13px;color:#94a3b8;font-weight:300;flex:1;min-width:200px">Ta strona używa plików cookie do celów analitycznych i marketingowych. <a href="/polityka-prywatnosci.html" style="color:var(--purple)">Polityka prywatności</a></p>
+
   <div style="display:flex;gap:8px;flex-shrink:0">
+
     <button onclick="cookieDecline()" style="background:none;border:1px solid rgba(255,255,255,.15);color:#94a3b8;padding:8px 16px;border-radius:8px;font-size:13px;cursor:pointer">Tylko niezbędne</button>
+
     <button onclick="cookieAccept()" style="background:linear-gradient(135deg,#8b5cf6,#3b82f6);border:none;color:#fff;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer">Akceptuj</button>
+
   </div>
+
 </div>
+
 <script>
+
 (function(){
+
   var c = localStorage.getItem('cookieConsent');
+
   if(!c){ var b=document.getElementById('cookieBanner'); if(b) b.style.display='flex'; }
+
   else if(c==='accepted'){ /* loadTrackers(); */ }
+
 })();
+
 function cookieAccept(){ localStorage.setItem('cookieConsent','accepted'); var b=document.getElementById('cookieBanner'); if(b) b.style.display='none'; /* loadTrackers(); */ }
+
 function cookieDecline(){ localStorage.setItem('cookieConsent','declined'); var b=document.getElementById('cookieBanner'); if(b) b.style.display='none'; }
 
 
+
+
+
 /* ── ROI CALCULATOR ── */
+
 function calcRoi(){
+
   const calls = +document.getElementById('r-calls').value;
+
   const miss = +document.getElementById('r-miss').value;
+
   const val = +document.getElementById('r-val').value;
+
   document.getElementById('v-calls').textContent = calls;
+
   document.getElementById('v-miss').textContent = miss + '%';
+
   document.getElementById('v-val').textContent = val.toLocaleString('pl') + ' zł';
+
   const missedPerDay = Math.round(calls * miss / 100);
+
   const converted = Math.round(missedPerDay * 0.3);
+
   const lossMonth = Math.round(converted * val * 22);
+
   const savedMonth = Math.round(lossMonth - 299);
+
   document.getElementById('roi-loss').textContent = lossMonth.toLocaleString('pl') + ' zł';
+
   document.getElementById('roi-saved').textContent = savedMonth.toLocaleString('pl') + ' zł';
+
   const months = lossMonth > 0 ? (299 / lossMonth * 30).toFixed(0) : '?';
+
   document.getElementById('roi-payback').textContent = months + ' dni';
+
   var ctaBtn=document.getElementById('roiCtaBtn');if(ctaBtn){ctaBtn.textContent='Odzyskaj '+lossMonth.toLocaleString('pl')+' zł/mies. z Karoliną \u2192';}
+
 }
+
+
 
 /* ── AUDIO DEMO (Web Speech API) ── */
+
 function playKarolina(){
+
   const btn = document.getElementById('audioBtn');
+
   if(window.speechSynthesis && window.speechSynthesis.speaking){
+
     window.speechSynthesis.cancel();
+
     btn.querySelector('span').textContent = 'Posłuchaj Karoliny — 30 sek';
+
     btn.querySelector('.audio-icon').innerHTML = '&#9654;';
+
     return;
+
   }
+
   if(!window.speechSynthesis){ alert('Twój przeglądarka nie obsługuje odtwarzania mowy. Spróbuj Chrome.'); return; }
+
   const text = 'Dzień dobry, tu Karolina, asystentka firmy. Jak mogę pomóc? Rozumiem, chce Pan umówić wizytę. Mamy wolne terminy w czwartek o czternastej lub w piątek o dziesiątej trzydzieści. Który termin Panu odpowiada? Imię i numer kontaktowy proszę. Dziękuję. Potwierdzenie SMS wysyłam od razu.';
+
   const u = new SpeechSynthesisUtterance(text);
+
   u.lang = 'pl-PL'; u.rate = 0.88; u.pitch = 1.05;
+
   const loadVoices = ()=>{
+
     const voices = window.speechSynthesis.getVoices();
+
     const pl = voices.find(v=>v.lang.startsWith('pl'));
+
     if(pl) u.voice = pl;
+
   };
+
   loadVoices();
+
   window.speechSynthesis.onvoiceschanged = loadVoices;
+
   btn.querySelector('span').textContent = 'Zatrzymaj odtwarzanie';
+
   btn.querySelector('.audio-icon').innerHTML = '&#9646;&#9646;';
+
   u.onend = ()=>{ btn.querySelector('span').textContent = 'Posłuchaj Karoliny — 30 sek'; btn.querySelector('.audio-icon').innerHTML = '&#9654;'; };
+
   window.speechSynthesis.speak(u);
+
 }
+
+
 
 /* ── LEAD MAGNET ── */
+
 async function submitLead(){
+
   const email = document.getElementById('lmEmail').value.trim();
+
   if(!email || !email.includes('@')){ document.getElementById('lmEmail').style.borderColor='#ef4444'; return; }
+
   try{
+
     const fd = new FormData();
+
     fd.append('email', email);
+
     fd.append('_subject', 'Lead Magnet — KREATO.AI PDF');
+
     fd.append('source', 'lead-magnet-strip');
+
     await fetch('https://formsubmit.co/ajax/biuro.stalsystem.pl@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:fd});
+
   }catch(e){}
+
   document.getElementById('lmWrap').style.display='none';
+
   document.getElementById('lmSuccess').style.display='block';
+
 }
+
+
 
 /* ── EXIT INTENT ── */
+
 function closeExit(){ document.getElementById('exit-popup').classList.remove('show'); }
+
 async function submitExit(){
+
   const email = document.getElementById('exitEmail').value.trim();
+
   if(!email || !email.includes('@')){ document.getElementById('exitEmail').style.borderColor='#ef4444'; return; }
+
   try{
+
     const fd = new FormData();
+
     fd.append('email', email);
+
     fd.append('_subject', 'Exit Popup Lead — KREATO.AI');
+
     fd.append('source', 'exit-popup');
+
     await fetch('https://formsubmit.co/ajax/biuro.stalsystem.pl@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:fd});
+
   }catch(e){}
+
   document.getElementById('exitFormWrap').style.display='none';
+
   document.getElementById('exitSuccess').style.display='block';
+
   setTimeout(closeExit, 2500);
+
 }
+
 let exitDone = false;
+
 document.addEventListener('mouseleave', e=>{
+
   if(e.clientY < 5 && !exitDone && !sessionStorage.getItem('exitSeen')){
+
     exitDone = true; sessionStorage.setItem('exitSeen','1');
+
     setTimeout(()=>document.getElementById('exit-popup').classList.add('show'), 300);
+
   }
+
 });
+
 document.getElementById('exit-popup').addEventListener('click', e=>{ if(e.target===document.getElementById('exit-popup')) closeExit(); });
 
+
+
 /* ── SMART DESKTOP STICKY ── */
+
 (function(){
+
   const sticky = document.getElementById('desk-sticky');
+
   const msg = document.getElementById('dsMsg');
+
   const sectionMsgs = [
+
     {id:'problems', txt:'<strong>Rozpoznajesz te problemy?</strong> Porozmawiajmy —'},
+
     {id:'compare', txt:'<strong>KREATO.AI wygrywa w każdej kategorii.</strong> Przekonaj się —'},
+
     {id:'why', txt:'<strong>5–10× tańszy od etatu,</strong> dostępny 24/7 —'},
+
     {id:'roi-calc', txt:'<strong>Policz ile tracisz.</strong> Prototyp zwraca się w tydzień —'},
+
     {id:'services', txt:'<strong>Voicebot, chatbot lub automatyzacja</strong> — dopasujemy —'},
+
     {id:'cases', txt:'<strong>Chcesz podobne wyniki?</strong> Bezpłatna analiza —'},
+
     {id:'testimonials', txt:'<strong>Dołącz do zadowolonych klientów</strong> —'},
+
     {id:'pricing', txt:'<strong>Zacznij od bezpłatnego prototypu.</strong> Bez ryzyka —'},
+
   ];
+
   let scrolled = false;
+
   window.addEventListener('scroll', ()=>{
+
     const y = window.scrollY;
+
     if(y > 300){ sticky.classList.add('ds-on'); scrolled = true; } else { sticky.classList.remove('ds-on'); }
+
     if(!scrolled) return;
+
     const cta = document.getElementById('cta');
+
     if(cta){
+
       const r = cta.getBoundingClientRect();
+
       if(r.top < window.innerHeight && r.bottom > 0){ sticky.classList.remove('ds-on'); return; }
+
     }
+
     for(let i = sectionMsgs.length-1; i>=0; i--){
+
       const el = document.getElementById(sectionMsgs[i].id);
+
       if(el && el.getBoundingClientRect().top < window.innerHeight/2){
+
         msg.innerHTML = sectionMsgs[i].txt; break;
+
       }
+
     }
+
   });
+
 })();
+
+
 
 </script>
 
+
+
 <!-- DESKTOP STICKY -->
+
 <div id="desk-sticky">
+
   <span class="ds-msg" id="dsMsg"><strong>Twoja firma nigdy nie straci klienta.</strong> Sprawdź za darmo —</span>
+
   <a href="#cta" class="btn btn-primary" style="font-size:13px;padding:10px 20px;white-space:nowrap">Bezpłatna konsultacja →</a>
+
+        <div style="margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:left">
+
+          <div style="background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);border-radius:10px;padding:12px 14px">
+
+            <div style="font-size:18px;margin-bottom:6px">&#129302;</div>
+
+            <div style="font-size:12px;font-weight:700;color:#f1f5f9;margin-bottom:3px">Działający voicebot</div>
+
+            <div style="font-size:11px;color:#94a3b8">na Twoich danych i procesach</div>
+
+          </div>
+
+          <div style="background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);border-radius:10px;padding:12px 14px">
+
+            <div style="font-size:18px;margin-bottom:6px">&#9889;</div>
+
+            <div style="font-size:12px;font-weight:700;color:#f1f5f9;margin-bottom:3px">W 48 godzin</div>
+
+            <div style="font-size:11px;color:#94a3b8">do pierwszego działającego demo</div>
+
+          </div>
+
+          <div style="background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);border-radius:10px;padding:12px 14px">
+
+            <div style="font-size:18px;margin-bottom:6px">&#128274;</div>
+
+            <div style="font-size:12px;font-weight:700;color:#f1f5f9;margin-bottom:3px">Bez zobowiązań</div>
+
+            <div style="font-size:11px;color:#94a3b8">płacisz dopiero gdy widzisz efekt</div>
+
+          </div>
+
+        </div>
+
 </div>
 
+
+
 <!-- EXIT INTENT POPUP -->
+
 <div id="exit-popup">
+
   <div class="exit-card">
+
     <button class="exit-close" onclick="closeExit()">&times;</button>
+
     <div class="badge" style="margin-bottom:16px"><span class="badge-dot"></span>Zanim wyjdziesz</div>
+
     <h3>Wyślemy Ci <span class="grad-text">bezpłatny plan</span><br>automatyzacji</h3>
+
     <p>Zostaw e-mail — odeślemy konkretny plan tego, co można zautomatyzować w firmie z Twojej branży. Zero zobowiązań, odpiszemy w 2 godziny.</p>
+
     <div id="exitFormWrap">
+
       <div class="exit-row">
+
         <input class="exit-input" type="email" placeholder="Twój e-mail" id="exitEmail">
+
         <button class="btn btn-primary" onclick="submitExit()">Wyślij →</button>
+
       </div>
+
       <p style="font-size:12px;color:var(--text3);margin-top:10px">Lub zadzwoń teraz: <a href="tel:+48733245757" style="color:var(--purple)">+48 733 245 757</a></p>
+
     </div>
+
     <div id="exitSuccess" style="display:none;color:var(--green);font-weight:700;font-size:15px;padding:12px 0">Dziękujemy! Odezwiemy się w ciągu 2 godzin.</div>
+
   </div>
+
 </div>
+
+
+
 
 
 <!-- Toast area -->
+
 <div id="toast-area"></div>
 
+
+
 <!-- Callback float -->
+
 <button id="callback-float" onclick="openCb()">📞 Zadzwonimy w 30 min</button>
 
+
+
 <!-- Callback modal -->
+
 <div id="cb-modal">
+
   <div class="cb-box">
+
     <button class="cb-close-btn" onclick="closeCb()">×</button>
+
     <h3>Oddzwonimy do Ciebie</h3>
+
     <p class="cb-desc">Zostaw numer — konsultant zadzwoni w ciągu 30 minut (pon–pt, 8:00–17:00).</p>
+
     <form id="cb-form" onsubmit="submitCb(event)">
+
       <input class="cb-inp" type="tel" id="cb-phone" placeholder="+48 700 000 000" required />
+
       <button class="cb-btn" type="submit">Zadzwóńcie do mnie →</button>
+
     </form>
+
     <div class="cb-ok" id="cb-ok">✓ Otrzymaliśmy Twój numer — oddzwonimy wkrótce!</div>
+
   </div>
+
 </div>
 
+
+
 <script>
+
 // Callback
+
 function openCb(){document.getElementById("cb-modal").classList.add("open")}
+
 function closeCb(){document.getElementById("cb-modal").classList.remove("open")}
+
 document.getElementById("cb-modal").addEventListener("click",function(e){if(e.target===this)closeCb()})
+
 function submitCb(e){
+
   e.preventDefault();
+
   var ph=document.getElementById("cb-phone").value;
+
   fetch("https://formsubmit.co/ajax/biuro.stalsystem.pl@gmail.com",{
+
     method:"POST",
+
     headers:{"Content-Type":"application/json","Accept":"application/json"},
+
     body:JSON.stringify({_subject:"KREATO Callback",telefon:ph,_template:"table"})
+
   }).catch(function(){});
+
   document.getElementById("cb-form").style.display="none";
+
   document.getElementById("cb-ok").style.display="block";
+
   setTimeout(closeCb,2800);
+
 }
+
 setTimeout(function(){
+
   if(window.innerWidth>=761){
+
     var f=document.getElementById("callback-float");
+
     if(f)f.style.display="flex";
+
   }
+
 },18000);
 
+
+
 // Social proof toasts
+
 var _td=[{av:"AK",name:"Agnieszka K.",msg:"zapisała się na konsultację · przed chwilą"},
+
 {av:"MJ",name:"Marek J.",msg:"zamówił voicebota AI · 2 minuty temu"},
+
 {av:"KW",name:"Klinika Wrocław",msg:"wdrożyła chatbota · 12 minut temu"},
+
 {av:"EP",name:"E-sklep Gdańsk",msg:"automatyzuje obsługę 24/7 · 38 min temu"},
+
 {av:"PB",name:"Piotr B.",msg:"pyta o prototyp · przed chwilą"},
+
 {av:"NM",name:"Firma Poznań",msg:"podpisała umowę · 1 godz. temu"}];
+
 var _ti=0;
+
 function _showToast(){
+
   var t=_td[_ti%_td.length];_ti++;
+
   var area=document.getElementById("toast-area");
+
   if(!area)return;
+
   var el=document.createElement("div");el.className="toast";
+
   el.innerHTML='<div class="toast-av">'+t.av+'</div><div><b>'+t.name+'</b><br>'+t.msg+'</div><span class="toast-x" onclick="this.parentNode.remove()">×</span>';
+
   area.appendChild(el);
+
   setTimeout(function(){el.style.animation="toastout .4s ease forwards";setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el)},400)},6500);
+
 }
+
 setTimeout(function(){_showToast();setInterval(_showToast,38000)},9000);
 
+
+
 // Industry tabs filter
+
 function filterTesti(btn,ind){
+
   document.querySelectorAll(".testi-tab").forEach(function(t){t.classList.remove("active")});
+
   btn.classList.add("active");
+
   document.querySelectorAll(".testi-item").forEach(function(c){
+
     c.classList.toggle("hidden",ind!=="all"&&c.dataset.industry!==ind);
+
   });
+
 }
+
+
+
 
 
 </script>
+
 </body>
+
 </html>
+
