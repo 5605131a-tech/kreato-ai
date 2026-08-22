@@ -1,4 +1,4 @@
-﻿
+
 
 
 
@@ -7861,6 +7861,32 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
 
 .smm-note strong{color:var(--purple)}
 
+/* ══ MAGIC UI EFFECTS ══ */
+
+/* 1 — Animated hero orbs */
+@keyframes heroOrb1{0%,100%{transform:translate(0,0) scale(1);opacity:.10}50%{transform:translate(-50px,35px) scale(1.25);opacity:.17}}
+@keyframes heroOrb2{0%,100%{transform:translate(0,0) scale(1);opacity:.07}50%{transform:translate(40px,-30px) scale(1.18);opacity:.12}}
+@keyframes heroOrb3{0%,100%{transform:translate(0,0) scale(1);opacity:.05}33%{transform:translate(20px,20px) scale(1.1);opacity:.09}66%{transform:translate(-20px,-10px) scale(.95);opacity:.06}}
+#hero{background:var(--bg)}
+#hero::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(139,92,246,.13) 0%,transparent 70%),
+             radial-gradient(ellipse 60% 50% at 30% 80%,rgba(59,130,246,.10) 0%,transparent 70%);
+  animation:heroOrb1 9s ease-in-out infinite}
+#hero::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 55% 45% at 50% 15%,rgba(34,211,238,.06) 0%,transparent 60%),
+             radial-gradient(ellipse 40% 40% at 85% 75%,rgba(16,185,129,.05) 0%,transparent 60%);
+  animation:heroOrb2 12s ease-in-out infinite}
+#hero>*{position:relative;z-index:1}
+
+/* 2 — CTA button pulse ring */
+@keyframes ctaPulse{0%{box-shadow:0 0 0 0 rgba(139,92,246,.65),0 8px 30px rgba(139,92,246,.3)}70%{box-shadow:0 0 0 16px rgba(139,92,246,0),0 8px 30px rgba(139,92,246,.3)}100%{box-shadow:0 0 0 0 rgba(139,92,246,0),0 8px 30px rgba(139,92,246,.3)}}
+#hero .btn-primary{animation:ctaPulse 2.4s ease-out infinite}
+#hero .btn-primary:hover{animation:none;box-shadow:0 8px 30px rgba(139,92,246,.5)}
+
+/* 3 — Stats counter fade-in */
+.hs-num{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.hs-num.hs-visible{opacity:1;transform:translateY(0)}
+
 </style>
 
 
@@ -9892,22 +9918,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-            <div class="service-card">
-        <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=200&fit=crop&q=80')"></div>
-        <div class="service-body">
-          <div class="service-icon">🌐</div>
-          <h3>Agent AI z przeglądarką</h3>
-          <p>AI-pracownik ze swoją własną przeglądarką i loginami do Twoich serwisów — sprawdza konkurencję, wypełnia formularze i wysyła zgłoszenia za Ciebie bez Twojego udziału.</p>
-          <ul class="service-points">
-            <li>Codzienne monitorowanie OLX, Allegro, cen konkurentów</li>
-            <li>Wypełnianie formularzy i wysyłka zgłoszeń na przetargi</li>
-            <li>Raport ze screenshotem do Telegrama każdego dnia</li>
-            <li>Własna przeglądarka z Twoimi loginami — pełna kontrola</li>
-          </ul>
-          <a class="service-link" href="#cta">Od 499 zł/mies. →</a>
-        </div>
-      </div>
-<div class="service-card">
+      <div class="service-card">
 
 
 
@@ -11721,8 +11732,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="pa-row"><span class="pa-row-label">Reklamy Facebook/IG</span><span class="pa-row-val">od 249 zł/mies</span></div>
 
-        <div class="pa-row"><span class="pa-row-label">Agent AI z przeglądarką</span><span class="pa-row-val">od 499 zł/mies</span></div>
-
         <div class="pa-row"><span class="pa-row-label">Wdrożenie i konfiguracja</span><span class="pa-row-val">399 zł jednorazowo</span></div>
 
         <div class="pa-row"><span class="pa-row-label">Dostępność</span><span class="pa-row-val">24/7, 365 dni</span></div>
@@ -13347,9 +13356,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
               <button class="quiz-opt" onclick="quizSelect(this,'usługa','🎯 Reklamy Facebook / Instagram Ads')">🎯 Reklamy Facebook / Instagram (Ads)</button>
 
-              <button class="quiz-opt"               <button class="quiz-opt" onclick="quizSelect(this,'usługa','🌐 Agent AI z przeglądarką — monitoring, formularze, przetargi')">🌐 Agent AI z przeglądarką</button>
-
-              onclick="quizSelect(this,'usługa','🔄 Wszystko razem — pełna automatyzacja')">🔄 Wszystko razem — pełna automatyzacja</button>
+              <button class="quiz-opt" onclick="quizSelect(this,'usługa','🔄 Wszystko razem — pełna automatyzacja')">🔄 Wszystko razem — pełna automatyzacja</button>
 
             </div>
 
@@ -17748,6 +17755,49 @@ function filterTesti(btn,ind){
   </div>
 
 </div>
+
+<script>
+/* ══ MAGIC EFFECTS JS ══ */
+(function(){
+  /* Counter animation for .hs-num elements */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target;
+      var raw = el.textContent.trim();
+      var m = raw.match(/^(\d+)(.*)/);
+      el.classList.add('hs-visible');
+      if(m){
+        var target = parseInt(m[1],10);
+        var suffix = m[2];
+        if(target > 3){
+          var dur = target > 100 ? 1400 : 800;
+          var t0 = null;
+          (function tick(ts){
+            if(!t0) t0 = ts;
+            var p = Math.min((ts-t0)/dur, 1);
+            /* ease-out cubic */
+            var eased = 1 - Math.pow(1-p,3);
+            el.textContent = Math.round(eased * target) + suffix;
+            if(p < 1) requestAnimationFrame(tick);
+            else el.textContent = raw;
+          })(performance.now());
+        }
+      }
+      io.unobserve(el);
+    });
+  },{threshold:0.4});
+  document.querySelectorAll('.hs-num').forEach(function(el){ io.observe(el); });
+
+  /* Subtle floating orb 3 — additional cyan orb that drifts independently */
+  var hero = document.getElementById('hero');
+  if(hero){
+    var orb = document.createElement('div');
+    orb.style.cssText='position:absolute;top:60%;left:60%;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.07) 0%,transparent 70%);pointer-events:none;z-index:0;animation:heroOrb3 15s ease-in-out infinite;transform:translate(-50%,-50%)';
+    hero.insertBefore(orb, hero.firstChild);
+  }
+})();
+</script>
 
 </body>
 
