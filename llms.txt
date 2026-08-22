@@ -1,0 +1,30 @@
+# KREATO.AI
+
+> Automatyzacja AI dla polskich firm MSP: voiceboty, chatboty, systemy automatyzacji procesow.
+
+## Co robimy
+
+Budujemy asystentow AI pod klucz dla malych i srednich firm w Polsce. Specjalizujemy sie w:
+- Voicebot Karolina: odbiera telefony 24/7, umawia wizyty, odpowiada na pytania
+- Chatboty: automatyzacja komunikacji przez SMS, email, Messenger
+- Integracje n8n: automatyzacja procesow wewnetrznych i zewnetrznych
+
+## Cennik
+
+- Pilotaz: 399 zl jednorazowo (konfiguracja + 30 dni usluga)
+- Subskrypcja Standard: 299 zl/mies (1 agent, do 500 interakcji/mies)
+- Subskrypcja Pro: 599 zl/mies (do 3 agentow, nieograniczone interakcje)
+
+## Kontakt
+
+- Telefon: +48 733 245 757
+- Email: biuro.stalsystem.pl@gmail.com
+- Adres: ul. Prandzeskiego 23, 63-000 Sroda Wielkopolska, Polska
+
+## Strony serwisu
+
+- [Strona glowna](https://kreato-ai.netlify.app/)
+- [Agenci AI](https://kreato-ai.netlify.app/agenci.html)
+- [Dla e-commerce](https://kreato-ai.netlify.app/dla-ecommerce.html)
+- [Dla klinik](https://kreato-ai.netlify.app/dla-klinik.html)
+- [Polityka prywatnosci](https://kreato-ai.netlify.app/polityka-prywatnosci.html)
