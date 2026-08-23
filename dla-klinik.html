@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Voicebot AI dla Klinik i Gabinetów — KREATO.AI</title>
-<meta name="description" content="Karolina AI odbiera telefony 24/7, umawia wizyty i wysyła przypomnienia. Voicebot dla klinik, gabinetów stomatologicznych i przychodni. Prototyp w 48h od 299 zł/mies.">
+<meta name="description" content="Karolina AI odbiera telefony 24/7, umawia wizyty i wysyła przypomnienia. Voicebot dla klinik, gabinetów stomatologicznych i przychodni. Prototyp w 48h od 399 zł/mies.">
 <meta name="keywords" content="voicebot dla kliniki, chatbot gabinet stomatologiczny, AI recepcja medyczna, automatyczne umawianie wizyt, chatbot klinika Polska">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Voicebot AI dla Klinik — KREATO.AI">
@@ -77,6 +77,12 @@ h3{font-size:18px;font-weight:700}
 .ac-points li{font-size:13px;color:var(--text2);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px}
 .ac-points li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
 
+/* INTEGRATIONS STRIP */
+.integrations-strip{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.2);border-radius:var(--r);padding:16px 20px;margin-top:28px}
+.integrations-strip .integ-label{font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.05em;margin-right:4px;white-space:nowrap}
+.integ-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);border-radius:100px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--green);white-space:nowrap}
+.integ-badge-roadmap{background:rgba(255,255,255,.04);border-color:var(--border);color:var(--text3)}
+
 /* HOW */
 .how-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:40px;counter-reset:step}
 .how-step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;counter-increment:step;position:relative}
@@ -116,11 +122,11 @@ footer a:hover{color:var(--text2)}
   "@context":"https://schema.org",
   "@type":"Service",
   "name":"Voicebot AI dla Klinik — Karolina",
-  "description":"Voicebot AI dla klinik i gabinetów medycznych. Odbiera telefony 24/7, umawia wizyty, wysyła przypomnienia SMS.",
+  "description":"Voicebot AI dla klinik i gabinetów medycznych. Odbiera telefony 24/7, umawia wizyty w Google Calendar i Znany Lekarz, wysyła przypomnienia SMS.",
   "provider":{"@type":"Organization","name":"KREATO.AI","url":"https://kreato.ai"},
   "areaServed":"PL",
   "serviceType":"AI Voice Assistant for Healthcare",
-  "offers":{"@type":"Offer","price":"299","priceCurrency":"PLN","billingDuration":"P1M"}
+  "offers":{"@type":"Offer","price":"399","priceCurrency":"PLN","billingDuration":"P1M"}
 }
 </script>
 <!-- Google Analytics 4 -->
@@ -154,7 +160,7 @@ footer a:hover{color:var(--text2)}
 <section id="hero">
   <div class="badge"><div class="badge-dot"></div>Rozwiązanie dla placówek medycznych</div>
   <h1>Nie trać pacjentów<br>przez brak <span class="grad-text">odpowiedzi</span></h1>
-  <p>94% pacjentów nie oddzwania po nieodebranym połączeniu. Karolina AI odbiera każdy telefon, 24 godziny na dobę — i umawia wizytę od razu.</p>
+  <p>94% pacjentów nie oddzwania po nieodebranym połączeniu. Karolina AI odbiera każdy telefon, 24 godziny na dobę — i rezerwuje wizytę od razu w Twoim kalendarzu.</p>
   <div class="hero-btns">
     <a href="diagnosta.html" class="btn btn-primary">Zrób bezpłatną diagnozę →</a>
     <a href="tel:+48733245757" class="btn btn-outline">📞 Zadzwoń: +48 733 245 757</a>
@@ -162,7 +168,7 @@ footer a:hover{color:var(--text2)}
   <div class="hero-stats">
     <div class="hs"><strong>94%</strong><span>pacjentów nie oddzwania</span></div>
     <div class="hs"><strong>48h</strong><span>prototyp gotowy</span></div>
-    <div class="hs"><strong>299 zł</strong><span>od miesiąca</span></div>
+    <div class="hs"><strong>399 zł</strong><span>od miesiąca</span></div>
     <div class="hs"><strong>24/7</strong><span>obsługa telefonów</span></div>
   </div>
 </section>
@@ -210,10 +216,10 @@ footer a:hover{color:var(--text2)}
         <p style="font-size:14px;color:var(--text2);margin:8px 0 0;line-height:1.5">Inteligentny asystent głosowy, który brzmi jak człowiek i obsługuje pacjentów przez całą dobę.</p>
         <ul class="ac-points">
           <li>Odbiera telefony 24/7, w weekendy i święta</li>
-          <li>Umawia, przekłada i anuluje wizyty</li>
-          <li>Weryfikuje ubezpieczenie NFZ/prywatne</li>
-          <li>Odpowiada na FAQ o gabinecie</li>
-          <li>Wysyła potwierdzenia SMS po umówieniu</li>
+          <li>Rezerwuje wizytę od razu — w Google Calendar, Znany Lekarz lub Calendly</li>
+          <li>Przekłada i anuluje wizyty bez angażowania recepcji</li>
+          <li>Wysyła SMS z potwierdzeniem w czasie rozmowy</li>
+          <li>Odpowiada na FAQ: ceny, lekarze, godziny, dojazd</li>
         </ul>
       </div>
       <div class="agent-card">
@@ -240,6 +246,17 @@ footer a:hover{color:var(--text2)}
           <li>Archiwizacja i wysyłka do CRM</li>
         </ul>
       </div>
+    </div>
+
+    <!-- INTEGRATIONS -->
+    <div class="integrations-strip">
+      <span class="integ-label">✅ Karolina rezerwuje teraz w:</span>
+      <span class="integ-badge">📅 Google Calendar</span>
+      <span class="integ-badge">🏥 Znany Lekarz</span>
+      <span class="integ-badge">🔗 Calendly</span>
+      <span class="integ-badge">📱 SMS (SMSAPI.pl)</span>
+      <span class="integ-badge integ-badge-roadmap">Kamsoft KS-SOMED · Q4 2026</span>
+      <span class="integ-badge integ-badge-roadmap">Nexus / CGM · Q4 2026</span>
     </div>
   </div>
 </section>
