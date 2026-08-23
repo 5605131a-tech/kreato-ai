@@ -8,7 +8,7 @@
 <meta name="keywords" content="voicebot dla kliniki, chatbot gabinet stomatologiczny, AI recepcja medyczna, automatyczne umawianie wizyt, chatbot klinika Polska">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Voicebot AI dla Klinik — KREATO.AI">
-<meta property="og:description" content="Karolina AI odbiera telefony 24/7, umawia wizyty i wysyła przypomnienia SMS. Prototyp w 48h.">
+<meta property="og:description" content="Karolina AI odbiera telefony 24/7, umawia wizyty i wysyła przypomnienia. Prototyp w 48h od 399 zł/mies.">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://kreato.ai/dla-klinik">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 <style>
 :root{
   --bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;
-  --purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--red:#ef4444;
+  --purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--red:#ef4444;--amber:#f59e0b;
   --grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);
   --grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);
   --text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;
@@ -32,7 +32,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,.95);backdrop-filt
 .nav-links{display:flex;align-items:center;gap:24px;list-style:none}
 .nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
 .nav-links a:hover{color:var(--text)}
-.nav-cta{background:var(--grad);color:#fff!important;padding:9px 18px;border-radius:var(--r-sm);font-size:13px!important;font-weight:700!important}
 @media(max-width:768px){.nav-links{display:none}}
 section{padding:72px 24px}
 .inner{max-width:1120px;margin:0 auto}
@@ -48,7 +47,6 @@ h3{font-size:18px;font-weight:700}
 .btn-primary:hover{opacity:.88;transform:translateY(-1px);box-shadow:0 8px 30px rgba(139,92,246,.4)}
 .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
 .btn-outline:hover{border-color:var(--border-a)}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px}
 
 /* HERO */
 #hero{padding:80px 24px 60px;text-align:center}
@@ -79,9 +77,22 @@ h3{font-size:18px;font-weight:700}
 
 /* INTEGRATIONS STRIP */
 .integrations-strip{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.2);border-radius:var(--r);padding:16px 20px;margin-top:28px}
-.integrations-strip .integ-label{font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.05em;margin-right:4px;white-space:nowrap}
+.integ-label{font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.05em;margin-right:4px;white-space:nowrap}
 .integ-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);border-radius:100px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--green);white-space:nowrap}
 .integ-badge-roadmap{background:rgba(255,255,255,.04);border-color:var(--border);color:var(--text3)}
+
+/* PRICING MODULES */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;position:relative}
+.price-card.featured{border-color:var(--border-a);background:linear-gradient(135deg,rgba(139,92,246,.06),rgba(59,130,246,.06))}
+.price-tag{font-size:36px;font-weight:900;color:var(--text);line-height:1}
+.price-tag span{font-size:14px;font-weight:400;color:var(--text3)}
+.price-name{font-size:16px;font-weight:700;margin-bottom:4px}
+.price-desc{font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.5}
+.price-features{list-style:none}
+.price-features li{font-size:13px;color:var(--text2);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px}
+.price-features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.price-addon-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--amber);background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);padding:2px 8px;border-radius:100px;margin-bottom:12px}
 
 /* HOW */
 .how-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:40px;counter-reset:step}
@@ -110,11 +121,8 @@ h3{font-size:18px;font-weight:700}
 footer{padding:32px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
 footer a{color:var(--text3);text-decoration:none;margin:0 10px}
 footer a:hover{color:var(--text2)}
-
-/* Schema breadcrumb */
 .breadcrumb{font-size:12px;color:var(--text3);padding:12px 24px;max-width:1120px;margin:0 auto}
 .breadcrumb a{color:var(--text3);text-decoration:none}
-.breadcrumb a:hover{color:var(--text2)}
 .breadcrumb span{margin:0 6px}
 </style>
 <script type="application/ld+json">
@@ -122,17 +130,15 @@ footer a:hover{color:var(--text2)}
   "@context":"https://schema.org",
   "@type":"Service",
   "name":"Voicebot AI dla Klinik — Karolina",
-  "description":"Voicebot AI dla klinik i gabinetów medycznych. Odbiera telefony 24/7, umawia wizyty w Google Calendar i Znany Lekarz, wysyła przypomnienia SMS.",
+  "description":"Voicebot AI dla klinik i gabinetów medycznych. Odbiera telefony 24/7, umawia wizyty w Google Calendar i Znany Lekarz.",
   "provider":{"@type":"Organization","name":"KREATO.AI","url":"https://kreato.ai"},
   "areaServed":"PL",
   "serviceType":"AI Voice Assistant for Healthcare",
   "offers":{"@type":"Offer","price":"399","priceCurrency":"PLN","billingDuration":"P1M"}
 }
 </script>
-<!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9QH1CPDDS"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-B9QH1CPDDS');</script>
-<!-- Facebook Pixel -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','934494976050338');fbq('track','PageView');</script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=934494976050338&ev=PageView&noscript=1"/></noscript>
 </head>
@@ -218,8 +224,8 @@ footer a:hover{color:var(--text2)}
           <li>Odbiera telefony 24/7, w weekendy i święta</li>
           <li>Rezerwuje wizytę od razu — w Google Calendar, Znany Lekarz lub Calendly</li>
           <li>Przekłada i anuluje wizyty bez angażowania recepcji</li>
-          <li>Wysyła SMS z potwierdzeniem w czasie rozmowy</li>
           <li>Odpowiada na FAQ: ceny, lekarze, godziny, dojazd</li>
+          <li>Raport dzienny do managera rano</li>
         </ul>
       </div>
       <div class="agent-card">
@@ -254,15 +260,55 @@ footer a:hover{color:var(--text2)}
       <span class="integ-badge">📅 Google Calendar</span>
       <span class="integ-badge">🏥 Znany Lekarz</span>
       <span class="integ-badge">🔗 Calendly</span>
-      <span class="integ-badge">📱 SMS (SMSAPI.pl)</span>
       <span class="integ-badge integ-badge-roadmap">Kamsoft KS-SOMED · Q4 2026</span>
       <span class="integ-badge integ-badge-roadmap">Nexus / CGM · Q4 2026</span>
     </div>
   </div>
 </section>
 
-<!-- HOW -->
+<!-- PRICING -->
 <section style="padding:60px 24px">
+  <div class="inner">
+    <div class="badge"><div class="badge-dot"></div>Cennik</div>
+    <h2>Prosty cennik<br>bez <span class="grad-text">niespodzianek</span></h2>
+    <div class="pricing-grid">
+
+      <div class="price-card featured">
+        <div class="price-name">Karolina — abonament podstawowy</div>
+        <div class="price-desc">Obsługa telefonów 24/7, rezerwacja wizyt, FAQ</div>
+        <div class="price-tag">399 zł <span>/mies</span></div>
+        <ul class="price-features" style="margin-top:16px">
+          <li>Odbieranie połączeń 24/7</li>
+          <li>Rezerwacja w Google Calendar / Znany Lekarz / Calendly</li>
+          <li>Przekładanie i anulowanie wizyt</li>
+          <li>Odpowiedzi na FAQ gabinetu</li>
+          <li>Raport dzienny na email</li>
+          <li>Wdrożenie w 48h · bez umowy</li>
+        </ul>
+      </div>
+
+      <div class="price-card">
+        <div class="price-addon-badge">+ MODUŁ DODATKOWY</div>
+        <div class="price-name">No-show Prevention</div>
+        <div class="price-desc">Automatyczne potwierdzenia 24h przed wizytą — pacjent potwierdza lub zwalnia slot</div>
+        <div class="price-tag">79 zł <span>/mies</span></div>
+        <ul class="price-features" style="margin-top:16px">
+          <li>Połączenie wychodzące dzień przed wizytą</li>
+          <li>Pacjent potwierdza lub odwołuje klawiszem</li>
+          <li>Wolny slot wraca natychmiast do kalendarza</li>
+          <li>Redukcja no-show o 60–80%</li>
+          <li>~4 320 zł odzysku miesięcznie (klinika 20 wizyt/tydz)</li>
+        </ul>
+        <div style="margin-top:16px;font-size:12px;color:var(--text3)">Razem z abonamentem: <strong style="color:var(--text)">478 zł/mies</strong></div>
+      </div>
+
+    </div>
+    <p style="text-align:center;font-size:13px;color:var(--text3);margin-top:20px">Faktura VAT · RODO compliant · Bez umowy długoterminowej</p>
+  </div>
+</section>
+
+<!-- HOW -->
+<section style="padding:60px 24px;background:var(--bg1)">
   <div class="inner">
     <div class="badge"><div class="badge-dot"></div>Jak to działa</div>
     <h2>Od decyzji do działającego<br>agenta — <span class="grad-text">w 48 godzin</span></h2>
@@ -288,7 +334,7 @@ footer a:hover{color:var(--text2)}
 </section>
 
 <!-- TESTIMONIALS -->
-<section style="padding:60px 24px;background:var(--bg1)">
+<section style="padding:60px 24px">
   <div class="inner">
     <div class="badge"><div class="badge-dot"></div>Opinie</div>
     <h2>Co mówią placówki<br>które już <span class="grad-text">wdrożyły</span></h2>
@@ -303,7 +349,7 @@ footer a:hover{color:var(--text2)}
       </div>
       <div class="testi">
         <div class="stars">★★★★★</div>
-        <p>„Agent Opinii w 3 tygodnie zebrał nam 28 nowych recenzji Google. Z 3,8 podskoczyliśmy na 4,7 gwiazdki. Widać to w liczbie nowych wizyt."</p>
+        <p>„Moduł No-show zredukował nieobecności z 28% do 9%. Odzyskujemy co miesiąc kilka tysięcy złotych na samych wizytach które wcześniej przepadały."</p>
         <div class="testi-author">
           <div class="testi-av" style="background:linear-gradient(135deg,#10b981,#3b82f6)">AN</div>
           <div class="testi-name"><strong>Anna N.</strong><span>Właściciel, Gabinet Rehabilitacyjny, Wrocław</span></div>
