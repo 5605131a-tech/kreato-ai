@@ -1,8 +1,4 @@
-
-
-
-
-<html lang="pl" dir="ltr">
+﻿<html lang="pl" dir="ltr">
 
 
 
@@ -612,7 +608,7 @@ body{
 
 
 
-  padding:80px 32px 32px;
+  padding:80px 32px 32px;overflow-y:auto;
 
 
 
@@ -8137,7 +8133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        <a href="tel:+48733245757" class="fp-action"><span>📞</span> Zadzwoń — +48 733 245 757</a>
+        <a href="tel:+48224176808" class="fp-action"><span>📞</span> Zadzwoń — +48 224 176 808</a>
 
 
 
@@ -8314,6 +8310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
   <a href="#faq" onclick="closeNav()">FAQ</a>
+  <a href="#pricing" onclick="closeNav()">Cennik</a>
 
 
 
@@ -8329,7 +8326,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-  <a href="tel:+48733245757" onclick="closeNav()" style="color:var(--green)!important;font-weight:700!important;font-size:18px!important">📞 +48 733 245 757</a><a href="#cta" onclick="closeNav()" class="overlay-cta">Przetestuj za darmo →</a>
+  <a href="javascript:void(0)" onclick="var d=document.getElementById('nav-contacts');d.style.display=d.style.display==='none'?'flex':'none';this.querySelector('.nav-arr').textContent=d.style.display==='none'?'▸':'▾';" style="display:flex;justify-content:space-between;align-items:center">Kontakt <span class="nav-arr" style="font-size:12px;color:var(--text3);transition:.2s">▸</span></a>
+
+  <div id="nav-contacts" style="display:none;flex-direction:column;gap:10px;padding:10px 0 8px 12px;border-left:2px solid rgba(139,92,246,.3)">
+    <a href="tel:+48224176808" onclick="closeNav()" style="color:var(--text2)!important;font-size:14px!important;display:flex;align-items:center;gap:8px">🤖 Karolina AI: +48 22 417 68 08</a>
+    <a href="mailto:biuro.stalsystem.pl@gmail.com" onclick="closeNav()" style="color:var(--text2)!important;font-size:14px!important;display:flex;align-items:center;gap:8px">✉️ biuro.stalsystem.pl@gmail.com</a>
+    <div style="color:var(--text3);font-size:13px;display:flex;align-items:flex-start;gap:8px;line-height:1.4">📍 ul. Prandzeskiego 23, 63-000 Środa Wlkp.</div>
+  </div>
+
+  <a href="#cta" onclick="closeNav()" class="overlay-cta">Przetestuj za darmo →</a>
 
 
 
@@ -8767,7 +8772,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        <img src="https://dbrqdnfoxoqnwytfsyvf.supabase.co/storage/v1/object/public/assets/karolina.jpg?v=2"
+        <img src="https://dbrqdnfoxoqnwytfsyvf.supabase.co/storage/v1/object/public/assets/karolina.jpg?v=3"
 
              alt="Karolina — Asystent AI KREATO" class="hero-karolina-img" loading="lazy">
 
@@ -8819,7 +8824,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="hc-bar">
 
-          <div class="hc-av"><img src="https://dbrqdnfoxoqnwytfsyvf.supabase.co/storage/v1/object/public/assets/karolina.jpg?v=2" alt="Karolina AI" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:50%;display:block" loading="lazy"></div>
+          <div class="hc-av"><img src="https://dbrqdnfoxoqnwytfsyvf.supabase.co/storage/v1/object/public/assets/karolina.jpg?v=3" alt="Karolina AI" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:50%;display:block" loading="lazy"></div>
 
           <div>
 
@@ -8835,7 +8840,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        <div class="chat-msg msg-ai">Dzień dobry! Tu Karolina — asystent AI kliniki DENT. W czym mogę dzisiaj pomóc?</div>
+        <div class="chat-msg msg-ai">Dzień dobry! Jestem Karolina — asystent AI kliniki DENT. Informuję, że rozmowa może być rejestrowana w celach jakościowych. Dane przetwarzamy zgodnie z RODO. W czym mogę dzisiaj pomóc?</div>
 
 
 
@@ -8901,7 +8906,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-    <div style="display:flex;gap:32px;flex:1;min-width:260px">
+    <div style="display:flex;gap:32px;flex:1;min-width:260px;flex-wrap:wrap">
 
 
 
@@ -8914,6 +8919,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
       <div style="text-align:center"><div class="hs-num">399 zł</div><div class="hs-label">od / mies.</div></div>
+
+
+
+      <div style="text-align:center"><div class="hs-num" style="font-size:clamp(22px,4vw,36px)">109+</div><div class="hs-label">workflow AI · Case #01</div></div>
 
 
 
@@ -8997,7 +9006,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-    <div class="trust-top">Zaufali nam firmy z branż</div>
+    <div class="trust-top">Rozumiemy firmy z tych branż</div>
 
 
 
@@ -9229,7 +9238,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<!-- ══ SOLUTION ══ -->
+<section id="solution">
 
 
 
@@ -9237,7 +9246,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<section id="roi-calc">
+  <div class="inner">
 
 
 
@@ -9245,7 +9254,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-  <div class="inner reveal">
+    <div class="solution-grid">
 
 
 
@@ -9253,7 +9262,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-    <div class="section-label">Kalkulator ROI</div>
+      <div class="reveal">
 
 
 
@@ -9261,7 +9270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-    <h2>Ile tracisz na <span class="grad-text">nieodebranych telefonach</span>?</h2>
+        <div class="section-label">Nasze podejście</div>
 
 
 
@@ -9269,7 +9278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-    <div class="roi-card">
+        <h2>Nie sprzedajemy <span class="grad-text">narzędzi</span>. Wdrażamy wyniki.</h2>
 
 
 
@@ -9277,7 +9286,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-      <div class="roi-sliders">
+        <p>Większość firm oferujących AI mówi o platformach i workflowach. Problem? Płacisz miesięcznie za cudze klocki — bez kontroli, z wysokimi kosztami i ograniczeniami, których nie przewidziałeś.</p>
 
 
 
@@ -9285,7 +9294,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        <div class="roi-row">
+        <p><strong>My budujemy inaczej.</strong> Voiceboty, chatboty i agentów AI pisanych pod Twój konkretny problem. Twój numer, Twoje dane — pełna kontrola. Możesz odejść w każdej chwili i zachować cały system.</p>
 
 
 
@@ -9293,7 +9302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-          <div class="roi-lbl"><span>Telefonów dziennie</span><strong id="v-calls">30</strong></div>
+        <a href="#cta" class="btn btn-primary" style="margin-top:8px">Porozmawiaj o swoim procesie →</a>
 
 
 
@@ -9301,7 +9310,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-          <input type="range" min="5" max="100" value="30" id="r-calls" oninput="calcRoi()">
+        <div class="solution-photo" style="margin-top:28px"></div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <div class="vs-grid reveal">
+
+
+
+
+
+
+
+        <div class="vs-row">
+
+
+
+
+
+
+
+          <div class="vs-bad">Call center — 40+ zł/h, tylko w godzinach pracy</div>
+
+
+
+
+
+
+
+          <div class="vs-vs">VS</div>
+
+
+
+
+
+
+
+          <div class="vs-good">KREATO voicebot — 24/7, od 399 zł/mies.</div>
 
 
 
@@ -9317,7 +9374,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        <div class="roi-row">
+        <div class="vs-row">
 
 
 
@@ -9325,7 +9382,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-          <div class="roi-lbl"><span>Nieodebranych (%)</span><strong id="v-miss">25%</strong></div>
+          <div class="vs-bad">Platformy SaaS — płacisz ciągle, tracisz kontrolę</div>
 
 
 
@@ -9333,7 +9390,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-          <input type="range" min="5" max="60" value="25" id="r-miss" oninput="calcRoi()">
+          <div class="vs-vs">VS</div>
+
+
+
+
+
+
+
+          <div class="vs-good">Twoje dane, Twój system — wychodzisz kiedy chcesz</div>
 
 
 
@@ -9349,7 +9414,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        <div class="roi-row">
+        <div class="vs-row">
 
 
 
@@ -9357,7 +9422,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-          <div class="roi-lbl"><span>Wartość klienta</span><strong id="v-val">800 zł</strong></div>
+          <div class="vs-bad">Software house — 4–8 tygodni, 30–80 tys. zł</div>
 
 
 
@@ -9365,7 +9430,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-          <input type="range" min="200" max="10000" step="100" value="800" id="r-val" oninput="calcRoi()">
+          <div class="vs-vs">VS</div>
+
+
+
+
+
+
+
+          <div class="vs-good">KREATO — pilotaż w 1–2 dni, ułamek kosztów</div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="vs-row">
+
+
+
+
+
+
+
+          <div class="vs-bad">Pracownik obsługi — urlopy, zwolnienia, rotacja</div>
+
+
+
+
+
+
+
+          <div class="vs-vs">VS</div>
+
+
+
+
+
+
+
+          <div class="vs-good">Agent AI — zawsze dostępny, zawsze taki sam poziom</div>
 
 
 
@@ -9382,86 +9495,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
       </div>
-
-
-
-
-
-
-
-      <div class="roi-result">
-
-
-
-
-
-
-
-        <div class="roi-desc">Tracisz miesięcznie na nieodebranych telefonach</div>
-
-
-
-
-
-
-
-        <div class="roi-big" id="roi-loss">18 000 zł</div>
-
-
-
-
-
-
-
-        <div class="roi-sub">przy założeniu, że 30% nieodebranych = utracony klient</div>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-      <div class="roi-split">
-
-
-
-
-
-
-
-        <div class="roi-mini"><div class="rm-val" id="roi-saved">17 701 zł</div><div class="rm-lbl">potencjalny zysk/mies. z voicebotem</div></div>
-
-
-
-
-
-
-
-        <div class="roi-mini"><div class="rm-val" id="roi-payback">&lt;1 mies.</div><div class="rm-lbl">zwrot z inwestycji</div></div>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-      <a href="#cta" class="btn btn-primary" id="roiCtaBtn" style="width:100%;justify-content:center">Chcę odzyskać te pieniądze →</a>
 
 
 
@@ -9486,6 +9519,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 </section>
+
+<!-- ══ SOLUTION ══ -->
+
+
+
+
+
+
+
+
 
 
 
@@ -9629,7 +9672,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-            <li>Pełna zgodność z RODO i PKE Art. 398</li>
+            <li>Klauzula informacyjna RODO + identyfikacja AI przy każdym połączeniu (PKE Art. 398)</li>
 
           </ul>
 
@@ -9651,7 +9694,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <span style="display:block;margin-bottom:2px">✓ Umówiony termin → Google Calendar</span>
 
-            <span style="display:block">✓ SMS z potwierdzeniem → klient</span>
+            <span style="display:block;margin-bottom:2px">✓ SMS z potwierdzeniem → klient</span>
+            <span style="display:block;margin-top:4px;color:var(--text3);font-size:11.5px">🔒 Dane osobowe przetwarzane wyłącznie za zgodą. Transkrypty usuwane po 30 dniach.</span>
 
           </div>
 
@@ -10125,8 +10169,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-      <a href="#services" style="display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:12px 28px;font-size:14px;font-weight:700;color:var(--text);text-decoration:none;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(139,92,246,.4)'" onmouseout="this.style.borderColor='var(--border)'"
-
       <!-- Monitoring konkurencji -->
       <div class="service-card" data-aos="fade-up" data-tilt data-tilt-max="6" data-tilt-speed="500" data-tilt-glare="true" data-tilt-max-glare="0.1">
         <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=200&fit=crop&q=80')"></div>
@@ -10169,7 +10211,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-    <p style="text-align:center;color:var(--text3);font-size:13px;margin-top:20px">Pilotaż 399 zł netto — płacisz gdy widzisz Płacisz gdy widzisz działający asystent na Twoich danych. Bez zobowiązań.</p>
+    
 
     <ul style="margin:12px auto 0;max-width:340px;text-align:left;line-height:2;color:var(--text2);font-size:14px;list-style:none;padding:0">
 
@@ -10275,7 +10317,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-      <div class="step-card"><div class="step-num">01</div><h3>Opisz problem</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">2 minuty. Wypełnij formularz — branża, skala, co Cię blokuje. Żadnych rozmów sprzedażowych.</p><span class="step-result">Działa od razu</span></div>
+      <div class="step-card"><div class="step-num">01</div><h3>Kontakt</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Napisz na WhatsApp lub e-mail. Na WhatsApp odpiszemy <strong>w ciągu dnia</strong>, na e-mail — <strong>w ciągu 30 minut</strong>. Żadnych rozmów sprzedażowych.</p><span class="step-result">Działa od razu</span></div>
 
 
 
@@ -10283,7 +10325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-      <div class="step-card"><div class="step-num">02</div><h3>Bot gotowy w 2–3 dni</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Karolina AI zadzwoni do Ciebie w 5 minut — żeby zebrać szczegóły. Na tej podstawie budujemy bota skonfigurowanego dokładnie pod Twoją firmę — gotowy w 2–3 dni.</p><span class="step-result">Zero czekania</span></div>
+      <div class="step-card"><div class="step-num">02</div><h3>Formularz (15 min)</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Wysyłamy link do kwestionariusza. Opisujesz firmę, usługi, ceny, najczęstsze pytania klientów. Zero rozmów z konsultantem.</p><span class="step-result">Ty decydujesz</span></div>
 
 
 
@@ -10291,7 +10333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-      <div class="step-card"><div class="step-num">03</div><h3>Testujesz sam</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Dostajesz dostęp. Rozmawiasz z botem, sprawdzasz odpowiedzi, akceptujesz — albo zmieniasz przez prosty formularz.</p><span class="step-result">Ty masz kontrolę</span></div>
+      <div class="step-card"><div class="step-num">03</div><h3>Konfiguracja (2–3 dni)</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Budujemy scenariusze, programujemy głos, podłączamy numer +48, integrujemy z Twoim kalendarzem. Ty nic nie robisz.</p><span class="step-result">Zero czekania</span></div>
 
 
 
@@ -10299,7 +10341,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-      <div class="step-card"><div class="step-num">04</div><h3>Uruchamiasz i skalujesz</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Bot pracuje 24/7. Raporty do Ciebie — co tydzień. Chcesz zmianę? Piszesz, wdrażamy tego samego dnia.</p><span class="step-result">Bez niespodzianek</span></div>
+      <div class="step-card"><div class="step-num">04</div><h3>Test i start</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Zadzwoń na numer testowy, sprawdź — akceptujesz lub zmieniasz. Po akceptacji Karolina odbiera telefony 24/7. Raporty na Telegram po każdej rozmowie.</p><span class="step-result">Bez niespodzianek</span></div>
 
 
 
@@ -10363,287 +10405,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<section id="solution">
 
-
-
-
-
-
-
-  <div class="inner">
-
-
-
-
-
-
-
-    <div class="solution-grid">
-
-
-
-
-
-
-
-      <div class="reveal">
-
-
-
-
-
-
-
-        <div class="section-label">Nasze podejście</div>
-
-
-
-
-
-
-
-        <h2>Nie sprzedajemy <span class="grad-text">narzędzi</span>. Wdrażamy wyniki.</h2>
-
-
-
-
-
-
-
-        <p>Większość firm oferujących AI mówi o platformach i workflowach. Problem? Płacisz miesięcznie za cudze klocki — bez kontroli, z wysokimi kosztami i ograniczeniami, których nie przewidziałeś.</p>
-
-
-
-
-
-
-
-        <p><strong>My budujemy inaczej.</strong> Voiceboty, chatboty i agentów AI pisanych pod Twój konkretny problem. Twój numer, Twoje dane — pełna kontrola. Możesz odejść w każdej chwili i zachować cały system.</p>
-
-
-
-
-
-
-
-        <a href="#cta" class="btn btn-primary" style="margin-top:8px">Porozmawiaj o swoim procesie →</a>
-
-
-
-
-
-
-
-        <div class="solution-photo" style="margin-top:28px"></div>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-      <div class="vs-grid reveal">
-
-
-
-
-
-
-
-        <div class="vs-row">
-
-
-
-
-
-
-
-          <div class="vs-bad">Call center — 40+ zł/h, tylko w godzinach pracy</div>
-
-
-
-
-
-
-
-          <div class="vs-vs">VS</div>
-
-
-
-
-
-
-
-          <div class="vs-good">KREATO voicebot — 24/7, od 399 zł/mies.</div>
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-        <div class="vs-row">
-
-
-
-
-
-
-
-          <div class="vs-bad">Platformy SaaS — płacisz ciągle, tracisz kontrolę</div>
-
-
-
-
-
-
-
-          <div class="vs-vs">VS</div>
-
-
-
-
-
-
-
-          <div class="vs-good">Twoje dane, Twój system — wychodzisz kiedy chcesz</div>
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-        <div class="vs-row">
-
-
-
-
-
-
-
-          <div class="vs-bad">Software house — 4–8 tygodni, 30–80 tys. zł</div>
-
-
-
-
-
-
-
-          <div class="vs-vs">VS</div>
-
-
-
-
-
-
-
-          <div class="vs-good">KREATO — pilotaż w 1–2 dni, ułamek kosztów</div>
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-        <div class="vs-row">
-
-
-
-
-
-
-
-          <div class="vs-bad">Pracownik obsługi — urlopy, zwolnienia, rotacja</div>
-
-
-
-
-
-
-
-          <div class="vs-vs">VS</div>
-
-
-
-
-
-
-
-          <div class="vs-good">Agent AI — zawsze dostępny, zawsze taki sam poziom</div>
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-
-  </div>
-
-
-
-
-
-
-
-</section>
 
 
 
@@ -11557,97 +11319,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="testi-grid">
 
+      <!-- CASE #01 — StalSystem Polska (własna firma) -->
+      <div class="testi-card testi-item" data-industry="budownictwo">
 
-
-      <div class="testi-card testi-item" data-industry="klinika">
-
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars" style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+          <span>★★★★★</span>
+          <span style="background:rgba(34,211,238,.15);color:#22d3ee;font-size:11px;padding:2px 10px;border-radius:100px;font-weight:700">CASE #01 · WŁASNA FIRMA</span>
+        </div>
 
         <p class="testi-text">
 
-          <strong style="color:#22d3ee;font-size:12px;display:block;margin-bottom:8px">PRZED: 38% połączeń nieodebranych po 17:00 &nbsp;→&nbsp; PO: 0% + więcej rezerwacji</strong>
+          <strong style="color:#22d3ee;font-size:12px;display:block;margin-bottom:8px">PRZED: nieodebrane połączenia po 17:00 &nbsp;→&nbsp; PO: 0 utraconych leadów · 24/7</strong>
 
-          „W ciągu 30 dni od uruchomienia Karoliny mieliśmy o 31% więcej wizyt. Recepcja przestała przepisywać terminy ręcznie — Karolina sama wpisuje do kalendarza i wysyła SMS. Zwrot z inwestycji nastąpił w 3. tygodniu."
+          „Wdrożyliśmy Karolinę AI w StalSystem Polska jako pierwsi — żeby sprawdzić na sobie, zanim polecimy klientom. Karolina odbiera każde połączenie, wpisuje do kalendarza i wysyła SMS potwierdzający. Teraz buduję to samo dla innych firm."
 
         </p>
 
         <div style="background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.15);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:12px;color:var(--text2)">
 
-          ✓ +31% wizyt w 30 dni &nbsp;·&nbsp; ✓ Zwrot w 3 tygodnie &nbsp;·&nbsp; ✓ Wdrożenie 2 dni
+          ✓ 109+ aktywnych workflow AI &nbsp;·&nbsp; ✓ 0 utraconych leadów &nbsp;·&nbsp; ✓ Karolina pod nr +48 224 176 808
 
         </div>
 
         <div class="testi-author">
 
-          <div class="testi-av">MK</div>
+          <div class="testi-av">AR</div>
 
-          <div><div class="testi-name">dr Marek Kowalski</div><div class="testi-role">Właściciel, Klinika Ząbek, Poznań</div></div>
-
-        </div>
-
-      </div>
-
-
-
-      <div class="testi-card testi-item" data-industry="ecommerce">
-
-        <div class="testi-stars">★★★★★</div>
-
-        <p class="testi-text">
-
-          <strong style="color:#22d3ee;font-size:12px;display:block;margin-bottom:8px">PRZED: 3 osoby × 4h/dzień na obsługę zapytań &nbsp;→&nbsp; PO: chatbot przejął 82%</strong>
-
-          „Mieliśmy 3 konsultantki obsługujące wyłącznie pytania o status zamówień. Teraz chatbot odpowiada w 90 sekund, a te 3 osoby zajmują się sprzedażą i reklamacjami. Zwrot z inwestycji: 11 dni."
-
-        </p>
-
-        <div style="background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.15);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:12px;color:var(--text2)">
-
-          ✓ 82% zapytań automatycznie &nbsp;·&nbsp; ✓ Odpowiedź w 90 sek &nbsp;·&nbsp; ✓ Zwrot w 11 dni
-
-        </div>
-
-        <div class="testi-author">
-
-          <div class="testi-av">AN</div>
-
-          <div><div class="testi-name">Anna Nowak</div><div class="testi-role">CEO SportStyle.pl, Warszawa</div></div>
+          <div><div class="testi-name">Anatoliy Romanchyshyn</div><div class="testi-role">Założyciel KREATO.AI · StalSystem Polska, Środa Wielkopolska</div></div>
 
         </div>
 
       </div>
 
-
-
-      <div class="testi-card testi-item" data-industry="budowlanka">
-
-        <div class="testi-stars">★★★★★</div>
-
-        <p class="testi-text">
-
-          <strong style="color:#22d3ee;font-size:12px;display:block;margin-bottom:8px">PRZED: 12 nieodebranych połączeń/tydzień po 18:00 &nbsp;→&nbsp; PO: 0 utraconych leadów</strong>
-
-          „Klienci dzwonią po pracy — właśnie wtedy gdy mój telefon milczy. Karolina odbiera, ustala zakres prac i umawia wizję lokalną. Teraz mam 8–10 nowych spotkań tygodniowo bez udziału własnego. To jakbym zatrudnił asystentkę za 399 zł."
-
-        </p>
-
-        <div style="background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.15);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:12px;color:var(--text2)">
-
-          ✓ 8–10 spotkań/tydzień automatycznie &nbsp;·&nbsp; ✓ 0 utraconych leadów &nbsp;·&nbsp; ✓ Działa od dnia 1
-
+      <!-- PILOT SLOT #02 -->
+      <div class="testi-card testi-item" style="border:1px dashed rgba(139,92,246,.35);background:rgba(139,92,246,.04);display:flex;align-items:center;justify-content:center">
+        <div style="text-align:center;padding:24px 16px">
+          <div style="font-size:40px;margin-bottom:14px">🔒</div>
+          <div style="font-weight:700;font-size:16px;margin-bottom:10px;color:var(--text)">Miejsce dla Twojej firmy</div>
+          <div style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:20px">Szukamy 2 firm pilotażowych — 50% rabat na wdrożenie w zamian za opinię po 30 dniach.</div>
+          <a href="#cta" class="btn btn-primary" style="font-size:13px;padding:10px 24px">Zarezerwuj miejsce →</a>
         </div>
-
-        <div class="testi-author">
-
-          <div class="testi-av">PW</div>
-
-          <div><div class="testi-name">Piotr Wiśniewski</div><div class="testi-role">Właściciel BUDMAX, Wrocław</div></div>
-
-        </div>
-
       </div>
 
-
+      <!-- PILOT SLOT #03 -->
+      <div class="testi-card testi-item" style="border:1px dashed rgba(139,92,246,.35);background:rgba(139,92,246,.04);display:flex;align-items:center;justify-content:center">
+        <div style="text-align:center;padding:24px 16px">
+          <div style="font-size:40px;margin-bottom:14px">🚀</div>
+          <div style="font-weight:700;font-size:16px;margin-bottom:10px;color:var(--text)">Twoja branża tu?</div>
+          <div style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:20px">Działamy w stomatologii, budownictwie, e-commerce, nieruchomościach. Powiedz czym się zajmujesz — dopasujemy bota pod Ciebie.</div>
+          <a href="#cta" class="btn btn-primary" style="font-size:13px;padding:10px 24px">Sprawdź czy pasuje →</a>
+        </div>
+      </div>
 
     </div>
 
@@ -11710,64 +11432,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
-
-
-<section class="price-anchor">
-
-  <div class="price-anchor-inner">
-
-    <h2>Ile kosztuje <span class="gradient-text">NIEautomatyzacja</span>?</h2>
-
-    <p class="pa-sub">Porównaj realne koszty — zanim zdecydujesz</p>
-
-    <div class="pa-grid">
-
-      <div class="pa-col good">
-
-        <div class="pa-col-title">✓ KAROLINA AI</div>
-
-        <div class="pa-row"><span class="pa-row-label">Odbieranie telefonów 24/7</span><span class="pa-row-val">od 399 zł/mies</span></div>
-
-        <div class="pa-row"><span class="pa-row-label">Reelsy + posty AI (SMM)</span><span class="pa-row-val">od 199 zł/mies</span></div>
-
-        <div class="pa-row"><span class="pa-row-label">Reklamy Facebook/IG</span><span class="pa-row-val">od 249 zł/mies</span></div>
-
-        <div class="pa-row"><span class="pa-row-label">Wdrożenie i konfiguracja</span><span class="pa-row-val">399 zł jednorazowo</span></div>
-
-        <div class="pa-row"><span class="pa-row-label">Dostępność</span><span class="pa-row-val">24/7, 365 dni</span></div>
-
-      <div class="pa-col bad">
-
-        <div class="pa-col-title">❌ TRADYCYJNE ROZWIĄZANIA</div>
-
-        <div class="pa-row"><span class="pa-row-label">Recepcjonistka / pracownik</span><span class="pa-row-val">3 500–5 000 zł/mies</span></div>
-
-        <div class="pa-row"><span class="pa-row-label">Agencja SMM (posty + reelsy)</span><span class="pa-row-val">2 000–5 000 zł/mies</span></div>
-
-        <div class="pa-row"><span class="pa-row-label">Call center outsourcing</span><span class="pa-row-val">2 500–4 000 zł/mies</span></div>
-
-        <div class="pa-row"><span class="pa-row-label">Wdrożenie + konfiguracja</span><span class="pa-row-val">5 000–20 000 zł</span></div>
-
-        <div class="pa-row"><span class="pa-row-label">Dostępność</span><span class="pa-row-val">8–17, pon–pt</span></div>
-
-      </div>
-
-      </div>
-
-    </div>
-
-    <div class="pa-cta-block">
-
-      <p>Pilotaż 399 zł · bot gotowy w 2–3 dni · rezygnujesz kiedy chcesz</p>
-
-
-
-    </div>
-
-  </div>
-
-</section>
 
 
 
@@ -11853,7 +11517,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           Przez <strong>10 lat</strong> buduję systemy automatyzacji dla firm w Polsce i Ukrainie.
 
-          Wdrożyłem ponad <strong>80 projektów AI i n8n</strong> — od małych gabinetów po sieci klinik.
+          Prowadzę <strong>109+ aktywnych workflow AI i n8n</strong> w StalSystem Polska — własnej firmie, którą zautomatyzowałem jako pierwszy. To mój Case #01.
 
           Prototyp dla Twojej firmy robię w <strong>2–3 dni robocze</strong>.<br><br>
 
@@ -11906,6 +11570,672 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 </section>
+
+<section id="roi-calc">
+
+
+
+
+
+
+
+  <div class="inner reveal">
+
+
+
+
+
+
+
+    <div class="section-label">Kalkulator ROI</div>
+
+
+
+
+
+
+
+    <h2>Ile tracisz na <span class="grad-text">nieodebranych telefonach</span>?</h2>
+
+
+
+
+
+
+
+    <div class="roi-card">
+
+
+
+
+
+
+
+      <div class="roi-sliders">
+
+
+
+
+
+
+
+        <div class="roi-row">
+
+
+
+
+
+
+
+          <div class="roi-lbl"><span>Telefonów dziennie</span><strong id="v-calls">30</strong></div>
+
+
+
+
+
+
+
+          <input type="range" min="5" max="100" value="30" id="r-calls" oninput="calcRoi()">
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="roi-row">
+
+
+
+
+
+
+
+          <div class="roi-lbl"><span>Nieodebranych (%)</span><strong id="v-miss">25%</strong></div>
+
+
+
+
+
+
+
+          <input type="range" min="5" max="60" value="25" id="r-miss" oninput="calcRoi()">
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="roi-row">
+
+
+
+
+
+
+
+          <div class="roi-lbl"><span>Wartość klienta</span><strong id="v-val">800 zł</strong></div>
+
+
+
+
+
+
+
+          <input type="range" min="200" max="10000" step="100" value="800" id="r-val" oninput="calcRoi()">
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <div class="roi-result">
+
+
+
+
+
+
+
+        <div class="roi-desc">Tracisz miesięcznie na nieodebranych telefonach</div>
+
+
+
+
+
+
+
+        <div class="roi-big" id="roi-loss">18 000 zł</div>
+
+
+
+
+
+
+
+        <div class="roi-sub">przy założeniu, że 30% nieodebranych = utracony klient</div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <div class="roi-split">
+
+
+
+
+
+
+
+        <div class="roi-mini"><div class="rm-val" id="roi-saved">17 701 zł</div><div class="rm-lbl">potencjalny zysk/mies. z voicebotem</div></div>
+
+
+
+
+
+
+
+        <div class="roi-mini"><div class="rm-val" id="roi-payback">&lt;1 mies.</div><div class="rm-lbl">zwrot z inwestycji</div></div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <a href="#cta" class="btn btn-primary" id="roiCtaBtn" style="width:100%;justify-content:center">Chcę odzyskać te pieniądze →</a>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+</section>
+
+<!-- JAK TO DZIAŁA -->
+<section id="jak-to-dziala" style="background:var(--bg)">
+  <div class="inner reveal">
+    <div class="section-label">Proces</div>
+    <h2>Od pierwszego kontaktu do <span class="grad-text">bota w pracy</span> — 2–3 dni</h2>
+    <p style="color:var(--text2);margin-top:12px;font-size:16px;font-weight:300;text-align:center;max-width:520px;margin-left:auto;margin-right:auto">Bez 30-minutowych rozmów wstępnych. Bez "skonfiguruj sam". Wysyłasz formularz — my robimy resztę.</p>
+
+    <div style="margin-top:48px;position:relative">
+      <!-- connecting line -->
+      <div style="position:absolute;left:31px;top:40px;bottom:40px;width:2px;background:linear-gradient(to bottom,var(--purple),rgba(139,92,246,0));display:none" class="step-line"></div>
+
+      <div style="display:flex;flex-direction:column;gap:0">
+
+        <!-- Step 1 -->
+        <div style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;flex-shrink:0">1</div>
+          <div style="flex:1">
+            <div style="font-size:17px;font-weight:700;margin-bottom:4px">Kontakt — piszesz że chcesz wdrożenie</div>
+            <div style="font-size:14px;color:var(--text2);line-height:1.6">WhatsApp, e-mail lub formularz na stronie. Odpiszemy w ciągu kilku godzin i wyślemy link do kwestionariusza.</div>
+          </div>
+          <div style="font-size:11px;color:var(--text3);white-space:nowrap;margin-top:4px;flex-shrink:0">Dzień 0</div>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(139,92,246,.15);border:2px solid var(--purple);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--purple);flex-shrink:0">2</div>
+          <div style="flex:1">
+            <div style="font-size:17px;font-weight:700;margin-bottom:4px">Kwestionariusz — opisujesz swoją firmę <span style="font-size:12px;font-weight:400;color:var(--text3)">(~10 minut)</span></div>
+            <div style="font-size:14px;color:var(--text2);line-height:1.6">Wypełniasz formularz online: usługi i ceny, godziny pracy, najczęstsze pytania klientów, styl komunikacji. Zero rozmów telefonicznych — wszystko przez formularz.</div>
+            <div style="margin-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--cyan);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);border-radius:6px;padding:4px 10px">📋 Link do formularza wysyłamy po kontakcie</div>
+          </div>
+          <div style="font-size:11px;color:var(--text3);white-space:nowrap;margin-top:4px;flex-shrink:0">Dzień 1</div>
+        </div>
+
+        <!-- Step 3 -->
+        <div style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#8b5cf6,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;flex-shrink:0">3</div>
+          <div style="flex:1">
+            <div style="font-size:17px;font-weight:700;margin-bottom:4px">Faktura — opłata za konfigurację</div>
+            <div style="font-size:14px;color:var(--text2);line-height:1.6">Po otrzymaniu kwestionariusza wystawiamy fakturę <strong style="color:var(--text)">399 zł netto (jednorazowo)</strong> za konfigurację. Po opłaceniu zaczynamy ustawiać Karolinę.</div>
+            <div style="margin-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--purple);background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.25);border-radius:6px;padding:4px 10px">💳 Przelew lub karta · termin płatności 3 dni</div>
+          </div>
+          <div style="font-size:11px;color:var(--text3);white-space:nowrap;margin-top:4px;flex-shrink:0">Dzień 1</div>
+        </div>
+
+        <!-- Step 4 -->
+        <div style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(139,92,246,.15);border:2px solid var(--purple);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--purple);flex-shrink:0">4</div>
+          <div style="flex:1">
+            <div style="font-size:17px;font-weight:700;margin-bottom:4px">Konfiguracja — Anatoliy ustawia Karolinę</div>
+            <div style="font-size:14px;color:var(--text2);line-height:1.6">Na podstawie Twojego kwestionariusza budujemy bazę wiedzy: usługi, ceny, godziny, FAQ, sposób rozmawiania. Karolina uczy się Twojej firmy. Dostarczamy nowy numer +48.</div>
+          </div>
+          <div style="font-size:11px;color:var(--text3);white-space:nowrap;margin-top:4px;flex-shrink:0">Dzień 1–2</div>
+        </div>
+
+        <!-- Step 5 -->
+        <div style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(139,92,246,.15);border:2px solid var(--purple);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--purple);flex-shrink:0">5</div>
+          <div style="flex:1">
+            <div style="font-size:17px;font-weight:700;margin-bottom:4px">Test — dzwonisz i sprawdzasz</div>
+            <div style="font-size:14px;color:var(--text2);line-height:1.6">Dzwonisz na nowy numer i testujesz Karolinę jak prawdziwy klient Twojej firmy. Jeśli coś nie gra — poprawki gratis, bez limitu rund.</div>
+          </div>
+          <div style="font-size:11px;color:var(--text3);white-space:nowrap;margin-top:4px;flex-shrink:0">Dzień 2–3</div>
+        </div>
+
+        <!-- Step 6 -->
+        <div style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#8b5cf6,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;flex-shrink:0">6</div>
+          <div style="flex:1">
+            <div style="font-size:17px;font-weight:700;margin-bottom:4px">Akceptacja — piszesz "Akceptuję bota"</div>
+            <div style="font-size:14px;color:var(--text2);line-height:1.6">Bot działa zgodnie z oczekiwaniami — wysyłasz nam na WhatsApp <strong style="color:var(--text)">"Akceptuję bota"</strong> lub podobnie. My wystawiamy fakturę za pierwszy miesiąc abonamentu od <strong style="color:var(--text)">399 zł netto</strong>. Po opłaceniu Karolina jest Twoja na stałe.</div>
+            <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+              <div style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--cyan);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);border-radius:6px;padding:4px 10px">💬 WhatsApp lub e-mail wystarczy</div>
+              <div style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--green);background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:6px;padding:4px 10px">✓ Umowa miesięczna — bez zobowiązań</div>
+            </div>
+          </div>
+          <div style="font-size:11px;color:var(--text3);white-space:nowrap;margin-top:4px;flex-shrink:0">Dzień 3</div>
+        </div>
+
+        <!-- Step 7 -->
+        <div style="display:flex;gap:20px;align-items:flex-start;padding:20px 0">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#10b981,#059669);display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0">✓</div>
+          <div style="flex:1">
+            <div style="font-size:17px;font-weight:700;margin-bottom:4px">Start — Karolina odbiera telefony 24/7</div>
+            <div style="font-size:14px;color:var(--text2);line-height:1.6">Bot w pracy. Każdego miesiąca wystawiamy fakturę abonamentową. Chcesz zrezygnować — piszesz i kończymy bez kar.</div>
+          </div>
+          <div style="font-size:11px;color:var(--text3);white-space:nowrap;margin-top:4px;flex-shrink:0">Dzień 3+</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:36px">
+      <a href="https://wa.me/48733245757?text=Dzień dobry! Chciałbym zacząć wdrożenie Karoliny AI." target="_blank" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;border-color:#25D366">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.54 5.873L0 24l6.322-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.963-1.345l-.357-.21-3.752.896.942-3.657-.232-.374A9.818 9.818 0 1112 21.818z"/></svg>
+        Zacznij wdrożenie — napisz na WhatsApp
+      </a>
+      <p style="margin-top:12px;font-size:13px;color:var(--text3)">Odpiszemy w ciągu kilku godzin &middot; pierwsze pytania gratis &middot; bez zobowiązań</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="pricing" style="background:var(--bg1)">
+  <div class="inner reveal">
+    <div class="section-label">Cennik</div>
+    <h2>Przejrzyste ceny — <span class="grad-text">bez niespodzianek</span></h2>
+    <p style="color:var(--text2);margin-top:12px;font-size:16px;font-weight:300;text-align:center">Ceny netto + VAT 23%. Umowa miesiączna — rezygnujesz kiedy chcesz.</p>
+
+    <!-- OPŁATA ZA WDROŻENIE -->
+    <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch">
+
+      <div style="background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(59,130,246,.06));border:2px solid var(--purple);border-radius:14px;padding:24px 28px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--purple);margin-bottom:8px">Opłata za konfigurację</div>
+        <div style="font-size:36px;font-weight:800;line-height:1;margin-bottom:4px">399 <span style="font-size:16px;font-weight:400;color:var(--text2)">zł netto</span></div>
+        <div style="font-size:13px;color:var(--text3);margin-bottom:16px">= 491 zł brutto &middot; <strong style="color:var(--text)">jednorazowo</strong></div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px">
+          <li style="font-size:13px;color:var(--text2);display:flex;gap:7px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Pełna konfiguracja Karoliny AI</li>
+          <li style="font-size:13px;color:var(--text2);display:flex;gap:7px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Nowy numer +48 przypisany do Twojej firmy</li>
+          <li style="font-size:13px;color:var(--text2);display:flex;gap:7px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Baza wiedzy: usługi, ceny, FAQ, godziny</li>
+          <li style="font-size:13px;color:var(--text2);display:flex;gap:7px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Testy i poprawki bez limitu rund</li>
+          <li style="font-size:13px;color:var(--text2);display:flex;gap:7px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Wdrożenie w 2–3 dni robocze</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:24px 28px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text3);margin-bottom:8px">Następnie abonament miesięczny</div>
+        <div style="font-size:36px;font-weight:800;line-height:1;margin-bottom:4px">od 399 <span style="font-size:16px;font-weight:400;color:var(--text2)">zł netto</span></div>
+        <div style="font-size:13px;color:var(--text3);margin-bottom:16px">/mies. &middot; umowa miesięczna &middot; rezygnujesz kiedy chcesz</div>
+        <div style="font-size:13px;color:var(--text2);line-height:1.7">Hosting, numer +48, minuty rozmów, aktualizacje AI, wsparcie. Karolina działa 24/7 — tyle kosztuje jej utrzymanie każdego miesiąca.</div>
+        <div style="margin-top:14px;font-size:12px;color:var(--text3)">&#128071; Szczegóły pakietów poniżej</div>
+      </div>
+
+    </div>
+
+    <!-- KAROLINA VOICEBOT - 3 taryfy -->
+    <div style="margin-top:40px;border:2px solid var(--purple);border-radius:var(--r);overflow:hidden">
+      <div style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(59,130,246,.08));padding:24px 32px;display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">&#127897;&#65039;</span>
+        <div>
+          <div style="font-size:22px;font-weight:700">Karolina AI &mdash; Voicebot</div>
+          <div style="color:var(--text3);font-size:14px">Asystent głosowy 24/7 &middot; <strong style="color:var(--cyan)">nowy numer +48 wliczony w pakiet</strong> &mdash; nie kupujesz osobno</div>
+        </div>
+      </div>
+      <!-- 3 karty taryfowe -->
+      <div style="padding:28px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px">
+
+        <!-- Podstawowy -->
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:22px;display:flex;flex-direction:column">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin-bottom:6px">Podstawowy</div>
+          <div style="font-size:30px;font-weight:800;line-height:1;margin-bottom:2px">399 zł <span style="font-size:13px;font-weight:400;color:var(--text2)">netto/mies.</span></div>
+          <div style="font-size:12px;color:var(--text3);margin-bottom:16px">= 491 zł brutto &middot; <strong>200 min</strong></div>
+          <ul style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Odbieranie połączeń 24/7</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--cyan);font-weight:700;flex-shrink:0">&#128222;</span> <strong>Nowy numer +48</strong> wliczony &mdash; nie kupujesz osobno</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Rezerwacja wizyt (Google Cal / Calendly)</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Zmiana i anulowanie na prośbę klienta</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Odpowiedzi na FAQ &mdash; cennik, godziny</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Raport dzienny na e-mail</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Wdrożenie 48h &middot; bez umowy</li>
+          </ul>
+          <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.5">
+            <strong style="color:var(--green)">&#128161;</strong> Do ~20 połączeń/dzień. Odzysk <strong>6&thinsp;000&ndash;18&thinsp;000 zł/mies.</strong>
+          </div>
+        </div>
+
+        <!-- Pro (wyróżniony) -->
+        <div style="background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(59,130,246,.05));border:2px solid var(--purple);border-radius:12px;padding:22px;display:flex;flex-direction:column;position:relative">
+          <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 14px;border-radius:100px;white-space:nowrap">&#11088; Najpopularniejszy</div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--purple);margin-bottom:6px">Pro</div>
+          <div style="font-size:30px;font-weight:800;line-height:1;margin-bottom:2px">499 zł <span style="font-size:13px;font-weight:400;color:var(--text2)">netto/mies.</span></div>
+          <div style="font-size:12px;color:var(--text3);margin-bottom:16px">= 614 zł brutto &middot; <strong>300 min</strong></div>
+          <ul style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Odbieranie połączeń 24/7</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--cyan);font-weight:700;flex-shrink:0">&#128222;</span> <strong>Nowy numer +48</strong> wliczony &mdash; nie kupujesz osobno</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Rezerwacja wizyt (Google Cal / Calendly)</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Zmiana i anulowanie na prośbę klienta</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Odpowiedzi na FAQ &mdash; cennik, godziny</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Raport dzienny na e-mail</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Wdrożenie 48h &middot; bez umowy</li>
+          </ul>
+          <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.5">
+            <strong style="color:var(--green)">&#128161;</strong> Do ~30 połączeń/dzień bez overage. Odzysk <strong>12&thinsp;000&ndash;24&thinsp;000 zł/mies.</strong>
+          </div>
+        </div>
+
+        <!-- Premium -->
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:22px;display:flex;flex-direction:column">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin-bottom:6px">Premium</div>
+          <div style="font-size:30px;font-weight:800;line-height:1;margin-bottom:2px">599 zł <span style="font-size:13px;font-weight:400;color:var(--text2)">netto/mies.</span></div>
+          <div style="font-size:12px;color:var(--text3);margin-bottom:16px">= 737 zł brutto &middot; <strong>400 min</strong></div>
+          <ul style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Odbieranie połączeń 24/7</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--cyan);font-weight:700;flex-shrink:0">&#128222;</span> <strong>Nowy numer +48</strong> wliczony &mdash; nie kupujesz osobno</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Rezerwacja wizyt (Google Cal / Calendly)</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Zmiana i anulowanie na prośbę klienta</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Odpowiedzi na FAQ &mdash; cennik, godziny</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Raport dzienny na e-mail</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Wdrożenie 48h &middot; bez umowy</li>
+          </ul>
+          <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.5">
+            <strong style="color:var(--green)">&#128161;</strong> Do ~45 połączeń/dzień. Kliniki z intensywnym ruchem — odzysk <strong>20&thinsp;000+ zł/mies.</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Overage + No-show add-on -->
+      <div style="padding:0 32px 24px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start">
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--text3)">
+          Ponad limit minut: <strong style="color:var(--text)">+1,50 zł/min</strong> &middot; Ceny netto + VAT 23%
+        </div>
+        <div style="border:2px solid rgba(139,92,246,.3);border-radius:10px;padding:14px 18px;background:rgba(139,92,246,.04)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div>
+              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--purple)">+ Moduł dodatkowy</div>
+              <div style="font-size:15px;font-weight:700;margin-top:2px">No-show Prevention</div>
+              <div style="font-size:11px;color:var(--text3)">Automatyczne potwierdzenia 24h przed wizytą</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;margin-left:12px">
+              <div style="font-size:20px;font-weight:700">+79 zł</div>
+              <div style="font-size:11px;color:var(--text3)">netto/mies. (97 zł brutto)</div>
+            </div>
+          </div>
+          <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px">
+            <li style="font-size:12px;color:var(--text2)">&#10003; Potwierdzenie dzień przed wizytą</li>
+            <li style="font-size:12px;color:var(--text2)">&#10003; Klient potwierdza klawiszem</li>
+            <li style="font-size:12px;color:var(--text2)">&#10003; Redukcja no-show 60&ndash;80%</li>
+            <li style="font-size:12px;color:var(--text2)">&#10003; ~4&thinsp;320 zł odzysku/mies.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="padding:20px 32px;border-top:1px solid var(--border);display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <a href="https://wa.me/48733245757?text=Chcę zamówić bota głosowego AI. Wyślijcie mi formularz." target="_blank" class="btn btn-primary" style="background:#25D366;border-color:#25D366;display:inline-flex;align-items:center;gap:8px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.54 5.873L0 24l6.322-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.963-1.345l-.357-.21-3.752.896.942-3.657-.232-.374A9.818 9.818 0 1112 21.818z"/></svg>
+          Napisz na WhatsApp
+        </a>
+        <span style="font-size:13px;color:var(--text3)">odpiszemy w ciągu dnia</span>
+        <a href="mailto:biuro.stalsystem.pl@gmail.com?subject=Zapytanie o Karolina AI" style="font-size:13px;color:var(--text2);display:inline-flex;align-items:center;gap:6px;text-decoration:none">✉️ Napisz na e-mail &mdash; odpiszemy w ciągu 30 minut</a>
+      </div>
+    </div>
+
+    <!-- OTHER SERVICES GRID -->
+    <div class="price-grid" style="margin-top:24px">
+
+      <div class="price-card">
+        <div style="font-size:24px;margin-bottom:8px">&#129302;</div>
+        <div class="price-tier">Chatbot AI</div>
+        <div class="price-amt">299 <span style="font-size:16px;font-weight:400">zł netto</span></div>
+        <div class="price-unit">/mies.</div>
+        <ul class="price-feats">
+          <li>Asystent tekstowy na stronie WWW</li>
+          <li>Odpowiedzi na pytania o ofertę i ceny</li>
+          <li>Kwalifikacja leadów &mdash; przekazuje do sprzedawcy</li>
+          <li>Baza wiedzy aktualizowana przez Ciebie</li>
+        </ul>
+        <div style="background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 12px;margin-bottom:16px;font-size:13px;line-height:1.4">
+          <strong style="color:var(--green)">&#128161;</strong> 80% zapytań automatycznie &middot; odpowiedź w 2&nbsp;min &middot; oszczędność ~2&thinsp;400 zł/mies.
+        </div>
+        <a href="#cta" class="btn btn-outline" style="width:100%;justify-content:center">Zapytaj o chatbota &rarr;</a>
+      </div>
+
+      <div class="price-card">
+        <div style="font-size:24px;margin-bottom:8px">&#128241;</div>
+        <div class="price-tier">SMM + Reelsy AI</div>
+        <div class="price-amt">199 <span style="font-size:16px;font-weight:400">zł netto</span></div>
+        <div class="price-unit">/mies.</div>
+        <ul class="price-feats">
+          <li>5 postów + 5 grafik AI miesięcznie</li>
+          <li>1 Reel (Facebook / Instagram)</li>
+          <li>Copywriting, hashtagi, harmonogram</li>
+          <li>Raport miesięczny: zasięg i interakcje</li>
+        </ul>
+        <div style="background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 12px;margin-bottom:16px;font-size:13px;line-height:1.4">
+          <strong style="color:var(--green)">&#128161;</strong> Agencja SMM bierze 800–1&thinsp;500 zł/mies. za to samo. Oszczędzasz <strong>600–1&thinsp;300 zł</strong> + zyskujesz 3–5 leadów organicznie miesięcznie.
+        </div>
+        <a href="#cta" class="btn btn-outline" style="width:100%;justify-content:center">Od 199 zł/mies. &rarr;</a>
+      </div>
+
+      <div class="price-card">
+        <div style="font-size:24px;margin-bottom:8px">&#127919;</div>
+        <div class="price-tier">Reklama FB / IG Ads</div>
+        <div class="price-amt">249 <span style="font-size:16px;font-weight:400">zł netto</span></div>
+        <div class="price-unit">/mies. (obsługa)</div>
+        <ul class="price-feats">
+          <li>Badanie grupy docelowej i person</li>
+          <li>Kreacje reklamowe + konfiguracja piksela</li>
+          <li>A/B testy i optymalizacja tygodniowa</li>
+          <li>Raport: ROAS, koszt/lead, zasięg</li>
+        </ul>
+        <div style="background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 12px;margin-bottom:16px;font-size:13px;line-height:1.4">
+          <strong style="color:var(--green)">&#128161;</strong> Obsługa w agencji: 800–2&thinsp;000 zł/mies. U nas 249 zł. Oszczędzasz <strong>550–1&thinsp;750 zł</strong>. Typowy ROAS 3–5× — przy budżecie 500 zł zarabiasz 1&thinsp;500–2&thinsp;500 zł.
+        </div>
+        <a href="#cta" class="btn btn-outline" style="width:100%;justify-content:center">Od 249 zł/mies. &rarr;</a>
+      </div>
+
+      <div class="price-card">
+        <div style="font-size:24px;margin-bottom:8px">&#128202;</div>
+        <div class="price-tier">Monitoring konkurencji</div>
+        <div class="price-amt">199 <span style="font-size:16px;font-weight:400">zł netto</span></div>
+        <div class="price-unit">/mies.</div>
+        <ul class="price-feats">
+          <li>Codzienne śledzenie cen i ofert konkurencji</li>
+          <li>Analiza reklam FB/IG rywali w czasie rzeczywistym</li>
+          <li>Alerty cenowe i nowe ogłoszenia do Telegrama</li>
+          <li>Tygodniowy raport trendów</li>
+        </ul>
+        <div style="background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 12px;margin-bottom:16px;font-size:13px;line-height:1.4">
+          <strong style="color:var(--green)">&#128161;</strong> Ręczne śledzenie = 2–3h/tydzień = <strong>400–600 zł</strong> Twojego czasu. Reagujesz o 24h szybciej → zatrzymujesz klientów, którzy szukali taniej u konkurencji.
+        </div>
+        <a href="#cta" class="btn btn-outline" style="width:100%;justify-content:center">Od 199 zł/mies. &rarr;</a>
+      </div>
+
+      <div class="price-card">
+        <div style="font-size:24px;margin-bottom:8px">&#128203;</div>
+        <div class="price-tier">Raporty automatyczne</div>
+        <p style="font-size:13px;color:var(--text2);line-height:1.5;margin-bottom:10px">Co poniedziałek o 8:00 masz w skrzynce raport ze statystyk firmy. Zero Excela, zero ręcznego zbierania danych.</p>
+        <div class="price-amt">149 <span style="font-size:16px;font-weight:400">zł netto</span></div>
+        <div class="price-unit">/mies.</div>
+        <ul class="price-feats">
+          <li>Dane z CRM, ERP, Excela, Google Analytics</li>
+          <li>PDF lub Google Sheet &mdash; wybór Twój</li>
+          <li>Wysyłka na e-mail lub Telegram automatycznie</li>
+          <li>Konfiguracja raz &mdash; działa samo</li>
+        </ul>
+        <div style="background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 12px;margin-bottom:16px;font-size:13px;line-height:1.4">
+          <strong style="color:var(--green)">&#128161;</strong> Oszczędność 4h/tydzień &middot; ~800 zł/mies. &middot; decyzje na danych, nie przeczuciach.
+        </div>
+        <a href="#cta" class="btn btn-outline" style="width:100%;justify-content:center">Od 149 zł/mies. &rarr;</a>
+      </div>
+
+      <div class="price-card">
+        <div style="font-size:24px;margin-bottom:8px">&#128736;&#65039;</div>
+        <div class="price-tier">Dedykowane narzędzia AI</div>
+        <div class="price-amt" style="font-size:28px;padding-top:6px">Indywidualnie</div>
+        <div class="price-unit">wycena w 24h</div>
+        <ul class="price-feats">
+          <li>Własny panel zarządzania z interfejsem webowym</li>
+          <li>Analiza dokumentów, ofert i przetargów przez AI</li>
+          <li>Scoring leadów i priorytetyzacja szans sprzedaży</li>
+          <li>Automatyzacja n8n pod Twój proces</li>
+          <li>Twój kod &mdash; możesz odejść kiedy chcesz</li>
+        </ul>
+        <div style="background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 12px;margin-bottom:16px;font-size:13px;line-height:1.4">
+          <strong style="color:var(--green)">&#128161;</strong> Automatyzacja procesów wartych <strong>5&thinsp;000–15&thinsp;000 zł/mies.</strong> pracy zespołu. Zwrot z inwestycji zazwyczaj w 2–3 miesiącach.
+        </div>
+        <a href="#cta" class="btn btn-outline" style="width:100%;justify-content:center">Opowiedz o potrzebie &rarr;</a>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;color:var(--text3);font-size:13px;margin-top:24px">Wdrożenie 399 zł jednorazowo &middot; umowa miesiączna &middot; rezygnujesz kiedy chcesz &middot; ceny netto + VAT 23%</p>
+  </div>
+</section>
+
+<section class="price-anchor">
+
+  <div class="price-anchor-inner">
+
+    <h2>Ile kosztuje <span class="gradient-text">NIEautomatyzacja</span>?</h2>
+
+    <p class="pa-sub">Porównaj realne koszty — zanim zdecydujesz</p>
+
+    <div class="pa-grid">
+
+      <div class="pa-col good">
+
+        <div class="pa-col-title">✓ KAROLINA AI</div>
+
+        <div class="pa-row"><span class="pa-row-label">Odbieranie telefonów 24/7</span><span class="pa-row-val">od 399 zł/mies</span></div>
+
+        <div class="pa-row"><span class="pa-row-label">Reelsy + posty AI (SMM)</span><span class="pa-row-val">od 199 zł/mies</span></div>
+
+        <div class="pa-row"><span class="pa-row-label">Reklamy Facebook/IG</span><span class="pa-row-val">od 249 zł/mies</span></div>
+
+        <div class="pa-row"><span class="pa-row-label">Wdrożenie i konfiguracja</span><span class="pa-row-val">399 zł jednorazowo</span></div>
+
+        <div class="pa-row"><span class="pa-row-label">Dostępność</span><span class="pa-row-val">24/7, 365 dni</span></div>
+
+      <div class="pa-col bad">
+
+        <div class="pa-col-title">❌ TRADYCYJNE ROZWIĄZANIA</div>
+
+        <div class="pa-row"><span class="pa-row-label">Recepcjonistka / pracownik</span><span class="pa-row-val">3 500–5 000 zł/mies</span></div>
+
+        <div class="pa-row"><span class="pa-row-label">Agencja SMM (posty + reelsy)</span><span class="pa-row-val">2 000–5 000 zł/mies</span></div>
+
+        <div class="pa-row"><span class="pa-row-label">Call center outsourcing</span><span class="pa-row-val">2 500–4 000 zł/mies</span></div>
+
+        <div class="pa-row"><span class="pa-row-label">Wdrożenie + konfiguracja</span><span class="pa-row-val">5 000–20 000 zł</span></div>
+
+        <div class="pa-row"><span class="pa-row-label">Dostępność</span><span class="pa-row-val">8–17, pon–pt</span></div>
+
+      </div>
+
+      </div>
+
+    </div>
+
+    <div class="pa-cta-block">
+
+      <p>Pilotaż 399 zł · bot gotowy w 2–3 dni · rezygnujesz kiedy chcesz</p>
+
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
 
 
 
@@ -11970,130 +12300,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
     <div class="faq-list">
-
-
-
-
-
-
-
-      <div class="faq-item">
-
-
-
-        <div class="faq-q" onclick="toggleFaq(this)"><span>Czy AI zastąpi moich pracowników?</span><div class="faq-icon">+</div></div>
-
-
-
-        <div class="faq-a"><p>Nie — AI przejmuje <strong>powtarzalne czynności</strong>: odbieranie telefonów, odpowiadanie na te same pytania, wysyłanie potwierdzeń. Twój zespół skupia się na tym, co wymaga człowieka: budowanie relacji, decyzje, obsługa trudnych przypadków. Recepcja przestaje siedzieć przy słuchawce, a zaczyna zajmować się pacjentami. W praktyce firmy po wdrożeniu nie zwalniają ludzi — <strong>zwiększają obroty bez zatrudniania nowych</strong>.</p></div>
-
-
-
-      </div>      <div class="faq-item">
-
-
-
-
-
-
-
-        <div class="faq-q" onclick="toggleFaq(this)"><span>Ile kosztuje wdrożenie AI?</span><div class="faq-icon">+</div></div>
-
-
-
-
-
-
-
-        <div class="faq-a">
-
-          <p><strong>399 zł jednorazowo — pilotaż</strong><br>
-
-          To koszt uruchomienia: konfigurujemy asystenta pod Twoją firmę, nagrywamy głos, piszemy skrypty, łączymy z numerem telefonu. Zajmuje to 2–3 dni i jest to praca, którą robimy raz. Nie sztuczna bariera — po prostu uczciwe wynagrodzenie za setup.</p>
-
-          <p style="margin-top:10px"><strong>399 zł/mies. — abonament</strong><br>
-
-          To miesięczny koszt utrzymania: hosting, <strong>dedykowany numer telefonu +48 tylko dla Twojej firmy</strong> (nie współdzielony z nikim), minuty rozmów, aktualizacje AI, wsparcie techniczne. Bot działa 24/7 — tyle właśnie kosztuje jego utrzymanie każdego miesiąca.</p>
-
-          <p style="margin-top:10px;color:var(--text2);font-size:14px">Rezygnujesz kiedy chcesz — bez kar, bez długich umów. Kod i konfiguracja zostają u Ciebie.</p>
-
-        </div>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-      <div class="faq-item">
-
-
-
-        <div class="faq-q" onclick="toggleFaq(this)"><span>Czy Karolina dzwoni z polskiego numeru?</span><div class="faq-icon">+</div></div>
-
-
-
-        <div class="faq-a">
-
-          <p>Tak. Karolina działa przez <strong>prawdziwy numer telefonu +48</strong> — dedykowany tylko Twojej firmie. Co potrafi:</p>
-
-          <ul style="margin:10px 0 0 18px;line-height:2">
-
-            <li>🎙️ <strong>Odbiera połączenia głosem</strong> — rozmawia naturalnie, jak człowiek</li>
-
-            <li>📞 <strong>Dzwoni sama</strong> — oddzwania do klientów, potwierdza wizyty, dożyma leady</li>
-
-            <li>📩 <strong>Odbiera SMS</strong> — czyta i rozumie wiadomości tekstowe</li>
-
-            <li>✉️ <strong>Wysyła SMS</strong> — potwierdzenia, przypomnienia, odpowiedzi</li>
-
-          </ul>
-
-          <p style="margin-top:12px;color:var(--text2);font-size:14px">❌ Komunikatory (WhatsApp, Messenger, Viber itp.) — <strong>nie są obsługiwane</strong>. Karolina działa wyłącznie przez telefon i SMS.</p>
-
-        </div>
-
-
-
-      </div>
-
-
-
-      <div class="faq-item">
-
-
-
-        <div class="faq-q" onclick="toggleFaq(this)"><span>Jak długo trwa wdrożenie?</span><div class="faq-icon">+</div></div>
-
-
-
-
-
-
-
-        <div class="faq-a"><p><strong>Pilotaż: 48 godzin</strong> — działający asystent skonfigurowany na danych Twojej firmy. Testujesz, dzwonisz, sprawdzasz jak działa — i dopiero potem decydujesz o abonamencie.</p></div>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
 
       <div class="faq-item">
 
@@ -12235,57 +12441,184 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
+            <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Jak zamówić bota Karolina? Jak wygląda cały proces?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a">
+          <div style="background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.2);border-radius:14px;padding:20px 18px">
+            <div style="text-align:center;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(139,92,246,.15)">
+              <div style="font-size:12px;color:var(--text3);letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px">Od pierwszego kontaktu do działającego bota</div>
+              <div style="font-size:26px;font-weight:800;color:var(--text);line-height:1">2–3 dni</div>
+              <div style="font-size:12px;color:var(--text3);margin-top:4px">Twój wkład: <strong style="color:var(--purple)">15 minut</strong> — resztą zajmujemy się my</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px">
+              <div style="display:flex;align-items:flex-start;gap:12px">
+                <span style="min-width:26px;height:26px;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">01</span>
+                <div><strong style="color:var(--text);font-size:14px">Kontakt</strong><br><span style="font-size:12px;color:var(--text3)">WhatsApp — odpiszemy w ciągu dnia &nbsp;·&nbsp; e-mail — w 30 minut<br>💬 Napisz: „Chcę zamówić Karolinę — prowadzę [branża]"</span></div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:12px">
+                <span style="min-width:26px;height:26px;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">02</span>
+                <div><strong style="color:var(--text);font-size:14px">Formularz online — 15 min</strong><br><span style="font-size:12px;color:var(--text3)">Opisujesz firmę, usługi, ceny, najczęstsze pytania. Zero rozmów z konsultantem.</span></div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:12px">
+                <span style="min-width:26px;height:26px;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">03</span>
+                <div><strong style="color:var(--text);font-size:14px">Konfiguracja — 2–3 dni</strong><br><span style="font-size:12px;color:var(--text3)">Budujemy scenariusze, programujemy głos, podłączamy numer +48, integrujemy z kalendarzem.</span></div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:12px">
+                <span style="min-width:26px;height:26px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">✓</span>
+                <div><strong style="color:var(--text);font-size:14px">Test i start</strong><br><span style="font-size:12px;color:var(--text3)">Dzwonisz na numer testowy, akceptujesz — Karolina rusza 24/7. Raporty na Telegram.</span></div>
+              </div>
+            </div>
+            <div style="background:rgba(139,92,246,.1);border-radius:8px;padding:10px 14px;margin-bottom:14px;text-align:center;font-size:13px;color:var(--text2)">
+              💰 <strong>399 zł</strong> konfiguracja &nbsp;+&nbsp; od <strong>299 zł/mies.</strong>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <a href="https://wa.me/48733245757?text=Chcę zamówić bota głosowego AI. Wyślijcie mi formularz." target="_blank" style="flex:1;min-width:140px;background:#25D366;color:#fff;border-radius:8px;padding:10px 14px;text-align:center;text-decoration:none;font-size:13px;font-weight:600">📱 Napisz na WhatsApp</a>
+              <a href="mailto:biuro.stalsystem.pl@gmail.com?subject=Zamówienie Karolina AI" style="flex:1;min-width:140px;background:rgba(139,92,246,.15);color:var(--text);border:1px solid rgba(139,92,246,.3);border-radius:8px;padding:10px 14px;text-align:center;text-decoration:none;font-size:13px;font-weight:600">✉️ Napisz e-mail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
       <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Czy Karolina odbiera telefony całą dobę?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p><strong>Tak — Karolina odbiera połączenia przychodzące 24/7, przez 365 dni w roku</strong>, bez przerw i świąt. Klient dzwoni o 22:00? Karolina odbiera, umawia wizytę, zapisuje do kalendarza.<br><br>Połączenia <strong>wychodzące</strong> (np. potwierdzenia wizyty, oddzwonienia) realizujemy zgodnie z przepisami RODO — wyłącznie w godzinach <strong>9:00–18:00</strong>. Jeśli klient zostawi prośbę o kontakt w nocy — Karolina oddzwoni rano w pierwszych dostępnych godzinach.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Czy Karolina może wysyłać SMS-y? Jak to działa z RODO?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p><strong>Tak — Karolina może wysyłać SMS-y</strong> (potwierdzenia wizyt, przypomnienia, linki do formularzy), ale tylko klientom, którzy wyrazili na to zgodę zgodnie z RODO.<br><br>W praktyce wygląda to tak:<br>• Klient zostawia numer telefonu i zaznacza zgodę (formularz na stronie, rozmowa z Karoliną)<br>• Karolina wysyła SMS tylko do osób ze zgodą &mdash; w godzinach <strong>9:00&ndash;18:00</strong><br>• Każdy SMS zawiera możliwość rezygnacji (np. &bdquo;odpisz STOP&rdquo;)<br><br>Bez zgody RODO &mdash; <strong>żadnych SMS-ów</strong>. To nie jest opcja, to wymog prawny (UODO + RODO Art. 6). Pomożemy skonfigurować formularz zgody poprawnie.</p></div>
+      </div>
+
+<div class="faq-item">
 
 
 
-        <div class="faq-q" onclick="toggleFaq(this)"><span>Kto to wszystko konfiguruje — ja czy wy?</span><div class="faq-icon">+</div></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Czy AI zastąpi moich pracowników?</span><div class="faq-icon">+</div></div>
+
+
+
+        <div class="faq-a"><p>Nie — AI przejmuje <strong>powtarzalne czynności</strong>: odbieranie telefonów, odpowiadanie na te same pytania, wysyłanie potwierdzeń. Twój zespół skupia się na tym, co wymaga człowieka: budowanie relacji, decyzje, obsługa trudnych przypadków. Recepcja przestaje siedzieć przy słuchawce, a zaczyna zajmować się pacjentami. W praktyce firmy po wdrożeniu nie zwalniają ludzi — <strong>zwiększają obroty bez zatrudniania nowych</strong>.</p></div>
+
+
+
+      </div>      <div class="faq-item">
+
+
+
+
+
+
+
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Ile kosztuje wdrożenie AI?</span><div class="faq-icon">+</div></div>
+
+
+
+
 
 
 
         <div class="faq-a">
 
-          <p style="margin-bottom:10px"><strong style="color:var(--text)">My robimy wszystko. Od Ciebie potrzebujemy tylko 3 rzeczy.</strong></p>
+          <p><strong>399 zł jednorazowo — pilotaż</strong><br>
 
-          <div style="display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin-bottom:14px;font-size:13px;align-items:start">
+          To koszt uruchomienia: konfigurujemy asystenta pod Twoją firmę, nagrywamy głos, piszemy skrypty, łączymy z numerem telefonu. Zajmuje to 2–3 dni i jest to praca, którą robimy raz. Nie sztuczna bariera — po prostu uczciwe wynagrodzenie za setup.</p>
 
-            <div style="color:#10b981;font-weight:700;font-size:16px">1.</div>
+          <p style="margin-top:10px"><strong>399 zł/mies. — abonament</strong><br>
 
-            <div style="color:var(--text2)">Dostęp do Google Calendar (1 kliknięcie — udostępniasz nam wybrany kalendarz)</div>
+          To miesięczny koszt utrzymania: hosting, <strong>dedykowany numer telefonu +48 tylko dla Twojej firmy</strong> (nie współdzielony z nikim), minuty rozmów, aktualizacje AI, wsparcie techniczne. Bot działa 24/7 — tyle właśnie kosztuje jego utrzymanie każdego miesiąca.</p>
+
+          <p style="margin-top:10px;color:var(--text2);font-size:14px">Rezygnujesz kiedy chcesz — bez kar, bez długich umów. Kod i konfiguracja zostają u Ciebie.</p>
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <div class="faq-item">
+
+
+
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Czy Karolina dzwoni z polskiego numeru?</span><div class="faq-icon">+</div></div>
+
+
+
+        <div class="faq-a">
+
+          <p>Tak. Karolina działa przez <strong>prawdziwy numer telefonu +48</strong> — dedykowany tylko Twojej firmie. Co potrafi:</p>
+
+          <ul style="margin:10px 0 0 18px;line-height:2">
+
+            <li>🎙️ <strong>Odbiera połączenia głosem</strong> — rozmawia naturalnie, jak człowiek</li>
+
+            <li>📞 <strong>Dzwoni sama</strong> — oddzwania do klientów, potwierdza wizyty, dożyma leady</li>
+
+            <li>📩 <strong>Odbiera SMS</strong> — czyta i rozumie wiadomości tekstowe</li>
+
+            <li>✉️ <strong>Wysyła SMS</strong> — potwierdzenia, przypomnienia, odpowiedzi</li>
+
+          </ul>
+
+          <p style="margin-top:12px;color:var(--text2);font-size:14px">❌ Komunikatory (WhatsApp, Messenger, Viber itp.) — <strong>nie są obsługiwane</strong>. Karolina działa wyłącznie przez telefon i SMS.</p>
+
+        </div>
+
+
+
+      </div>
+
+
+
+      <div class="faq-item">
+
+
+
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Jak długo trwa wdrożenie?</span><div class="faq-icon">.</div>
+            <div style="color:var(--text2)">Wypełniasz <strong style="color:var(--text)">kwestionariusz online</strong> (~10 minut) — opisujesz usługi, ceny, godziny, najczęstsze pytania klientów</div>
 
             <div style="color:#10b981;font-weight:700;font-size:16px">2.</div>
-
-            <div style="color:var(--text2)">Opis Twojej oferty i cennik (wysyłasz nam plik lub wypełniasz formularz)</div>
+            <div style="color:var(--text2)">Podajesz numer telefonu dla Karoliny — <strong style="color:var(--text)">lub zamawiasz nowy +48</strong> od nas (wliczony w pakiet)</div>
 
             <div style="color:#10b981;font-weight:700;font-size:16px">3.</div>
-
-            <div style="color:var(--text2)">Numer telefonu, na który ma odbierać Karolina (lub kupujemy nowy +48 dla Ciebie)</div>
+            <div style="color:var(--text2)">Testujesz gotowego bota i mówisz "OK" — albo zgłaszasz poprawki (gratis, bez limitu)</div>
 
           </div>
 
           <div style="background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.2);border-radius:8px;padding:12px 14px;font-size:13px">
 
-            <div style="font-weight:700;color:var(--text);margin-bottom:8px">My konfigurujemy:</div>
+            <div style="font-weight:700;color:var(--text);margin-bottom:8px">My konfigurujemy na podstawie kwestionariusza:</div>
 
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;color:var(--text2)">
 
               <div>✓ Karolina AI — głos, skrypt, oferta</div>
-
-              <div>✓ Integracja z Twoim numerem +48</div>
-
-              <div>✓ Google Calendar — automatyczne wpisy</div>
-
-              <div>✓ Telegram — powiadomienia do Ciebie</div>
-
-              <div>✓ Google Sheets — tabela rezerwacji</div>
-
-              <div>✓ SMS potwierdzające dla klientów</div>
+              <div>✓ Nowy numer +48 dla Twojej firmy</div>
+              <div>✓ Baza wiedzy: ceny, FAQ, godziny</div>
+              <div>✓ Telegram — powiadomienia po każdej rozmowie</div>
+              <div>✓ Transkrypt rozmowy w ciągu kilku sekund</div>
+              <div>✓ Integracja z kalendarzem (opcjonalnie)</div>
 
             </div>
 
           </div>
 
-          <p style="margin-top:10px;font-size:13px;color:var(--text2)"><strong style="color:var(--text)">Czas wdrożenia: 2 dni robocze.</strong> Po tym czasie Karolina odbiera pierwsze połączenia, a Ty dostajesz gotowy dashboard. Zero technicznej wiedzy z Twojej strony.</p>
+          <p style="margin-top:10px;font-size:13px;color:var(--text2)"><strong style="color:var(--text)">Czas wdrożenia: 2–3 dni robocze.</strong> Twój wkład: ~10 minut na formularz + test bota. Zero wiedzy technicznej.</p>
 
         </div>
 
@@ -12427,7 +12760,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        <div class="faq-a"><p>Po każdej rozmowie dostajesz <strong>pełny transkrypt</strong> (tekst) i <strong>podsumowanie</strong> — co chciał klient, jakie dane podał, jaki następny krok ustalono. Trafia do Ciebie przez <strong>Telegram, e-mail lub Google Drive</strong> — w ciągu kilku sekund po zakończeniu rozmowy. W planie Pro dodatkowo: <strong>panel online</strong>, gdzie widzisz historię wszystkich rozmów, nagrania audio i status każdego kontaktu. Nic nie ginie w notatniku recepcji.</p></div>
+        <div class="faq-a"><p>Po zakończeniu każdej rozmowy Karolina automatycznie wysyła Ci na <strong>Telegram</strong> podsumowanie: kto dzwonił, czego chciał, co ustalono — w ciągu kilku sekund. Działa to tak: Karolina kończy rozmowę → system wysyła gotową notatkę prosto na Twój telefon. Nie musisz wchodzić do żadnego panelu — powiadomienie samo do Ciebie trafia. <strong>Pełny transkrypt</strong> (tekst całej rozmowy) dostępny na żądanie.</p><p style="margin-top:10px">Jeśli używasz <strong>Google Calendar</strong> — Karolina ma wgląd w Twój kalendarz i widzi wolne terminy w czasie rzeczywistym. Gdy klient chce umówić wizytę, Karolina sprawdza dostępność i od razu rezerwuje termin — bez Twojego udziału. Wszystkie wizyty wpadają prosto do kalendarza firmy.</p><p style="margin-top:10px">W planie Pro dodatkowo: <strong>panel online</strong> z historią wszystkich rozmów i statusem każdego kontaktu. Nic nie ginie w notatniku recepcji.</p></div>
 
 
 
@@ -12459,7 +12792,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        <div class="faq-a"><p>Potrzebujemy od Ciebie tylko 3 rzeczy: cennik, godziny pracy, najczęstsze pytania klientów i procedury (np. jak umawiacie wizyty). Resztą — skrypty, konfigurację, testy — zajmujemy się my. Nie potrzebujesz dokumentacji technicznej ani działu IT. Typowy onboarding od strony klienta to <strong>maksymalnie 2 godziny Twojego czasu</strong> rozłożone na tydzień.</p></div>
+        <div class="faq-a"><p>Po kontakcie wysyłamy Ci link do <strong>kwestionariusza online</strong> — zajmuje około 10 minut. Opisujesz: czym zajmuje się firma, jakie masz usługi i ceny, godziny pracy, najczęstsze pytania od klientów. Resztą — skrypty, konfigurację, testy, numer +48 — zajmujemy się my. Nie potrzebujesz działu IT ani wiedzy technicznej. <strong>Twój czas: maksymalnie 10 minut na formularz</strong> + test gotowego bota.</p></div>
 
 
 
@@ -12480,6 +12813,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
       </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Czy Karolina obsługuje klientów w innych językach?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Tak — pracujemy również w innych językach. Karolina może prowadzić rozmowy po <strong>angielsku, niemiecku, francusku</strong> i innych językach europejskich. Wystarczy poinformować nas przy wdrożeniu, w jakim języku mają być obsługiwani Twoi klienci. Idealne rozwiązanie dla firm z międzynarodową klientelą lub działających na rynkach zagranicznych.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Dlaczego jesteście tańsi od agencji? Co ukrywacie?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Dobre pytanie — i uczciwa odpowiedź jest prosta.<br><br>Zamiast płacić trzem różnym firmom — agencji AI, webowej i reklamowej — płacisz jednej osobie, która robi to wszystko: voicebota, stronę i targetowanie reklam. <strong>Zero pośredników, zero marży na marżę.</strong><br><br>Poza tym: nie mamy biura, działu sprzedaży ani 15 handlowców. Agencja z centrum Warszawy wlicza te koszty w Twoją fakturę. My nie.<br><br>I jedno co ważne: to co Ci sprzedajemy, <strong>najpierw wdrożyliśmy u siebie</strong> — StalSystem Polska działa na 109+ workflow AI. Nie płacisz za eksperymenty na Twojej firmie.<br><br><strong>Tańsze = brak pośredników. Nie brak jakości.</strong></p></div>
+
+
 
 
 
@@ -12583,7 +12927,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-      <div class="obj-item"><div class="obj-myth"><span class="obj-x">✕</span><p>„To pewnie trwa miesiące i kosztuje fortuny."</p></div><div class="obj-truth"><span class="obj-check">✓</span><p>Kiedyś tak. Dziś <strong>działający pilotaż w 1–2 dni</strong>. Widzisz wyniki zanim podpiszesz cokolwiek.</p></div></div>
+      <div class="obj-item"><div class="obj-myth"><span class="obj-x">✕</span><p>„To pewnie trwa miesiące i kosztuje fortuny."</p></div><div class="obj-truth"><span class="obj-check">✓</span><p>Kiedyś tak. Dziś <strong>działający pilotaż w 2–3 dni</strong>. Widzisz wyniki zanim podpiszesz cokolwiek.</p></div></div>
 
 
 
@@ -13389,17 +13733,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
               <div class="form-group">
 
-                <label class="form-label">Telefon *</label>
+                <label class="form-label">Email *</label>
 
-                <input class="form-input" id="qPhone" type="tel" placeholder="+48 000 000 000" required>
-
-              </div>
-
-              <div class="form-group">
-
-                <label class="form-label">Email</label>
-
-                <input class="form-input" id="qEmail" type="email" placeholder="jan@firma.pl">
+                <input class="form-input" id="qEmail" type="email" placeholder="jan@firma.pl" required>
 
               </div>
 
@@ -13569,31 +13905,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        <a href="tel:+48733245757" class="contact-card-v">
-
-
-
-
-
-
-
-          <div class="ccv-icon">📞</div>
-
-
-
-
-
-
-
-          <div><div class="ccv-label">Telefon</div><div class="ccv-val">+48 733 245 757</div></div>
-
-
-
-
-
-
-
-        </a>
+        
 
 
 
@@ -13617,7 +13929,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-          <div><div class="ccv-label">WhatsApp</div><div class="ccv-val">Napisz teraz →</div></div>
+          <div><div class="ccv-label">WhatsApp</div><div class="ccv-val">+48 733 245 757</div><div style="font-size:11px;opacity:.6;margin-top:2px">Napisz teraz →</div></div>
 
 
 
@@ -13633,31 +13945,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        <a href="mailto:biuro.stalsystem.pl@gmail.com" class="contact-card-v">
-
-
-
-
-
-
-
-          <div class="ccv-icon">✉️</div>
-
-
-
-
-
-
-
-          <div><div class="ccv-label">Email</div><div class="ccv-val">biuro.stalsystem.pl@gmail.com</div></div>
-
-
-
-
-
-
-
-        </a>
+        
 
 
 
@@ -13713,31 +14001,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        <div class="guarantee-strip">
-
-
-
-
-
-
-
-          <strong>✓ Gwarancja zerowego ryzyka</strong>
-
-
-
-
-
-
-
-          <p>Jeśli pilotaż Cię nie przekona — nie płacisz nic.<br>Decyzja po zobaczeniu działającego systemu, nie przed.</p>
-
-
-
-
-
-
-
-        </div>
+        
 
 
 
@@ -14111,7 +14375,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-  <div class="footer-copy">© 2026 KREATO.AI · Polska · <a href="tel:+48733245757" style="color:var(--text3);text-decoration:none">+48 733 245 757</a></div>
+  <div class="footer-copy">© 2026 KREATO.AI · Polska · <a href="mailto:biuro.stalsystem.pl@gmail.com" style="color:var(--text3);text-decoration:none">biuro.stalsystem.pl@gmail.com</a> · <a href="tel:+48224176808" style="color:var(--text3);text-decoration:none">+48 224 176 808</a></div>
 
 
 
@@ -16951,7 +17215,7 @@ document.getElementById('exit-popup').addEventListener('click', e=>{ if(e.target
 
 
 
-<button id="callback-float" onclick="openCb()">📞 Zadzwonimy w 30 min</button>
+<button id="callback-float" onclick="openCb()">✉️ Odpisujemy w 30 min</button>
 
 
 
@@ -17721,7 +17985,7 @@ function filterTesti(btn,ind){
 
     <img class="kp-avatar"
 
-      src="https://dbrqdnfoxoqnwytfsyvf.supabase.co/storage/v1/object/public/assets/karolina.jpg?v=2"
+      src="https://dbrqdnfoxoqnwytfsyvf.supabase.co/storage/v1/object/public/assets/karolina.jpg?v=3"
 
       alt="Karolina AI" loading="lazy">
 
@@ -17838,6 +18102,9 @@ if(typeof Typed !== 'undefined' && document.getElementById('kreato-typed')){
 
 
 </html>
+
+
+
 
 
 
