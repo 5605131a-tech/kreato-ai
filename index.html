@@ -10293,7 +10293,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-      <div class="step-card"><div class="step-num">02</div><h3>Kwestionariusz (10–20 min)</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Wypełniasz formularz online: nazwa firmy, adres, usługi i ceny, godziny pracy, najczęstsze pytania, styl komunikacji. Zero rozmów telefonicznych.</p><span class="step-result">Dzień 1</span></div>
+      <div class="step-card"><div class="step-num">02</div><h3>Kwestionariusz (10–20 min)</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Wypełniasz formularz online: nazwa firmy, adres, usługi i ceny, godziny pracy, najczęstsze pytania, styl komunikacji. Zero rozmów telefonicznych.</p><button onclick="openOnboarding()" style="margin-top:12px;background:var(--grad);color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:13px;font-weight:600;cursor:pointer;width:100%">Wypełnij kwestionariusz →</button><span class="step-result">Dzień 1</span></div>
 
       <div class="step-card"><div class="step-num">03</div><h3>Faktura — 399 zł netto</h3><p style="color:var(--text2);font-size:13px;line-height:1.7;font-weight:300">Po otrzymaniu kwestionariusza wystawiamy fakturę za konfigurację. Przelew lub karta, termin 3 dni. Po opłaceniu zaczynamy.</p><span class="step-result">Dzień 1</span></div>
 
@@ -17996,6 +17996,189 @@ if(typeof Typed !== 'undefined' && document.getElementById('kreato-typed')){
     hero.insertBefore(orb, hero.firstChild);
   }
 })();
+</script>
+
+<!-- ===== ONBOARDING MODAL ===== -->
+<div id="onboardingModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);overflow-y:auto;padding:20px 16px">
+  <div style="max-width:640px;margin:0 auto;background:var(--card);border:1px solid var(--border-a);border-radius:16px;padding:32px 28px;position:relative">
+
+    <button onclick="closeOnboarding()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--text2);font-size:22px;cursor:pointer;line-height:1">×</button>
+
+    <div style="margin-bottom:24px">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:8px">Kwestionariusz konfiguracyjny</div>
+      <h3 style="font-size:20px;font-weight:700;color:#fff;margin-bottom:6px">Skonfiguruj Karolinę AI dla Twojej firmy</h3>
+      <p style="font-size:13px;color:var(--text2);line-height:1.6">Wypełnij poniższy formularz (10–20 min) — na tej podstawie zbudujemy bazę wiedzy Karoliny. Zero rozmów telefonicznych.</p>
+    </div>
+
+    <form id="onboardingForm" onsubmit="submitOnboarding(event)">
+
+      <!-- Q1 -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">1. NAZWA FIRMY</label>
+        <input name="q1_nazwa" type="text" required placeholder="np. Stomatologia Kowalski" style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:#fff;font-size:14px;outline:none">
+      </div>
+
+      <!-- Q2 -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">2. BRANŻA</label>
+        <select name="q2_branza" required style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:#fff;font-size:14px;outline:none;appearance:none">
+          <option value="">— wybierz —</option>
+          <option>Stomatologia / Klinika medyczna</option>
+          <option>Budowlanka / Usługi techniczne</option>
+          <option>Sklep / E-commerce</option>
+          <option>Beauty / Salon fryzjerski</option>
+          <option>Restauracja / Catering</option>
+          <option>Usługi finansowe / Ubezpieczenia</option>
+          <option>Nieruchomości</option>
+          <option>Inna</option>
+        </select>
+      </div>
+
+      <!-- Q3 -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">3. ADRES / MIASTO</label>
+        <input name="q3_adres" type="text" required placeholder="np. ul. Główna 5, Poznań" style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:#fff;font-size:14px;outline:none">
+      </div>
+
+      <!-- Q4 -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">4. USŁUGI I ORIENTACYJNE CENY</label>
+        <textarea name="q4_uslugi" required rows="4" placeholder="np. Przegląd stomatologiczny — 150 zł&#10;Wybielanie zębów — 800 zł&#10;Ekstrakcja — 200 zł" style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:#fff;font-size:14px;outline:none;resize:vertical"></textarea>
+      </div>
+
+      <!-- Q5 -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">5. GODZINY PRACY</label>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-items:center">
+          <span style="font-size:13px;color:var(--text2)">Pon–Pt</span>
+          <input name="q5_ponpt" type="text" placeholder="np. 8:00–18:00" style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:#fff;font-size:13px;outline:none">
+          <span style="font-size:13px;color:var(--text2)">Sobota</span>
+          <input name="q5_sb" type="text" placeholder="Zamknięte" style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:#fff;font-size:13px;outline:none">
+          <span style="font-size:13px;color:var(--text2)">Niedziela</span>
+          <input name="q5_nd" type="text" placeholder="Zamknięte" style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:#fff;font-size:13px;outline:none">
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">6. NAJCZĘSTSZE PYTANIA KLIENTÓW + ODPOWIEDZI</label>
+        <p style="font-size:11px;color:var(--text3);margin-bottom:6px">Przykład: „Czy mają Państwo wolny termin w tym tygodniu?" → „Wolne terminy proszę sprawdzić dzwoniąc po 9:00."</p>
+        <textarea name="q6_faq" required rows="5" placeholder="Pytanie 1: ...&#10;Odpowiedź: ...&#10;&#10;Pytanie 2: ...&#10;Odpowiedź: ..." style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:#fff;font-size:14px;outline:none;resize:vertical"></textarea>
+      </div>
+
+      <!-- Q7 -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">7. JAK KAROLINA MA SIĘ PRZEDSTAWIAĆ?</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+          <label style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2)">
+            <input type="radio" name="q7_styl" value="Oficjalnie (Pan/Pani)" style="accent-color:var(--purple)"> Oficjalnie (Pan/Pani)
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2)">
+            <input type="radio" name="q7_styl" value="Przyjaźnie (per Ty)" style="accent-color:var(--purple)"> Przyjaźnie (per Ty)
+          </label>
+        </div>
+        <input name="q7_imie" type="text" placeholder="Jak ma się przedstawiać bot? (np. 'Karolina z firmy Kowalski')" style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:#fff;font-size:14px;outline:none">
+      </div>
+
+      <!-- Q8 -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">8. CO ROBIĆ GDY BOT NIE ZNA ODPOWIEDZI?</label>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <label style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2)">
+            <input type="radio" name="q8_fallback" value="Przekaż na numer telefonu" style="accent-color:var(--purple)"> Przekaż rozmowę na numer telefonu
+          </label>
+          <label style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2)">
+            <input type="radio" name="q8_fallback" value="Powiedz że oddzwonimy" style="accent-color:var(--purple)"> Powiedz „oddzwonimy w ciągu godziny"
+          </label>
+          <label style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2)">
+            <input type="radio" name="q8_fallback" value="Wyślij SMS z prośbą o kontakt" style="accent-color:var(--purple)"> Wyślij SMS do klienta z prośbą o kontakt
+          </label>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">9. CO MA ROBIĆ BOT? (można wybrać kilka)</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <label style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2)">
+            <input type="checkbox" name="q9_cele" value="Odbieranie pytań o usługi i ceny" style="accent-color:var(--purple)"> Pytania o usługi/ceny
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2)">
+            <input type="checkbox" name="q9_cele" value="Umawianie wizyt/spotkań" style="accent-color:var(--purple)"> Umawianie wizyt
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2)">
+            <input type="checkbox" name="q9_cele" value="Kwalifikacja leadów" style="accent-color:var(--purple)"> Kwalifikacja leadów
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2)">
+            <input type="checkbox" name="q9_cele" value="Informacje o godzinach/adresie" style="accent-color:var(--purple)"> Godziny/adres
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2)">
+            <input type="checkbox" name="q9_cele" value="Odbiór połączeń po godzinach pracy" style="accent-color:var(--purple)"> Po godzinach pracy
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2)">
+            <input type="checkbox" name="q9_cele" value="Przekazywanie powiadomień do właściciela" style="accent-color:var(--purple)"> Powiadomienia właściciela
+          </label>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">10. DANE KONTAKTOWE DO POWIADOMIEŃ</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <input name="q10_email" type="email" required placeholder="E-mail" style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:#fff;font-size:14px;outline:none">
+          <input name="q10_tel" type="tel" placeholder="Telefon (opcjonalnie)" style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:#fff;font-size:14px;outline:none">
+        </div>
+      </div>
+
+      <!-- Q11 -->
+      <div style="margin-bottom:28px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">11. DODATKOWE INFORMACJE (opcjonalnie)</label>
+        <textarea name="q11_extra" rows="3" placeholder="Coś ważnego, czego nie było w poprzednich pytaniach..." style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:#fff;font-size:14px;outline:none;resize:vertical"></textarea>
+      </div>
+
+      <button type="submit" style="width:100%;background:var(--grad);color:#fff;border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:700;cursor:pointer">Wyślij kwestionariusz →</button>
+      <p style="text-align:center;font-size:11px;color:var(--text3);margin-top:10px">Odpiszemy w ciągu 30 minut i wystawimy fakturę za konfigurację (399 zł netto)</p>
+
+    </form>
+
+    <div id="onboardingSuccess" style="display:none;text-align:center;padding:40px 20px">
+      <div style="font-size:48px;margin-bottom:16px">✅</div>
+      <h3 style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px">Otrzymaliśmy kwestionariusz!</h3>
+      <p style="color:var(--text2);font-size:14px">Odpiszemy w ciągu 30 minut z fakturą i terminem uruchomienia.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function openOnboarding(){document.getElementById('onboardingModal').style.display='block';document.body.style.overflow='hidden'}
+function closeOnboarding(){document.getElementById('onboardingModal').style.display='none';document.body.style.overflow=''}
+document.getElementById('onboardingModal').addEventListener('click',function(e){if(e.target===this)closeOnboarding()})
+
+function submitOnboarding(e){
+  e.preventDefault();
+  var f=e.target;
+  var d={};
+  new FormData(f).forEach(function(v,k){if(d[k])d[k]+=(Array.isArray(d[k])?', ':', ')+v;else d[k]=v});
+  var body='Kwestionariusz KREATO.AI\n\n';
+  var labels={'q1_nazwa':'1. Nazwa firmy','q2_branza':'2. Branża','q3_adres':'3. Adres','q4_uslugi':'4. Usługi i ceny','q5_ponpt':'5a. Pon-Pt','q5_sb':'5b. Sobota','q5_nd':'5c. Niedziela','q6_faq':'6. FAQ','q7_styl':'7. Styl komunikacji','q7_imie':'7b. Przedstawienie','q8_fallback':'8. Fallback','q9_cele':'9. Cele bota','q10_email':'10. E-mail','q10_tel':'10. Telefon','q11_extra':'11. Dodatkowe'};
+  Object.keys(labels).forEach(function(k){if(d[k])body+=labels[k]+': '+d[k]+'\n'});
+
+  // mailto fallback
+  var mailto='mailto:biuro.stalsystem.pl@gmail.com?subject='+encodeURIComponent('Kwestionariusz KREATO.AI — '+( d.q1_nazwa||'')+'')+'&body='+encodeURIComponent(body);
+
+  // try n8n webhook
+  fetch('https://178.105.194.238.sslip.io/webhook/kreato-onboarding',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+    .catch(function(){});
+
+  // open mailto as backup
+  window.location.href=mailto;
+
+  setTimeout(function(){
+    f.style.display='none';
+    document.getElementById('onboardingSuccess').style.display='block';
+  },800);
+}
 </script>
 
 </body>
