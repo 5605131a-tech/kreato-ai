@@ -17413,6 +17413,8 @@ if(typeof Typed !== 'undefined' && document.getElementById('kreato-typed')){
     </div>
 
     <form id="onboardingForm" onsubmit="submitOnboarding(event)">
+      <!-- honeypot: bots fill this, humans don't -->
+      <input type="text" name="_honey" style="display:none;position:absolute;left:-9999px" tabindex="-1" autocomplete="off">
 
       <!-- Q_scale -->
       <div style="margin-bottom:20px">
@@ -17587,8 +17589,10 @@ document.getElementById('onboardingModal').addEventListener('click',function(e){
 function submitOnboarding(e){
   e.preventDefault();
   var f=e.target;
+  // honeypot check: bots fill hidden field, humans leave it empty
+  if(f._honey && f._honey.value){return;}
   var d={};
-  new FormData(f).forEach(function(v,k){if(d[k])d[k]+=(Array.isArray(d[k])?', ':', ')+v;else d[k]=v});
+  new FormData(f).forEach(function(v,k){if(k==='_honey')return;if(d[k])d[k]+=(Array.isArray(d[k])?', ':', ')+v;else d[k]=v});
   var body='Kwestionariusz KREATO.AI\n\n';
   var labels={'q1_nazwa':'1. Nazwa firmy','q2_branza':'2. Branża','q3_adres':'3. Adres','q4_uslugi':'4. Usługi i ceny','q5_ponpt':'5a. Pon-Pt','q5_sb':'5b. Sobota','q5_nd':'5c. Niedziela','q6_faq':'6. FAQ','q7_styl':'7. Styl komunikacji','q7_imie':'7b. Przedstawienie','q8_fallback':'8. Fallback','q9_cele':'9. Cele bota','q_scale':'Skala (połączeń/mies.)','q_pain':'Kiedy traci klientów','q10_email':'10. E-mail','q10_tel':'10. Telefon','q11_extra':'11. Dodatkowe'};
   Object.keys(labels).forEach(function(k){if(d[k])body+=labels[k]+': '+d[k]+'\n'});
@@ -17597,7 +17601,7 @@ function submitOnboarding(e){
   var mailto='mailto:biuro.stalsystem.pl@gmail.com?subject='+encodeURIComponent('Kwestionariusz KREATO.AI — '+( d.q1_nazwa||'')+'')+'&body='+encodeURIComponent(body);
 
   // try n8n webhook
-  fetch('https://178.105.194.238.sslip.io/webhook/kreato-onboarding',{method:'POST',headers:{'Content-Type':'application/json','X-Kreato-Token':'kreato_form_2026'},body:JSON.stringify(d)})
+  fetch('https://178.105.194.238.sslip.io/webhook/kreato-onboarding',{method:'POST',headers:{'Content-Type':'application/json','X-Kreato-Token':'krt_4e8b2f9a1c7d3e6f'},body:JSON.stringify(d)})
     .catch(function(){});
 
   // open mailto as backup
