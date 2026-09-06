@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 
 Sitemap: https://kreato-ai.netlify.app/sitemap.xml
-# deploy 2026-08-22
+# deploy 2026-09-06

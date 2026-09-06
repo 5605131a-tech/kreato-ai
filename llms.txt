@@ -1,30 +1,42 @@
 # KREATO.AI
+> Voiceboty, chatboty i agenci AI dla małych i średnich firm w Polsce.
+> Pilotaż w 2–3 dni robocze od 399 zł netto/mies. Bez długich umów.
 
-> Automatyzacja AI dla polskich firm MSP: voiceboty, chatboty, systemy automatyzacji procesow.
+## O firmie
+KREATO.AI to agencja AI zbudowana przez Anatoliya Romanchyshyna — przedsiębiorcę z 10-letnim doświadczeniem w automatyzacji procesów dla firm w Polsce. Specjalizujemy się w budowaniu dedykowanych asystentów AI (voicebotów, chatbotów, agentów n8n), które zastępują powtarzalne czynności: odbieranie telefonów, umawianie wizyt, follow-upy, raporty.
 
-## Co robimy
+## Główne usługi
 
-Budujemy asystentow AI pod klucz dla malych i srednich firm w Polsce. Specjalizujemy sie w:
-- Voicebot Karolina: odbiera telefony 24/7, umawia wizyty, odpowiada na pytania
-- Chatboty: automatyzacja komunikacji przez SMS, email, Messenger
-- Integracje n8n: automatyzacja procesow wewnetrznych i zewnetrznych
+### Karolina AI — Voicebot
+Asystent głosowy 24/7 na polskim numerze telefonu +48. Odbiera i wykonuje połączenia, umawia wizyty, wysyła SMS z potwierdzeniem, transkrybuje rozmowy do CRM/Google Sheets. Zgodna z RODO i PKE Art. 398.
+- Cena: od 399 zł netto/mies. + 399 zł konfiguracja (jednorazowo)
+- Demo: zadzwoń na +48 224 176 808 (Karolina AI — test bezpłatny)
 
-## Cennik
+### Chatbot AI
+Asystent tekstowy na stronie WWW. Odpowiada na pytania o ofertę, kwalifikuje leady, integruje się z CRM.
 
-- Pilotaz: 399 zl jednorazowo (konfiguracja + 30 dni usluga)
-- Subskrypcja Standard: 299 zl/mies (1 agent, do 500 interakcji/mies)
-- Subskrypcja Pro: 599 zl/mies (do 3 agentow, nieograniczone interakcje)
+### Automatyzacja n8n
+Integracje między systemami, automatyczne raporty, powiadomienia Telegram/email, workflow bez kodu.
+
+### SMM AI
+5 postów + 5 grafik AI + 1 Reel miesięcznie. Od 399 zł/mies.
+
+### Reklama FB/Instagram Ads
+Kampanie performance dla MŚP. Od 499 zł/mies. (budżet reklamowy osobno, min. 500 zł/mies.).
+
+## Branże
+
+- Stomatologia i kliniki medyczne → /dla-klinik.html
+- E-commerce → /dla-ecommerce.html
+- Agenci AI dla B2B → /agenci.html
+- Budownictwo, nieruchomości, logistyka, usługi B2C
+
+## Technologie
+Vapi AI (voicebot), n8n (automatyzacja), Supabase (baza danych), ElevenLabs (głos), OpenAI / DeepSeek (LLM), Zadarma (SMS/telefonia).
 
 ## Kontakt
-
-- Telefon: +48 733 245 757
+- Tel: +48 733 245 757
 - Email: biuro.stalsystem.pl@gmail.com
-- Adres: ul. Prandzeskiego 23, 63-000 Sroda Wielkopolska, Polska
-
-## Strony serwisu
-
-- [Strona glowna](https://kreato-ai.netlify.app/)
-- [Agenci AI](https://kreato-ai.netlify.app/agenci.html)
-- [Dla e-commerce](https://kreato-ai.netlify.app/dla-ecommerce.html)
-- [Dla klinik](https://kreato-ai.netlify.app/dla-klinik.html)
-- [Polityka prywatnosci](https://kreato-ai.netlify.app/polityka-prywatnosci.html)
+- Adres: ul. Prandzeskiego 23, 63-000 Środa Wielkopolska, Polska
+- Strona: https://kreato-ai.netlify.app/
+- WhatsApp: https://wa.me/48733245757

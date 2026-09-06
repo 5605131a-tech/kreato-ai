@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog KREATO.AI — Automatyzacja AI dla firm</title>
+<meta name="description" content="Praktyczne artykuły o voicebotach, automatyzacji AI i n8n dla polskich firm. Dowiedz się jak wdrożyć AI w swojej firmie — bez kodowania.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Blog KREATO.AI — Automatyzacja AI dla firm">
+<meta property="og:description" content="Praktyczne artykuły o voicebotach, chatbotach i automatyzacji AI dla MŚP w Polsce.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://kreato-ai.netlify.app/blog.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog KREATO.AI",
+  "description": "Praktyczne artykuły o automatyzacji AI dla polskich firm",
+  "url": "https://kreato-ai.netlify.app/blog.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "KREATO.AI",
+    "url": "https://kreato-ai.netlify.app/"
+  }
+}
+</script>
+<style>
+:root{--bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;--purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);--grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.nav-logo{font-size:20px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta{background:var(--grad);color:#fff!important;padding:9px 18px;border-radius:var(--r-sm);font-size:13px!important;font-weight:700!important}
+@media(max-width:768px){.nav-links{display:none}}
+.inner{max-width:1120px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--grad-soft);border:1px solid var(--border-a);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+.breadcrumb{font-size:12px;color:var(--text3);padding:12px 24px;max-width:1120px;margin:0 auto}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--text2)}
+.breadcrumb span{margin:0 6px}
+.blog-hero{padding:72px 24px 48px;text-align:center}
+.blog-hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:16px}
+.blog-hero p{font-size:17px;color:var(--text2);max-width:560px;margin:0 auto;line-height:1.6}
+.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;padding:48px 24px 80px;max-width:1120px;margin:0 auto}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s;text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+.post-card:hover{border-color:var(--border-a);transform:translateY(-3px);box-shadow:0 12px 40px rgba(139,92,246,.1)}
+.post-img{height:160px;background:var(--grad-soft);display:flex;align-items:center;justify-content:center;font-size:48px}
+.post-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
+.post-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(139,92,246,.08);padding:3px 10px;border-radius:100px;width:fit-content}
+.post-title{font-size:16px;font-weight:700;line-height:1.4}
+.post-excerpt{font-size:13px;color:var(--text2);line-height:1.6;flex:1}
+.post-meta{font-size:11px;color:var(--text3);margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+.post-coming{opacity:.5;pointer-events:none}
+.coming-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--text3);background:rgba(255,255,255,.04);padding:2px 8px;border-radius:100px;margin-left:8px;vertical-align:middle}
+footer{padding:32px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
+footer a{color:var(--text3);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--text2)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">KREATO.AI</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Usługi</a></li>
+      <li><a href="dla-klinik.html">Kliniki</a></li>
+      <li><a href="dla-ecommerce.html">E-commerce</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="diagnosta.html">Diagnoza AI</a></li>
+    </ul>
+    <a href="diagnosta.html" class="nav-cta nav-links">Bezpłatna diagnoza →</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">KREATO.AI</a><span>/</span>
+  <span>Blog</span>
+</div>
+
+<div class="blog-hero">
+  <div class="inner">
+    <div class="badge"><div class="badge-dot"></div>Wiedza z praktyki</div>
+    <h1>Automatyzacja AI<br>dla <span class="grad-text">polskich firm</span></h1>
+    <p>Praktyczne artykuły o voicebotach, chatbotach i agentach AI. Bez marketingowej ściemy — tylko to, co działa.</p>
+  </div>
+</div>
+
+<div class="blog-grid">
+
+  <a href="#" class="post-card post-coming">
+    <div class="post-img">🎙️</div>
+    <div class="post-body">
+      <span class="post-tag">Voicebot</span>
+      <div class="post-title">Voicebot AI vs recepcjonistka — ile naprawdę kosztuje obsługa telefonu? <span class="coming-badge">Wkrótce</span></div>
+      <div class="post-excerpt">Porównanie realne koszty etatu, telefonii i voicebota AI. Kalkulacja ROI dla kliniki 3-lekarskiej.</div>
+      <div class="post-meta">Październik 2026 · 8 min czytania</div>
+    </div>
+  </a>
+
+  <a href="#" class="post-card post-coming">
+    <div class="post-img">🤖</div>
+    <div class="post-body">
+      <span class="post-tag">n8n</span>
+      <div class="post-title">5 automatyzacji n8n, które każda firma może uruchomić w weekend <span class="coming-badge">Wkrótce</span></div>
+      <div class="post-excerpt">Lead z formularza → Telegram → CRM → email follow-up. Krok po kroku bez programisty.</div>
+      <div class="post-meta">Październik 2026 · 12 min czytania</div>
+    </div>
+  </a>
+
+  <a href="#" class="post-card post-coming">
+    <div class="post-img">📞</div>
+    <div class="post-body">
+      <span class="post-tag">Sprzedaż</span>
+      <div class="post-title">Jak Karolina AI zamknęła 8 wizyt w pierwszą noc po wdrożeniu <span class="coming-badge">Wkrótce</span></div>
+      <div class="post-excerpt">Case study: klinika stomatologiczna, Poznań. Konfiguracja, pierwsze tygodnie, wyniki po 30 dniach.</div>
+      <div class="post-meta">Wrzesień 2026 · 6 min czytania</div>
+    </div>
+  </a>
+
+  <a href="#" class="post-card post-coming">
+    <div class="post-img">🛒</div>
+    <div class="post-body">
+      <span class="post-tag">E-commerce</span>
+      <div class="post-title">Chatbot dla sklepu online — kiedy warto, a kiedy to strata pieniędzy? <span class="coming-badge">Wkrótce</span></div>
+      <div class="post-excerpt">Analiza: przy jakim wolumenie zamówień chatbot zaczyna się opłacać. Benchmarki z 6 wdrożeń.</div>
+      <div class="post-meta">Październik 2026 · 10 min czytania</div>
+    </div>
+  </a>
+
+  <a href="#" class="post-card post-coming">
+    <div class="post-img">⚖️</div>
+    <div class="post-body">
+      <span class="post-tag">Prawo</span>
+      <div class="post-title">RODO i EU AI Act — co musisz wiedzieć przed wdrożeniem voicebota <span class="coming-badge">Wkrótce</span></div>
+      <div class="post-excerpt">Klauzule informacyjne, zgody, retencja danych. Checklist compliance dla polskiej firmy MŚP.</div>
+      <div class="post-meta">Październik 2026 · 7 min czytania</div>
+    </div>
+  </a>
+
+  <a href="#" class="post-card post-coming">
+    <div class="post-img">📊</div>
+    <div class="post-body">
+      <span class="post-tag">Raporty</span>
+      <div class="post-title">Automatyczny raport biznesowy z n8n — jak go zbudować w 3 godziny <span class="coming-badge">Wkrótce</span></div>
+      <div class="post-excerpt">Workflow: Google Sheets + Telegram + DeepSeek. Co poniedziałek raport ląduje sam o 08:00.</div>
+      <div class="post-meta">Listopad 2026 · 15 min czytania</div>
+    </div>
+  </a>
+
+</div>
+
+<footer>
+  <div>
+    &copy; 2026 KREATO.AI ·
+    <a href="index.html">Strona główna</a> ·
+    <a href="dla-klinik.html">Dla klinik</a> ·
+    <a href="dla-ecommerce.html">E-commerce</a> ·
+    <a href="blog.html">Blog</a> ·
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+  </div>
+  <div style="margin-top:8px">ul. Prandzeskiego 23, 63-000 Środa Wielkopolska · <a href="tel:+48733245757">+48 733 245 757</a></div>
+</footer>
+
+</body>
+</html>
