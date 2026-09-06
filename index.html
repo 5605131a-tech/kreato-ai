@@ -15405,9 +15405,11 @@ function calcRoi(){
 
 
 
+window._kAudio = new Audio('karolina-demo.mp3');
+window._kAudio.preload = 'auto';
+
 function playKarolina(){
   const btn = document.getElementById('audioBtn');
-  if(!window._kAudio) window._kAudio = new Audio('karolina-demo.mp3');
   const audio = window._kAudio;
   if(!audio.paused){
     audio.pause();
