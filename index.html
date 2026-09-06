@@ -6804,30 +6804,6 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
 
 
 
-.audio-demo-row{margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
-
-
-
-
-
-
-
-.audio-btn{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--purple);border-radius:16px;padding:18px 28px;font-family:var(--font);font-size:16px;font-weight:700;color:var(--text);cursor:pointer;transition:all .2s;width:100%;max-width:380px}
-
-
-
-
-
-
-
-.audio-btn:hover{border-color:var(--purple);box-shadow:0 0 20px var(--glow)}
-
-
-
-
-
-
-
 .audio-icon{width:48px;height:48px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;box-shadow:0 0 20px var(--glow)}
 
 
@@ -9874,17 +9850,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
         <div class="demo-note">To uproszczona wersja demonstracyjna. Docelowy asystent zna Twoją ofertę, cennik i procedury — dokładnie tak jak Twój najlepszy pracownik.</div>
-
-
-
-
-
-
-
-        <div class="audio-demo-row">
-        <p style="font-size:14px;color:var(--text2);margin-bottom:14px;font-weight:500">Posłuchaj zanim zdecydujesz — jak brzmi Twój asystent AI:</p>
-        <button class="audio-btn" id="audioBtn" onclick="playKarolina()">
-          <div class="audio-icon">&#9654;</div>
           <span>Posłuchaj Karoliny</span>
         </button>
         <p class="audio-note">Odtwarzanie w przeglądarce &middot; język polski &middot; naturalny głos AI</p>
@@ -15390,19 +15355,6 @@ function calcRoi(){
 
 
 /* ── AUDIO DEMO (Web Speech API) ── */
-
-
-
-
-
-
-
-function playKarolina(){
-  try {
-    const btn = document.getElementById('audioBtn');
-    if(!window._kAudio){
-      window._kAudio = new Audio('karolina-demo.mp3');
-    }
     const audio = window._kAudio;
     if(!audio.paused){
       audio.pause();
