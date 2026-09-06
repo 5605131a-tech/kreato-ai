@@ -1288,24 +1288,31 @@ nav{
 
 
 
-section{padding:96px 24px;border-top:1px solid rgba(255,255,255,.08)}
+@keyframes pulse-line{
+  0%,100%{opacity:.25;box-shadow:0 0 6px rgba(139,92,246,.2)}
+  50%{opacity:1;box-shadow:0 0 18px rgba(139,92,246,.7),0 0 40px rgba(139,92,246,.3)}
+}
+section{padding:96px 24px;position:relative;border-top:1px solid rgba(255,255,255,.06)}
 #hero{border-top:none}
-#hero-trust{background:#0d1528;border-top:1px solid rgba(255,255,255,.08)}
+#hero-trust{background:#0d1528}
 #problems{background:#070b14}
 #solution{background:#0d1528}
-#demo{background:#0e0c22;border-top:2px solid rgba(139,92,246,.5);border-bottom:2px solid rgba(139,92,246,.5)}
 #cases{background:#0d1528}
 #testimonials{background:#070b14}
 #founder{background:#0d1528}
-#roi-calc{background:#0e0c22;border-top:2px solid rgba(139,92,246,.4)}
 #objections{background:#0d1528}
 #why{background:#070b14}
-#pricing{background:#0e0c22;border-top:2px solid rgba(139,92,246,.6);border-bottom:2px solid rgba(139,92,246,.4)}
 #process{background:#0d1528}
 #faq{background:#070b14}
 #services{background:#0d1528}
 #lead-magnet{background:#070b14}
-#cta{background:linear-gradient(135deg,#0e0c22 0%,#0a0618 100%);border-top:2px solid rgba(139,92,246,.6)}
+#demo,#roi-calc,#pricing,#cta{background:#0e0c22;border-top:none}
+#demo::before,#roi-calc::before,#pricing::before,#cta::before{
+  content:'';position:absolute;top:0;left:8%;right:8%;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(139,92,246,.9) 30%,rgba(168,85,247,1) 50%,rgba(139,92,246,.9) 70%,transparent);
+  animation:pulse-line 2.5s ease-in-out infinite;border-radius:2px
+}
+#cta{background:linear-gradient(160deg,#0e0c22 0%,#0a0618 100%)}
 
 
 
