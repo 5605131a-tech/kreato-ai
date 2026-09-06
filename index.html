@@ -15405,23 +15405,25 @@ function calcRoi(){
 
 
 
-window._kAudio = new Audio('karolina-demo.mp3');
-window._kAudio.preload = 'auto';
-
 function playKarolina(){
-  const btn = document.getElementById('audioBtn');
-  const audio = window._kAudio;
-  if(!audio.paused){
-    audio.pause();
-    audio.currentTime = 0;
-    btn.querySelector('span').textContent = 'Posłuchaj Karoliny';
-    btn.querySelector('.audio-icon').innerHTML = '&#9654;';
-    return;
-  }
-  btn.querySelector('span').textContent = 'Zatrzymaj odtwarzanie';
-  btn.querySelector('.audio-icon').innerHTML = '&#9646;&#9646;';
-  audio.onended = ()=>{ btn.querySelector('span').textContent = 'Posłuchaj Karoliny'; btn.querySelector('.audio-icon').innerHTML = '&#9654;'; };
-  audio.play();
+  try {
+    const btn = document.getElementById('audioBtn');
+    if(!window._kAudio){
+      window._kAudio = new Audio('karolina-demo.mp3');
+    }
+    const audio = window._kAudio;
+    if(!audio.paused){
+      audio.pause();
+      audio.currentTime = 0;
+      btn.querySelector('span').textContent = 'Posłuchaj Karoliny';
+      btn.querySelector('.audio-icon').innerHTML = '&#9654;';
+      return;
+    }
+    btn.querySelector('span').textContent = 'Zatrzymaj odtwarzanie';
+    btn.querySelector('.audio-icon').innerHTML = '&#9646;&#9646;';
+    audio.onended = ()=>{ btn.querySelector('span').textContent = 'Posłuchaj Karoliny'; btn.querySelector('.audio-icon').innerHTML = '&#9654;'; };
+    audio.play().catch(()=>{});
+  } catch(e){ console.error('audio:', e); }
 }
 
 
