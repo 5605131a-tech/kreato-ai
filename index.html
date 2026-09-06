@@ -15416,189 +15416,20 @@ function calcRoi(){
 
 
 function playKarolina(){
-
-
-
-
-
-
-
   const btn = document.getElementById('audioBtn');
-
-
-
-
-
-
-
-  if(window.speechSynthesis && window.speechSynthesis.speaking){
-
-
-
-
-
-
-
-    window.speechSynthesis.cancel();
-
-
-
-
-
-
-
-    btn.querySelector('span').textContent = 'Posłuchaj Karoliny — 30 sek';
-
-
-
-
-
-
-
+  if(!window._kAudio) window._kAudio = new Audio('karolina-demo.mp3');
+  const audio = window._kAudio;
+  if(!audio.paused){
+    audio.pause();
+    audio.currentTime = 0;
+    btn.querySelector('span').textContent = 'Posłuchaj Karoliny';
     btn.querySelector('.audio-icon').innerHTML = '&#9654;';
-
-
-
-
-
-
-
     return;
-
-
-
-
-
-
-
   }
-
-
-
-
-
-
-
-  if(!window.speechSynthesis){ alert('Twój przeglądarka nie obsługuje odtwarzania mowy. Spróbuj Chrome.'); return; }
-
-
-
-
-
-
-
-  const text = 'Dzień dobry! Jestem Karolina — asystent głosowy AI Pana firmy. Odbieram telefony klientów całą dobę i umawiam wizyty — zamiast sygnału zajętego.';
-
-
-
-
-
-
-
-  const u = new SpeechSynthesisUtterance(text);
-
-
-
-
-
-
-
-  u.lang = 'pl-PL'; u.rate = 0.88; u.pitch = 1.05;
-
-
-
-
-
-
-
-  const loadVoices = ()=>{
-
-
-
-
-
-
-
-    const voices = window.speechSynthesis.getVoices();
-
-
-
-
-
-
-
-    const pl = voices.find(v=>v.lang.startsWith('pl'));
-
-
-
-
-
-
-
-    if(pl) u.voice = pl;
-
-
-
-
-
-
-
-  };
-
-
-
-
-
-
-
-  loadVoices();
-
-
-
-
-
-
-
-  window.speechSynthesis.onvoiceschanged = loadVoices;
-
-
-
-
-
-
-
   btn.querySelector('span').textContent = 'Zatrzymaj odtwarzanie';
-
-
-
-
-
-
-
   btn.querySelector('.audio-icon').innerHTML = '&#9646;&#9646;';
-
-
-
-
-
-
-
-  u.onend = ()=>{ btn.querySelector('span').textContent = 'Posłuchaj Karoliny — 30 sek'; btn.querySelector('.audio-icon').innerHTML = '&#9654;'; };
-
-
-
-
-
-
-
-  window.speechSynthesis.speak(u);
-
-
-
-
-
-
-
+  audio.onended = ()=>{ btn.querySelector('span').textContent = 'Posłuchaj Karoliny'; btn.querySelector('.audio-icon').innerHTML = '&#9654;'; };
+  audio.play();
 }
 
 
