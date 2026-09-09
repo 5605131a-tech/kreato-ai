@@ -7852,6 +7852,52 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
 .hs-num{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
 .hs-num.hs-visible{opacity:1;transform:translateY(0)}
 
+/* ══ BLOG ══ */
+#blog{background:var(--bg1)}
+.blog-desc{color:var(--text2);font-size:16px;line-height:1.8;font-weight:300;margin:12px 0 48px;max-width:520px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.blog-featured{grid-column:span 2}
+.blog-art{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;transition:border-color .2s,box-shadow .2s;position:relative;overflow:hidden}
+.blog-art:hover{border-color:var(--border-a);box-shadow:0 0 30px var(--glow)}
+.blog-art::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.blog-art:hover::before{transform:scaleX(1)}
+.blog-art-meta{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.blog-num{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)}
+.blog-chip{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.15);border-radius:100px;padding:3px 10px}
+.blog-time{font-size:11px;color:var(--text3);margin-left:auto}
+.blog-art h3{font-size:16px;font-weight:700;margin-bottom:10px;line-height:1.35;color:var(--text);letter-spacing:-.01em}
+.blog-featured h3{font-size:20px}
+.blog-art>p{color:var(--text2);font-size:13px;line-height:1.72;font-weight:300;margin-bottom:18px}
+.blog-toggle{display:inline-flex;align-items:center;gap:6px;color:var(--purple);font-size:13px;font-weight:700;background:none;border:none;cursor:pointer;font-family:var(--font);padding:0;transition:gap .15s}
+.blog-toggle:hover{gap:10px}
+.blog-toggle svg{transition:transform .25s}
+.blog-toggle.open svg{transform:rotate(180deg)}
+.blog-body{overflow:hidden;max-height:0;transition:max-height .45s cubic-bezier(.16,1,.3,1)}
+.blog-body.open{max-height:9999px}
+.blog-body-inner{border-top:1px solid var(--border);padding-top:18px;margin-top:18px}
+.blog-body-inner p{color:var(--text2);font-size:13px;line-height:1.8;margin-bottom:12px;font-weight:300}
+.blog-body-inner h4{font-size:13px;font-weight:700;color:var(--purple);margin:18px 0 7px}
+.blog-body-inner strong{color:var(--text);font-weight:700}
+.bstat{background:rgba(139,92,246,.08);border:1px solid var(--border-a);border-radius:var(--r-sm);padding:12px 16px;margin:14px 0;font-size:12px;color:var(--text2);line-height:1.6}
+.bstat strong{display:block;font-size:22px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.btbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:12px}
+.btbl th{padding:7px 10px;text-align:left;font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text3);background:var(--bg2);border-bottom:1px solid var(--border)}
+.btbl td{padding:9px 10px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top}
+.btbl td.hl{color:var(--green);font-weight:600}.btbl td.bad{color:#f87171}.btbl tr:last-child td{border-bottom:none}
+.btimeline{display:flex;flex-direction:column;margin:14px 0}
+.bti{display:grid;grid-template-columns:72px 1fr;gap:.5rem 1rem;padding:11px 0;border-bottom:1px solid var(--border)}
+.bti:last-child{border-bottom:none}
+.bti-l{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);padding-top:2px}
+.bti-r{font-size:12px;color:var(--text2);font-weight:300;line-height:1.65}
+.bti-r strong{color:var(--text);font-weight:700}
+.bcklist{list-style:none;padding:0;margin:10px 0}
+.bcklist li{padding:4px 0 4px 20px;position:relative;color:var(--text2);font-size:12px;font-weight:300;line-height:1.65}
+.bcklist li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+.blog-close{display:inline-flex;align-items:center;gap:5px;color:var(--text3);font-size:12px;cursor:pointer;background:none;border:none;font-family:var(--font);margin-top:14px;padding:0;transition:color .15s}
+.blog-close:hover{color:var(--purple)}
+@media(max-width:860px){.blog-grid{grid-template-columns:1fr 1fr}.blog-featured{grid-column:span 2}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}.blog-featured{grid-column:span 1}.blog-featured h3{font-size:17px}}
+
 </style>
 
 
@@ -8561,7 +8607,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="#blog">Blog</a></li>
 
 
 
@@ -12442,6 +12488,12 @@ Szczegółowy proces po zamówieniu — w sekcji <a href="#process" style="color
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)"><span>20. Co wchodzi w miesięczny abonament i dlaczego nie ma opłaty jednorazowej?</span><div class="faq-icon">+</div></div>
         <div class="faq-a"><p><strong>Abonament to koszt działania Karoliny</strong> — serwer pracujący 24/7, minuty rozmów AI, SMS-y potwierdzające, integracja z Google Calendar i wsparcie techniczne. Jeśli coś przestanie działać — naprawiamy sami, bez dodatkowej faktury.<br><br><strong>Dlaczego nie jednorazowo?</strong> Bo Karolina pracuje każdego dnia. To jak wynagrodzenie pracownika — płacisz co miesiąc, bo pracuje co miesiąc. Jednorazowo płacisz tylko wdrożenie (599 zł netto) — konfigurację, bazę wiedzy i testy. Reszta to koszt działania AI.<br><br><strong>Punkt odniesienia:</strong> jedna odwołana wizyta u stomatologa to ~300 zł straconego przychodu. Karolina kosztuje mniej niż ta jedna wizyta miesięcznie — i odbiera telefony o 21:00, w sobotę i w niedzielę.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>21. Gdzie mogę więcej dowiedzieć się o botach głosowych AI?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Przygotowaliśmy <strong>5 artykułów</strong> w prostym języku — bez technicznego żargonu. Wyjaśniamy jak bot głosowy zastępuje recepcjonistkę, co się dzieje podczas rozmowy z AI i jak zautomatyzować umawianie wizyt w 24h. <a href="#blog" style="color:var(--purple);font-weight:700;text-decoration:underline">Przeczytaj blog poniżej →</a></p></div>
+      </div>
 
 
 
@@ -13395,6 +13447,183 @@ Szczegółowy proces po zamówieniu — w sekcji <a href="#process" style="color
 
 
 
+<!-- ══ BLOG ══ -->
+
+<section id="blog">
+  <div class="inner reveal">
+    <div class="section-label">Blog</div>
+    <h2>Bot głosowy w <span class="grad-text">prostym języku</span></h2>
+    <p class="blog-desc">5 artykułów bez technicznego żargonu — wyjaśniamy jak działa Karolina i dlaczego polskie firmy wybierają AI do obsługi telefonów.</p>
+
+    <div class="blog-grid">
+
+      <div class="blog-art blog-featured">
+        <div class="blog-art-meta">
+          <span class="blog-num">Artykuł 01/05</span>
+          <span class="blog-chip">PODSTAWY</span>
+          <span class="blog-time">6 min czytania</span>
+        </div>
+        <h3>Bot głosowy zamiast recepcjonistki — jak to naprawdę działa?</h3>
+        <p>Twoi klienci dzwonią wieczorami, w soboty, gdy jesteś na urlopie. Recepcjonistka pracuje 8h — bot głosowy 24/7. Jak dokładnie to działa? Tłumaczymy krok po kroku, bez technicznych pojęć.</p>
+        <button class="blog-toggle" onclick="toggleBlog('art1',this)">
+          <span class="blog-toggle-txt">Czytaj więcej</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="blog-body" id="art1">
+          <div class="blog-body-inner">
+            <div class="bstat"><strong>78%</strong>polskich klientów rezygnuje z usługi gdy nie może się dodzwonić za pierwszym razem (CBOS 2025)</div>
+            <h4>Bot vs recepcjonistka — uczciwe porównanie</h4>
+            <table class="btbl">
+              <thead><tr><th>Zadanie</th><th>Recepcjonistka</th><th class="hl">Karolina (bot AI)</th></tr></thead>
+              <tbody>
+                <tr><td>Odbieranie telefonów</td><td>8–16h, pon–pt</td><td class="hl">24/7, 365 dni</td></tr>
+                <tr><td>Równoczesne rozmowy</td><td>1</td><td class="hl">do 5 naraz</td></tr>
+                <tr><td>Umawianie wizyt</td><td>ręcznie w kalendarzu</td><td class="hl">automatycznie</td></tr>
+                <tr><td>Błędy przy wpisaniu danych</td><td>zdarzają się</td><td class="hl">zero</td></tr>
+                <tr><td>Koszt miesięczny</td><td>3 500–5 000 zł</td><td class="hl">399 zł</td></tr>
+              </tbody>
+            </table>
+            <h4>Kiedy bot NIE zastąpi człowieka?</h4>
+            <p>Szczera odpowiedź: <strong>w sytuacjach kryzysowych i emocjonalnie trudnych</strong> bot przekieruje rozmowę do człowieka. Karolina nie zastępuje Twój zespół — przejmuje 80% rutynowych rozmów, żebyś mógł skupić się na klientach wymagających prawdziwej uwagi.</p>
+            <ul class="bcklist">
+              <li>Umawianie, potwierdzanie i odwoływanie wizyt — tak</li>
+              <li>Odpowiedzi na standardowe pytania (godziny, ceny, lokalizacja) — tak</li>
+              <li>Sprawy reklamacyjne wymagające decyzji — przekazuje do Ciebie</li>
+              <li>Nagłe przypadki wymagające natychmiastowej reakcji — eskaluje do człowieka</li>
+            </ul>
+            <button class="blog-close" onclick="toggleBlog('art1',this.closest('.blog-body').previousElementSibling)">↑ Zwiń artykuł</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-art">
+        <div class="blog-art-meta">
+          <span class="blog-num">Artykuł 02/05</span>
+          <span class="blog-chip">JAK DZIAŁA</span>
+          <span class="blog-time">4 min czytania</span>
+        </div>
+        <h3>Co się dzieje podczas rozmowy z AI? Krok po kroku</h3>
+        <p>Klient dzwoni o 21:37. Odbiera Karolina. W ciągu 0,3 sekundy uruchamiają się 4 systemy. Pokazujemy co dosłownie dzieje się w środku — bez żargonu.</p>
+        <button class="blog-toggle" onclick="toggleBlog('art2',this)">
+          <span class="blog-toggle-txt">Czytaj więcej</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="blog-body" id="art2">
+          <div class="blog-body-inner">
+            <div class="btimeline">
+              <div class="bti"><div class="bti-l">0,0s</div><div class="bti-r"><strong>Telefon odbiera Karolina</strong> — dostępna 24/7, bez sygnału zajętości</div></div>
+              <div class="bti"><div class="bti-l">0,0–0,3s</div><div class="bti-r"><strong>Transkrypcja mowy</strong> — silnik STT (Speech-to-Text) zamienia głos na tekst w czasie rzeczywistym</div></div>
+              <div class="bti"><div class="bti-l">0,3–0,8s</div><div class="bti-r"><strong>AI rozumie intencję</strong> — model językowy analizuje zdanie: czy klient chce umówić wizytę, zapytać o cenę, odwołać termin?</div></div>
+              <div class="bti"><div class="bti-l">0,8–1,2s</div><div class="bti-r"><strong>Odpowiedź + działanie</strong> — Karolina mówi i jednocześnie wpisuje wizytę do kalendarza, wysyła SMS z potwierdzeniem, zapisuje dane klienta</div></div>
+              <div class="bti"><div class="bti-l">Po rozmowie</div><div class="bti-r"><strong>Raport do Ciebie</strong> — w Telegramie dostajesz skrót: kto dzwonił, o co pytał, czy umówił wizytę i na kiedy</div></div>
+            </div>
+            <p>Cały dialog trwa zwykle <strong>2–4 minuty</strong>. Karolina nie robi przerwy na „sprawdzę i oddzwonię" — wszystko dzieje się w czasie rzeczywistym.</p>
+            <button class="blog-close" onclick="toggleBlog('art2',this.closest('.blog-body').previousElementSibling)">↑ Zwiń artykuł</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-art">
+        <div class="blog-art-meta">
+          <span class="blog-num">Artykuł 03/05</span>
+          <span class="blog-chip">BRANŻE</span>
+          <span class="blog-time">3 min czytania</span>
+        </div>
+        <h3>5 branż, które zyskują na botach głosowych AI</h3>
+        <p>Bot głosowy nie jest narzędziem dla korporacji. Najbardziej korzystają małe i średnie firmy, które mają jeden wspólny problem: za dużo telefonów, za mało czasu.</p>
+        <button class="blog-toggle" onclick="toggleBlog('art3',this)">
+          <span class="blog-toggle-txt">Czytaj więcej</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="blog-body" id="art3">
+          <div class="blog-body-inner">
+            <h4>1. Gabinety medyczne i stomatologiczne</h4>
+            <p>Pacjenci dzwonią rano przed wizytą i wieczorami po pracy. <strong>1 odwołana wizyta = ~300 zł straty.</strong> Karolina potwierdza wizyty dzień wcześniej przez SMS i wypełnia lukę gdy ktoś odwoła.</p>
+            <h4>2. Salony urody i SPA</h4>
+            <p>Klientki rezerwują wizyty w soboty i niedziele gdy recepcja jest zamknięta. <strong>Karolina odbiera 24/7</strong> i umawia termin bez konieczności odpowiadania na dziesiątki wiadomości w różnych kanałach.</p>
+            <h4>3. Usługi remontowe i budowlane</h4>
+            <p>Majster jest na budowie — telefon wibruje, nie może odebrać. Klient dzwoni do konkurencji. <strong>Karolina zbiera dane</strong> (zakres, lokalizacja, termin) i zapisuje do arkusza — właściciel oddzwania wieczorem z pełnym briefem.</p>
+            <h4>4. Firmy szkoleniowe i coachingowe</h4>
+            <p>Pytania o terminy, ceny, czy zostały miejsca — to 80% rozmów. Bot odpowie na wszystkie i prześle zapisy automatycznie do arkusza Google lub CRM.</p>
+            <h4>5. Sklepy i punkty usługowe</h4>
+            <p>Godziny otwarcia, dostępność produktu, możliwość rezerwacji — klasyczne pytania które pochłaniają czas pracownika. <strong>Bot obsłuży je zanim pracownik skończy parzyć kawę.</strong></p>
+            <button class="blog-close" onclick="toggleBlog('art3',this.closest('.blog-body').previousElementSibling)">↑ Zwiń artykuł</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-art">
+        <div class="blog-art-meta">
+          <span class="blog-num">Artykuł 04/05</span>
+          <span class="blog-chip">WDROŻENIE</span>
+          <span class="blog-time">4 min czytania</span>
+        </div>
+        <h3>Jak zautomatyzować umawianie wizyt w 24 godziny?</h3>
+        <p>„24 godziny to niemożliwe" — tak myśli większość właścicieli przed naszym onboardingiem. Pokazujemy każdy krok od formularza do pierwszego odebranego telefonu.</p>
+        <button class="blog-toggle" onclick="toggleBlog('art4',this)">
+          <span class="blog-toggle-txt">Czytaj więcej</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="blog-body" id="art4">
+          <div class="blog-body-inner">
+            <div class="btimeline">
+              <div class="bti"><div class="bti-l">Dzień 0</div><div class="bti-r"><strong>Formularz onboardingowy</strong> — 11 pytań: branża, godziny pracy, najczęstsze pytania klientów, ton rozmowy. Zajmuje 15 minut.</div></div>
+              <div class="bti"><div class="bti-l">Dzień 1 rano</div><div class="bti-r"><strong>Tworzymy bazę wiedzy Karoliny</strong> — na podstawie Twojego formularza. Karolina zna Twoją firmę: ceny, usługi, wyjątki, odpowiedzi na trudne pytania.</div></div>
+              <div class="bti"><div class="bti-l">Dzień 1 południe</div><div class="bti-r"><strong>Testy wewnętrzne</strong> — dzwonimy z typowymi scenariuszami. Sprawdzamy czy odpowiada poprawnie i naturalnie po polsku.</div></div>
+              <div class="bti"><div class="bti-l">Dzień 1 wieczór</div><div class="bti-r"><strong>Numer gotowy</strong> — Karolina podłączona do Twojego numeru lub dostaje dedykowany. Pierwsze połączenie testowe z Twoim telefonem.</div></div>
+              <div class="bti"><div class="bti-l">Dzień 2+</div><div class="bti-r"><strong>System działa</strong> — raporty w Telegramie, wizyty w kalendarzu. Przez pierwsze 2 tygodnie monitorujemy i poprawiamy jeśli coś nie gra.</div></div>
+            </div>
+            <p>Wdrożenie zajmuje mniej czasu niż zatrudnienie nowego pracownika — i nie wymaga ZUS, urlopu ani trzymiesięcznego wypowiedzenia.</p>
+            <button class="blog-close" onclick="toggleBlog('art4',this.closest('.blog-body').previousElementSibling)">↑ Zwiń artykuł</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-art">
+        <div class="blog-art-meta">
+          <span class="blog-num">Artykuł 05/05</span>
+          <span class="blog-chip">KOSZTY</span>
+          <span class="blog-time">3 min czytania</span>
+        </div>
+        <h3>Ile kosztuje bot głosowy? Pełne zestawienie bez ukrytych opłat</h3>
+        <p>Kiedy firmy słyszą „AI" — myślą o kosmicznych cenach. Tymczasem Karolina kosztuje mniej niż jedno odwołane przyjęcie u stomatologa miesięcznie. Pokazujemy pełne liczby.</p>
+        <button class="blog-toggle" onclick="toggleBlog('art5',this)">
+          <span class="blog-toggle-txt">Czytaj więcej</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="blog-body" id="art5">
+          <div class="blog-body-inner">
+            <table class="btbl">
+              <thead><tr><th>Składnik kosztu</th><th>Kwota</th><th>Kiedy</th></tr></thead>
+              <tbody>
+                <tr><td>Konfiguracja i wdrożenie</td><td class="hl">599 zł netto</td><td>jednorazowo</td></tr>
+                <tr><td>Abonament miesięczny</td><td class="hl">399 zł netto</td><td>co miesiąc</td></tr>
+                <tr><td>Zmiany w bazie wiedzy</td><td class="hl">0 zł</td><td>bezpłatnie</td></tr>
+                <tr><td>Dodatkowy numer telefonu</td><td class="hl">~30 zł/mies.</td><td>opcjonalnie</td></tr>
+                <tr><td>Minuty rozmów (do 300/mies.)</td><td class="hl">w abonamencie</td><td>—</td></tr>
+              </tbody>
+            </table>
+            <h4>Dla porównania</h4>
+            <table class="btbl">
+              <thead><tr><th>Rozwiązanie</th><th>Koszt/miesiąc</th><th>Dostępność</th></tr></thead>
+              <tbody>
+                <tr><td>Karolina (KREATO.AI)</td><td class="hl">399 zł</td><td class="hl">24/7</td></tr>
+                <tr><td>Recepcjonistka (część etatu)</td><td class="bad">1 800–2 500 zł</td><td>8h/dzień</td></tr>
+                <tr><td>Call center zewnętrzne</td><td class="bad">800–2 000 zł</td><td>ograniczona</td></tr>
+                <tr><td>Nie robić nic</td><td class="bad">nieodebrane = utracone</td><td>—</td></tr>
+              </tbody>
+            </table>
+            <div class="bstat"><strong>ROI w 1 miesiąc</strong>Gabinet stomatologiczny: 12 wizyt więcej × 250 zł = <strong style="-webkit-text-fill-color:var(--green);color:var(--green)">3 000 zł</strong> dodatkowego przychodu przy 399 zł kosztu.</div>
+            <button class="blog-close" onclick="toggleBlog('art5',this.closest('.blog-body').previousElementSibling)">↑ Zwiń artykuł</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <!-- ══ FOOTER ══ -->
 
 
@@ -13578,7 +13807,7 @@ Szczegółowy proces po zamówieniu — w sekcji <a href="#process" style="color
 
 
         <li><a href="#faq">FAQ</a></li>
-      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="#blog">Blog</a></li>
 
 
 
@@ -14187,13 +14416,15 @@ function toggleFaq(el){
 
 
   if(!isOpen) item.classList.add('open');
+}
 
-
-
-
-
-
-
+function toggleBlog(id, btn) {
+  const body = document.getElementById(id);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open');
+  btn.classList.toggle('open');
+  const txt = btn.querySelector('.blog-toggle-txt');
+  if (txt) txt.textContent = isOpen ? 'Czytaj więcej' : 'Zwiń artykuł';
 }
 
 

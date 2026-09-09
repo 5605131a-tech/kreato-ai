@@ -486,6 +486,19 @@ tbody td:first-child { color: var(--text); font-weight: 700; }
         <p>Pobieranie historii połączeń.</p>
       </div>
     </div>
+
+    <div style="height:36px"></div>
+    <div class="section-head">
+      <h2>Płatności</h2>
+      <span class="count" id="inv-count"></span>
+    </div>
+    <div class="table-wrap" id="inv-area">
+      <div class="empty">
+        <div class="icon">💳</div>
+        <h3>Ładowanie…</h3>
+        <p>Pobieranie historii faktur.</p>
+      </div>
+    </div>
   </main>
 </div>
 
@@ -576,12 +589,20 @@ async function showApp(user) {
   const { data: calls = [] } = await sb
     .from('kreato_calls')
     .select('*')
-    .eq('client_id', client.id)
+    .eq('vapi_assistant_id', client.vapi_assistant_id)
     .order('connected_at', { ascending: false })
     .limit(200);
 
   renderStats(calls, client.plan_minutes);
   renderTable(calls);
+
+  const { data: invoices = [] } = await sb
+    .from('kreato_invoices')
+    .select('*')
+    .eq('client_id', client.id)
+    .order('invoice_date', { ascending: false })
+    .limit(24);
+  renderInvoices(invoices);
 }
 
 // ─── STATS ───
@@ -628,7 +649,10 @@ function renderTable(calls) {
   const rows = calls.map(c => {
     const date = fmtDate(c.connected_at);
     const dur  = fmtDur(c.duration_sec);
-    const caller = c.caller_number || '—';
+    const rawCaller = c.caller_number || '';
+    const caller = rawCaller
+      ? `<a href="tel:${esc(rawCaller)}" style="color:inherit;text-decoration:none;font-family:'Courier New',monospace">${esc(rawCaller)}</a>`
+      : '—';
     const reason = c.ended_reason || '';
     const { cls, label } = reasonBadge(reason);
     const rec = c.recording_url
@@ -636,7 +660,7 @@ function renderTable(calls) {
       : `<span style="color:var(--muted)">—</span>`;
     return `<tr>
       <td>${date}</td>
-      <td class="caller">${esc(caller)}</td>
+      <td class="caller">${caller}</td>
       <td class="dur">${dur}</td>
       <td><span class="reason-badge ${cls}">${label}</span></td>
       <td>${rec}</td>
@@ -653,6 +677,61 @@ function renderTable(calls) {
     </tr></thead>
     <tbody>${rows}</tbody>
   </table>`;
+}
+
+// ─── INVOICES ───
+function renderInvoices(invoices) {
+  const area  = document.getElementById('inv-area');
+  const count = document.getElementById('inv-count');
+
+  if (!invoices.length) {
+    count.textContent = '';
+    area.innerHTML = `
+      <div class="empty">
+        <div class="icon">💳</div>
+        <h3>Brak faktur</h3>
+        <p>Historia płatności pojawi się tutaj po wystawieniu pierwszej faktury.</p>
+      </div>`;
+    return;
+  }
+
+  count.textContent = `${invoices.length} faktur`;
+  const rows = invoices.map(inv => {
+    const date    = inv.invoice_date ? inv.invoice_date : '—';
+    const due     = inv.due_date || '—';
+    const amount  = inv.amount_pln ? `${parseFloat(inv.amount_pln).toFixed(2)} zł` : '—';
+    const desc    = esc(inv.description || 'Abonament KREATO.AI');
+    const { scls, slabel } = statusBadge(inv.status);
+    const useme   = inv.useme_url
+      ? `<a href="${esc(inv.useme_url)}" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700;text-decoration:none">Useme →</a>`
+      : `<span style="color:var(--muted)">—</span>`;
+    return `<tr>
+      <td>${esc(date)}</td>
+      <td>${desc}</td>
+      <td class="dur">${amount}</td>
+      <td>${esc(due)}</td>
+      <td><span class="reason-badge ${scls}">${slabel}</span></td>
+      <td>${useme}</td>
+    </tr>`;
+  }).join('');
+
+  area.innerHTML = `<table>
+    <thead><tr>
+      <th>Data wystawienia</th>
+      <th>Opis</th>
+      <th>Kwota</th>
+      <th>Termin płatności</th>
+      <th>Status</th>
+      <th>Faktura</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+function statusBadge(s) {
+  if (s === 'paid')    return { scls: 'reason-hangup',   slabel: 'Opłacona' };
+  if (s === 'overdue') return { scls: 'reason-timeout',  slabel: 'Zaległa' };
+  return                      { scls: 'reason-transfer', slabel: 'Oczekuje' };
 }
 
 // ─── HELPERS ───
