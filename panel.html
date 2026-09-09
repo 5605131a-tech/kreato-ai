@@ -398,6 +398,20 @@ tbody td:first-child { color: var(--text); font-weight: 700; }
 }
 @keyframes shimmer { to { background-position: -200% 0; } }
 
+/* ── SMS ─────────────────────────────────────── */
+.sms-text {
+  max-width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--sub);
+  font-size: 13px;
+}
+.sms-text:hover { white-space: normal; overflow: visible; }
+.sms-sent   { background: rgba(34,197,94,.1);  color: var(--success); }
+.sms-failed { background: rgba(239,68,68,.1);  color: var(--danger); }
+.sms-pending{ background: rgba(245,158,11,.1); color: var(--warn); }
+
 /* ── RESPONSIVE ──────────────────────────────── */
 @media (max-width: 600px) {
   .page { padding: 20px 16px 48px; }
@@ -473,6 +487,11 @@ tbody td:first-child { color: var(--text); font-weight: 700; }
         <div class="tile-value" id="stat-calls-total">—</div>
         <div class="tile-sub">od początku usługi</div>
       </div>
+      <div class="tile">
+        <div class="tile-label">SMS w tym miesiącu</div>
+        <div class="tile-value" id="stat-sms-month">—</div>
+        <div class="tile-sub" id="stat-sms-sub">potwierdzenia i powiadomienia</div>
+      </div>
     </div>
 
     <div class="section-head">
@@ -484,6 +503,19 @@ tbody td:first-child { color: var(--text); font-weight: 700; }
         <div class="icon">📞</div>
         <h3>Ładowanie…</h3>
         <p>Pobieranie historii połączeń.</p>
+      </div>
+    </div>
+
+    <div style="height:36px"></div>
+    <div class="section-head">
+      <h2>Historia SMS</h2>
+      <span class="count" id="sms-count"></span>
+    </div>
+    <div class="table-wrap" id="sms-area">
+      <div class="empty">
+        <div class="icon">💬</div>
+        <h3>Ładowanie…</h3>
+        <p>Pobieranie historii SMS.</p>
       </div>
     </div>
 
@@ -596,6 +628,14 @@ async function showApp(user) {
   renderStats(calls, client.plan_minutes);
   renderTable(calls);
 
+  const { data: smsLog = [] } = await sb
+    .from('kreato_sms')
+    .select('*')
+    .eq('client_id', client.id)
+    .order('sent_at', { ascending: false })
+    .limit(100);
+  renderSMS(smsLog);
+
   const { data: invoices = [] } = await sb
     .from('kreato_invoices')
     .select('*')
@@ -613,6 +653,8 @@ function renderStats(calls, planMin) {
     return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
   });
 
+  const now2 = new Date();
+  // SMS stat is updated separately in renderSMS — placeholder here
   const secMonth = thisMonth.reduce((s, c) => s + (c.duration_sec || 0), 0);
   const minMonth = Math.ceil(secMonth / 60);
 
@@ -677,6 +719,63 @@ function renderTable(calls) {
     </tr></thead>
     <tbody>${rows}</tbody>
   </table>`;
+}
+
+// ─── SMS ───
+function renderSMS(smsLog) {
+  const area  = document.getElementById('sms-area');
+  const count = document.getElementById('sms-count');
+
+  // Count this month for stat tile
+  const now = new Date();
+  const thisMonth = smsLog.filter(s => {
+    const d = new Date(s.sent_at);
+    return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
+  });
+  document.getElementById('stat-sms-month').textContent = thisMonth.length;
+  document.getElementById('stat-sms-sub').textContent =
+    thisMonth.length === 1 ? 'SMS wysłany' : 'SMS wysłanych';
+
+  if (!smsLog.length) {
+    count.textContent = '';
+    area.innerHTML = `
+      <div class="empty">
+        <div class="icon">💬</div>
+        <h3>Brak SMS</h3>
+        <p>Historia SMS pojawi się tutaj po pierwszych wiadomościach Karoliny.</p>
+      </div>`;
+    return;
+  }
+
+  count.textContent = `${smsLog.length} wiadomości`;
+  const rows = smsLog.map(s => {
+    const date = fmtDate(s.sent_at);
+    const to   = s.recipient_number || '—';
+    const txt  = esc(s.message_text || '');
+    const { scls: sc, slabel: sl } = smsBadge(s.status);
+    return `<tr>
+      <td>${date}</td>
+      <td class="caller"><a href="tel:${esc(to)}" style="color:inherit;text-decoration:none">${esc(to)}</a></td>
+      <td><div class="sms-text" title="${txt}">${txt}</div></td>
+      <td><span class="reason-badge ${sc}">${sl}</span></td>
+    </tr>`;
+  }).join('');
+
+  area.innerHTML = `<table>
+    <thead><tr>
+      <th>Data i godzina</th>
+      <th>Odbiorca</th>
+      <th>Treść</th>
+      <th>Status</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+function smsBadge(s) {
+  if (!s || s === 'sent')    return { scls: 'sms-sent',    slabel: 'Wysłany' };
+  if (s === 'failed')        return { scls: 'sms-failed',  slabel: 'Błąd' };
+  return                            { scls: 'sms-pending', slabel: 'Oczekuje' };
 }
 
 // ─── INVOICES ───
