@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KREATO.AI — Akceptacja konfiguracji</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #080b12;
+    --surface: #0f1420;
+    --border: #1e2535;
+    --green: #00d084;
+    --green-dim: rgba(0,208,132,.12);
+    --green-glow: rgba(0,208,132,.25);
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --error: #ef4444;
+    --error-dim: rgba(239,68,68,.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px 40px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .logo-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
+
+  .icon {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 32px;
+    transition: background .3s;
+  }
+  .icon.ready   { background: var(--green-dim); }
+  .icon.success { background: var(--green-dim); }
+  .icon.loading { background: rgba(255,255,255,.06); }
+  .icon.error   { background: var(--error-dim); }
+
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
+  .sub { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 32px; }
+
+  .info-box {
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    text-align: left;
+  }
+  .info-box .label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
+  .info-box .value { font-size: 15px; font-weight: 600; color: var(--text); }
+
+  .btn {
+    display: block; width: 100%;
+    padding: 16px;
+    background: var(--green);
+    color: #000;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity .2s, transform .1s, box-shadow .2s;
+    letter-spacing: .02em;
+  }
+  .btn:hover  { opacity: .9; box-shadow: 0 0 24px var(--green-glow); }
+  .btn:active { transform: scale(.98); }
+  .btn:disabled { opacity: .4; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .spinner {
+    display: inline-block;
+    width: 18px; height: 18px;
+    border: 2px solid rgba(255,255,255,.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .hint { font-size: 12px; color: var(--muted); margin-top: 16px; line-height: 1.5; }
+
+  [data-state] { display: none; }
+  body[data-view="ready"]   [data-state="ready"]   { display: block; }
+  body[data-view="loading"] [data-state="loading"] { display: block; }
+  body[data-view="success"] [data-state="success"] { display: block; }
+  body[data-view="error"]   [data-state="error"]   { display: block; }
+  body[data-view="notoken"] [data-state="notoken"] { display: block; }
+
+  .checkmark {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: draw .5s .1s ease forwards;
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+</style>
+</head>
+<body data-view="ready">
+
+<div class="card">
+  <div class="logo"><span class="logo-dot"></span>KREATO.AI<span class="logo-dot"></span></div>
+
+  <!-- READY -->
+  <div data-state="ready">
+    <div class="icon ready">🤖</div>
+    <h1>Karolina jest gotowa!</h1>
+    <p class="sub">Konfiguracja asystenta głosowego została zakończona. Proszę potwierdzić akceptację, aby aktywować konto w panelu klienta.</p>
+    <div class="info-box">
+      <div class="label">Klient</div>
+      <div class="value" id="clientName">—</div>
+    </div>
+    <button class="btn" id="acceptBtn" onclick="doAccept()">Akceptuję konfigurację →</button>
+    <p class="hint">Po akceptacji otrzymają Państwo dane dostępowe do panelu KREATO.AI w ciągu kilku minut.</p>
+  </div>
+
+  <!-- LOADING -->
+  <div data-state="loading">
+    <div class="icon loading">⌛</div>
+    <h1>Przetwarzanie…</h1>
+    <p class="sub">Proszę chwilę poczekać.</p>
+    <button class="btn" disabled><span class="spinner"></span>Wysyłanie…</button>
+  </div>
+
+  <!-- SUCCESS -->
+  <div data-state="success">
+    <div class="icon success">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <path class="checkmark" d="M10 20 L17 27 L30 13" stroke="#00d084" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1>Dziękujemy za akceptację!</h1>
+    <p class="sub">Twoje zgłoszenie zostało przyjęte. Dane dostępowe do panelu klienta zostaną przesłane na adres e-mail w ciągu kilku minut.</p>
+    <div class="info-box">
+      <div class="label">Co dalej?</div>
+      <div class="value" style="font-size:13px;font-weight:400;color:var(--muted);line-height:1.6">Sprawdź skrzynkę e-mail — wyślemy dane logowania do panelu KREATO.AI, gdzie zobaczysz statystyki połączeń, czas trwania rozmów i faktury.</div>
+    </div>
+  </div>
+
+  <!-- ERROR -->
+  <div data-state="error">
+    <div class="icon error">⚠️</div>
+    <h1>Coś poszło nie tak</h1>
+    <p class="sub">Nie udało się wysłać akceptacji. Proszę spróbować ponownie lub skontaktować się z nami.</p>
+    <button class="btn" onclick="doAccept()" style="margin-bottom:12px">Spróbuj ponownie</button>
+    <p class="hint">W razie problemów: <a href="mailto:biuro.stalsystem.pl@gmail.com" style="color:var(--green)">biuro.stalsystem.pl@gmail.com</a></p>
+  </div>
+
+  <!-- NO TOKEN -->
+  <div data-state="notoken">
+    <div class="icon error">🔗</div>
+    <h1>Nieprawidłowy link</h1>
+    <p class="sub">Ten link nie zawiera wymaganych danych. Proszę użyć linku otrzymanego w wiadomości e-mail od KREATO.AI.</p>
+    <p class="hint">Masz pytania? <a href="mailto:biuro.stalsystem.pl@gmail.com" style="color:var(--green)">biuro.stalsystem.pl@gmail.com</a></p>
+  </div>
+</div>
+
+<script>
+const N8N_WEBHOOK = 'https://178.105.194.238.sslip.io/webhook/kreato-accept';
+
+const params = new URLSearchParams(window.location.search);
+const token  = params.get('token') || '';
+const label  = params.get('firma') || params.get('client') || token;
+
+if (!token) {
+  document.body.dataset.view = 'notoken';
+} else {
+  const el = document.getElementById('clientName');
+  if (el) el.textContent = decodeURIComponent(label).replace(/-/g,' ');
+}
+
+async function doAccept() {
+  if (!token) return;
+  document.body.dataset.view = 'loading';
+  try {
+    const res = await fetch(N8N_WEBHOOK, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ token, firma: decodeURIComponent(label), ts: new Date().toISOString() })
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    document.body.dataset.view = 'success';
+  } catch (e) {
+    document.body.dataset.view = 'error';
+  }
+}
+</script>
+</body>
+</html>
