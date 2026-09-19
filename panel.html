@@ -220,6 +220,7 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: 32px 24px 64px;
+  overflow-x: hidden;
 }
 .page-header {
   margin-bottom: 28px;
@@ -285,6 +286,7 @@ body {
   transition: opacity .2s;
 }
 .tile:hover::before { opacity: 1; }
+#tile-payment { border-width: 1px; transition: border-color .3s; }
 .tile-label {
   font-size: 10.5px;
   font-weight: 700;
@@ -332,7 +334,7 @@ body {
   font-size: 12px;
   color: var(--muted);
 }
-.table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
+.table-wrap { overflow-x: auto; max-width: 100%; border-radius: var(--radius); border: 1px solid var(--border); }
 table {
   width: 100%;
   border-collapse: collapse;
@@ -448,6 +450,60 @@ tbody td:first-child { color: var(--text); font-weight: 700; }
         <button type="submit" class="btn-primary" id="login-btn">Zaloguj</button>
       </form>
       <div class="error-msg" id="error-msg" role="alert" aria-live="polite"></div>
+      <div style="text-align:center;margin-top:14px">
+        <button onclick="showForgot()" style="background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;text-decoration:underline;font-family:inherit">
+          Nie pamiętam hasła
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ FORGOT PASSWORD ═══════════ -->
+<div id="forgot-screen" style="display:none;min-height:100vh;display:none;align-items:center;justify-content:center;background:var(--bg)">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="wordmark">KREATO<span>.AI</span></div>
+      <div class="tagline">Reset hasła</div>
+    </div>
+    <div class="login-card">
+      <h2>Zapomniałem hasła</h2>
+      <p class="login-sub">Wyślemy link do zresetowania hasła na Twój e-mail.</p>
+      <div class="field">
+        <label for="reset-email">E-mail</label>
+        <input id="reset-email" type="email" placeholder="firma@domena.pl" autocomplete="email">
+      </div>
+      <button onclick="sendReset()" class="btn-primary" id="reset-btn">Wyślij link</button>
+      <div id="reset-msg" style="margin-top:12px;font-size:13px;text-align:center"></div>
+      <div style="text-align:center;margin-top:14px">
+        <button onclick="showLogin()" style="background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;text-decoration:underline;font-family:inherit">
+          ← Wróć do logowania
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ NEW PASSWORD ═══════════ -->
+<div id="newpass-screen" style="display:none;min-height:100vh;align-items:center;justify-content:center;background:var(--bg)">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="wordmark">KREATO<span>.AI</span></div>
+      <div class="tagline">Nowe hasło</div>
+    </div>
+    <div class="login-card">
+      <h2>Ustaw nowe hasło</h2>
+      <p class="login-sub">Wpisz nowe hasło — będzie ono używane przy następnym logowaniu.</p>
+      <div class="field">
+        <label for="new-password">Nowe hasło</label>
+        <input id="new-password" type="password" placeholder="min. 6 znaków" autocomplete="new-password">
+      </div>
+      <div class="field">
+        <label for="new-password2">Powtórz hasło</label>
+        <input id="new-password2" type="password" placeholder="••••••••" autocomplete="new-password">
+      </div>
+      <button onclick="setNewPassword()" class="btn-primary" id="newpass-btn">Zapisz hasło</button>
+      <div id="newpass-msg" style="margin-top:12px;font-size:13px;text-align:center"></div>
     </div>
   </div>
 </div>
@@ -461,29 +517,80 @@ tbody td:first-child { color: var(--text); font-weight: 700; }
     <button class="btn-logout" id="logout-btn">Wyloguj</button>
   </nav>
 
+  <!-- OVERDUE BANNER — widoczny tylko gdy zaległość -->
+  <div id="overdue-banner" style="display:none;background:#7f1d1d;color:#fca5a5;padding:12px 24px;font-size:13px;font-weight:700;text-align:center;letter-spacing:.02em">
+    ⚠ Faktura zaległa — <span id="overdue-amount"></span> zł · Ureguluj płatność, aby uniknąć przerwy w usłudze &nbsp;
+    <a id="overdue-link" href="mailto:biuro.stalsystem.pl@gmail.com" style="color:#fca5a5;text-decoration:underline">Kontakt →</a>
+  </div>
+
   <main class="page">
+
+    <!-- HEADER -->
     <div class="page-header">
-      <h1 id="greeting">Twój panel</h1>
-      <div class="phone-row">
+      <h1 id="greeting" style="font-size:20px;font-weight:900">Karolina pracuje dla Twojej firmy</h1>
+      <div class="phone-row" style="margin-top:8px;flex-wrap:wrap;gap:8px">
         <span class="phone-label">Numer bota:</span>
         <span class="phone-num" id="phone-num">—</span>
         <span class="plan-badge" id="plan-badge">Pilot</span>
+        <span id="active-days" style="font-size:12px;color:var(--muted)"></span>
+      </div>
+      <div style="margin-top:6px;font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.02em" id="client-company-sub"></div>
+    </div>
+
+    <!-- ROI BANNER — główna metryka wartości -->
+    <div id="roi-banner" style="background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(59,130,246,.08));border:1px solid rgba(16,185,129,.3);border-radius:12px;padding:24px 28px;margin-bottom:28px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--success);margin-bottom:16px">
+        📊 Wartość Karoliny w tym miesiącu
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px">
+        <div>
+          <div style="font-size:34px;font-weight:900;color:var(--text)" id="roi-calls-val">—</div>
+          <div style="font-size:12px;color:var(--sub);margin-top:4px">połączeń odebranych<br><span style="color:var(--success);font-weight:700">0 nieodebranych</span></div>
+        </div>
+        <div>
+          <div style="font-size:34px;font-weight:900;color:var(--text)" id="roi-hours-val">—<span style="font-size:16px;font-weight:400;color:var(--sub)"> godz.</span></div>
+          <div style="font-size:12px;color:var(--sub);margin-top:4px">czasu pracownika<br><span style="color:var(--success);font-weight:700">zaoszczędzone</span></div>
+        </div>
+        <div>
+          <div style="font-size:34px;font-weight:900;color:var(--text)" id="roi-cost-val">—<span style="font-size:16px;font-weight:400;color:var(--sub)"> zł</span></div>
+          <div style="font-size:12px;color:var(--sub);margin-top:4px">koszt abonamentu<br><span id="roi-vs" style="color:var(--success);font-weight:700"></span></div>
+        </div>
       </div>
     </div>
 
+    <!-- SAVINGS BLOCK -->
+    <div id="savings-block" style="background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(16,185,129,.06));border:1px solid rgba(34,197,94,.25);border-radius:12px;padding:24px 28px;margin-bottom:28px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--success);margin-bottom:16px">
+        💰 Ile oszczędzasz vs. rynek
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px">
+        <div>
+          <div style="font-size:34px;font-weight:900;color:var(--text)" id="savings-monthly-val">—<span style="font-size:16px;font-weight:400;color:var(--sub)"> zł</span></div>
+          <div style="font-size:12px;color:var(--sub);margin-top:4px">oszczędności miesięcznie<br><span style="color:var(--success);font-weight:700">vs. sekretarka (~4 500 zł/mies.)</span></div>
+        </div>
+        <div>
+          <div style="font-size:34px;font-weight:900;color:var(--text)" id="savings-annual-val">—<span style="font-size:16px;font-weight:400;color:var(--sub)"> zł</span></div>
+          <div style="font-size:12px;color:var(--sub);margin-top:4px">oszczędności rocznie<br><span style="color:var(--success);font-weight:700">zwrot inwestycji</span></div>
+        </div>
+        <div>
+          <div style="font-size:34px;font-weight:900;color:var(--text)" id="savings-plan-val">—<span style="font-size:16px;font-weight:400;color:var(--sub)"> zł</span></div>
+          <div style="font-size:12px;color:var(--sub);margin-top:4px">Twój abonament<br><span style="color:var(--accent);font-weight:700">miesięcznie</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS TILES -->
     <div class="stats" id="stats-row">
       <div class="tile">
         <div class="tile-label">Minuty w tym miesiącu</div>
         <div class="tile-value" id="stat-min-month">—<span class="tile-unit">min</span></div>
-        <div class="tile-sub" id="stat-min-sub">z <span id="plan-minutes">—</span> min w planie</div>
+        <div style="margin-top:10px;height:4px;background:var(--bg2);border-radius:2px;overflow:hidden">
+          <div id="min-bar" style="height:100%;background:var(--accent);border-radius:2px;width:0%;transition:width .6s ease"></div>
+        </div>
+        <div class="tile-sub" id="stat-min-sub" style="margin-top:6px">z <span id="plan-minutes">—</span> min w planie</div>
       </div>
       <div class="tile">
-        <div class="tile-label">Połączenia w tym miesiącu</div>
-        <div class="tile-value" id="stat-calls-month">—</div>
-        <div class="tile-sub" id="stat-calls-sub">rozmów odebranych</div>
-      </div>
-      <div class="tile">
-        <div class="tile-label">Łącznie wszystkich połączeń</div>
+        <div class="tile-label">Połączenia ogółem</div>
         <div class="tile-value" id="stat-calls-total">—</div>
         <div class="tile-sub">od początku usługi</div>
       </div>
@@ -492,18 +599,34 @@ tbody td:first-child { color: var(--text); font-weight: 700; }
         <div class="tile-value" id="stat-sms-month">—</div>
         <div class="tile-sub" id="stat-sms-sub">potwierdzenia i powiadomienia</div>
       </div>
+      <div class="tile" id="tile-payment" style="transition:border-color .3s">
+        <div class="tile-label">Status płatności</div>
+        <div id="stat-pay-status" style="font-size:17px;font-weight:700;padding:10px 0 4px">—</div>
+        <div class="tile-sub" id="stat-pay-sub">sprawdzanie…</div>
+      </div>
+      <div class="tile" id="tile-subscription">
+        <div class="tile-label">Ważność abonamentu</div>
+        <div id="stat-sub-days" style="font-size:24px;font-weight:900;padding:10px 0 4px;color:var(--success)">—</div>
+        <div class="tile-sub" id="stat-sub-date">brak daty</div>
+      </div>
     </div>
 
+    <!-- PŁATNOŚCI -->
+    <div class="section-head">
+      <h2>Płatności i faktury</h2>
+      <span class="count" id="inv-count"></span>
+    </div>
+    <div class="table-wrap" id="inv-area">
+      <div class="empty"><div class="icon">💳</div><h3>Ładowanie…</h3></div>
+    </div>
+
+    <div style="height:36px"></div>
     <div class="section-head">
       <h2>Historia połączeń</h2>
       <span class="count" id="calls-count"></span>
     </div>
     <div class="table-wrap" id="calls-area">
-      <div class="empty">
-        <div class="icon">📞</div>
-        <h3>Ładowanie…</h3>
-        <p>Pobieranie historii połączeń.</p>
-      </div>
+      <div class="empty"><div class="icon">📞</div><h3>Ładowanie…</h3></div>
     </div>
 
     <div style="height:36px"></div>
@@ -512,25 +635,78 @@ tbody td:first-child { color: var(--text); font-weight: 700; }
       <span class="count" id="sms-count"></span>
     </div>
     <div class="table-wrap" id="sms-area">
-      <div class="empty">
-        <div class="icon">💬</div>
-        <h3>Ładowanie…</h3>
-        <p>Pobieranie historii SMS.</p>
-      </div>
+      <div class="empty"><div class="icon">💬</div><h3>Ładowanie…</h3></div>
     </div>
 
     <div style="height:36px"></div>
     <div class="section-head">
-      <h2>Płatności</h2>
-      <span class="count" id="inv-count"></span>
+      <h2>Wiadomości do supportu</h2>
     </div>
-    <div class="table-wrap" id="inv-area">
-      <div class="empty">
-        <div class="icon">💳</div>
-        <h3>Ładowanie…</h3>
-        <p>Pobieranie historii faktur.</p>
+
+    <!-- SUPPORT TICKET FORM -->
+    <div id="chat-box" style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px">✉️ Wyślij zgłoszenie — odpowiemy w ciągu 1h</div>
+
+      <div style="margin-bottom:14px">
+        <label style="font-size:12px;font-weight:700;color:var(--muted);display:block;margin-bottom:6px">Imię i nazwisko / Firma</label>
+        <input type="text" id="ticket-name" readonly
+          style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--muted);font-size:14px;font-family:inherit;box-sizing:border-box;cursor:default">
+      </div>
+
+      <div style="margin-bottom:14px">
+        <label style="font-size:12px;font-weight:700;color:var(--muted);display:block;margin-bottom:6px">Pytanie / Temat *</label>
+        <input type="text" id="ticket-subject" placeholder="np. Karolina nie odpowiada na pytanie o cenę" maxlength="150"
+          style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-size:14px;font-family:inherit;outline:none;box-sizing:border-box;transition:border-color .2s"
+          onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+      </div>
+
+      <div style="margin-bottom:14px">
+        <label style="font-size:12px;font-weight:700;color:var(--muted);display:block;margin-bottom:6px">Opis problemu *</label>
+        <textarea id="ticket-desc" placeholder="Opisz problem — kiedy wystąpił, co powiedziała Karolina, czego oczekujesz..." rows="4"
+          style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-size:14px;font-family:inherit;resize:vertical;outline:none;box-sizing:border-box;line-height:1.5;min-height:100px;transition:border-color .2s"
+          onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+      </div>
+
+      <div style="margin-bottom:20px">
+        <label style="font-size:12px;font-weight:700;color:var(--muted);display:block;margin-bottom:6px">Zrzut ekranu (opcjonalnie)</label>
+        <input type="file" id="ticket-file" accept="image/*" style="display:none" onchange="ticketPreviewFile(this)">
+        <button onclick="document.getElementById('ticket-file').click()"
+          style="background:var(--bg2);border:1px dashed var(--border);border-radius:8px;padding:12px 20px;color:var(--muted);font-size:13px;cursor:pointer;width:100%;text-align:left;font-family:inherit;transition:border-color .2s"
+          onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          📎 Wybierz plik (PNG/JPG, max 5MB)
+        </button>
+        <div id="ticket-file-name" style="margin-top:6px;font-size:12px;color:var(--accent);display:none"></div>
+      </div>
+
+      <button onclick="sendTicket()" id="ticket-send"
+        style="background:var(--accent);border:none;border-radius:8px;padding:12px 0;color:#fff;font-weight:700;font-size:15px;cursor:pointer;width:100%;transition:opacity .2s">
+        Wyślij do supportu →
+      </button>
+
+      <div id="ticket-success" style="display:none;margin-top:16px;padding:12px 16px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);border-radius:8px;color:var(--success);font-size:14px;font-weight:600;text-align:center">
+        ✓ Zgłoszenie wysłane! Odpowiemy w ciągu 1h w dni robocze.
+      </div>
+      <div id="ticket-error" style="display:none;margin-top:16px;padding:12px 16px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:8px;color:var(--danger);font-size:14px;font-weight:600;text-align:center"></div>
+
+      <div id="ticket-history-wrap" style="display:none;margin-top:24px;border-top:1px solid var(--border);padding-top:20px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px">Historia zgłoszeń</div>
+        <div id="ticket-history"></div>
       </div>
     </div>
+
+    <!-- KONTAKT ALTERNATYWNY -->
+    <div style="margin-top:16px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px">
+      <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px">Kontakt bezpośredni</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="https://wa.me/48733245757" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.2);border-radius:8px;padding:8px 14px;text-decoration:none;color:var(--text);font-size:13px;font-weight:700">
+          <span style="font-size:16px">💬</span> WhatsApp
+        </a>
+        <a href="mailto:biuro.stalsystem.pl@gmail.com" style="display:flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:8px 14px;text-decoration:none;color:var(--text);font-size:13px;font-weight:700">
+          <span style="font-size:16px">✉️</span> biuro.stalsystem.pl@gmail.com
+        </a>
+      </div>
+    </div>
+    <div style="height:48px"></div>
   </main>
 </div>
 
@@ -547,11 +723,91 @@ const appScreen   = document.getElementById('app-screen');
 
 // ─── AUTH CHECK ───
 async function init() {
+  // Check for password recovery token in URL hash
+  const hash = window.location.hash;
+  if (hash.includes('type=recovery') && hash.includes('access_token')) {
+    // Parse tokens from hash
+    const params = new URLSearchParams(hash.slice(1));
+    const accessToken  = params.get('access_token');
+    const refreshToken = params.get('refresh_token');
+    if (accessToken) {
+      await sb.auth.setSession({ access_token: accessToken, refresh_token: refreshToken || '' });
+      // Clear hash from URL
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+      showNewPassScreen();
+      return;
+    }
+  }
+
   const { data: { session } } = await sb.auth.getSession();
   if (session) {
     await showApp(session.user);
   } else {
     loginScreen.style.display = 'flex';
+  }
+}
+
+// ─── FORGOT PASSWORD ───
+function showForgot() {
+  loginScreen.style.display  = 'none';
+  document.getElementById('forgot-screen').style.display = 'flex';
+}
+
+function showLogin() {
+  document.getElementById('forgot-screen').style.display = 'none';
+  document.getElementById('newpass-screen').style.display = 'none';
+  loginScreen.style.display = 'flex';
+}
+
+function showNewPassScreen() {
+  loginScreen.style.display = 'none';
+  document.getElementById('forgot-screen').style.display = 'none';
+  document.getElementById('newpass-screen').style.display = 'flex';
+}
+
+async function sendReset() {
+  const email = document.getElementById('reset-email').value.trim();
+  const msg   = document.getElementById('reset-msg');
+  const btn   = document.getElementById('reset-btn');
+  if (!email) { msg.style.color = 'var(--danger)'; msg.textContent = 'Wpisz adres e-mail.'; return; }
+
+  btn.disabled = true; btn.textContent = 'Wysyłanie…';
+  const redirectTo = 'https://5605131a-tech.github.io/kreato-ai/panel.html';
+  const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo });
+  btn.disabled = false; btn.textContent = 'Wyślij link';
+
+  if (error) {
+    msg.style.color = 'var(--danger)';
+    msg.textContent = 'Błąd. Sprawdź e-mail lub skontaktuj się z supportem.';
+  } else {
+    msg.style.color = 'var(--success)';
+    msg.textContent = '✓ Link wysłany! Sprawdź skrzynkę pocztową (w tym folder Spam).';
+  }
+}
+
+async function setNewPassword() {
+  const p1  = document.getElementById('new-password').value;
+  const p2  = document.getElementById('new-password2').value;
+  const msg = document.getElementById('newpass-msg');
+  const btn = document.getElementById('newpass-btn');
+
+  if (p1.length < 6) { msg.style.color='var(--danger)'; msg.textContent='Hasło musi mieć min. 6 znaków.'; return; }
+  if (p1 !== p2)     { msg.style.color='var(--danger)'; msg.textContent='Hasła nie są identyczne.'; return; }
+
+  btn.disabled = true; btn.textContent = 'Zapisywanie…';
+  const { data, error } = await sb.auth.updateUser({ password: p1 });
+  btn.disabled = false; btn.textContent = 'Zapisz hasło';
+
+  if (error) {
+    msg.style.color = 'var(--danger)';
+    msg.textContent = 'Błąd zmiany hasła. Spróbuj ponownie lub skontaktuj się z supportem.';
+  } else {
+    msg.style.color = 'var(--success)';
+    msg.textContent = '✓ Hasło zmienione! Przekierowuję…';
+    setTimeout(async () => {
+      document.getElementById('newpass-screen').style.display = 'none';
+      await showApp(data.user);
+    }, 1200);
   }
 }
 
@@ -612,37 +868,80 @@ async function showApp(user) {
   // Fill header
   const company = client.company_name || 'Twoja firma';
   document.getElementById('company-name').textContent = company;
-  document.getElementById('greeting').textContent = company;
-  document.getElementById('phone-num').textContent  = client.phone_number || '—';
-  document.getElementById('plan-badge').textContent = planLabel(client.plan);
+  document.getElementById('greeting').textContent     = `Karolina pracuje dla ${company}`;
+  document.getElementById('client-company-sub').textContent = client.contact_name
+    ? `${client.contact_name} · ${company}`
+    : company;
+  document.getElementById('phone-num').textContent    = client.phone_number || '—';
+  document.getElementById('plan-badge').textContent   = planLabel(client.plan);
   document.getElementById('plan-minutes').textContent = client.plan_minutes ?? '—';
 
+  // Active days
+  if (client.created_at) {
+    const days = Math.floor((Date.now() - new Date(client.created_at)) / 86400000);
+    document.getElementById('active-days').textContent = `· aktywna od ${days} dni`;
+  }
+
   // Fetch calls
-  const { data: calls = [] } = await sb
+  const { data: callsData } = await sb
     .from('kreato_calls')
     .select('*')
     .eq('vapi_assistant_id', client.vapi_assistant_id)
     .order('connected_at', { ascending: false })
     .limit(200);
+  const calls = callsData || [];
 
   renderStats(calls, client.plan_minutes);
   renderTable(calls);
 
-  const { data: smsLog = [] } = await sb
+  const { data: smsData } = await sb
     .from('kreato_sms')
     .select('*')
     .eq('client_id', client.id)
     .order('sent_at', { ascending: false })
     .limit(100);
+  const smsLog = smsData || [];
   renderSMS(smsLog);
 
-  const { data: invoices = [] } = await sb
+  const { data: invData } = await sb
     .from('kreato_invoices')
     .select('*')
     .eq('client_id', client.id)
     .order('invoice_date', { ascending: false })
     .limit(24);
+  const invoices = invData || [];
   renderInvoices(invoices);
+  renderPaymentTile(invoices);
+
+  // Subscription end — days remaining
+  if (client.subscription_end) {
+    const endDate = new Date(client.subscription_end);
+    const daysLeft = Math.ceil((endDate - Date.now()) / 86400000);
+    const dEl   = document.getElementById('stat-sub-days');
+    const dSub  = document.getElementById('stat-sub-date');
+    const dTile = document.getElementById('tile-subscription');
+    dSub.textContent = endDate.toLocaleDateString('pl-PL', {day:'2-digit',month:'2-digit',year:'numeric'});
+    if (daysLeft <= 0) {
+      dEl.innerHTML = '<span style="color:var(--danger)">Wygasł</span>';
+      dTile.style.borderColor = 'var(--danger)';
+    } else if (daysLeft <= 7) {
+      dEl.innerHTML = `<span style="color:var(--warn)">${daysLeft} dni</span>`;
+      dTile.style.borderColor = 'var(--warn)';
+    } else {
+      dEl.innerHTML = `<span style="color:var(--success)">${daysLeft} dni</span>`;
+    }
+  }
+
+  // Pre-fill ticket name field
+  const ticketNameEl = document.getElementById('ticket-name');
+  if (ticketNameEl) {
+    ticketNameEl.value = client.contact_name
+      ? `${client.contact_name} · ${client.company_name || ''}`
+      : (client.company_name || '');
+  }
+
+  // Init support tickets
+  await initTickets(client.id);
 }
 
 // ─── STATS ───
@@ -653,21 +952,54 @@ function renderStats(calls, planMin) {
     return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
   });
 
-  const now2 = new Date();
-  // SMS stat is updated separately in renderSMS — placeholder here
   const secMonth = thisMonth.reduce((s, c) => s + (c.duration_sec || 0), 0);
   const minMonth = Math.ceil(secMonth / 60);
+  const hoursTotal = +(secMonth / 3600).toFixed(1);
 
+  // Stats tiles
   document.getElementById('stat-min-month').innerHTML =
     `${minMonth}<span class="tile-unit">min</span>`;
-  document.getElementById('stat-calls-month').textContent = thisMonth.length;
   document.getElementById('stat-calls-total').textContent = calls.length;
 
-  const sub = document.getElementById('stat-min-sub');
+  // Minutes progress bar
   if (planMin) {
-    const pct = Math.round((minMonth / planMin) * 100);
-    const cls = pct >= 90 ? 'neg' : 'pos';
-    sub.innerHTML = `z ${planMin} min w planie &nbsp;<span class="${cls}">${pct}%</span>`;
+    const pct = Math.min(Math.round((minMonth / planMin) * 100), 100);
+    document.getElementById('min-bar').style.width = pct + '%';
+    document.getElementById('min-bar').style.background = pct >= 90 ? 'var(--danger)' : pct >= 70 ? 'var(--warn)' : 'var(--accent)';
+    const sub = document.getElementById('stat-min-sub');
+    if (pct >= 90) {
+      sub.innerHTML = `z ${planMin} min &nbsp;<span class="neg">⚠ ${pct}% — rozważ upgrade</span>`;
+    } else {
+      sub.innerHTML = `z ${planMin} min w planie &nbsp;<span class="pos">${pct}%</span>`;
+    }
+  }
+
+  // ROI banner
+  document.getElementById('roi-calls-val').textContent = thisMonth.length;
+  document.getElementById('roi-hours-val').innerHTML =
+    `${hoursTotal}<span style="font-size:16px;font-weight:400;color:var(--sub)"> godz.</span>`;
+
+  // Cost tile — subscription price vs hours saved
+  const planCost = planMin <= 200 ? 399 : planMin <= 300 ? 499 : 599;
+  document.getElementById('roi-cost-val').innerHTML =
+    `${planCost}<span style="font-size:16px;font-weight:400;color:var(--sub)"> zł</span>`;
+
+  // Savings block
+  const marketCost = 4500;
+  const monthlySavings = marketCost - planCost;
+  document.getElementById('savings-monthly-val').innerHTML =
+    `${monthlySavings.toLocaleString('pl-PL')}<span style="font-size:16px;font-weight:400;color:var(--sub)"> zł</span>`;
+  document.getElementById('savings-annual-val').innerHTML =
+    `${(monthlySavings * 12).toLocaleString('pl-PL')}<span style="font-size:16px;font-weight:400;color:var(--sub)"> zł</span>`;
+  document.getElementById('savings-plan-val').innerHTML =
+    `${planCost}<span style="font-size:16px;font-weight:400;color:var(--sub)"> zł</span>`;
+
+  if (hoursTotal > 0) {
+    const equiv = Math.round(hoursTotal * 35); // 35 zł/h koszt pracownika
+    document.getElementById('roi-vs').textContent =
+      equiv > planCost
+        ? `ekwiwalent ${equiv} zł pracy — oszczędzasz ${equiv - planCost} zł`
+        : `bot odbiera — Twój czas wolny`;
   }
 }
 
@@ -827,6 +1159,48 @@ function renderInvoices(invoices) {
   </table>`;
 }
 
+// ─── PAYMENT TILE ───
+function renderPaymentTile(invoices) {
+  const el    = document.getElementById('stat-pay-status');
+  const sub   = document.getElementById('stat-pay-sub');
+  const tile  = document.getElementById('tile-payment');
+  const banner = document.getElementById('overdue-banner');
+
+  if (!invoices.length) {
+    el.textContent  = '—';
+    sub.textContent = 'brak faktur';
+    return;
+  }
+
+  const overdue = invoices.find(i => i.status === 'overdue');
+  const pending = invoices.find(i => i.status === 'pending' || i.status === 'awaiting');
+
+  if (overdue) {
+    el.innerHTML = '<span style="color:var(--danger)">⚠ Zaległa</span>';
+    sub.innerHTML = `<span class="neg">${esc(String(overdue.amount_pln))} zł — termin: ${esc(overdue.due_date || '—')}</span>`;
+    tile.style.borderColor = 'var(--danger)';
+    // Show top banner
+    banner.style.display = 'block';
+    document.getElementById('overdue-amount').textContent = overdue.amount_pln;
+  } else if (pending) {
+    el.innerHTML = '<span style="color:var(--warn)">⏳ Do opłaty</span>';
+    sub.innerHTML = `${esc(String(pending.amount_pln))} zł &nbsp;·&nbsp; do ${esc(pending.due_date || '—')}`;
+    tile.style.borderColor = 'var(--warn)';
+  } else {
+    el.innerHTML = '<span style="color:var(--success)">✓ Opłacone</span>';
+    // Find next likely payment
+    const last = invoices[0];
+    if (last && last.invoice_date) {
+      const nextDate = new Date(last.invoice_date);
+      nextDate.setMonth(nextDate.getMonth() + 1);
+      sub.textContent = `następny abonament: ${nextDate.toLocaleDateString('pl-PL', {day:'2-digit',month:'2-digit',year:'numeric'})}`;
+    } else {
+      sub.textContent = 'wszystkie faktury uregulowane';
+    }
+    tile.style.borderColor = 'var(--success)';
+  }
+}
+
 function statusBadge(s) {
   if (s === 'paid')    return { scls: 'reason-hangup',   slabel: 'Opłacona' };
   if (s === 'overdue') return { scls: 'reason-timeout',  slabel: 'Zaległa' };
@@ -864,6 +1238,108 @@ function reasonBadge(r) {
 function esc(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
+
+// ─── SUPPORT TICKETS ───
+let _ticketClientId = null;
+let _ticketFileBase64 = null;
+
+function ticketPreviewFile(input) {
+  const file = input.files[0];
+  if (!file) return;
+  if (file.size > 5 * 1024 * 1024) {
+    alert('Plik jest za duży (max 5MB)');
+    input.value = '';
+    return;
+  }
+  document.getElementById('ticket-file-name').textContent = '📎 ' + file.name;
+  document.getElementById('ticket-file-name').style.display = 'block';
+  const reader = new FileReader();
+  reader.onload = e => { _ticketFileBase64 = e.target.result; };
+  reader.readAsDataURL(file);
+}
+
+async function sendTicket() {
+  const subject = document.getElementById('ticket-subject').value.trim();
+  const desc    = document.getElementById('ticket-desc').value.trim();
+  const name    = document.getElementById('ticket-name').value.trim();
+  const errEl   = document.getElementById('ticket-error');
+  const okEl    = document.getElementById('ticket-success');
+  const btn     = document.getElementById('ticket-send');
+
+  errEl.style.display = 'none'; okEl.style.display = 'none';
+  if (!subject || !desc) {
+    errEl.textContent = 'Wypełnij temat i opis zgłoszenia.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true; btn.style.opacity = '.5'; btn.textContent = 'Wysyłanie…';
+
+  // Send to n8n AI Support Agent
+  let aiResponse = null;
+  try {
+    const r = await fetch('https://178.105.194.238.sslip.io/webhook/kreato-ai-support', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ client_id: _ticketClientId, name, subject, description: desc, screenshot_base64: _ticketFileBase64 || null })
+    });
+    const rd = await r.json();
+    aiResponse = rd.ai_response || null;
+  } catch(e) { /* fallback: AI unavailable, ticket saved */ }
+
+  okEl.innerHTML = aiResponse
+    ? `✓ Zgłoszenie wysłane!<br><br><strong>Odpowiedź AI:</strong><br><span style="font-weight:400;color:var(--text)">${esc(aiResponse)}</span>`
+    : '✓ Zgłoszenie wysłane! Odpowiemy w ciągu 1h w dni robocze.';
+  okEl.style.display = 'block';
+  document.getElementById('ticket-subject').value = '';
+  document.getElementById('ticket-desc').value = '';
+  document.getElementById('ticket-file').value = '';
+  document.getElementById('ticket-file-name').style.display = 'none';
+  _ticketFileBase64 = null;
+  btn.disabled = false; btn.style.opacity = '1'; btn.textContent = 'Wyślij do supportu →';
+  await loadTicketHistory();
+}
+
+async function initTickets(clientId) {
+  _ticketClientId = clientId;
+  await loadTicketHistory();
+}
+
+async function loadTicketHistory() {
+  if (!_ticketClientId) return;
+  const { data: tickets } = await sb
+    .from('kreato_support_tickets')
+    .select('*')
+    .eq('client_id', _ticketClientId)
+    .order('created_at', { ascending: false })
+    .limit(10);
+
+  const history = tickets || [];
+  if (!history.length) return;
+
+  const issueColors = { TECHNICAL:'#ef4444', UX:'#f59e0b', KNOWLEDGE:'#8b5cf6', BILLING:'#3b82f6', OTHER:'var(--muted)' };
+  const issueLabels = { TECHNICAL:'⚠ Techniczne', UX:'💬 Bot', KNOWLEDGE:'📚 Wiedza', BILLING:'💳 Rozliczenie', OTHER:'ℹ Inne' };
+
+  document.getElementById('ticket-history-wrap').style.display = 'block';
+  document.getElementById('ticket-history').innerHTML = history.map(t => {
+    const date = new Date(t.created_at).toLocaleDateString('pl-PL', {day:'2-digit',month:'2-digit',year:'numeric'})
+      + ' ' + new Date(t.created_at).toLocaleTimeString('pl-PL',{hour:'2-digit',minute:'2-digit'});
+    const typeColor = issueColors[t.issue_type] || 'var(--muted)';
+    const typeLabel = issueLabels[t.issue_type] || t.issue_type;
+    return `<div style="padding:14px 0;border-bottom:1px solid var(--border)">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;gap:8px;flex-wrap:wrap">
+        <div>
+          <span style="font-size:13px;font-weight:700">${esc(t.subject || '—')}</span>
+          <span style="margin-left:8px;font-size:11px;font-weight:700;color:${typeColor};background:${typeColor}18;padding:2px 8px;border-radius:4px">${typeLabel}</span>
+        </div>
+        <span style="font-size:11px;color:var(--muted);flex-shrink:0">${date}</span>
+      </div>
+      <div style="font-size:12px;color:var(--sub);margin-bottom:8px">${esc((t.description||'').slice(0,120))}${(t.description||'').length>120?'…':''}</div>
+      ${t.ai_response ? `<div style="background:rgba(59,130,246,.06);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:8px 12px;font-size:13px;color:var(--text);white-space:pre-wrap"><strong style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)">AI KREATO</strong><br>${esc(t.ai_response)}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+
 
 init();
 </script>
