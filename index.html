@@ -9893,7 +9893,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-          <a class="service-link" href="#cta">Zapytaj o chatbota →</a>
+          <a class="service-link" href="#" onclick="openOrder('chatbot');return false;">Zapytaj o chatbota →</a>
 
 
 
@@ -10013,7 +10013,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-          <a class="service-link" href="#cta">Przetestuj za darmo →</a>
+          <a class="service-link" href="#" onclick="openOrder('n8n');return false;">Przetestuj za darmo →</a>
 
 
 
@@ -10133,7 +10133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-          <a class="service-link" href="#cta">Opowiedz o potrzebie →</a>
+          <a class="service-link" href="#" onclick="openOrder('dedykowane');return false;">Opowiedz o potrzebie →</a>
 
 
 
@@ -10179,7 +10179,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           </ul>
 
-          <a class="service-link" href="#pricing">Od 399 zł/mies. →</a>
+          <a class="service-link" href="#" onclick="openOrder('smm');return false;">Od 399 zł/mies. →</a>
 
         </div>
 
@@ -10219,7 +10219,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           </div>
 
-          <a class="service-link" href="#pricing">Od 499 zł/mies. →</a>
+          <a class="service-link" href="#" onclick="openOrder('ads');return false;">Od 499 zł/mies. →</a>
 
         </div>
 
@@ -10256,7 +10256,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li>Alerty cenowe i nowe ogłoszenia od razu do Telegrama</li>
             <li>Tygodniowy raport trendów do decyzji biznesowych</li>
           </ul>
-          <a class="service-link" href="#cta">Od 199 zł/mies. →</a>
+          <a class="service-link" href="#" onclick="openOrder('monitoring');return false;">Od 199 zł/mies. →</a>
         </div>
       </div>
 
@@ -10273,7 +10273,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li>Wysyłka na e-mail lub Telegram automatycznie</li>
             <li>Konfiguracja raz — działa samo bez Twojego udziału</li>
           </ul>
-          <a class="service-link" href="#cta">Od 149 zł/mies. →</a>
+          <a class="service-link" href="#" onclick="openOrder('raporty');return false;">Od 149 zł/mies. →</a>
         </div>
       </div>
 
@@ -11983,7 +11983,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Overage + No-show add-on -->
       <div style="padding:0 32px 24px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start">
         <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--text3)">
-          Ponad limit minut: <strong style="color:var(--text)">+1,50 zł/min</strong> &middot; Ceny netto + VAT 23%
+          Ponad limit minut (każdy pakiet): <strong style="color:var(--text)">+0,99 zł/min</strong> &middot; Ceny netto + VAT 23%
         </div>
         <div style="border:2px solid rgba(139,92,246,.3);border-radius:10px;padding:14px 18px;background:rgba(139,92,246,.04)">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
@@ -12002,6 +12002,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li style="font-size:12px;color:var(--text2)">&#10003; Klient potwierdza klawiszem</li>
             <li style="font-size:12px;color:var(--text2)">&#10003; Redukcja no-show 60&ndash;80%</li>
             <li style="font-size:12px;color:var(--text2)">&#10003; ~4&thinsp;320 zł odzysku/mies.</li>
+            <li style="font-size:12px;color:var(--text);font-weight:600;grid-column:1/-1;margin-top:4px">&#9993; W pakiecie do 200 SMS/mies. &middot; ponad limit +0,30 zł/SMS</li>
           </ul>
         </div>
       </div>
@@ -12775,6 +12776,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)"><span>27. Dodaliśmy nową usługę — czy Karolina będzie o niej rozmawiać?</span><div class="faq-icon">+</div></div>
         <div class="faq-a"><p>Oczywiście — i to <strong>bezpłatnie</strong>. Prześlij nam opis nowej usługi: czym jest, ile kosztuje, dla kogo, jak się umówić. W ciągu jednego dnia roboczego uzupełnimy wiedzę Karoliny. Od tego momentu będzie aktywnie informować klientów o nowej ofercie i odpowiadać na pytania z nią związane. To jedna z największych zalet AI voicebota — aktualizacja wiedzy jest błyskawiczna i nie wymaga żadnego szkolenia.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>28. Czy muszę zmieniać swój numer telefonu? Jak przekierować połączenia na Karolinę?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p><strong>Nie — nie musisz zmieniać ani przenosić swojego numeru.</strong> Zostajesz przy numerze z wizytówek, szyldu i Google Maps, a na swoim telefonie (Play, Orange, T-Mobile, Plus) lub centrali włączasz przekierowanie połączeń na numer +48, który przydzielimy Twojej firmie. Masz trzy warianty:</p>
+        <p style="margin-top:10px"><strong>1. Wszystkie połączenia</strong> (np. po godzinach pracy): wpisz <span style="font-family:ui-monospace,Consolas,monospace;background:rgba(139,92,246,.12);padding:1px 6px;border-radius:5px;white-space:nowrap">**21*NUMER#</span> i zadzwoń. Wyłączenie rano: <span style="font-family:ui-monospace,Consolas,monospace;background:rgba(139,92,246,.12);padding:1px 6px;border-radius:5px;white-space:nowrap">#21#</span>.<br>
+        <strong>2. Gdy nie odbierasz</strong>: <span style="font-family:ui-monospace,Consolas,monospace;background:rgba(139,92,246,.12);padding:1px 6px;border-radius:5px;white-space:nowrap">**61*NUMER**15#</span> — po 15 sekundach dzwonienia rozmowę przejmuje Karolina. Wyłączenie: <span style="font-family:ui-monospace,Consolas,monospace;background:rgba(139,92,246,.12);padding:1px 6px;border-radius:5px;white-space:nowrap">#61#</span>.<br>
+        <strong>3. Gdy jesteś zajęty</strong> (rozmawiasz inną linią): <span style="font-family:ui-monospace,Consolas,monospace;background:rgba(139,92,246,.12);padding:1px 6px;border-radius:5px;white-space:nowrap">**67*NUMER#</span>. Wyłączenie: <span style="font-family:ui-monospace,Consolas,monospace;background:rgba(139,92,246,.12);padding:1px 6px;border-radius:5px;white-space:nowrap">#67#</span>.</p>
+        <p style="margin-top:10px">Zamiast <em>NUMER</em> wpisujesz numer Karoliny, który dostaniesz od nas po konfiguracji. Są to standardowe kody GSM, działające u większości operatorów; w centrali lub telefonii stacjonarnej przekierowanie ustawia się w panelu operatora. Uwaga: przekierowane połączenie może być rozliczane według taryfy Twojego operatora — sprawdź to w swoim abonamencie. Podpowiemy Ci krok po kroku podczas wdrożenia.</p></div>
       </div>
 
 
@@ -17667,6 +17676,7 @@ if(typeof Typed !== 'undefined' && document.getElementById('kreato-typed')){
     </div>
 
     <form id="onboardingForm" onsubmit="submitOnboarding(event)">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 
       <!-- Q_scale -->
       <div style="margin-bottom:20px">
@@ -17851,7 +17861,7 @@ function submitOnboarding(e){
   var mailto='mailto:biuro.stalsystem.pl@gmail.com?subject='+encodeURIComponent('Kwestionariusz KREATO.AI — '+( d.q1_nazwa||'')+'')+'&body='+encodeURIComponent(body);
 
   // try n8n webhook
-  fetch('https://178.105.194.238.sslip.io/webhook/kreato-onboarding',{method:'POST',headers:{'Content-Type':'application/json','X-Kreato-Token':'kreato_form_2026'},body:JSON.stringify(d)})
+  fetch('https://178.105.194.238.sslip.io/webhook/kreato-onboarding',{method:'POST',headers:{'Content-Type':'application/json','X-Kreato-Token':'krt_4e8b2f9a1c7d3e6f'},body:JSON.stringify(d)})
     .catch(function(){});
 
   // open mailto as backup
@@ -17878,6 +17888,139 @@ function toggleBlog(id, btn) {
   if (txt) txt.textContent = isOpen ? 'Czytaj wiÄ™cej' : 'ZwiĹ„ artykuĹ‚';
 
 }
+</script>
+
+
+<!-- ===== ORDER VARIANT MODAL (produkty inne niz Karolina) ===== -->
+<div id="orderModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);overflow-y:auto;padding:20px 16px" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+  <div style="max-width:560px;margin:0 auto;background:var(--card);border:1px solid var(--border-a);border-radius:16px;padding:30px 26px;position:relative">
+    <button type="button" onclick="closeOrder()" aria-label="Zamknij" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text2);font-size:22px;cursor:pointer;line-height:1">×</button>
+    <div id="orderFormWrap">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:8px">Wybierz wariant</div>
+      <h3 id="orderTitle" style="font-size:20px;font-weight:700;color:#fff;margin-bottom:6px"></h3>
+      <p style="font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:18px">Wybierz opcję i zostaw kontakt. Potwierdzenie przyjdzie automatycznie na e-mail — bez czekania na telefon.</p>
+      <form id="orderForm" onsubmit="submitOrder(event)" novalidate>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <div id="orderVariants" style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px"></div>
+        <div id="orderSlot" style="display:none;margin-bottom:16px">
+          <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.04em">TERMIN KONSULTACJI (15 MIN)</label>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <select id="orderDate" name="slot_date" style="flex:1;min-width:150px;padding:10px 12px;border-radius:8px;border:1px solid var(--border-a);background:var(--bg2);color:var(--text)"></select>
+            <select id="orderTime" name="slot_time" style="flex:1;min-width:110px;padding:10px 12px;border-radius:8px;border:1px solid var(--border-a);background:var(--bg2);color:var(--text)"></select>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+          <input name="name" placeholder="Imię i nazwisko *" required autocomplete="name" style="padding:11px 12px;border-radius:8px;border:1px solid var(--border-a);background:var(--bg2);color:var(--text)">
+          <input name="email" type="email" placeholder="E-mail *" required autocomplete="email" style="padding:11px 12px;border-radius:8px;border:1px solid var(--border-a);background:var(--bg2);color:var(--text)">
+        </div>
+        <input name="phone" type="tel" placeholder="Telefon (opcjonalnie)" autocomplete="tel" style="width:100%;margin-bottom:10px;padding:11px 12px;border-radius:8px;border:1px solid var(--border-a);background:var(--bg2);color:var(--text)">
+        <textarea name="comment" rows="3" placeholder="Krótko: czego potrzebujesz? (opcjonalnie)" style="width:100%;margin-bottom:12px;padding:11px 12px;border-radius:8px;border:1px solid var(--border-a);background:var(--bg2);color:var(--text);resize:vertical"></textarea>
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:14px;cursor:pointer">
+          <input type="checkbox" name="consent" required style="margin-top:3px;accent-color:var(--purple)">
+          <span>Zgadzam się na kontakt w sprawie zapytania. Administratorem danych jest KREATO.AI; szczegóły w <a href="polityka-prywatnosci.html" target="_blank" style="color:var(--purple)">polityce prywatności</a>.</span>
+        </label>
+        <div id="orderError" role="alert" style="display:none;font-size:13px;color:#f87171;margin-bottom:10px"></div>
+        <button id="orderSubmit" type="submit" style="width:100%;background:var(--grad);color:#fff;border:none;border-radius:10px;padding:13px 20px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.02em">Wyślij →</button>
+      </form>
+    </div>
+    <div id="orderDone" style="display:none;text-align:center;padding:24px 4px">
+      <div style="font-size:40px;margin-bottom:10px">✅</div>
+      <h3 style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px">Dziękujemy — zgłoszenie przyjęte</h3>
+      <p id="orderDoneText" style="font-size:14px;color:var(--text2);line-height:1.7"></p>
+      <button type="button" onclick="closeOrder()" style="margin-top:18px;background:var(--bg2);color:var(--text);border:1px solid var(--border-a);border-radius:10px;padding:10px 24px;font-size:13px;cursor:pointer">Zamknij</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var ENDPOINT='https://178.105.194.238.sslip.io/webhook/kreato-order', TOKEN='krt_ord_760d972e7c7a79b2';
+  var CONSULT={id:'konsultacja',label:'Bezpłatna konsultacja 15 min',desc:'Wybierasz termin — potwierdzamy automatycznie.',consult:true};
+  var DEMO={id:'demo',label:'Demo na moich danych',desc:'Pokażemy działający przykład dla Twojej branży.'};
+  var QUOTE={id:'wycena',label:'Wycena indywidualna',desc:'Opisz potrzebę — przygotujemy propozycję.'};
+  var PRODUCTS={
+    chatbot:{name:'Chatbot AI dla klientów',variants:[CONSULT,DEMO,QUOTE]},
+    n8n:{name:'Automatyzacja procesów n8n',variants:[CONSULT,DEMO,QUOTE]},
+    dedykowane:{name:'Dedykowane narzędzia AI',variants:[CONSULT,DEMO,QUOTE]},
+    smm:{name:'Social Media Marketing',variants:[{id:'pakiet_start',label:'Pakiet Start — 399 zł netto/mies.',desc:'5 postów + 5 grafik AI + 1 Reel miesięcznie (umowa roczna; miesięcznie +20%).'},{id:'wycena',label:'Większy pakiet — wycena',desc:'Więcej postów, kanałów lub Reelsów.'},CONSULT]},
+    ads:{name:'Reklama FB / Instagram Ads',variants:[{id:'pakiet_start',label:'Pakiet Start — 499 zł netto/mies.',desc:'Kreacje, piksel, A/B testy, raport. Budżet reklamowy od 500 zł/mies. płacisz osobno (umowa roczna; miesięcznie +20%).'},{id:'wycena',label:'Większy zakres — wycena',desc:'Więcej kampanii lub kanałów.'},CONSULT]},
+    monitoring:{name:'Monitoring konkurencji AI',variants:[{id:'pakiet_basic',label:'Basic — 199 zł netto/mies.',desc:'Codzienny raport o konkurencji w Telegramie (umowa roczna; miesięcznie +20%).'},{id:'wycena',label:'Rozszerzony zakres — wycena',desc:'Więcej źródeł i alertów.'},CONSULT]},
+    raporty:{name:'Raporty automatyczne',variants:[{id:'pakiet_basic',label:'Basic — 149 zł netto/mies.',desc:'Cotygodniowy raport ze statystyk firmy (umowa roczna; miesięcznie +20%).'},{id:'wycena',label:'Rozszerzony zakres — wycena',desc:'Więcej źródeł danych i raportów.'},CONSULT]}
+  };
+  var current=null;
+  var $=function(id){return document.getElementById(id)};
+
+  function fillSlots(){
+    var d=$('orderDate'), t=$('orderTime'); d.innerHTML=''; t.innerHTML='';
+    var days=['ndz','pon','wt','śr','czw','pt','sob'], dt=new Date(), n=0;
+    dt.setDate(dt.getDate()+1);
+    while(n<10){
+      var wd=dt.getDay();
+      if(wd!==0&&wd!==6){
+        var iso=dt.getFullYear()+'-'+String(dt.getMonth()+1).padStart(2,'0')+'-'+String(dt.getDate()).padStart(2,'0');
+        var o=document.createElement('option'); o.value=iso;
+        o.textContent=days[wd]+' '+String(dt.getDate()).padStart(2,'0')+'.'+String(dt.getMonth()+1).padStart(2,'0'); d.appendChild(o); n++;
+      }
+      dt.setDate(dt.getDate()+1);
+    }
+    ['10:00','11:00','12:00','13:00','14:00','15:00','16:00'].forEach(function(h){var o=document.createElement('option');o.value=h;o.textContent=h;t.appendChild(o)});
+  }
+  function onVariant(){
+    var v=document.querySelector('#orderForm input[name="variant"]:checked');
+    var isC=v&&v.getAttribute('data-consult')==='1';
+    $('orderSlot').style.display=isC?'block':'none';
+    document.querySelectorAll('#orderVariants label').forEach(function(l){
+      var r=l.querySelector('input'); l.style.background=r.checked?'rgba(139,92,246,.18)':''; l.style.borderColor=r.checked?'var(--purple)':'';
+    });
+  }
+  window.openOrder=function(key){
+    var p=PRODUCTS[key]; if(!p) return; current=key;
+    $('orderTitle').textContent=p.name;
+    var box=$('orderVariants'); box.innerHTML='';
+    p.variants.forEach(function(v,i){
+      var l=document.createElement('label');
+      l.style.cssText='display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid var(--border-a);border-radius:10px;cursor:pointer;transition:background .2s';
+      var r=document.createElement('input'); r.type='radio'; r.name='variant'; r.value=v.id; r.required=true; r.style.cssText='margin-top:3px;accent-color:var(--purple)';
+      if(v.consult) r.setAttribute('data-consult','1'); if(i===0) r.checked=true;
+      r.addEventListener('change',onVariant);
+      var s=document.createElement('span'); s.innerHTML='<strong style="color:#fff;font-size:14px"></strong><br><span style="font-size:12px;color:var(--text2);line-height:1.5"></span>';
+      s.querySelector('strong').textContent=v.label; s.querySelector('span').textContent=v.desc;
+      l.appendChild(r); l.appendChild(s); box.appendChild(l);
+    });
+    fillSlots(); onVariant();
+    $('orderError').style.display='none'; $('orderFormWrap').style.display='block'; $('orderDone').style.display='none';
+    $('orderSubmit').disabled=false; $('orderSubmit').textContent='Wyślij →';
+    $('orderModal').style.display='block'; document.body.style.overflow='hidden';
+  };
+  window.closeOrder=function(){$('orderModal').style.display='none';document.body.style.overflow=''};
+  $('orderModal').addEventListener('click',function(e){if(e.target===this)closeOrder()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&$('orderModal').style.display==='block')closeOrder()});
+
+  window.submitOrder=function(e){
+    e.preventDefault();
+    var f=e.target, err=$('orderError'); err.style.display='none';
+    var d={}; new FormData(f).forEach(function(v,k){d[k]=v});
+    if(!d.name||!d.email||!/^\S+@\S+\.\S+$/.test(d.email)){err.textContent='Podaj imię i poprawny adres e-mail.';err.style.display='block';return}
+    if(!f.consent.checked){err.textContent='Zaznacz zgodę na kontakt.';err.style.display='block';return}
+    var p=PRODUCTS[current], vr=p.variants.filter(function(x){return x.id===d.variant})[0]||{};
+    var payload={product:current,product_label:p.name,variant:d.variant,variant_label:vr.label||d.variant,
+      name:d.name,email:d.email,phone:d.phone||'',comment:d.comment||'',consent:true,_honey:d._honey||'',
+      slot_date:vr.consult?d.slot_date:'',slot_time:vr.consult?d.slot_time:'',source:'site',page:location.href.split('#')[0]};
+    var b=$('orderSubmit'); b.disabled=true; b.textContent='Wysyłanie…';
+    fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','X-Kreato-Token':TOKEN},body:JSON.stringify(payload)})
+      .then(function(r){return r.json().catch(function(){return{}}).then(function(j){return{ok:r.ok,j:j}})})
+      .then(function(x){
+        if(!x.ok){var er=new Error('status');er.srv=(x.j&&x.j.message)||'';throw er;}
+        $('orderDoneText').textContent=(x.j&&x.j.message)||'Potwierdzenie wysłaliśmy na Twój adres e-mail. Sprawdź także folder SPAM.';
+        $('orderFormWrap').style.display='none'; $('orderDone').style.display='block';
+      })
+      .catch(function(ex){
+        b.disabled=false; b.textContent='Wyślij →';
+        if(ex&&ex.srv){err.textContent=ex.srv;err.style.display='block';return}
+        err.innerHTML='Nie udało się wysłać zgłoszenia. Spróbuj ponownie lub napisz na <a href="mailto:biuro.stalsystem.pl@gmail.com" style="color:var(--purple)">biuro.stalsystem.pl@gmail.com</a>.';
+        err.style.display='block';
+      });
+  };
+})();
 </script>
 
 </body>
