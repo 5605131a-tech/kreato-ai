@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kreato-ai.netlify.app/</loc>
+    <loc>https://kreato.tech/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://kreato-ai.netlify.app/dla-klinik.html</loc>
+    <loc>https://kreato.tech/dla-klinik.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kreato-ai.netlify.app/dla-ecommerce.html</loc>
+    <loc>https://kreato.tech/dla-ecommerce.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kreato-ai.netlify.app/agenci.html</loc>
+    <loc>https://kreato.tech/agenci.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kreato-ai.netlify.app/blog.html</loc>
+    <loc>https://kreato.tech/blog.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kreato-ai.netlify.app/polityka-prywatnosci.html</loc>
+    <loc>https://kreato.tech/polityka-prywatnosci.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://kreato.tech/serwis.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
