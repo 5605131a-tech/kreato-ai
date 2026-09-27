@@ -7967,55 +7967,39 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
 
 
 
-<!-- Google Analytics 4 -->
+<!-- Analytics/Marketing — loaded only after cookie consent (see loadTrackers() / cookieAccept() below), not on page load -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+window.loadTrackers = function(){
+  if (window.__trackersLoaded) return;
+  window.__trackersLoaded = true;
 
+  // Google Tag Manager
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-59L4527J');
 
+  // Google Analytics 4
+  gtag('js', new Date());
+  gtag('config', 'G-1EHEBKL1MJ');
+  var ga=document.createElement('script'); ga.async=true; ga.src='https://www.googletagmanager.com/gtag/js?id=G-1EHEBKL1MJ';
+  document.head.appendChild(ga);
 
+  // Facebook Pixel
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1457570979539396');
+  fbq('track','PageView');
 
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1EHEBKL1MJ"></script>
-
-
-
-
-
-
-
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-1EHEBKL1MJ');</script>
-
-
-
-
-
-
-
-<!-- Facebook Pixel -->
-
-
-
-
-
-
-
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1457570979539396');fbq('track','PageView');</script>
-
-
-
-
-
-
-
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1457570979539396&ev=PageView&noscript=1"/ loading="lazy"></noscript>
-
-
-
-
-
-
-
-
+  // Microsoft Clarity
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "y6djywbid8");
+};
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -8047,27 +8031,12 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
     {
       "@type": "Offer",
       "name": "Pilotaż AI",
-      "price": "499",
+      "price": "599",
       "priceCurrency": "PLN"
     }
   ]
 }
 </script>
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "y6djywbid8");
-    </script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-59L4527J');</script>
-<!-- End Google Tag Manager -->
 </head>
 
 
@@ -8077,10 +8046,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59L4527J"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 
 
@@ -10169,7 +10134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <ul class="service-points">
 
-            <li>5 postów + 5 grafik AI miesięcznie</li>
+            <li>10 postów + 10 grafik AI miesięcznie</li>
 
             <li>1 Reel (Facebook / Instagram)</li>
 
@@ -10179,7 +10144,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           </ul>
 
-          <a class="service-link" href="#" onclick="openOrder('smm');return false;">Od 399 zł/mies. →</a>
+          <a class="service-link" href="#" onclick="openOrder('smm');return false;">Od 199 zł/mies. →</a>
 
         </div>
 
@@ -12053,13 +12018,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="price-amt">199 <span style="font-size:16px;font-weight:400">zł netto</span></div>
         <div class="price-unit">/mies.</div>
         <ul class="price-feats">
-          <li>5 postów + 5 grafik AI miesięcznie</li>
+          <li>10 postów + 10 grafik AI miesięcznie</li>
           <li>1 Reel (Facebook / Instagram)</li>
           <li>Copywriting, hashtagi, harmonogram</li>
           <li>Raport miesięczny: zasięg i interakcje</li>
         </ul>
         <div style="background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 12px;margin-bottom:16px;font-size:13px;line-height:1.4">
-          <strong style="color:var(--green)">&#128161;</strong> Agencja SMM bierze 800–1&thinsp;500 zł/mies. za to samo. Oszczędzasz <strong>600–1&thinsp;300 zł</strong> + zyskujesz 3–5 leadów organicznie miesięcznie.
+          <strong style="color:var(--green)">&#128161;</strong> Agencja SMM bierze 400–900 zł/mies. za podobny zakres. Oszczędzasz <strong>200–700 zł</strong> + zyskujesz 3–5 leadów organicznie miesięcznie.
         </div>
         <a href="#cta" class="btn btn-outline" style="width:100%;justify-content:center">Od 199 zł/mies. &rarr;</a>
       </div>
@@ -12174,7 +12139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="pa-row"><span class="pa-row-label">Recepcjonistka / pracownik</span><span class="pa-row-val">3 500–5 000 zł/mies</span></div>
 
-        <div class="pa-row"><span class="pa-row-label">Agencja SMM (posty + reelsy)</span><span class="pa-row-val">2 000–5 000 zł/mies</span></div>
+        <div class="pa-row"><span class="pa-row-label">Agencja SMM (posty + reelsy)</span><span class="pa-row-val">400–900 zł/mies</span></div>
 
         <div class="pa-row"><span class="pa-row-label">Call center outsourcing</span><span class="pa-row-val">2 500–4 000 zł/mies</span></div>
 
@@ -15418,7 +15383,7 @@ sectionEls.forEach(s=>scrollSpy.observe(s));
 
 
 
-  else if(c==='accepted'){ /* loadTrackers(); */ }
+  else if(c==='accepted'){ loadTrackers(); }
 
 
 
@@ -15434,7 +15399,7 @@ sectionEls.forEach(s=>scrollSpy.observe(s));
 
 
 
-function cookieAccept(){ localStorage.setItem('cookieConsent','accepted'); var b=document.getElementById('cookieBanner'); if(b) b.style.display='none'; /* loadTrackers(); */ }
+function cookieAccept(){ localStorage.setItem('cookieConsent','accepted'); var b=document.getElementById('cookieBanner'); if(b) b.style.display='none'; loadTrackers(); }
 
 
 
@@ -17950,7 +17915,7 @@ function toggleBlog(id, btn) {
     chatbot:{name:'Chatbot AI dla klientów',variants:[CONSULT,DEMO,QUOTE]},
     n8n:{name:'Automatyzacja procesów n8n',variants:[CONSULT,DEMO,QUOTE]},
     dedykowane:{name:'Dedykowane narzędzia AI',variants:[CONSULT,DEMO,QUOTE]},
-    smm:{name:'Social Media Marketing',variants:[{id:'pakiet_start',label:'Pakiet Start — 399 zł netto/mies.',desc:'5 postów + 5 grafik AI + 1 Reel miesięcznie (umowa roczna; miesięcznie +20%).'},{id:'wycena',label:'Większy pakiet — wycena',desc:'Więcej postów, kanałów lub Reelsów.'},CONSULT]},
+    smm:{name:'Social Media Marketing',variants:[{id:'pakiet_start',label:'Pakiet Start — 199 zł netto/mies.',desc:'10 postów + 10 grafik AI + 1 Reel miesięcznie (umowa roczna; miesięcznie +20%).'},{id:'pakiet_plus',label:'Pakiet Plus — 299 zł netto/mies.',desc:'16 postów + 16 grafik AI + 1 Reel miesięcznie (umowa roczna; miesięcznie +20%).'},{id:'wycena',label:'Większy pakiet — wycena',desc:'Więcej postów, kanałów lub Reelsów.'},CONSULT]},
     ads:{name:'Reklama FB / Instagram Ads',variants:[{id:'pakiet_start',label:'Pakiet Start — 499 zł netto/mies.',desc:'Kreacje, piksel, A/B testy, raport. Budżet reklamowy od 500 zł/mies. płacisz osobno (umowa roczna; miesięcznie +20%).'},{id:'wycena',label:'Większy zakres — wycena',desc:'Więcej kampanii lub kanałów.'},CONSULT]},
     monitoring:{name:'Monitoring konkurencji AI',variants:[{id:'pakiet_basic',label:'Basic — 199 zł netto/mies.',desc:'Codzienny raport o konkurencji w Telegramie (umowa roczna; miesięcznie +20%).'},{id:'wycena',label:'Rozszerzony zakres — wycena',desc:'Więcej źródeł i alertów.'},CONSULT]},
     raporty:{name:'Raporty automatyczne',variants:[{id:'pakiet_basic',label:'Basic — 149 zł netto/mies.',desc:'Cotygodniowy raport ze statystyk firmy (umowa roczna; miesięcznie +20%).'},{id:'wycena',label:'Rozszerzony zakres — wycena',desc:'Więcej źródeł danych i raportów.'},CONSULT]}
