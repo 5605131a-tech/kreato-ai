@@ -1,6 +1,19 @@
 User-agent: *
 Allow: /
-Disallow: /api/
 
-Sitemap: https://kreato-ai.netlify.app/sitemap.xml
-# deploy 2026-09-06
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://kreato.tech/sitemap.xml
+
+# AI visibility
+# LLMs.txt: https://kreato.tech/llms.txt
