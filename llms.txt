@@ -11,9 +11,9 @@ KREATO.AI builds AI voice bots, chatbots, and automation agents for Polish small
 - **KREATO Serwis** — field service management: job intake, crew scheduling, calendar, PDF protocols. Pilot program, see /serwis.html
 
 ## Pricing
-- Karolina AI Starter: 399 PLN net/month (200 min)
-- Karolina AI Business: 499 PLN net/month (400 min)
-- Karolina AI Pro Max: 699 PLN net/month (600 min)
+- Karolina AI Starter: 399 PLN net/month (600 min)
+- Karolina AI Business: 499 PLN net/month (800 min)
+- Karolina AI Pro Max: 699 PLN net/month (1100 min)
 - Configuration: 599 PLN one-time
 
 ## Contact
