@@ -8061,215 +8061,6 @@ window.loadTrackers = function(){
 
 
 
-<!-- ══ FLOATING WIDGET ══ -->
-
-
-
-
-
-
-
-<div class="float-widget">
-
-
-
-
-
-
-
-  <div class="float-popup" id="floatPopup">
-
-
-
-
-
-
-
-    <div class="fp-header">
-
-
-
-
-
-
-
-      <div class="fp-av">AI</div>
-
-
-
-
-
-
-
-      <div>
-
-
-
-
-
-
-
-        <div class="fp-title">KREATO.AI</div>
-
-
-
-
-
-
-
-        <div class="fp-sub">Zwykle odpowiadamy od razu</div>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-
-    <div class="fp-body">
-
-
-
-
-
-
-
-      <p class="fp-msg">Cześć! 👋 Jak możemy pomóc? Wybierz opcję lub napisz do nas bezpośrednio.</p>
-
-
-
-
-
-
-
-      <div class="fp-actions">
-
-
-
-
-
-
-
-        <a href="tel:+48459567844" class="fp-action"><span>📞</span> Zadzwoń — +48 459 567 844</a>
-
-
-
-
-
-
-
-        <a href="https://wa.me/48459567844?text=Dzień dobry! Chciałbym dowiedzieć się więcej o KREATO.AI" target="_blank" class="fp-action"><span>💬</span> WhatsApp</a>
-
-
-
-
-
-
-
-        <a href="#cta" class="fp-action" onclick="closeFloat()"><span>📝</span> Wyślij zapytanie</a>
-
-
-
-
-
-
-
-        <a href="#demo" class="fp-action" onclick="closeFloat()"><span>🤖</span> Przetestuj demo AI</a>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-
-  </div>
-
-
-
-
-
-
-
-  <button class="float-btn" id="floatBtn" aria-label="Kontakt">
-
-
-
-
-
-
-
-    <div class="float-pulse"></div>
-
-
-
-
-
-
-
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2">
-
-
-
-
-
-
-
-      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-
-
-
-
-
-
-
-    </svg>
-
-
-
-
-
-
-
-  </button>
-
-
-
-
-
-
-
-</div>
 
 
 
@@ -12494,7 +12285,7 @@ window.loadTrackers = function(){
 
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)"><span>20. Jak zaktualizować bazę wiedzy Karoliny — np. przy zmianie cennika?</span><div class="faq-icon">+</div></div>
-        <div class="faq-a"><p>Napisz do nas przez <strong>Panel Klienta</strong> w sekcji Wiadomości (lub WhatsApp +48 459 567 844) — podaj nowe informacje: usługa, cena, godziny. Aktualizujemy bazę wiedzy Karoliny w ciągu <strong>24 godzin roboczych</strong>. Możesz to robić tak często, jak potrzebujesz — w ramach abonamentu, bez dodatkowych opłat. Najczęstsze zmiany to: nowy cennik, sezonowe promocje, nowe usługi, zmiana godzin pracy.</p></div>
+        <div class="faq-a"><p>Napisz do nas przez <strong>Panel Klienta</strong> w sekcji Wiadomości — podaj nowe informacje: usługa, cena, godziny. Aktualizujemy bazę wiedzy Karoliny w ciągu <strong>24 godzin roboczych</strong>. Możesz to robić tak często, jak potrzebujesz — w ramach abonamentu, bez dodatkowych opłat. Najczęstsze zmiany to: nowy cennik, sezonowe promocje, nowe usługi, zmiana godzin pracy.</p></div>
       </div>
 
       <div class="faq-item">
@@ -13415,7 +13206,7 @@ window.loadTrackers = function(){
 
       <div class="footer-contact" style="margin-top:16px;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--text)">
         <div>📍 ul. Prądzyńskiego 23, 63-000, Środa-Wielkopolska</div>
-        <div>📞 <a href="tel:+48459567844" style="color:var(--text2);text-decoration:none">+48 459 567 844</a> · <a href="sms:+48459567844" style="color:var(--purple);text-decoration:none;font-weight:600">Napisz SMS</a> · <a href="https://wa.me/48459567844" target="_blank" style="color:#25d366;text-decoration:none;font-weight:600">WhatsApp</a></div>
+        <div>📞 <a href="tel:+48459567844" style="color:var(--text2);text-decoration:none">+48 459 567 844</a> · <a href="sms:+48459567844" style="color:var(--purple);text-decoration:none;font-weight:600">Napisz SMS</a></div>
         <div>✉️ <a href="mailto:biuro@kreato.tech" style="color:var(--text2);text-decoration:none">biuro@kreato.tech</a></div>
       </div>
 
@@ -13963,63 +13754,6 @@ overlay.addEventListener('click', e=>{ if(e.target===overlay) closeNav(); });
 
 
 
-/* ── FLOATING WIDGET ── */
-
-
-
-
-
-
-
-const floatBtn = document.getElementById('floatBtn');
-
-
-
-
-
-
-
-const floatPopup = document.getElementById('floatPopup');
-
-
-
-
-
-
-
-function closeFloat(){ floatPopup.classList.remove('open'); }
-
-
-
-
-
-
-
-floatBtn.addEventListener('click', ()=>floatPopup.classList.toggle('open'));
-
-
-
-
-
-
-
-document.addEventListener('click', e=>{
-
-
-
-
-
-
-
-  if(!e.target.closest('.float-widget')) floatPopup.classList.remove('open');
-
-
-
-
-
-
-
-});
 
 
 
