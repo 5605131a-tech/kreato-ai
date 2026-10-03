@@ -8053,7 +8053,7 @@ var ok=false;try{ok=localStorage.getItem('cookieConsent')==='accepted'}catch(e){
 var id='lead_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);
 var p={token:TK,event_id:id,source:o.source||(o.telefon?'callback':'form'),name:o.name||'',email:o.email||'',phone:o.phone||o.tel||o.telefon||'',message:o.message||'',company:o.company||o.firma||'',
 utm_source:a.utm_source||'',utm_medium:a.utm_medium||'',utm_campaign:a.utm_campaign||'',utm_content:a.utm_content||'',utm_term:a.utm_term||'',fbclid:ok?(a.fbclid||''):'',
-landing_url:a.landing_url||location.href,fbp:ok?ck('_fbp'):'',fbc:ok?ck('_fbc'):'',consent_marketing:ok};
+landing_url:a.landing_url||location.href,fbp:ok?ck('_fbp'):'',fbc:ok?(ck('_fbc')||(a.fbclid?'fb.1.'+Date.now()+'.'+a.fbclid:'')):'',consent_marketing:ok};
 if(!p.email&&!p.phone)return;
 of.call(window,EP,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p),keepalive:true}).catch(function(){});
 if(window.fbq)fbq('track','Lead',{},{eventID:id});
