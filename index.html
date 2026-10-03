@@ -8037,6 +8037,51 @@ window.loadTrackers = function(){
   ]
 }
 </script>
+<script>
+/* KREATO lead tracking: UTM + fbclid capture, copy of every form lead to n8n 17.1, Meta Lead event (dedup with CAPI via event_id) */
+(function(){
+var EP='https://178.105.194.238.sslip.io/webhook/kreato-lead-intake',TK='krt_ord_760d972e7c7a79b2';
+var KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'];
+try{var q=new URLSearchParams(location.search),a={},has=false;
+KEYS.forEach(function(k){if(q.get(k)){a[k]=q.get(k);has=true}});
+if(has){a.landing_url=location.href;localStorage.setItem('kr_attr',JSON.stringify(a));}}catch(e){}
+function ck(n){var m=document.cookie.match('(?:^|; )'+n+'=([^;]*)');return m?decodeURIComponent(m[1]):''}
+var of=window.fetch;
+function send(o){try{
+var a={};try{a=JSON.parse(localStorage.getItem('kr_attr')||'{}')}catch(e){}
+var ok=false;try{ok=localStorage.getItem('cookieConsent')==='accepted'}catch(e){}
+var id='lead_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);
+var p={token:TK,event_id:id,source:o.source||(o.telefon?'callback':'form'),name:o.name||'',email:o.email||'',phone:o.phone||o.tel||o.telefon||'',message:o.message||'',company:o.company||o.firma||'',
+utm_source:a.utm_source||'',utm_medium:a.utm_medium||'',utm_campaign:a.utm_campaign||'',utm_content:a.utm_content||'',utm_term:a.utm_term||'',fbclid:ok?(a.fbclid||''):'',
+landing_url:a.landing_url||location.href,fbp:ok?ck('_fbp'):'',fbc:ok?ck('_fbc'):'',consent_marketing:ok};
+if(!p.email&&!p.phone)return;
+of.call(window,EP,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p),keepalive:true}).catch(function(){});
+if(window.fbq)fbq('track','Lead',{},{eventID:id});
+}catch(e){}}
+window.fetch=function(u,opt){
+try{if(typeof u==='string'&&u.indexOf('formsubmit.co')>-1&&opt&&opt.body){
+var o={};
+if(typeof FormData!=='undefined'&&opt.body instanceof FormData){opt.body.forEach(function(v,k){o[k]=v})}
+else if(typeof opt.body==='string'){o=JSON.parse(opt.body)}
+send(o);}}catch(e){}
+return of.apply(this,arguments);};
+/* micro-conversions (fire only when the pixel is loaded, i.e. after cookie consent) */
+function tr(n,custom,d){try{if(window.fbq){custom?fbq('trackCustom',n,d||{}):fbq('track',n,d||{})}}catch(e){}}
+document.addEventListener('click',function(e){try{
+var a=e.target.closest&&e.target.closest('a');
+if(a){var h=a.getAttribute('href')||'';
+if(h.indexOf('tel:')===0)tr('Contact',false,{method:'phone'});
+else if(h.indexOf('wa.me')>-1)tr('Contact',false,{method:'whatsapp'});
+if(a.id==='roiCtaBtn')tr('RoiCta',true);}
+}catch(x){}},true);
+window.addEventListener('load',function(){
+function once(name,ev){var done=false,f=window[name];if(typeof f!=='function')return;
+window[name]=function(){if(!done){done=true;tr(ev,true)}return f.apply(this,arguments)}}
+once('quizNext','QuizStart');once('sendDemo','DemoMessage');once('calcRoi','RoiCalc');
+var f=window.submitQuiz;if(typeof f==='function'){window.submitQuiz=function(){tr('QuizComplete',true);return f.apply(this,arguments)}}
+});
+})();
+</script>
 </head>
 
 
@@ -9464,10 +9509,10 @@ window.loadTrackers = function(){
           <ul style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px;flex:1">
             <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Odbieranie połączeń 24/7</li>
             <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--cyan);font-weight:700;flex-shrink:0">&#128222;</span> Przekierowanie z Twojego numeru &mdash; zostajesz przy swoim numerze (FAQ 28)</li>
-            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Zapisuje kontakt &mdash; oddzwaniasz i umawiasz sam</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Zapisuje kontakt i <strong>rezerwuje wizyty w Google Calendar</strong></li>
             <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Odpowiedzi na FAQ &mdash; cennik, godziny</li>
             <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Powiadomienie na Telegram po każdym leadzie</li>
-            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Wdrożenie 299 zł &middot; pilotaż 149,50 zł &middot; bez integracji kalendarza</li>
+            <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Wdrożenie 299 zł &middot; pilotaż 149,50 zł</li>
           </ul>
           <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.5">
             <strong style="color:var(--green)">&#128161;</strong> Dla jednoosobowych firm i rzemieślników. Ok. 150 rozmów/mies. (śr. 2 min). Ponad limit: 0,89 zł/min.
@@ -9478,7 +9523,8 @@ window.loadTrackers = function(){
         <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:22px;display:flex;flex-direction:column">
           <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin-bottom:6px">Starter</div>
           <div style="font-size:30px;font-weight:800;line-height:1;margin-bottom:2px">349 zł <span style="font-size:13px;font-weight:400;color:var(--text2)">netto/mies.</span></div>
-          <div style="font-size:12px;color:var(--text3);margin-bottom:8px"><strong>700 min</strong></div><div style="display:inline-block;align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:100px;padding:3px 10px;margin-bottom:6px">Umowa roczna &middot; 12 mies.</div><div style="font-size:12px;color:var(--text2);margin-bottom:16px">Rozliczenie miesięczne: <strong style="color:var(--text)">399 zł</strong> netto/mies.</div>
+          <div style="font-size:12px;color:var(--text3);margin-bottom:8px"><strong>700 min</strong></div><div style="display:inline-block;align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:100px;padding:3px 10px;margin-bottom:6px">Umowa roczna &middot; 12 mies.</div>
+          <div style="font-size:12px;color:var(--text3);margin-bottom:8px">rozliczenie miesięczne: <strong style="color:var(--text)">379 zł</strong> netto/mies.</div><div style="font-size:12px;color:var(--text2);margin-bottom:16px">Rozliczenie miesięczne: <strong style="color:var(--text)">399 zł</strong> netto/mies.</div>
           <ul style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px;flex:1">
             <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Odbieranie połączeń 24/7</li>
             <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--cyan);font-weight:700;flex-shrink:0">&#128222;</span> <strong>Nowy numer +48</strong> wliczony &mdash; nie kupujesz osobno</li>
@@ -9501,7 +9547,8 @@ window.loadTrackers = function(){
           <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 14px;border-radius:100px;white-space:nowrap">&#11088; Najpopularniejszy</div>
           <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--purple);margin-bottom:6px">Business</div>
           <div style="font-size:30px;font-weight:800;line-height:1;margin-bottom:2px">449 zł <span style="font-size:13px;font-weight:400;color:var(--text2)">netto/mies.</span></div>
-          <div style="font-size:12px;color:var(--text3);margin-bottom:8px"><strong>1000 min</strong></div><div style="display:inline-block;align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:100px;padding:3px 10px;margin-bottom:6px">Umowa roczna &middot; 12 mies.</div><div style="font-size:12px;color:var(--text2);margin-bottom:16px">Rozliczenie miesięczne: <strong style="color:var(--text)">499 zł</strong> netto/mies.</div>
+          <div style="font-size:12px;color:var(--text3);margin-bottom:8px"><strong>1000 min</strong></div><div style="display:inline-block;align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:100px;padding:3px 10px;margin-bottom:6px">Umowa roczna &middot; 12 mies.</div>
+          <div style="font-size:12px;color:var(--text3);margin-bottom:8px">rozliczenie miesięczne: <strong style="color:var(--text)">479 zł</strong> netto/mies.</div><div style="font-size:12px;color:var(--text2);margin-bottom:16px">Rozliczenie miesięczne: <strong style="color:var(--text)">499 zł</strong> netto/mies.</div>
           <ul style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px;flex:1">
             <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span> Odbieranie połączeń 24/7</li>
             <li style="display:flex;gap:7px;font-size:13px"><span style="color:var(--cyan);font-weight:700;flex-shrink:0">&#128222;</span> <strong>Nowy numer +48</strong> wliczony &mdash; nie kupujesz osobno</li>
@@ -11672,7 +11719,7 @@ window.loadTrackers = function(){
 
     </div>
 
-    <p style="text-align:center;color:var(--text3);font-size:13px;margin-top:24px">Wdrożenie 599 zł jednorazowo &middot; ceny przy umowie rocznej (12 mies.) &middot; umowa miesięczna +20% &middot; ceny netto + VAT 23%</p>
+    <p style="text-align:center;color:var(--text3);font-size:13px;margin-top:24px">Wdrożenie 599 zł jednorazowo &middot; ceny przy umowie rocznej (12 mies.) &middot; umowa miesięczna: Starter 379 zł, Business 479 zł, pozostałe pakiety +20% &middot; ceny netto + VAT 23%</p>
   <div style="text-align:center;margin-top:36px">
     <button onclick="openOnboarding()" style="background:var(--grad);color:#fff;border:none;border-radius:12px;padding:16px 40px;font-size:16px;font-weight:700;cursor:pointer;letter-spacing:.02em;box-shadow:0 4px 24px rgba(139,92,246,.35)">Zamów bota →</button>
     <p style="margin-top:12px;font-size:13px;color:var(--text3)">Wdrożenie w 2–3 dni · Rezygnacja bez kar</p>
