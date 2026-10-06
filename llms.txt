@@ -1,35 +1,40 @@
 # KREATO.AI — AI Agents for Polish SMB Companies
 
 ## About
-KREATO.AI builds AI voice bots, chatbots, and automation agents for Polish small and medium businesses.
+KREATO.AI builds AI voice bots, chatbots and automation agents for Polish small and medium businesses. Main product: Karolina, an AI voice receptionist that answers phone calls 24/7 in Polish.
 
 ## Products
-- **Karolina AI** — 24/7 AI receptionist voicebot (Polish language). Answers calls, books appointments, handles FAQ. From 399 PLN/month.
-- **Chatbot AI** — website chatbot
-- **SMM + Reels AI** — automated social media content generation
-- **Reklama FB/IG** — Facebook and Instagram ad management
+- **Karolina AI** — AI voice receptionist (Polish). Answers incoming calls 24/7, answers FAQ, books appointments in Google Calendar, sends SMS confirmations and notifies the owner (Telegram or e-mail). Handles several calls at the same time. It does not make outgoing calls to customers.
+- **Chatbot AI** — website chatbot, from 199 PLN net/month; can check free slots and book visits.
+- **Reklama FB/IG** — Facebook and Instagram ad management, from 249 PLN net/month (ad budget separate).
+- **SMM + Reels AI** — automated social media content, from 499 PLN net/month.
+- **Raporty automatyczne** — automatic reports, from 149 PLN net/month.
+- **Monitoring konkurencji AI** — competitor monitoring, from 199 PLN net/month.
 - **KREATO Serwis** — field service management: job intake, crew scheduling, calendar, PDF protocols. Pilot program, see /serwis.html
 
-## Pricing
-- Karolina AI Starter: 399 PLN net/month (600 min)
-- Karolina AI Business: 499 PLN net/month (800 min)
-- Karolina AI Pro Max: 699 PLN net/month (1100 min)
-- Configuration: 599 PLN one-time
+## Pricing (Karolina AI, net prices, VAT 23% added)
+Annual contract (12 months), PLN net per month:
+- Lite: 249 (300 min; works by forwarding calls from your own number, no separate +48 number)
+- Starter: 349 (700 min; new +48 number included)
+- Business: 449 (1000 min)
+- Pro Max: 599 (1400 min)
+Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, Business 479, Pro Max 679.
+- Minutes above the limit: Lite 0.89, Starter 0.79, Business 0.69, Pro Max 0.59 PLN net per minute.
+- Configuration: 599 PLN net one-time (Lite: 299 PLN). Pilot offer until end of 2026 (10 places): -50% on configuration in exchange for a review after 30 days.
+- Setup: about 10-20 minutes for an online form, bot ready in 2-3 business days.
 
 ## Contact
-- Phone: +48 459 567 844 (Karolina AI — 24/7 test)
-- Email: biuro@kreato.tech
-- Address: ul. Prandzeskiego 23, 63-000 Środa Wielkopolska, Poland
+- Phone: +48 459 567 844 (Karolina AI, live demo, available 24/7; calls may be recorded)
+- Email: biuro@kreato.tech (answered within 30 minutes; first answers may come from an AI assistant)
+- Address: ul. Prądzyńskiego 23, 63-000 Środa Wielkopolska, Poland
 
 ## Compliance
-- RODO / GDPR compliant
-- EU AI Act compliant (Article 52 — disclosure obligation)
-- Privacy Policy: https://kreato.tech/polityka-prywatnosci.html
+- Karolina identifies herself as an AI assistant at the start of the call.
+- Personal data is processed according to GDPR (RODO). Privacy Policy: https://kreato.tech/polityka-prywatnosci.html
 
 ## Technical
 - Powered by LiveKit (voice AI), n8n (automation), Supabase
 - Languages: Polish (primary), English on request
-- Pilot time: 2-3 business days
 
 ## Blog
 - https://kreato.tech/blog.html — Articles about AI voice bots, n8n automation, RODO compliance, case studies
