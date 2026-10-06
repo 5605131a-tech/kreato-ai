@@ -16393,7 +16393,7 @@ document.addEventListener('click', e=>{ if(e.target && e.target.id==='exit-popup
 
 
 
-    <h3>Oddzwonimy do Ciebie</h3>
+    <h3>Zadzwoń do Karoliny</h3>
 
 
 
@@ -16401,7 +16401,7 @@ document.addEventListener('click', e=>{ if(e.target && e.target.id==='exit-popup
 
 
 
-    <p class="cb-desc">Zostaw numer — <strong>oddzwoni konsultant</strong> (pon–pt 9–18). Albo od razu zadzwoń do Karoliny: <strong>+48 459 567 844</strong>, odbiera 24/7, także w weekendy.</p>
+    <p class="cb-desc">Karolina, asystentka AI, <strong>odbiera telefony 24/7</strong>, także w weekendy. Sprawdź ją na żywo albo zostaw e-mail, a odpowiemy w ciągu kilku minut.</p><a class="cb-btn" href="tel:+48459567844" style="display:block;text-align:center;text-decoration:none;margin-bottom:14px">📞 Zadzwoń: +48 459 567 844</a><p class="cb-desc" style="margin:0 0 10px;text-align:center">lub napisz do nas:</p>
 
 
 
@@ -16417,7 +16417,7 @@ document.addEventListener('click', e=>{ if(e.target && e.target.id==='exit-popup
 
 
 
-      <input class="cb-inp" type="tel" id="cb-phone" placeholder="+48 700 000 000" required />
+      <input class="cb-inp" type="email" id="cb-email" placeholder="twoj@email.pl" autocomplete="email" required />
 
 
 
@@ -16425,7 +16425,7 @@ document.addEventListener('click', e=>{ if(e.target && e.target.id==='exit-popup
 
 
 
-      <button class="cb-btn" type="submit">Zadzwóńcie do mnie →</button>
+      <button class="cb-btn" type="submit">Wyślij zapytanie →</button>
 
 
 
@@ -16441,7 +16441,7 @@ document.addEventListener('click', e=>{ if(e.target && e.target.id==='exit-popup
 
 
 
-    <div class="cb-ok" id="cb-ok">✓ Otrzymaliśmy Twój numer — konsultant oddzwoni w godzinach pracy (pon–pt 9–18).</div>
+    <p style="font-size:11px;color:var(--text2);margin-top:12px;line-height:1.5;text-align:center">Wysyłając e-mail zgadzasz się na odpowiedź na zapytanie. <a href="polityka-prywatnosci.html" style="color:var(--purple)">Polityka prywatności</a></p><div class="cb-ok" id="cb-ok">✓ Dziękujemy! Odpowiemy na Twój e-mail w ciągu kilku minut.</div>
 
 
 
@@ -16529,7 +16529,7 @@ function submitCb(e){
 
 
 
-  var ph=document.getElementById("cb-phone").value;
+  var em=document.getElementById("cb-email").value;
 
 
 
@@ -16561,7 +16561,7 @@ function submitCb(e){
 
 
 
-    body:JSON.stringify({_subject:"KREATO Callback",telefon:ph,_template:"table"})
+    body:JSON.stringify({_subject:"KREATO zapytanie z widżetu",source:"widget",email:em,message:"Zapytanie z widżetu na kreato.tech",_template:"table"})
 
 
 
