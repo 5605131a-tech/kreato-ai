@@ -123,12 +123,11 @@ footer a:hover{color:var(--text2)}
   "offers":{"@type":"Offer","price":"299","priceCurrency":"PLN","billingDuration":"P1M"}
 }
 </script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9QH1CPDDS"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-B9QH1CPDDS');</script>
-<!-- Facebook Pixel -->
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','934494976050338');fbq('track','PageView');</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=934494976050338&ev=PageView&noscript=1"/></noscript>
+<!-- GA4 + Facebook Pixel — uruchamiane tylko po zgodzie na cookies (zgoda zapisana w localStorage na stronie głównej) -->
+<script>(function(){var ok=false;try{ok=localStorage.getItem('cookieConsent')==='accepted'}catch(e){}if(!ok)return;
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','G-B9QH1CPDDS');
+var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id=G-B9QH1CPDDS';document.head.appendChild(g);
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','934494976050338');fbq('track','PageView');})();</script>
 </head>
 <body>
 
@@ -416,7 +415,7 @@ footer a:hover{color:var(--text2)}
     <a href="diagnosta.html">Diagnoza AI</a> ·
     <a href="polityka-prywatnosci.html">Polityka prywatności</a>
   </div>
-  <div style="margin-top:8px">ul. Prandzeskiego 23, 63-000 Środa Wielkopolska · <a href="tel:+48733245757">+48 733 245 757</a> · <a href="mailto:biuro@stalsystem.org.pl">biuro@stalsystem.org.pl</a></div>
+  <div style="margin-top:8px">ul. Prandzeskiego 23, 63-000 Środa Wielkopolska · <a href="tel:+48733245757">+48 733 245 757</a> · <a href="mailto:biuro@kreato.tech">biuro@kreato.tech</a></div>
 </footer>
 
 </body>
