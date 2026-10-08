@@ -251,7 +251,7 @@
 
 
 
-  --text3:#64748b;
+  --text3:#8b9bb2;
 
 
 
@@ -7745,7 +7745,7 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
 
 #kariPopup .kp-close{
 
-  margin-left:auto;background:none;border:none;color:#64748b;font-size:18px;cursor:pointer;
+  margin-left:auto;background:none;border:none;color:#8b9bb2;font-size:18px;cursor:pointer;
 
   padding:0 2px;line-height:1;transition:color .2s;
 
@@ -7777,7 +7777,7 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
 
 #kariPopup .kp-sub{
 
-  font-size:11px;color:#64748b;text-align:center;padding-bottom:14px;
+  font-size:11px;color:#8b9bb2;text-align:center;padding-bottom:14px;
 
 }
 
@@ -7950,6 +7950,22 @@ table.cmp tbody tr:hover td.cmp-us{background:rgba(139,92,246,.05)}
 @media(max-width:860px){.blog-grid{grid-template-columns:1fr 1fr}.blog-featured{grid-column:span 2}}
 
 @media(max-width:600px){.blog-grid{grid-template-columns:1fr}.blog-featured{grid-column:span 1}.blog-featured h3{font-size:17px}}
+
+/* === CZYTELNOSC (08.10.2026): min 14px, tekst glowny 16px; motyw bez zmian === */
+body{font-size:16px}
+html,body{overflow-x:clip}
+p,li,dd,td{font-size:max(16px,1em)}
+/* drobny tekst z atrybutu style (11-13px -> 14px, etykiety 9-10px -> 12px, akapity 14-15px -> 16px) */
+[style*="font-size:13px"],[style*="font-size: 13px"],[style*="font-size:12px"],[style*="font-size: 12px"],[style*="font-size:11px"],[style*="font-size: 11px"],[style*="font-size:11.5px"]{font-size:14px!important}
+[style*="font-size:10px"],[style*="font-size: 10px"],[style*="font-size:9px"]{font-size:12px!important}
+p[style*="font-size:14px"],p[style*="font-size:15px"],li[style*="font-size:14px"],li[style*="font-size:15px"],td[style*="font-size:14px"],td[style*="font-size:15px"]{font-size:16px!important}
+/* drobny tekst z klas: tresc -> 14px */
+.founder-quote,.chat-msg,.vs-bad,.vs-good,.service-link,.stat-label,.demo-note,.dm,.case-result,.trust-item,.footer-copy,.fp-action,.testi-role,.price-feats,.guarantee-strip p,.roi-desc,.roi-sub,.lm-item,.audio-note,.scarce-strip,.integ-pill,.pa-col-title,.blog-art > p,.blog-body-inner p,.blog-body-inner h4,.bcklist li,.btbl,.bstat,.bti-r,.step-result,.price-unit,.hc-input,.demo-input,.demo-sug,.form-label,.founder-role,.hc-status,.hc-time,.demo-av-status,.fp-sub,.hc-wa,.footer-b2b,.blog-time,.price-setup-badge,.karolina-status-badge,.faq-tab,.testi-tab,.blog-toggle,.blog-close,.toast,.demo-av-name,.hc-name,.trust-pill,#callback-float,#quizBack,#kariPopup .kp-name,#kariPopup .kp-status,#kariPopup .kp-sub,.footer-col h4{font-size:14px}
+/* etykiety/plakietki: min 12px */
+.badge,.section-label,.hs-label,.price-badge,.case-tag,.vs-vs,.blog-chip,.price-tier,.ccv-label,.trust-top,.integ-label,.ff-item .ff-lbl,.roi-mini .rm-lbl,table.cmp thead th,.btbl th,.bti-l,.blog-num{font-size:12px}
+.blog-body-inner p,.faq-a p,.faq-a li{font-size:16px}
+/* gorny pasek informacyjny zostaje kompaktowy */
+div[style*="rgba(99,102,241,.15),rgba(139,92,246,.12)"],div[style*="rgba(99,102,241,.15),rgba(139,92,246,.12)"] *{font-size:13px!important}
 </style>
 
 
@@ -8729,7 +8745,7 @@ var f=window.submitQuiz;if(typeof f==='function'){window.submitQuiz=function(){t
 
 
 
-      <p style="font-size:11px;color:#64748b;text-align:center;margin-top:8px;line-height:1.5">
+      <p style="font-size:11px;color:#8b9bb2;text-align:center;margin-top:8px;line-height:1.5">
 
         To numer Karoliny AI — odbiera automatycznie, 24/7.<br>
 
