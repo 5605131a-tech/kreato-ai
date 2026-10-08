@@ -57,6 +57,7 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 - https://kreato.tech/dla-klinik.html — For clinics
 - https://kreato.tech/dla-ecommerce.html — For e-commerce
 - https://kreato.tech/agenci.html — B2B AI agents
+- https://kreato.tech/jak-dzialaja-boty.html — How each KREATO bot works step by step (voicebot, chatbot, reports, monitoring, SMM, ads, Serwis), industry examples and a savings calculator
 - https://kreato.tech/blog.html — Blog
 - https://kreato.tech/polityka-prywatnosci.html — Privacy Policy (Polish, RODO compliant)
 

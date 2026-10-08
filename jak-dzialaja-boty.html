@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jak działają boty KREATO</title>
+<meta name="description" content="Zobacz krok po kroku, jak działają boty KREATO: voicebot Karolina, chatbot, raporty, monitoring konkurencji, SMM, reklamy i Serwis. Przykłady z branż i kalkulator.">
+<link rel="canonical" href="https://kreato.tech/jak-dzialaja-boty.html">
+<style>
+:root{--bg:#0f1420;--card:#171e2e;--line:#33405c;--txt:#e8ecf5;--mut:#9aa6c0;--acc:#4f8cff;--ok:#3ecf8e;--bot:#1f2c4a;--usr:#243b2f}
+@media (prefers-color-scheme:light){:root{--bg:#f4f6fb;--card:#fff;--line:#c6cfe2;--txt:#1b2236;--mut:#5b6784;--acc:#2563eb;--ok:#0f9d63;--bot:#e6eeff;--usr:#e3f6ec}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,Segoe UI,sans-serif;padding:24px 16px 40px}
+.wrap{max-width:640px;margin:0 auto}
+h1{font-size:1.5rem;margin:0 0 6px}p.sub{color:var(--mut);margin:0 0 22px}
+.flow{display:flex;flex-direction:column}
+.node{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;cursor:pointer;transition:.15s;text-align:left;color:var(--txt);font:inherit;width:100%}
+.node:hover,.node.on{border-color:var(--acc);box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 25%,transparent)}
+.node b{display:block}.node span{color:var(--mut);font-size:.9rem}
+.tag{display:inline-block;font-size:.72rem;padding:1px 8px;border-radius:99px;border:1px solid var(--ok);color:var(--ok);margin-left:6px;font-style:normal}
+.arrow{height:24px;position:relative}.arrow:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px dashed var(--line)}
+.arrow:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--line)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.split{grid-template-columns:1fr}}
+#info{margin-top:18px;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px}
+#info h2{font-size:1rem;margin:0 0 4px;color:var(--acc)}#info p{margin:0;color:var(--mut)}
+.demo{margin-top:28px}
+.demo h2{font-size:1.1rem;margin:0 0 2px}.demo small{color:var(--mut)}
+.chat{margin-top:10px;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:85%;padding:8px 12px;border-radius:12px;font-size:.95rem}
+.m.bot{background:var(--bot);align-self:flex-start}.m.usr{background:var(--usr);align-self:flex-end}
+.m i{display:block;font-style:normal;font-size:.72rem;color:var(--mut);margin-bottom:1px}
+.sms{align-self:center;font-size:.85rem;color:var(--ok);border:1px dashed var(--ok);border-radius:10px;padding:6px 12px;text-align:center}
+.cta{margin-top:28px;background:var(--card);border:1.5px solid var(--acc);border-radius:14px;padding:18px;text-align:center}
+.cta h2{margin:0 0 4px;font-size:1.15rem}.cta p{margin:0 0 14px;color:var(--mut)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;text-decoration:none;border:1.5px solid var(--acc)}
+.btn.p{background:var(--acc);color:#fff}.btn.s{color:var(--acc)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.tab{padding:7px 14px;border-radius:20px;border:1px solid var(--line);background:transparent;color:var(--mut);font:inherit;font-size:.88rem;font-weight:600;cursor:pointer}
+.tab.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.lead{margin:0 0 14px;color:var(--mut)}
+.price{display:inline-block;margin:0 0 14px;font-size:.85rem;color:var(--ok);border:1px solid var(--ok);border-radius:99px;padding:1px 10px}
+.ben{margin-top:32px}
+.ben h2{font-size:1.25rem;margin:0 0 4px}.ben .sub2{color:var(--mut);margin:0 0 14px}
+.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.bgrid{grid-template-columns:1fr}}
+.bc{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px}
+.bc b{display:block;margin-bottom:2px}.bc span{color:var(--mut);font-size:.9rem}
+.calc{margin-top:14px;background:var(--card);border:1.5px solid var(--acc);border-radius:14px;padding:16px}
+.calc h3{margin:0 0 4px;font-size:1.05rem}.calc small{color:var(--mut);display:block;margin-bottom:12px}
+.row{display:grid;grid-template-columns:1fr 110px;gap:10px;align-items:center;margin-bottom:8px}
+.row label{font-size:.92rem}
+.row input,.row select{width:100%;padding:7px 8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--txt);font:inherit}
+.res{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;font-size:.95rem}
+.res div{display:flex;justify-content:space-between;gap:10px;padding:2px 0}
+.res .big{font-weight:700;font-size:1.1rem;color:var(--ok)}
+.fine{font-size:.78rem;color:var(--mut);margin-top:8px}
+.fq{margin-top:18px}
+.fq h3{margin:0 0 6px;font-size:1rem}
+.fq a{display:block;padding:7px 12px;margin-bottom:6px;border:1px solid var(--line);border-radius:10px;color:var(--txt);text-decoration:none;background:var(--card);font-size:.92rem}
+.fq a:hover{border-color:var(--acc)}
+.fq a span{color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p style="margin:0 0 14px;font-size:.9rem"><a href="/" style="color:var(--acc)">← kreato.tech</a> &nbsp;·&nbsp; <a href="/#faq" style="color:var(--acc)">FAQ</a> &nbsp;·&nbsp; <a href="/blog.html" style="color:var(--acc)">Blog</a></p>
+<h1>Jak działają boty KREATO</h1>
+<p class="sub">Wybierz bota i kliknij krok, żeby zobaczyć, co to znaczy dla Twojej firmy.</p>
+<div class="tabs" id="tabs"></div>
+<p class="lead" id="lead"></p>
+<span class="price" id="price"></span>
+<div class="flow" id="flow"></div>
+<div id="info"><h2>Wybierz krok</h2><p>Opis pojawi się tutaj.</p></div>
+<div class="fq" id="fq"><h3>❓ Pytania z FAQ do tego bota</h3><div id="fqlist"></div></div>
+<div id="demo-wrap"><div class="demo">
+ <h2>Przykładowa rozmowa: gabinet stomatologiczny</h2>
+ <small>Ilustracja działania bota na przykładzie demo, nie nagranie prawdziwego klienta.</small>
+ <div class="chat">
+  <div class="m bot"><i>Bot</i>Dzień dobry, gabinet stomatologiczny, w czym mogę pomóc?</div>
+  <div class="m usr"><i>Klient</i>Dzień dobry, chciałbym umówić się na przegląd.</div>
+  <div class="m bot"><i>Bot</i>Oczywiście. Na jaki dzień byłoby Panu wygodnie?</div>
+  <div class="m usr"><i>Klient</i>Najlepiej w czwartek po południu.</div>
+  <div class="m bot"><i>Bot</i>W czwartek mam wolne 15:30 i 17:00. Który termin pasuje?</div>
+  <div class="m usr"><i>Klient</i>Piętnasta trzydzieści.</div>
+  <div class="m bot"><i>Bot</i>Zapisane: czwartek, 15:30. Za chwilę wyślę potwierdzenie SMS-em. Do zobaczenia!</div>
+  <div class="sms">✓ Wizyta w kalendarzu · SMS z potwierdzeniem wysłany</div>
+ </div>
+</div>
+
+</div>
+<div class="ben">
+<h2>Co zyskujesz: czas i pieniądze</h2>
+<p class="sub2">Bot nie jest kosztem, tylko pracownikiem, który nie bierze urlopu i nie gubi telefonów.</p>
+<div class="bgrid">
+ <div class="bc"><b>⏱️ Czas: zero dyżuru przy telefonie</b><span>Nie odrywasz się od pracy, żeby odebrać. Bot odbiera sam, a Ty dostajesz krótkie podsumowanie.</span></div>
+ <div class="bc"><b>⏱️ Czas: odpowiedź od razu</b><span>Klient nie czeka na oddzwonienie. Do 5 rozmów naraz, bez sygnału zajętości.</span></div>
+ <div class="bc"><b>⏱️ Czas: gotowe w 2–3 dni</b><span>Twój wkład to ok. 10 minut formularza i test. Resztę robimy my.</span></div>
+ <div class="bc"><b>💰 Pieniądze: odzyskane zapytania</b><span>Telefon w nocy, w weekend i w godzinach szczytu to klienci, którzy dziś idą do konkurencji.</span></div>
+</div>
+
+<div class="bgrid" style="margin-top:10px">
+ <div class="bc"><b>🎯 Jak marketer: reklama się zwraca</b><span>Płacisz za każde kliknięcie i każdy telefon z reklamy. Gdy nikt nie odbiera, ten koszt przepada. Bot odbiera każdy telefon z reklamy, więc budżet reklamowy nie ucieka.</span></div>
+ <div class="bc"><b>🎯 Jak marketer: widzisz wynik</b><span>Panel pokazuje rozmowy, umówione wizyty i szacowaną wartość. Łatwo ocenić, ile dał telefon, a ile reklama.</span></div>
+ <div class="bc"><b>🤝 Jak sprzedawca: pierwszy kontakt w kilka sekund</b><span>Kto odpowie pierwszy, ten zwykle wygrywa klienta. Bot jest zawsze pierwszy.</span></div>
+ <div class="bc"><b>🤝 Jak sprzedawca: zawsze ta sama jakość</b><span>Bez złego dnia, urlopu i chorobowego. Zadaje te same pytania i zbiera komplet danych, a trudne sprawy oddaje człowiekowi.</span></div>
+</div>
+
+<h3 style="margin:18px 0 6px;font-size:1.05rem">Przykłady z różnych branż</h3>
+<p class="sub2" style="margin-bottom:10px">Założenia są przykładowe, nie pochodzą od klientów. Kliknij przykład, a liczby wpiszą się do kalkulatora poniżej.</p>
+<div id="ex"></div>
+
+<div class="calc">
+ <h3>Policz to dla swojej firmy</h3>
+ <small>Wpisz własne liczby. Wartości początkowe to tylko przykład, nie obietnica wyniku.</small>
+ <div class="row"><label for="c1">Ile telefonów miesięcznie dziś nie odbierasz?</label><input id="c1" type="number" min="0" value="20"></div>
+ <div class="row"><label for="c2">Ilu z nich zakończyłoby się wizytą lub zleceniem? (%)</label><input id="c2" type="number" min="0" max="100" value="30"></div>
+ <div class="row"><label for="c3">Średnia wartość jednej wizyty lub zlecenia (zł)</label><input id="c3" type="number" min="0" value="200"></div>
+ <div class="row"><label for="c4">Pakiet bota (rozliczenie roczne, netto/mies.)</label>
+  <select id="c4"><option value="249">Lite 249 zł</option><option value="349" selected>Starter 349 zł</option><option value="449">Business 449 zł</option><option value="599">Pro Max 599 zł</option></select></div>
+ <div class="res">
+  <div><span>Odzyskany przychód / mies.</span><b id="r1">–</b></div>
+  <div><span>Koszt bota / mies.</span><b id="r2">–</b></div>
+  <div class="big"><span>Różnica / mies.</span><b id="r3">–</b></div>
+  <div><span>Ile wizyt zwraca abonament</span><b id="r4">–</b></div>
+ </div>
+ <p class="fine">Szacunek na podstawie założeń, które wpisujesz sam. Nie uwzględnia opłaty za konfigurację ani minut ponad limit pakietu. Ceny netto, VAT 23% dolicza się do faktury.</p>
+</div>
+</div>
+<div class="cta">
+ <h2>Usłysz to na własne uszy</h2>
+ <p>Zadzwoń do Karoliny, asystentki KREATO, i sprawdź, jak brzmi rozmowa.</p>
+ <div class="btns">
+  <a class="btn p" href="tel:+48459567844">Zadzwoń: +48 459 567 844</a>
+  <a class="btn s" href="mailto:biuro@kreato.tech?subject=Demo%20bota%20KREATO">Umów demo</a>
+ </div>
+</div>
+</div>
+<script>
+var BOTS=[
+{n:'🎙️ Karolina (telefon)',lead:'Asystentka głosowa odbiera telefony po polsku, 24/7.',price:'od 249 zł netto/mies.',demo:1,steps:[
+['Klient dzwoni','Odbieramy zawsze, także poza godzinami pracy','Nie tracisz klientów','Klient dzwoni wieczorem, w weekend albo gdy jesteś zajęty — bot odbiera od razu, zamiast poczty głosowej.'],
+['Zwykły numer','Bez aplikacji i bez zmian dla klienta','Nic nie zmieniasz u siebie','Klient dzwoni zwykłym telefonem. Ty zostajesz przy swoim numerze (przekierowanie) albo dostajesz dedykowany +48.'],
+['Słucha i odpowiada','Rozumie zwykłą mowę, zna Twoją firmę','Zna Twoją ofertę','Mówi po polsku według scenariusza pod Twoją branżę: usługi, ceny, godziny pracy.'],
+['Wpisuje wizytę','Prosto do Google Calendar','Kalendarz wypełnia się sam','Sprawdza wolne terminy i wpisuje wizytę. Nie przepisujesz niczego ręcznie.'],
+['Dajemy Ci znać','Podsumowanie na Telegram i w Panelu Klienta','Wiesz, co się wydarzyło','Po rozmowie dostajesz: kto dzwonił, czego chciał, co ustalono.'],
+['SMS z potwierdzeniem','Klient pamięta o wizycie (usługa dodatkowa)','Mniej niestawień','Klient może dostać SMS z potwierdzeniem terminu. SMS-y wysyłamy tylko osobom, które skontaktowały się z Twoją firmą.']]},
+{n:'🤖 Chatbot AI (strona)',lead:'Asystent tekstowy na Twojej stronie internetowej.',price:'od 199 zł netto/mies.',steps:[
+['Klient pisze na stronie','Okienko czatu na Twojej stronie WWW','Odpowiedź od razu','Klient pyta o ofertę, cenę, dostępność — bez dzwonienia i czekania na e-mail.'],
+['Bot odpowiada z bazy wiedzy','Zna Twoją ofertę i ceny','Zna Twoją ofertę','Odpowiada na podstawie Twojej bazy wiedzy. Aktualizujesz ją samodzielnie.'],
+['Zbiera dane zainteresowanych','Kwalifikuje leady','Gotowe kontakty','Pyta o to, co potrzebne, i przekazuje gorący kontakt do sprzedawcy.'],
+['Umawia wizytę (opcja)','Sprawdza kalendarz, +150 zł netto/mies.','Rezerwacja bez telefonu','Opcjonalnie sprawdza Twój kalendarz Google i sam umawia wizytę.']]},
+{n:'📊 Raporty automatyczne',lead:'Co poniedziałek o 8:00 masz raport w skrzynce.',price:'od 149 zł netto/mies.',steps:[
+['Zbieramy dane','CRM, Excel, Google Analytics i inne','Zero ręcznego zbierania','Łączymy się ze źródłami danych Twojej firmy. Konfiguracja raz.'],
+['Liczymy i układamy','Statystyki gotowe do decyzji','Liczby bez Excela','Dane zamieniają się w czytelny raport.'],
+['Dostajesz raport','PDF lub Google Sheet, e-mail lub Telegram','Raport sam do Ciebie przychodzi','Wybierasz format i kanał. Raport trafia do Ciebie automatycznie, bez Twojego udziału.']]},
+{n:'🔍 Monitoring konkurencji',lead:'Agent śledzi konkurencję, Ty czytasz raport.',price:'od 199 zł netto/mies.',steps:[
+['Agent sprawdza źródła','Ceny, oferty i reklamy konkurentów','Widzisz, co robi rynek','Śledzimy m.in. serwisy ogłoszeniowe, sklepy i reklamy FB/IG konkurencji.'],
+['Porównuje zmiany','Co się zmieniło od ostatniego razu','Tylko to, co ważne','Agent wychwytuje nowe ceny, oferty i kampanie.'],
+['Raport na Telegram','Alert i podsumowanie tygodniowe','Decyzje na faktach','Dostajesz powiadomienia oraz tygodniowy raport trendów.']]},
+{n:'📱 SMM + Reels AI',lead:'Posty i rolki przygotowywane automatycznie.',price:'cena w Cenniku',steps:[
+['Poznajemy Twoją firmę','Oferta, styl, klienci','Treści w Twoim stylu','Na tej podstawie powstają tematy postów i rolek.'],
+['AI tworzy posty i rolki','Teksty, grafika, polski lektor','Regularne treści bez Twojej pracy','Automatyczne przygotowanie treści do mediów społecznościowych.'],
+['Publikacja','Facebook i Instagram','Stała obecność w sieci','Treści trafiają na Twoje profile.']]},
+{n:'🎯 Reklama FB/IG',lead:'Prowadzimy reklamy, które mają przynosić zapytania.',price:'cena w Cenniku (budżet reklamowy osobno)',steps:[
+['Badamy grupę docelową','Kim są Twoi klienci','Trafiamy do właściwych ludzi','Opisujemy idealnego klienta i miejsce, gdzie go znaleźć.'],
+['Kreacje i piksel','Grafiki, teksty, pomiar','Reklama, którą da się zmierzyć','Przygotowujemy reklamy i podłączamy pomiar wyników.'],
+['Testy i optymalizacja','Co tydzień poprawiamy wyniki','Płacisz za to, co działa','Porównujemy warianty i zostawiamy najlepsze.'],
+['Raport','Koszt zapytania, zasięg, zwrot','Wiesz, ile to kosztuje','Regularny raport z kluczowymi wskaźnikami.']]},
+{n:'🧰 KREATO Serwis',lead:'Zlecenia, ekipy i protokoły w jednym miejscu (pilotaż).',price:'pilotaż, szczegóły na stronie Serwis',steps:[
+['Zgłoszenie od klienta','Zlecenie trafia do systemu','Nic nie ginie','Zgłoszenie wpada do jednego miejsca, bez kartek i telefonów.'],
+['Planowanie ekipy','Termin w kalendarzu','Porządek w grafiku','System układa zlecenie w kalendarzu ekipy.'],
+['Monter w Telegramie','Zlecenia i statusy w telefonie','Monter wie, gdzie jechać','Ekipa dostaje zlecenia w Telegramie i zgłasza postęp.'],
+['Protokół PDF','Dokument po zakończeniu pracy','Papierologia z głowy','Po pracy powstaje protokół w PDF.'],
+['Podgląd dla Ciebie','Postęp na bieżąco','Widzisz status','Śledzisz zlecenia i dostajesz raporty.']]}
+];
+function show(i){var b=BOTS[i];
+document.querySelectorAll('.tab').forEach(function(t,k){t.classList.toggle('on',k==i)});
+document.getElementById('lead').textContent=b.lead;document.getElementById('price').textContent=b.price;
+document.getElementById('demo-wrap').style.display=b.demo?'':'none';
+var f=document.getElementById('flow');f.innerHTML='';
+b.steps.forEach(function(st,k){
+ if(k){var a=document.createElement('div');a.className='arrow';f.appendChild(a);}
+ var n=document.createElement('button');n.className='node';
+ n.innerHTML='<b>'+(k+1)+'. '+st[0]+'</b><span>'+st[1]+'</span>';
+ n.onclick=function(){document.querySelectorAll('.node').forEach(function(x){x.classList.remove('on')});n.classList.add('on');
+  document.querySelector('#info h2').textContent=st[2];document.querySelector('#info p').textContent=st[3];};
+ f.appendChild(n);});
+document.querySelector('#info h2').textContent='Wybierz krok';document.querySelector('#info p').textContent='Opis pojawi się tutaj.';}
+var T=document.getElementById('tabs');
+BOTS.forEach(function(b,i){var t=document.createElement('button');t.className='tab';t.textContent=b.n;t.onclick=function(){show(i)};T.appendChild(t);});
+show(0);
+
+function calc(){
+ var n=+document.getElementById('c1').value||0,pr=+document.getElementById('c2').value||0,v=+document.getElementById('c3').value||0,c=+document.getElementById('c4').value||0;
+ var rev=Math.round(n*pr/100*v),diff=rev-c,per=v>0?Math.ceil(c/v):0;
+ function z(x){return x.toLocaleString('pl-PL')+' zł'}
+ document.getElementById('r1').textContent=z(rev);document.getElementById('r2').textContent=z(c);
+ document.getElementById('r3').textContent=(diff>=0?'+':'')+z(diff);
+ document.getElementById('r4').textContent=v>0?('wystarczy '+per+(per==1?' wizyta':(per<5?' wizyty':' wizyt'))):'–';
+}
+['c1','c2','c3','c4'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});calc();
+var EX=[
+ {n:'🦷 Gabinet stomatologiczny',t:'Recepcja zajęta pacjentem, telefon dzwoni. Nieodebrane połączenia to pacjenci, którzy umówią się gdzie indziej.',c:20,p:30,v:400,pl:349},
+ {n:'✂️ Salon fryzjerski',t:'W trakcie strzyżenia nie odbierzesz. Bot umawia termin w kalendarzu, także wieczorem i w niedzielę.',c:30,p:40,v:120,pl:349},
+ {n:'🔧 Ekipa remontowa lub instalatorska',t:'Na budowie ręce są zajęte. Klient dzwoni do kilku firm i wybiera tę, która odpowie pierwsza.',c:10,p:25,v:1500,pl:349},
+ {n:'🚗 Warsztat samochodowy',t:'Rano mechanik pod autem, po południu kolejka. Bot zbiera markę auta, usterkę i numer telefonu, a Ty oddzwaniasz (tak działa pakiet Lite).',c:15,p:35,v:350,pl:249}
+];
+var exBox=document.getElementById('ex');
+EX.forEach(function(e){
+ var rev=Math.round(e.c*e.p/100*e.v),d=rev-e.pl;
+ function z(x){return x.toLocaleString('pl-PL')+' zł'}
+ var b=document.createElement('button');b.className='node';b.style.marginBottom='8px';
+ b.innerHTML='<b>'+e.n+'</b><span>'+e.t+'<br><br>'+e.c+' nieodebranych telefonów × '+e.p+'% × '+z(e.v)+' = <b style="display:inline;color:var(--txt)">'+z(rev)+'</b> miesięcznie. Bot kosztuje '+z(e.pl)+', więc zostaje <b style="display:inline;color:var(--ok)">+'+z(d)+'</b>.</span>';
+ b.onclick=function(){document.getElementById('c1').value=e.c;document.getElementById('c2').value=e.p;document.getElementById('c3').value=e.v;document.getElementById('c4').value=e.pl;calc();document.querySelector('.calc').scrollIntoView({behavior:'smooth',block:'center'});};
+ exBox.appendChild(b);
+});
+
+var FQ='https://kreato.tech/';
+var FAQMAP=[
+ [['faq-jak-dziala','Jak dokładnie działa bot głosowy, krok po kroku?'],['faq-boty','Jakie boty KREATO oferuje?'],['faq','3. Czy Karolina odbiera telefony całą dobę?'],['faq','4. Czy Karolina może wysyłać SMS-y? Jak to działa z RODO?'],['faq','16. Ile połączeń może obsługiwać jednocześnie?'],['faq','28. Czy muszę zmieniać swój numer? Jak przekierować połączenia?'],['faq','31. Czy Karolina może sama zadzwonić do klienta?']],
+ [['faq','30. Czy Chatbot AI może umawiać wizyty w moim kalendarzu?'],['faq','29. Jakie rabaty oferujecie?'],['faq-boty','Jakie boty KREATO oferuje?']],
+ [['faq-boty','Jakie boty KREATO oferuje?'],['faq','29. Jakie rabaty oferujecie?']],
+ [['faq-boty','Jakie boty KREATO oferuje?'],['faq','29. Jakie rabaty oferujecie?']],
+ [['faq-boty','Jakie boty KREATO oferuje?'],['faq','29. Jakie rabaty oferujecie?']],
+ [['faq-boty','Jakie boty KREATO oferuje?'],['faq','29. Jakie rabaty oferujecie?']],
+ [['faq-boty','Jakie boty KREATO oferuje?'],['faq','29. Jakie rabaty oferujecie?']]
+];
+function renderFq(i){
+ var box=document.getElementById('fqlist');box.innerHTML='';
+ (FAQMAP[i]||[]).forEach(function(q){
+  var a=document.createElement('a');a.href=FQ+'#'+q[0];a.innerHTML=q[1]+' <span>→ FAQ</span>';box.appendChild(a);});
+}
+var _show=show;show=function(i){_show(i);renderFq(i);};
+show(0);
+</script>
+</body>
+</html>
