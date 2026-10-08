@@ -7,7 +7,7 @@ KREATO.AI builds AI voice bots, chatbots and automation agents for Polish small 
 - **Karolina AI** — AI voice receptionist (Polish). Answers incoming calls 24/7, answers FAQ, books appointments in Google Calendar, sends SMS confirmations and notifies the owner (Telegram or e-mail). Handles several calls at the same time. It does not make outgoing calls to customers.
 - **Chatbot AI** — website chatbot, from 199 PLN net/month; can check free slots and book visits.
 - **Reklama FB/IG** — Facebook and Instagram ad management, from 249 PLN net/month (ad budget separate).
-- **SMM + Reels AI** — automated social media content, from 499 PLN net/month.
+- **SMM + Reels AI** — automated social media content, from 199 PLN net/month.
 - **Raporty automatyczne** — automatic reports, from 149 PLN net/month.
 - **Monitoring konkurencji AI** — competitor monitoring, from 199 PLN net/month.
 - **KREATO Serwis** — field service management: job intake, crew scheduling, calendar, PDF protocols. Pilot program, see /serwis.html
