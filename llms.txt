@@ -21,7 +21,7 @@ Annual contract (12 months), PLN net per month:
 Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, Business 479, Pro Max 679.
 - Minutes above the limit: Lite 0.89, Starter 0.79, Business 0.69, Pro Max 0.59 PLN net per minute.
 - Trial: 7 days for 0 PLN, no card, up to 100 minutes of calls. Configuration normally 599 PLN net one-time (Lite: 299 PLN), 0 PLN for the first 10 companies in exchange for a review after 30 days and permission to name the company. After the trial the customer picks a package or cancels (the assistant then switches off, nothing is charged).
-- Referral program: a customer who recommends a new company gets 20% of that company's monthly subscription as a discount on their own invoice for the first 12 months of the referred company's contract (discounts stack up to 100%; conditions on the FAQ, question 29a).
+- Referral program: a customer who brings in a new customer (company) gets 20% of that company's monthly subscription as a discount on their own invoice for the first 12 months of the referred company's contract (discounts stack up to 100%; conditions on the FAQ, question 29a).
 - Minute limits: each package has a monthly minute limit; at 80% the customer gets an e-mail recommending a top-up or a higher package; minutes above the limit are billed at the package rate.
 - Setup: about 10-20 minutes for an online form, bot ready in 2-3 business days.
 
