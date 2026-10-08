@@ -892,6 +892,7 @@ async function showApp(user) {
   const calls = callsData || [];
 
   renderStats(calls, client.plan_minutes);
+  try { const { data: pm } = await sb.rpc('panel_minutes'); if (pm) renderMinutesLive(pm); } catch (e) { /* licznik z kreato_calls zostaje */ }
   renderTable(calls);
 
   const { data: smsData } = await sb
@@ -907,6 +908,7 @@ async function showApp(user) {
     .from('kreato_invoices')
     .select('*')
     .eq('client_id', client.id)
+    .neq('status', 'draft')
     .order('invoice_date', { ascending: false })
     .limit(24);
   const invoices = invData || [];
@@ -945,6 +947,40 @@ async function showApp(user) {
 }
 
 // ─── STATS ───
+function renderMinutesLive(pm) {
+  const pk = pm.package && pm.package.package ? pm.package : null;
+  const tr = pm.trial && pm.trial.trial ? pm.trial : null;
+  const st = pk || tr;
+  if (!st) return;
+  const esc = v => String(v == null ? '' : v).replace(/[<>&"]/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' }[c]));
+  const fmt = d => new Date(d).toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  const used = Math.ceil((st.used_seconds || 0) / 60);
+  const lim = Math.round((st.limit_seconds || 0) / 60);
+  const pct = lim ? Math.min(Math.round(used / lim * 100), 100) : 0;
+  const tile = document.getElementById('stat-min-month').closest('.tile');
+  tile.querySelector('.tile-label').textContent = pk ? 'Minuty w okresie rozliczeniowym' : 'Minuty próbne';
+  document.getElementById('stat-min-month').innerHTML = `${used}<span class="tile-unit">min</span>`;
+  const bar = document.getElementById('min-bar');
+  bar.style.width = pct + '%';
+  bar.style.background = pct >= 90 ? 'var(--danger)' : pct >= 80 ? 'var(--warn)' : 'var(--accent)';
+  const sub = document.getElementById('stat-min-sub');
+  const until = fmt(pk ? pk.period_end : tr.ends_at);
+  let html = pk
+    ? `z ${lim} min (pakiet ${esc(pk.name)}) · do ${until}`
+    : `z ${lim} min próbnych · do ${until}`;
+  if (pk && pk.overage_seconds > 0) {
+    html += `<br><span class="neg">Dodatkowo: ${Math.ceil(pk.overage_seconds / 60)} min = ${Number(pk.overage_pln).toFixed(2).replace('.', ',')} zł netto</span>`;
+  }
+  if (pct >= 80) {
+    const tip = pk
+      ? (pk.hard_cap ? 'zalecamy doładować pakiet minut, aby uniknąć zatrzymania bota'
+                      : 'zalecamy doładować pakiet minut lub przejść na wyższy, aby uniknąć wyższych kosztów')
+      : 'zalecamy wcześniej wybrać abonament, aby Karolina się nie zatrzymała';
+    html += `<br><span class="neg">⚠ ${pct}% — ${tip}</span>`;
+  }
+  sub.innerHTML = html;
+}
+
 function renderStats(calls, planMin) {
   const now = new Date();
   const thisMonth = calls.filter(c => {

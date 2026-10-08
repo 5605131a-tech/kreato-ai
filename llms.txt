@@ -20,12 +20,13 @@ Annual contract (12 months), PLN net per month:
 - Pro Max: 599 (1400 min)
 Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, Business 479, Pro Max 679.
 - Minutes above the limit: Lite 0.89, Starter 0.79, Business 0.69, Pro Max 0.59 PLN net per minute.
-- Configuration: 599 PLN net one-time (Lite: 299 PLN). Pilot offer until end of 2026 (10 places): -50% on configuration in exchange for a review after 30 days.
+- Trial: 7 days for 0 PLN, no card, up to 100 minutes of calls. Configuration normally 599 PLN net one-time (Lite: 299 PLN), 0 PLN for the first 10 companies in exchange for a review after 30 days and permission to name the company. After the trial the customer picks a package or cancels (the assistant then switches off, nothing is charged).
+- Minute limits: each package has a monthly minute limit; at 80% the customer gets an e-mail recommending a top-up or a higher package; minutes above the limit are billed at the package rate.
 - Setup: about 10-20 minutes for an online form, bot ready in 2-3 business days.
 
 ## Contact
 - Phone: +48 459 567 844 (Karolina AI, live demo, available 24/7; calls may be recorded)
-- Email: biuro@kreato.tech (answered within 30 minutes; first answers may come from an AI assistant)
+- Email: biuro@kreato.tech (an automatic confirmation arrives within 5 minutes; an AI assistant answers around the clock and hands complex cases to a human)
 - Address: ul. Prądzyńskiego 23, 63-000 Środa Wielkopolska, Poland
 
 ## Compliance
