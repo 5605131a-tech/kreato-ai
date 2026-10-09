@@ -9,7 +9,7 @@ KREATO.AI builds AI voice bots, chatbots and automation agents for Polish small 
 - **Reklama FB/IG** — Facebook and Instagram ad management, from 249 PLN net/month (ad budget separate).
 - **SMM + Reels AI** — automated social media content, from 199 PLN net/month.
 - **Raporty automatyczne** — automatic reports, from 149 PLN net/month.
-- **Monitoring konkurencji AI** — competitor monitoring, from 199 PLN net/month.
+- **Monitoring konkurencji AI** — competitor monitoring (pilot program): a weekly Telegram report on changes on competitors' public websites, their Meta ads and public reviews; from 199 PLN net/month.
 - **KREATO Serwis** — field service management: job intake, crew scheduling, calendar, PDF protocols. Pilot program, see /serwis.html
 
 ## Pricing (Karolina AI, net prices in PLN; by default a receipt (rachunek) without VAT because the seller is not a VAT payer; on request an invoice with 23% VAT can be issued via the Useme platform; VAT will be added after VAT registration)
