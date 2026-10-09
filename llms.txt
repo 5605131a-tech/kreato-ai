@@ -12,7 +12,7 @@ KREATO.AI builds AI voice bots, chatbots and automation agents for Polish small 
 - **Monitoring konkurencji AI** — competitor monitoring, from 199 PLN net/month.
 - **KREATO Serwis** — field service management: job intake, crew scheduling, calendar, PDF protocols. Pilot program, see /serwis.html
 
-## Pricing (Karolina AI, net prices, VAT 23% added)
+## Pricing (Karolina AI, net prices in PLN; by default a receipt (rachunek) without VAT because the seller is not a VAT payer; on request an invoice with 23% VAT can be issued via the Useme platform; VAT will be added after VAT registration)
 Annual contract (12 months), PLN net per month:
 - Lite: 249 (300 min; works by forwarding calls from your own number, no separate +48 number)
 - Starter: 349 (700 min; new +48 number included)
@@ -23,6 +23,7 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 - Trial: 7 days for 0 PLN, no card, up to 100 minutes of calls. Configuration normally 599 PLN net one-time (Lite: 299 PLN), 0 PLN for the first 10 companies in exchange for a review after 30 days and permission to name the company. After the trial the customer picks a package or cancels (the assistant then switches off, nothing is charged).
 - Referral program: a customer who brings in a new customer (company) gets 20% of that company's monthly subscription as a discount on their own invoice for the first 12 months of the referred company's contract (discounts stack up to 100%; conditions on the FAQ, question 29a).
 - Minute limits: each package has a monthly minute limit; at 80% the customer gets an e-mail recommending a top-up or a higher package; minutes above the limit are billed at the package rate.
+- Annual plan extras: price locked for 12 months, configuration 0 PLN (instead of 599 PLN; Lite 299 PLN), up to 1 knowledge-base update per month included, payment monthly or upfront for 12 months, 30-day money-back guarantee on subscription fees (conditions in the Terms: https://kreato.tech/regulamin.html). Savings versus monthly billing: 360 PLN per year (Lite, Starter, Business), 960 PLN per year (Pro Max).
 - Setup: about 10-20 minutes for an online form, bot ready in 2-3 business days.
 
 ## Contact
@@ -61,6 +62,7 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 - https://kreato.tech/agenci.html — B2B AI agents
 - https://kreato.tech/jak-dzialaja-boty.html — How each KREATO bot works step by step (voicebot, chatbot, reports, monitoring, SMM, ads, Serwis), industry examples and a savings calculator
 - https://kreato.tech/blog.html — Blog
+- https://kreato.tech/regulamin.html — Terms of Service (Polish)
 - https://kreato.tech/polityka-prywatnosci.html — Privacy Policy (Polish, RODO compliant)
 
 ## Sitemap
