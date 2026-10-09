@@ -7,7 +7,7 @@ KREATO.AI builds AI voice bots, chatbots and automation agents for Polish small 
 - **Karolina AI** — AI voice receptionist (Polish). Answers incoming calls 24/7, answers FAQ, books appointments in Google Calendar, sends SMS confirmations and notifies the owner (Telegram or e-mail). Handles several calls at the same time. It does not make outgoing calls to customers.
 - **Chatbot AI** — website chatbot, from 199 PLN net/month; can check free slots and book visits.
 - **Reklama FB/IG** — Facebook and Instagram ad management, from 249 PLN net/month (ad budget separate).
-- **SMM + Reels AI** — automated social media content, from 199 PLN net/month.
+- **SMM + Reels AI** — automated social media content (posts, graphics, Reels); you approve and publish them yourself; from 199 PLN net/month.
 - **Raporty automatyczne** — automatic reports, from 149 PLN net/month.
 - **Monitoring konkurencji AI** — competitor monitoring (pilot program): a weekly Telegram report on changes on competitors' public websites, their Meta ads and public reviews; from 199 PLN net/month.
 - **KREATO Serwis** — field service management: job intake, crew scheduling, calendar, PDF protocols. Pilot program, see /serwis.html
@@ -25,6 +25,10 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 - Minute limits: each package has a monthly minute limit; at 80% the customer gets an e-mail recommending a top-up or a higher package; minutes above the limit are billed at the package rate.
 - Annual plan extras: price locked for 12 months, configuration 0 PLN (instead of 599 PLN; Lite 299 PLN), up to 1 knowledge-base update per month included, payment monthly or upfront for 12 months, 30-day money-back guarantee on subscription fees (conditions in the Terms: https://kreato.tech/regulamin.html). Savings versus monthly billing: 360 PLN per year (Lite, Starter, Business), 960 PLN per year (Pro Max).
 - Setup: about 10-20 minutes for an online form, bot ready in 2-3 business days.
+
+## Annual plans and bundles (other products, PLN net per month)
+- Annual plan = pay for 10 months, use 12; price locked for 12 months; monthly billing without commitment stays available. Chatbot AI 165 (1,990 per year), SMM + Reels AI 165 (1,990), Reklama FB/IG 207 (2,490, ad budget separate), Raporty automatyczne 124 (1,490). Monitoring and KREATO Serwis are pilots: the pilot price stays locked.
+- Second bot in a bundle: Chatbot AI and SMM 159 instead of 199, Raporty 119 instead of 149, Reklama from 199 instead of 249 (monthly); in the annual plan 133 / 133 / 99 / 166. Example: Karolina Lite annual 249 + Chatbot AI annual bundle 133 = 382 per month instead of 478 monthly separately.
 
 ## Contact
 - Phone: +48 459 567 844 (Karolina AI, live demo, available 24/7; calls may be recorded)
