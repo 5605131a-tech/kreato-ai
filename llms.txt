@@ -67,6 +67,9 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 - https://kreato.tech/ai-recepcjonistka-kancelaria-prawna.html — AI receptionist (voicebot Karolina) for law firms (no legal advice): answers calls 24/7, books in Google Calendar, SMS confirmations, from 249 PLN net/month, 7-day trial for 0 PLN
 - https://kreato.tech/ai-recepcjonistka-warsztat-samochodowy.html — AI receptionist (voicebot Karolina) for car repair shops: answers calls 24/7, books in Google Calendar, SMS confirmations, from 249 PLN net/month, 7-day trial for 0 PLN
 - https://kreato.tech/ai-recepcjonistka-gabinet-weterynaryjny.html — AI receptionist (voicebot Karolina) for veterinary clinics (urgent cases routed to on-call number): answers calls 24/7, books in Google Calendar, SMS confirmations, from 249 PLN net/month, 7-day trial for 0 PLN
+- https://kreato.tech/ai-recepcjonistka-hotel.html — AI receptionist (voicebot Karolina) for hotels and guesthouses (enquiries collected, booking confirmed by the owner): answers calls 24/7, SMS confirmations, from 249 PLN net/month, 7-day trial for 0 PLN
+- https://kreato.tech/ai-recepcjonistka-fitness-club.html — AI receptionist (voicebot Karolina) for fitness clubs and gyms: answers calls 24/7, SMS confirmations, from 249 PLN net/month, 7-day trial for 0 PLN
+- https://kreato.tech/ai-recepcjonistka-biuro-rachunkowe.html — AI receptionist (voicebot Karolina) for accounting offices (no tax advice): answers calls 24/7, SMS confirmations, from 249 PLN net/month, 7-day trial for 0 PLN
 - https://kreato.tech/dla-ecommerce.html — For e-commerce
 - https://kreato.tech/agenci.html — B2B AI agents
 - https://kreato.tech/jak-dzialaja-boty.html — How each KREATO bot works step by step (voicebot, chatbot, reports, monitoring, SMM, ads, Serwis), industry examples and a savings calculator
