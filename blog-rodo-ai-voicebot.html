@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://kreato.tech/blog-rodo-ai-voicebot.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RODO i AI — co sprawdzić przed wdrożeniem voicebota w firmie","description":"Lista kontrolna dla firmy MŚP: informacja o AI i nagrywaniu, podstawy prawne, umowa powierzenia, retencja nagrań. To nie jest porada prawna.","datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"pl","keywords":"RODO voicebot, RODO AI, AI Act, nagrywanie rozmów, umowa powierzenia, bot głosowy RODO","mainEntityOfPage":"https://kreato.tech/blog-rodo-ai-voicebot.html","author":{"@type":"Organization","name":"KREATO.AI"},"publisher":{"@type":"Organization","name":"KREATO.AI","url":"https://kreato.tech/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RODO i AI — co sprawdzić przed wdrożeniem voicebota w firmie","description":"Lista kontrolna dla firmy MŚP: informacja o AI i nagrywaniu, podstawy prawne, umowa powierzenia, retencja nagrań. To nie jest porada prawna.","datePublished":"2026-10-07","dateModified":"2026-10-11","inLanguage":"pl","keywords":"RODO voicebot, RODO AI, AI Act, nagrywanie rozmów, umowa powierzenia, bot głosowy RODO","mainEntityOfPage":"https://kreato.tech/blog-rodo-ai-voicebot.html","author":{"@type":"Organization","name":"KREATO.AI"},"publisher":{"@type":"Organization","name":"KREATO.AI","url":"https://kreato.tech/"}}</script>
 <style>
 :root{--bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;--purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);--grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -83,6 +83,38 @@ footer a:hover{color:var(--text2)}
 <meta property="og:site_name" content="KREATO.AI">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Czy muszę mieć inspektora ochrony danych?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Nie w każdej firmie. Obowiązek zależy od rodzaju i skali przetwarzania danych. To pytanie do prawnika lub inspektora ochrony danych, a nie do dostawcy voicebota."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Czy mogę wyłączyć nagrywanie?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Zakres nagrywania ustalamy przed wdrożeniem. Wybór wpływa na to, co możesz później przejrzeć, więc warto go przemyśleć razem z zasadami przechowywania."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Kto odpowiada za dane dzwoniących?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Co do zasady administratorem jesteś Ty, a dostawca voicebota działa jako podmiot przetwarzający na podstawie umowy powierzenia. Szczegóły ustalamy przed uruchomieniem usługi."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <nav>
@@ -102,7 +134,7 @@ footer a:hover{color:var(--text2)}
 <article class="art">
 <span class="post-tag">Prawo</span>
 <h1>RODO i AI — co sprawdzić przed wdrożeniem voicebota w firmie</h1>
-<div class="meta">7 października 2026 · 7 min czytania · KREATO.AI</div>
+<div class="meta">7 października 2026 (aktualizacja: 11 października) · 4 min czytania · KREATO.AI</div>
 
 <p class="lead">Voicebot odbiera telefony i często nagrywa rozmowy. To oznacza przetwarzanie danych osobowych, więc obowiązują Cię przepisy RODO. Poniżej lista rzeczy do sprawdzenia przed wdrożeniem.</p>
 <div class="note"><strong>To nie jest porada prawna.</strong> Artykuł porządkuje pytania, które warto zadać prawnikowi lub inspektorowi ochrony danych. Przepisy i ich interpretacje się zmieniają.</div>
@@ -131,6 +163,20 @@ footer a:hover{color:var(--text2)}
 <li>Przekazanie trudnych spraw człowiekowi</li>
 </ul>
 
+<h2>Lista kontrolna na jedną stronę</h2>
+<ul><li>Rozmówca wie, że rozmawia z AI.</li><li>Rozmówca wie o nagrywaniu i ma dostęp do klauzuli informacyjnej.</li><li>Masz umowę powierzenia przetwarzania z dostawcą.</li><li>Znasz podwykonawców i miejsce przetwarzania danych.</li><li>Ustaliłeś okres przechowywania nagrań i sposób ich usuwania.</li><li>Wiesz, kto w firmie ma dostęp do rozmów i podsumowań.</li></ul>
+<h2>Najczęstsze pomyłki</h2>
+<ul><li>Brak informacji o nagrywaniu na początku rozmowy.</li><li>Brak umowy powierzenia z dostawcą.</li><li>Nagrania przechowywane „na zawsze”, bez ustalonego okresu.</li><li>Zbieranie więcej danych, niż potrzeba do załatwienia sprawy.</li></ul>
+<h2>Branże o większym ryzyku</h2>
+<p>Zdrowie, prawo i finanse to obszary, w których dane są szczególnie wrażliwe, a w przypadku danych o zdrowiu obowiązują dodatkowe wymogi RODO. Dlatego w <a href="ai-recepcjonistka-gabinet-stomatologiczny.html">gabinetach</a>, <a href="ai-recepcjonistka-kancelaria-prawna.html">kancelariach</a> i <a href="ai-recepcjonistka-biuro-rachunkowe.html">biurach rachunkowych</a> ograniczamy zakres zbieranych danych do niezbędnego minimum i ustalamy zasady rozmowy przed wdrożeniem. To nie jest porada prawna; ostateczną ocenę zostaw prawnikowi lub inspektorowi ochrony danych.</p>
+<h2>Najczęstsze pytania</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy muszę mieć inspektora ochrony danych?</h3>
+<p>Nie w każdej firmie. Obowiązek zależy od rodzaju i skali przetwarzania danych. To pytanie do prawnika lub inspektora ochrony danych, a nie do dostawcy voicebota.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy mogę wyłączyć nagrywanie?</h3>
+<p>Zakres nagrywania ustalamy przed wdrożeniem. Wybór wpływa na to, co możesz później przejrzeć, więc warto go przemyśleć razem z zasadami przechowywania.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Kto odpowiada za dane dzwoniących?</h3>
+<p>Co do zasady administratorem jesteś Ty, a dostawca voicebota działa jako podmiot przetwarzający na podstawie umowy powierzenia. Szczegóły ustalamy przed uruchomieniem usługi.</p>
+<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="blog-czego-bot-nie-powinien-robic.html">Czego bot nie powinien robić</a> · <a href="blog-pilotaz-ai-krok-po-kroku.html">Pilotaż AI w 2–3 dni</a></p>
 <p style="margin-top:22px"><strong>Powiązane na stronie:</strong> <a href="polityka-prywatnosci.html">Polityka prywatności KREATO.AI</a> · <a href="blog.html">Wszystkie artykuły</a></p>
 <div class="cta"><h3>Masz pytanie albo chcesz zobaczyć, jak to działa u Ciebie?</h3><p>Napisz do nas — odpiszemy e-mailem.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Pytanie z bloga: RODO i AI — co sprawdzić przed wdrożeniem voicebota w firmie">biuro@kreato.tech</a></div>
 </article>

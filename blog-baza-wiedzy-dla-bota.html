@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://kreato.tech/blog-baza-wiedzy-dla-bota.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Baza wiedzy dla bota: co przygotować, żeby odpowiadał jak Twój najlepszy pracownik","description":"Praktyczna lista: usługi, ceny, godziny, wyjątki, pytania klientów i ton wypowiedzi. Z szablonem, który wypełnisz w pół godziny.","datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"pl","keywords":"baza wiedzy dla bota, FAQ dla chatbota, trening bota, wdrożenie chatbota, konfiguracja voicebota","mainEntityOfPage":"https://kreato.tech/blog-baza-wiedzy-dla-bota.html","author":{"@type":"Organization","name":"KREATO.AI"},"publisher":{"@type":"Organization","name":"KREATO.AI","url":"https://kreato.tech/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Baza wiedzy dla bota: co przygotować, żeby odpowiadał jak Twój najlepszy pracownik","description":"Praktyczna lista: usługi, ceny, godziny, wyjątki, pytania klientów i ton wypowiedzi. Z szablonem, który wypełnisz w pół godziny.","datePublished":"2026-10-07","dateModified":"2026-10-11","inLanguage":"pl","keywords":"baza wiedzy dla bota, FAQ dla chatbota, trening bota, wdrożenie chatbota, konfiguracja voicebota","mainEntityOfPage":"https://kreato.tech/blog-baza-wiedzy-dla-bota.html","author":{"@type":"Organization","name":"KREATO.AI"},"publisher":{"@type":"Organization","name":"KREATO.AI","url":"https://kreato.tech/"}}</script>
 <style>
 :root{--bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;--purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);--grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -83,6 +83,38 @@ footer a:hover{color:var(--text2)}
 <meta property="og:site_name" content="KREATO.AI">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Ile pytań trzeba zebrać na start?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Na początek wystarczy kilkanaście do kilkudziesięciu najczęstszych pytań z prawdziwych rozmów. Resztę uzupełnisz po pierwszych tygodniach pilotażu, na podstawie rozmów, w których bot nie znał odpowiedzi."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Czy bot sam się uczy z rozmów?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Nie zmienia bazy wiedzy na własną rękę. Przeglądamy rozmowy i razem z Tobą dopisujemy brakujące odpowiedzi, dzięki czemu wiesz, co bot mówi Twoim klientom."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Co, jeśli nie mam cennika w jednym dokumencie?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "To normalne. Spisz ceny usług, o które pytają najczęściej, a dla pozostałych napisz, jak bot ma reagować (np. zebrać dane i przekazać pytanie do Ciebie)."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <nav>
@@ -102,7 +134,7 @@ footer a:hover{color:var(--text2)}
 <article class="art">
 <span class="post-tag">Poradnik</span>
 <h1>Baza wiedzy dla bota: co przygotować, żeby odpowiadał jak Twój najlepszy pracownik</h1>
-<div class="meta">7 października 2026 · 7 min czytania · KREATO.AI</div>
+<div class="meta">7 października 2026 (aktualizacja: 11 października) · 4 min czytania · KREATO.AI</div>
 
 <p class="lead">Bot jest tak dobry, jak materiał, z którego się uczy. Najlepszy model językowy nie odpowie poprawnie na pytanie o cennik, jeśli nikt mu cennika nie podał. Oto, co zebrać przed wdrożeniem.</p>
 <h2>1. Usługi i produkty</h2>
@@ -126,6 +158,20 @@ footer a:hover{color:var(--text2)}
 <div class="note">Test odbiorczy: zadaj botowi 10 pytań, na które znasz odpowiedź, i zapisz, co odpowiedział. Poprawiaj bazę, dopóki wszystkie odpowiedzi nie są zgodne z prawdą.</div>
 <p>W naszym wdrożeniu zbieramy te informacje w krótkim kwestionariuszu (10–20 minut), więc nie musisz niczego pisać od zera.</p>
 
+<h2>Jak zapisać usługę: zły i dobry przykład</h2>
+<p><strong>Zły:</strong> „Zabieg kompleksowy, cena wg cennika.” Bot nie wie, co to jest, ile trwa ani ile kosztuje, więc zacznie zgadywać.</p><p><strong>Dobry:</strong> „Przegląd i higienizacja: około 60 minut, cena od 250 zł, dla pacjentów dorosłych, nie obejmuje leczenia próchnicy. Jeśli klient pyta o ból, zbierz dane i umów wizytę kontrolną.” Jest nazwa, czas, cena, zakres i reguła na wyjątek. Tak samo opisz każdą usługę, o którą klienci pytają najczęściej.</p>
+<h2>Jak często aktualizować bazę</h2>
+<p>Przy każdej zmianie cen, godzin lub oferty — oraz raz w miesiącu, na podstawie rozmów, w których bot nie umiał pomóc. Wyznacz jedną osobę odpowiedzialną za aktualność informacji. Baza, którą ktoś pamięta zaktualizować, jest wartościowa, a baza „wszystkich” szybko się starzeje. Zmiany w bazie Karoliny wprowadzamy po przeglądzie rozmów razem z Tobą — bot nie przepisuje jej sam.</p>
+<h2>Czego nie wkładać do bazy wiedzy</h2>
+<ul><li>Danych osobowych klientów (lista pacjentów, numery telefonów).</li><li>Haseł, kluczy i dostępów do systemów.</li><li>Informacji poufnych: wynagrodzeń, umów z kontrahentami, danych finansowych.</li><li>Sprzecznych odpowiedzi na to samo pytanie. Wybierz jedną wersję.</li></ul>
+<h2>Najczęstsze pytania</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">Ile pytań trzeba zebrać na start?</h3>
+<p>Na początek wystarczy kilkanaście do kilkudziesięciu najczęstszych pytań z prawdziwych rozmów. Resztę uzupełnisz po pierwszych tygodniach pilotażu, na podstawie rozmów, w których bot nie znał odpowiedzi.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy bot sam się uczy z rozmów?</h3>
+<p>Nie zmienia bazy wiedzy na własną rękę. Przeglądamy rozmowy i razem z Tobą dopisujemy brakujące odpowiedzi, dzięki czemu wiesz, co bot mówi Twoim klientom.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Co, jeśli nie mam cennika w jednym dokumencie?</h3>
+<p>To normalne. Spisz ceny usług, o które pytają najczęściej, a dla pozostałych napisz, jak bot ma reagować (np. zebrać dane i przekazać pytanie do Ciebie).</p>
+<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="blog-pilotaz-ai-krok-po-kroku.html">Pilotaż AI w 2–3 dni</a> · <a href="blog-czego-bot-nie-powinien-robic.html">Czego bot nie powinien robić</a></p>
 <p style="margin-top:22px"><strong>Powiązane na stronie:</strong> <a href="index.html#process">Jak działamy</a> · <a href="blog.html">Wszystkie artykuły</a></p>
 <div class="cta"><h3>Masz pytanie albo chcesz zobaczyć, jak to działa u Ciebie?</h3><p>Napisz do nas — odpiszemy e-mailem.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Pytanie z bloga: Baza wiedzy dla bota: co przygotować, żeby odpowiadał jak Tw">biuro@kreato.tech</a></div>
 </article>

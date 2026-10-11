@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://kreato.tech/blog-raport-n8n.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Automatyczny raport biznesowy w n8n — jak go zbudować krok po kroku","description":"Od arkusza z danymi do raportu na Telegramie w każdy poniedziałek o 8:00: harmonogram, zbieranie danych, podsumowanie i kontrola błędów.","datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"pl","keywords":"raport automatyczny, raport w n8n, raport na Telegramie, automatyzacja raportów, raporty dla firm","mainEntityOfPage":"https://kreato.tech/blog-raport-n8n.html","author":{"@type":"Organization","name":"KREATO.AI"},"publisher":{"@type":"Organization","name":"KREATO.AI","url":"https://kreato.tech/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Automatyczny raport biznesowy w n8n — jak go zbudować krok po kroku","description":"Od arkusza z danymi do raportu na Telegramie w każdy poniedziałek o 8:00: harmonogram, zbieranie danych, podsumowanie i kontrola błędów.","datePublished":"2026-10-07","dateModified":"2026-10-11","inLanguage":"pl","keywords":"raport automatyczny, raport w n8n, raport na Telegramie, automatyzacja raportów, raporty dla firm","mainEntityOfPage":"https://kreato.tech/blog-raport-n8n.html","author":{"@type":"Organization","name":"KREATO.AI"},"publisher":{"@type":"Organization","name":"KREATO.AI","url":"https://kreato.tech/"}}</script>
 <style>
 :root{--bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;--purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);--grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -83,6 +83,38 @@ footer a:hover{color:var(--text2)}
 <meta property="og:site_name" content="KREATO.AI">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Czy potrzebuję własnego serwera n8n?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Nie koniecznie. Możesz użyć wersji chmurowej albo własnego serwera. Wybór zależy od tego, jak wrażliwe są dane i kto ma o nie dbać."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Ile czasu zajmuje zbudowanie raportu?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Prosty raport (jeden arkusz, kilka liczb, wysyłka na Telegram) da się zrobić w kilka godzin. Raporty z wielu źródeł wymagają więcej czasu na porządkowanie danych."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Czy model językowy może napisać raport sam?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Może napisać podsumowanie, ale zawsze na podstawie policzonych liczb. Nie pozwalaj mu wymyślać danych i dołączaj surowe liczby, żeby móc je sprawdzić."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <nav>
@@ -102,7 +134,7 @@ footer a:hover{color:var(--text2)}
 <article class="art">
 <span class="post-tag">Raporty</span>
 <h1>Automatyczny raport biznesowy w n8n — jak go zbudować krok po kroku</h1>
-<div class="meta">7 października 2026 · 8 min czytania · KREATO.AI</div>
+<div class="meta">7 października 2026 (aktualizacja: 11 października) · 4 min czytania · KREATO.AI</div>
 
 <p class="lead">Raport, który sam przychodzi w poniedziałek rano, zmienia sposób zarządzania firmą: zamiast szukać liczb, od razu widzisz, co się wydarzyło. Oto schemat, który można zbudować w n8n.</p>
 <h2>Co będzie potrzebne</h2>
@@ -128,6 +160,20 @@ footer a:hover{color:var(--text2)}
 <h2>Gotowe rozwiązanie</h2>
 <p>Jeśli wolisz nie budować tego samemu, oferujemy Raporty automatyczne — cotygodniowe zestawienie ze statystyk firmy od 149 zł netto miesięcznie. <a href="index.html#services">Zobacz usługi</a>.</p>
 
+<h2>Jakie liczby wybrać w zależności od firmy</h2>
+<p>Dla usług lokalnych: liczba zapytań, umówionych wizyt i nieodebranych połączeń. Dla sklepu: liczba zamówień, średnia wartość koszyka i pytania bez odpowiedzi. Dla kancelarii lub biura: liczba nowych zapytań, spotkań i czas do odpowiedzi. Wybierz cztery–sześć liczb, które faktycznie wpływają na Twoje decyzje, i resztę zostaw w arkuszu.</p>
+<h2>Jak sprawdzić, czy raport nie kłamie</h2>
+<p>Przez pierwsze dwa tygodnie porównuj raport z arkuszem ręcznie. Najczęściej błędy wynikają z formatu daty, zdublowanych wierszy albo pustych komórek. Do raportu zawsze dołączaj same liczby obok podsumowania słowami, żebyś mógł zauważyć, gdy opis rozmija się z danymi.</p>
+<h2>Gotowy wariant bez budowania</h2>
+<p>Jeśli nie chcesz budować przepływu samodzielnie, oferujemy Raporty automatyczne: tygodniowe podsumowanie na Telegramie lub e-mailem, zbudowane na Twoich danych. Cena zaczyna się od 149 zł netto miesięcznie (119 zł przy planie rocznym). Zakres ustalamy z Tobą, bo raport ma pokazywać liczby, które naprawdę wykorzystujesz.</p>
+<h2>Najczęstsze pytania</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy potrzebuję własnego serwera n8n?</h3>
+<p>Nie koniecznie. Możesz użyć wersji chmurowej albo własnego serwera. Wybór zależy od tego, jak wrażliwe są dane i kto ma o nie dbać.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Ile czasu zajmuje zbudowanie raportu?</h3>
+<p>Prosty raport (jeden arkusz, kilka liczb, wysyłka na Telegram) da się zrobić w kilka godzin. Raporty z wielu źródeł wymagają więcej czasu na porządkowanie danych.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy model językowy może napisać raport sam?</h3>
+<p>Może napisać podsumowanie, ale zawsze na podstawie policzonych liczb. Nie pozwalaj mu wymyślać danych i dołączaj surowe liczby, żeby móc je sprawdzić.</p>
+<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="blog-jak-mierzyc-skutecznosc-bota.html">Jak mierzyć skuteczność bota</a> · <a href="blog-telegram-jako-centrum-powiadomien.html">Telegram jako centrum powiadomień</a></p>
 <p style="margin-top:22px"><strong>Powiązane na stronie:</strong> <a href="index.html#services">Raporty automatyczne</a> · <a href="blog.html">Wszystkie artykuły</a></p>
 <div class="cta"><h3>Masz pytanie albo chcesz zobaczyć, jak to działa u Ciebie?</h3><p>Napisz do nas — odpiszemy e-mailem.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Pytanie z bloga: Automatyczny raport biznesowy w n8n — jak go zbudować krok p">biuro@kreato.tech</a></div>
 </article>

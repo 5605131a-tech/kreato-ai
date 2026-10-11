@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://kreato.tech/blog-jak-mierzyc-skutecznosc-bota.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Jak mierzyć, czy bot działa: 6 wskaźników po pierwszym miesiącu","description":"Liczba rozmów, odsetek załatwionych spraw, umówione terminy, rozmowy przekazane człowiekowi, jakość odpowiedzi i opinia klientów — co liczyć i jak.","datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"pl","keywords":"skuteczność bota, wskaźniki chatbota, KPI voicebot, jak mierzyć chatbota, raport z rozmów bota","mainEntityOfPage":"https://kreato.tech/blog-jak-mierzyc-skutecznosc-bota.html","author":{"@type":"Organization","name":"KREATO.AI"},"publisher":{"@type":"Organization","name":"KREATO.AI","url":"https://kreato.tech/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Jak mierzyć, czy bot działa: 6 wskaźników po pierwszym miesiącu","description":"Liczba rozmów, odsetek załatwionych spraw, umówione terminy, rozmowy przekazane człowiekowi, jakość odpowiedzi i opinia klientów — co liczyć i jak.","datePublished":"2026-10-07","dateModified":"2026-10-11","inLanguage":"pl","keywords":"skuteczność bota, wskaźniki chatbota, KPI voicebot, jak mierzyć chatbota, raport z rozmów bota","mainEntityOfPage":"https://kreato.tech/blog-jak-mierzyc-skutecznosc-bota.html","author":{"@type":"Organization","name":"KREATO.AI"},"publisher":{"@type":"Organization","name":"KREATO.AI","url":"https://kreato.tech/"}}</script>
 <style>
 :root{--bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;--purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);--grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -83,6 +83,38 @@ footer a:hover{color:var(--text2)}
 <meta property="og:site_name" content="KREATO.AI">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Jaki wynik jest dobry?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "To zależy od branży i punktu wyjścia. Porównuj z własnym stanem przed wdrożeniem, a nie z liczbami z internetu."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Ile rozmów trzeba, żeby ocenić bota?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Kilkadziesiąt rozmów daje obraz, ale nawet kilka dobrze przejrzanych pokaże, gdzie bot się myli. Ważniejsza jest jakość przeglądu niż sama liczba."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Czy mogę zobaczyć nagrania rozmów?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Zakres nagrywania i dostępu do rozmów ustalamy przed wdrożeniem, zgodnie z RODO i informacją podawaną rozmówcy na początku połączenia."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <nav>
@@ -102,7 +134,7 @@ footer a:hover{color:var(--text2)}
 <article class="art">
 <span class="post-tag">Pomiar</span>
 <h1>Jak mierzyć, czy bot działa: 6 wskaźników po pierwszym miesiącu</h1>
-<div class="meta">7 października 2026 · 6 min czytania · KREATO.AI</div>
+<div class="meta">7 października 2026 (aktualizacja: 11 października) · 4 min czytania · KREATO.AI</div>
 
 <p class="lead">„Wydaje mi się, że bot działa” to za mało. Po pierwszym miesiącu sprawdź kilka liczb, które pokażą, czy wdrożenie się opłaca i co poprawić.</p>
 <h2>1. Liczba rozmów</h2>
@@ -120,6 +152,20 @@ footer a:hover{color:var(--text2)}
 <div class="note">Zasada: mierz tylko to, na co możesz zareagować. Sześć liczb, które przeglądasz raz w tygodniu, jest lepsze niż pięćdziesiąt, do których nikt nie zagląda.</div>
 <p>Liczby możesz uzupełnić o <a href="blog-raport-n8n.html">automatyczny raport tygodniowy</a>.</p>
 
+<h2>Jak zbierać te liczby w praktyce</h2>
+<p>Najprościej opierać się na podsumowaniach, które bot wysyła po każdej rozmowie, i na raporcie tygodniowym. Raz w tygodniu przeglądasz je i wpisujesz sześć liczb do jednego arkusza. Nie potrzebujesz zaawansowanych narzędzi, wystarczy stały rytm i te same kolumny, żeby porównywać tydzień do tygodnia. Więcej o raportach: <a href="blog-raport-n8n.html">Automatyczny raport w n8n</a>.</p>
+<h2>Tygodniowy przegląd w 15 minut</h2>
+<ul><li>Sprawdź liczbę rozmów i godziny, w których dzwonili klienci.</li><li>Policz umówione terminy i zapytania.</li><li>Przeczytaj 5 losowych rozmów od początku do końca.</li><li>Zapisz jedną rzecz do poprawy i dopisz ją do bazy wiedzy.</li><li>Zanotuj, co klienci mówili o rozmowie z AI.</li></ul>
+<h2>Kiedy uznać pilotaż za udany</h2>
+<p>Ustal kryteria przed startem, a nie po fakcie. Na przykład: „odbiera co najmniej tyle połączeń po godzinach, ile wcześniej traciłem; umawia terminy bez mojej interwencji; nie podaje błędnych informacji”. Własne kryteria chronią przed oceną „na wrażenie”, w obie strony.</p>
+<h2>Najczęstsze pytania</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">Jaki wynik jest dobry?</h3>
+<p>To zależy od branży i punktu wyjścia. Porównuj z własnym stanem przed wdrożeniem, a nie z liczbami z internetu.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Ile rozmów trzeba, żeby ocenić bota?</h3>
+<p>Kilkadziesiąt rozmów daje obraz, ale nawet kilka dobrze przejrzanych pokaże, gdzie bot się myli. Ważniejsza jest jakość przeglądu niż sama liczba.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy mogę zobaczyć nagrania rozmów?</h3>
+<p>Zakres nagrywania i dostępu do rozmów ustalamy przed wdrożeniem, zgodnie z RODO i informacją podawaną rozmówcy na początku połączenia.</p>
+<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="blog-pilotaz-ai-krok-po-kroku.html">Pilotaż AI w 2–3 dni</a> · <a href="blog-czego-bot-nie-powinien-robic.html">Czego bot nie powinien robić</a></p>
 <p style="margin-top:22px"><strong>Powiązane na stronie:</strong> <a href="blog-raport-n8n.html">Automatyczny raport w n8n</a> · <a href="blog.html">Wszystkie artykuły</a></p>
 <div class="cta"><h3>Masz pytanie albo chcesz zobaczyć, jak to działa u Ciebie?</h3><p>Napisz do nas — odpiszemy e-mailem.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Pytanie z bloga: Jak mierzyć, czy bot działa: 6 wskaźników po pierwszym miesi">biuro@kreato.tech</a></div>
 </article>
