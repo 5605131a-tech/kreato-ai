@@ -7,6 +7,7 @@ KREATO.AI builds AI voice bots, chatbots and automation agents for Polish small 
 - **Karolina AI** — AI voice receptionist (Polish). Answers incoming calls 24/7, answers FAQ, books appointments in Google Calendar, sends SMS confirmations and notifies the owner (Telegram or e-mail). Handles several calls at the same time. It does not make outgoing calls to customers.
 - **Chatbot AI** — website chatbot, from 199 PLN net/month; can check free slots and book visits.
 - **Chatbot AI in Messenger, Instagram and WhatsApp (pilot)** — the same assistant on messaging channels, 249 PLN net/month (207 per month on the annual plan, pay 10 months use 12). Pilot with the first clients: launch depends on Meta approvals and the client's business accounts; WhatsApp needs the client's own number not used in the regular WhatsApp app. Details: https://kreato.tech/#faq-kanaly
+- **Bot dla sklepu (Shop Bot)** — chatbot for online stores: checks order status (order number plus e-mail or phone must match), accepts return and cancellation requests and forwards them to the shop (the shop decides), answers shipping, payment and complaint questions from the shop's knowledge base. WooCommerce via a read-only API key (pilot); Shoptet and Shopify in preparation. Start 299 PLN net/month (status and knowledge base), Pro 399 PLN net/month (adds returns and cancellations with Telegram notification); annual plan, pay 10 months use 12: 249 / 333 PLN. Page: https://kreato.tech/bot-dla-sklepu.html
 - **Reklama FB/IG** — Facebook and Instagram ad management, from 249 PLN net/month (ad budget separate).
 - **SMM + Reels AI** — automated social media content (posts, graphics, Reels); you approve and publish them yourself; from 199 PLN net/month.
 - **Raporty automatyczne** — automatic reports, from 149 PLN net/month.
@@ -49,6 +50,7 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 - https://kreato.tech/blog-voicebot-vs-recepcjonistka.html — Voicebot AI vs recepcjonistka — koszt obsługi telefonu
 - https://kreato.tech/blog-nieodebrany-telefon-koszt.html — Ile kosztuje nieodebrany telefon i jak to policzyć
 - https://kreato.tech/blog-chatbot-dla-sklepu.html — Chatbot dla sklepu online — kiedy warto
+- https://kreato.tech/blog-bot-statusy-zamowien-zwroty.html — Gdzie jest moja paczka? Jak bot odpowiada na status zamówienia i zwroty
 - https://kreato.tech/blog-chatbot-czy-voicebot.html — Chatbot czy voicebot — od czego zacząć
 - https://kreato.tech/blog-chatbot-messenger-instagram-whatsapp.html — Chatbot in Messenger, Instagram and WhatsApp: how it works, what Meta requires, pricing (pilot)
 - https://kreato.tech/blog-baza-wiedzy-dla-bota.html — Baza wiedzy dla bota — co przygotować
@@ -59,12 +61,11 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 - https://kreato.tech/blog-5-automatyzacji-n8n.html — 5 automatyzacji n8n dla firmy
 - https://kreato.tech/blog-raport-n8n.html — Automatyczny raport biznesowy w n8n
 - https://kreato.tech/blog-telegram-jako-centrum-powiadomien.html — Telegram jako centrum powiadomień firmy
-- https://kreato.tech/blog-przypomnienia-o-platnosciach-faktury-sms.html — Przypomnienia o nieopłaconych fakturach: jak je wysyłać, żeby nie psuć relacji z klientem
-- https://kreato.tech/blog-bot-dokumenty-firmowe-dla-pracownikow.html — Bot, który odpowiada pracownikom na pytania z dokumentów firmy
 
 ## Pages
 - https://kreato.tech/ — Main page
 - https://kreato.tech/serwis.html — KREATO Serwis (field service)
+- https://kreato.tech/bot-dla-sklepu.html — Shop Bot: order status and returns chatbot for online stores (WooCommerce pilot), Start 299 / Pro 399 PLN net per month
 - https://kreato.tech/dla-klinik.html — For clinics
 - https://kreato.tech/ai-recepcjonistka-gabinet-stomatologiczny.html — AI receptionist (voicebot Karolina) for dental practices: answers calls 24/7, books visits in Google Calendar, SMS confirmations, from 249 PLN net/month, 7-day trial for 0 PLN
 - https://kreato.tech/ai-recepcjonistka-salon-beauty.html — AI receptionist (voicebot Karolina) for salons (hair, beauty): answers calls 24/7, books in Google Calendar, SMS confirmations, from 249 PLN net/month, 7-day trial for 0 PLN

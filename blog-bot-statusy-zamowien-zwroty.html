@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>„Gdzie jest moja paczka?” — jak bot odpowiada na status zamówienia i zwroty</title>
+<meta name="description" content="Jak bot sklepu odpowiada na status zamówienia i zwroty: dwa elementy weryfikacji, dane z systemu sklepu, 14 dni na odstąpienie i granice odpowiedzialności bota.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="chatbot sklep, status zamówienia, zwroty, gdzie jest moja paczka, bot dla sklepu">
+<meta property="article:section" content="E-commerce">
+<meta property="og:title" content="„Gdzie jest moja paczka?” — jak bot odpowiada na status zamówienia i zwroty">
+<meta property="og:description" content="Jak bot sklepu odpowiada na status zamówienia i zwroty: dwa elementy weryfikacji, dane z systemu sklepu, 14 dni na odstąpienie i granice odpowiedzialności bota.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kreato.tech/blog-bot-statusy-zamowien-zwroty.html">
+<link rel="canonical" href="https://kreato.tech/blog-bot-statusy-zamowien-zwroty.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "„Gdzie jest moja paczka?” — jak bot odpowiada na status zamówienia i zwroty", "description": "Jak bot sklepu odpowiada na status zamówienia i zwroty: dwa elementy weryfikacji, dane z systemu sklepu, 14 dni na odstąpienie i granice odpowiedzialności bota.", "datePublished": "2026-10-12", "dateModified": "2026-10-12", "inLanguage": "pl", "keywords": "chatbot sklep, status zamówienia, zwroty, gdzie jest moja paczka, bot dla sklepu", "mainEntityOfPage": "https://kreato.tech/blog-bot-statusy-zamowien-zwroty.html", "author": {"@type": "Organization", "name": "KREATO.AI"}, "publisher": {"@type": "Organization", "name": "KREATO.AI", "url": "https://kreato.tech/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Czy bot może sam zdecydować o zwrocie pieniędzy?", "acceptedAnswer": {"@type": "Answer", "text": "Nie powinien. Może przyjąć zgłoszenie, sprawdzić termin i przekazać sprawę sklepowi. Decyzja o zwrocie i jego forma należą do sprzedawcy."}}, {"@type": "Question", "name": "Ile czasu klient ma na zwrot zakupów online?", "acceptedAnswer": {"@type": "Answer", "text": "Konsument ma 14 dni od otrzymania towaru na odstąpienie od umowy zawartej na odległość, bez podawania przyczyny. Sprzedawca zwraca pieniądze w ciągu 14 dni od otrzymania oświadczenia o odstąpieniu i może wstrzymać zwrot do czasu odzyskania towaru. W razie wątpliwości warto zapytać prawnika lub sprawdzić informacje UOKiK."}}, {"@type": "Question", "name": "Czy bot może podawać status zamówienia każdemu, kto zna numer?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. Sam numer zamówienia to za mało: bot powinien żądać drugiego elementu, np. e-maila lub telefonu z zamówienia, i przy niezgodności odpowiadać tak, jakby zamówienia nie było."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "KREATO.AI", "item": "https://kreato.tech/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kreato.tech/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Status zamówienia i zwroty", "item": "https://kreato.tech/blog-bot-statusy-zamowien-zwroty.html"}]}</script>
+<style>
+:root{--bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;--purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);--grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.nav-logo{font-size:20px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta{background:var(--grad);color:#fff!important;padding:9px 18px;border-radius:var(--r-sm);font-size:13px!important;font-weight:700!important}
+@media(max-width:768px){.nav-links{display:none}}
+.inner{max-width:1120px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--grad-soft);border:1px solid var(--border-a);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+.breadcrumb{font-size:12px;color:var(--text3);padding:12px 24px;max-width:1120px;margin:0 auto}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--text2)}
+.breadcrumb span{margin:0 6px}
+.blog-hero{padding:72px 24px 48px;text-align:center}
+.blog-hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:16px}
+.blog-hero p{font-size:17px;color:var(--text2);max-width:560px;margin:0 auto;line-height:1.6}
+.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;padding:48px 24px 80px;max-width:1120px;margin:0 auto}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s;text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+.post-card:hover{border-color:var(--border-a);transform:translateY(-3px);box-shadow:0 12px 40px rgba(139,92,246,.1)}
+.post-img{height:160px;background:var(--grad-soft);display:flex;align-items:center;justify-content:center;font-size:48px}
+.post-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
+.post-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(139,92,246,.08);padding:3px 10px;border-radius:100px;width:fit-content}
+.post-title{font-size:16px;font-weight:700;line-height:1.4}
+.post-excerpt{font-size:13px;color:var(--text2);line-height:1.6;flex:1}
+.post-meta{font-size:11px;color:var(--text3);margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+.post-coming{opacity:.5;pointer-events:none}
+.coming-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--text3);background:rgba(255,255,255,.04);padding:2px 8px;border-radius:100px;margin-left:8px;vertical-align:middle}
+footer{padding:32px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
+footer a{color:var(--text3);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--text2)}
+
+.art{max-width:760px;margin:0 auto;padding:40px 24px 24px}
+.art h1{font-size:clamp(28px,4.4vw,42px);font-weight:900;line-height:1.2;letter-spacing:-.02em;margin:10px 0 14px}
+.art .lead{font-size:18px;color:var(--text2);line-height:1.65;margin-bottom:10px}
+.art .meta{font-size:13px;color:var(--text3);margin-bottom:28px}
+.art h2{font-size:22px;font-weight:800;margin:34px 0 12px;line-height:1.3}
+.art p{font-size:16px;line-height:1.75;color:#cbd5e1;margin-bottom:14px}
+.art ul,.art ol{margin:0 0 16px 22px;color:#cbd5e1;font-size:16px;line-height:1.75}
+.art li{margin-bottom:6px}
+.art a{color:var(--purple)}
+.art table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px}
+.art th,.art td{border:1px solid var(--border);padding:9px 12px;text-align:left;color:#cbd5e1}
+.art th{background:var(--card);color:var(--text)}
+.note{background:var(--grad-soft);border:1px solid var(--border-a);border-radius:var(--r-sm);padding:14px 16px;font-size:14px;line-height:1.6;color:#cbd5e1;margin:18px 0}
+.cta{background:var(--card);border:1px solid var(--border-a);border-radius:var(--r);padding:24px;margin:36px 0 12px;text-align:center}
+.cta h3{font-size:19px;margin-bottom:8px}
+.cta p{margin-bottom:14px}
+.cta a.btn{display:inline-block;background:var(--grad);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-sm)}
+.more{max-width:760px;margin:0 auto;padding:0 24px 60px;font-size:14px;color:var(--text2)}
+</style>
+<meta property="og:image" content="https://kreato.tech/og-kreato.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KREATO.AI — Karolina odbiera telefony za Ciebie">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KREATO.AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">KREATO.AI</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Usługi</a></li>
+      <li><a href="dla-klinik.html">Kliniki</a></li>
+      <li><a href="dla-ecommerce.html">E-commerce</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="diagnosta.html">Diagnoza AI</a></li>
+    </ul>
+    <a href="diagnosta.html" class="nav-cta nav-links">Bezpłatna diagnoza →</a>
+  </div>
+</nav>
+<div class="breadcrumb"><a href="index.html">KREATO.AI</a><span>/</span><a href="blog.html">Blog</a><span>/</span>E-commerce</div>
+<article class="art">
+<span class="post-tag">E-commerce</span>
+<h1>„Gdzie jest moja paczka?” — jak bot odpowiada na pytania o zamówienia i zwroty</h1>
+<div class="meta">12 października 2026 · 5 min czytania · KREATO.AI</div>
+
+<p class="lead">Wśród pytań do sklepu internetowego najczęściej wraca jedno: gdzie jest zamówienie. Zaraz za nim są zwroty. To dobre pola dla bota, ale tylko wtedy, gdy bot nie zgaduje i nie obiecuje więcej, niż sklep chce dotrzymać.</p>
+
+<h2>Dlaczego te dwa tematy</h2>
+<p>Pytanie o paczkę ma jedną prawdziwą odpowiedź, która leży w systemie sklepu: status, przewoźnik, numer przesyłki. Człowiek odpisuje, otwierając panel i przepisując te dane. Bot może zrobić to samo w kilka sekund o każdej porze. Zwroty są trudniejsze, bo mają termin i konsekwencje finansowe, więc tu bot zbiera zgłoszenie, a decyduje sprzedawca.</p>
+<p>Nie podajemy tu żadnych procentów „zaoszczędzonych zgłoszeń”, bo nie mamy jeszcze danych z wielu sklepów. Zamiast tego proponujemy prosty pomiar u Ciebie: przez tydzień policz, ile wiadomości dotyczy statusu zamówienia i zwrotów. To jest Twoja skala, a nie cudza średnia. Szerszy test opłacalności opisujemy w artykule <a href="blog-chatbot-dla-sklepu.html">Chatbot dla sklepu online — kiedy warto</a>.</p>
+
+<h2>Status zamówienia: co musi umieć bot</h2>
+<ol>
+<li><strong>Zapytać o dwie rzeczy, nie o jedną.</strong> Numer zamówienia i e-mail lub telefon z zamówienia. Sam numer łatwo odgadnąć, więc nie wystarczy.</li>
+<li><strong>Odpowiadać danymi z systemu, nie z głowy.</strong> Status, pozycje, przewoźnik, numer przesyłki pobiera system sklepu. Model językowy tylko prowadzi rozmowę.</li>
+<li><strong>Nie zdradzać, czy dane „prawie pasują”.</strong> Błędny numer i błędny e-mail powinny dawać tę samą odpowiedź, bez podpowiedzi, które pole było złe.</li>
+<li><strong>Przyznać się do braku danych.</strong> Gdy sklep chwilowo nie odpowiada, bot mówi to wprost i odsyła do zespołu.</li>
+</ol>
+
+<h2>Zwroty: bot przyjmuje, sklep decyduje</h2>
+<p>Konsument ma <strong>14 dni od otrzymania towaru</strong> na odstąpienie od umowy zawartej na odległość, bez podawania przyczyny. Bot może sprawdzić, czy zamówienie mieści się w tym terminie, i zapisać zgłoszenie. Co dalej: instrukcję odesłania, koszt przesyłki zwrotnej i zwrot pieniędzy ustala sklep zgodnie ze swoim regulaminem i przepisami. Szczegóły prawne zawsze warto potwierdzić u prawnika albo w materiałach UOKiK.</p>
+<ul>
+<li><strong>W terminie:</strong> zgłoszenie trafia do sklepu (u nas jako powiadomienie w Telegramie), klient dostaje informację, że sklep się odezwie.</li>
+<li><strong>Po terminie:</strong> bot nie odmawia „z urzędu”, tylko informuje o upływie terminu i wskazuje reklamację, jeśli towar ma wadę.</li>
+<li><strong>Przed wysyłką:</strong> zamiast zwrotu przyjmuje prośbę o anulowanie, którą sklep potwierdza.</li>
+<li><strong>Reklamacje:</strong> bot zbiera opis wady i numer zamówienia. Rozpatruje je człowiek.</li>
+</ul>
+<div class="note">Zasada, którą stosujemy w naszym bocie: model nie zapowiada wyniku. Zanim system sprawdzi termin, bot pisze tylko „Sprawdzam to dla Ciebie…”. Informację „zgłoszenie przyjęte” lub „termin minął” dopisuje system, żeby słowa bota nie przeczyły faktom.</div>
+
+<h2>Czego bot w tym obszarze nie powinien robić</h2>
+<ul>
+<li>Obiecywać zwrotu pieniędzy, wymiany ani konkretnego terminu.</li>
+<li>Prosić o dane karty, hasła lub PESEL.</li>
+<li>Powtarzać w rozmowie pełnego adresu e-mail i telefonu klienta.</li>
+<li>Udawać człowieka. Jeśli klient pyta, bot przyznaje, że jest asystentem AI.</li>
+</ul>
+<p>Więcej o granicach botów: <a href="blog-czego-bot-nie-powinien-robic.html">Czego bot nie powinien robić</a>.</p>
+
+<h2>Jak to wygląda w KREATO</h2>
+<p>Przygotowaliśmy takiego bota w dwóch wariantach: Start (299 zł netto miesięcznie) odpowiada na pytania i sprawdza status, a Pro (399 zł) przyjmuje też zwroty i anulowania z powiadomieniem do sklepu. W planie rocznym płacisz za 10 miesięcy i korzystasz 12 (249 i 333 zł). WooCommerce wdrażamy pilotażowo, Shoptet i Shopify są w przygotowaniu. Pełny opis: <a href="bot-dla-sklepu.html">Bot dla sklepu internetowego</a>.</p>
+
+<h2>Najczęstsze pytania</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy bot może sam zdecydować o zwrocie pieniędzy?</h3><p>Nie powinien. Może przyjąć zgłoszenie, sprawdzić termin i przekazać sprawę sklepowi. Decyzja o zwrocie i jego forma należą do sprzedawcy.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Ile czasu klient ma na zwrot zakupów online?</h3><p>Konsument ma 14 dni od otrzymania towaru na odstąpienie od umowy zawartej na odległość, bez podawania przyczyny. Sprzedawca zwraca pieniądze w ciągu 14 dni od otrzymania oświadczenia o odstąpieniu i może wstrzymać zwrot do czasu odzyskania towaru. W razie wątpliwości warto zapytać prawnika lub sprawdzić informacje UOKiK.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy bot może podawać status zamówienia każdemu, kto zna numer?</h3><p>Nie. Sam numer zamówienia to za mało: bot powinien żądać drugiego elementu, np. e-maila lub telefonu z zamówienia, i przy niezgodności odpowiadać tak, jakby zamówienia nie było.</p>
+
+<p style="margin-top:22px"><strong>Powiązane na stronie:</strong> <a href="bot-dla-sklepu.html">Bot dla sklepu</a> · <a href="blog-chatbot-dla-sklepu.html">Chatbot dla sklepu online</a> · <a href="blog-baza-wiedzy-dla-bota.html">Baza wiedzy dla bota</a> · <a href="blog.html">Wszystkie artykuły</a></p>
+<div class="cta"><h3>Masz pytanie albo chcesz zobaczyć, jak to działa u Ciebie?</h3><p>Napisz do nas — odpiszemy e-mailem.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Pytanie z bloga: status zamówienia i zwroty">biuro@kreato.tech</a></div>
+</article>
+<div class="more"><strong>Czytaj dalej:</strong> <a href="blog-chatbot-dla-sklepu.html">Chatbot dla sklepu online — kiedy warto</a> · <a href="blog-jak-mierzyc-skutecznosc-bota.html">Jak mierzyć skuteczność bota — 6 wskaźników</a> · <a href="blog-rodo-ai-voicebot.html">RODO i AI — lista kontrolna</a></div>
+<div id="faq-strip" style="max-width:860px;margin:40px auto 24px;padding:18px 20px;background:var(--card,#131c2f);border:1px solid rgba(139,92,246,.35);border-radius:12px;font-family:inherit"><div style="font-size:15px;font-weight:700;color:var(--text,#e8eaf0);margin-bottom:6px">❓ Masz pytania? Zobacz odpowiedzi w FAQ</div><div style="font-size:14px;line-height:1.7;color:var(--text2,#8b92a8)">Najczęstsze pytanie na ten temat: <a href="index.html#faq-chatbot" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">34. Chatbot AI: jak działa i ile kosztuje?</a><br><a href="index.html#faq" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Wszystkie pytania i odpowiedzi (FAQ) →</a> &nbsp;·&nbsp; <a href="jak-dzialaja-boty.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Jak działają nasze boty (schematy) →</a></div></div>
+
+<footer>
+  <div>
+    &copy; 2026 KREATO.AI ·
+    <a href="index.html">Strona główna</a> ·
+    <a href="dla-klinik.html">Dla klinik</a> ·
+    <a href="dla-ecommerce.html">E-commerce</a> ·
+    <a href="blog.html">Blog</a> ·
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+  </div>
+  <div style="margin-top:8px">ul. Prądzyńskiego 23, 63-000 Środa Wielkopolska · <a href="mailto:biuro@kreato.tech">biuro@kreato.tech</a></div>
+</footer>
+</body>
+</html>
