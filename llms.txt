@@ -59,6 +59,8 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 - https://kreato.tech/blog-5-automatyzacji-n8n.html — 5 automatyzacji n8n dla firmy
 - https://kreato.tech/blog-raport-n8n.html — Automatyczny raport biznesowy w n8n
 - https://kreato.tech/blog-telegram-jako-centrum-powiadomien.html — Telegram jako centrum powiadomień firmy
+- https://kreato.tech/blog-przypomnienia-o-platnosciach-faktury-sms.html — Przypomnienia o nieopłaconych fakturach: jak je wysyłać, żeby nie psuć relacji z klientem
+- https://kreato.tech/blog-bot-dokumenty-firmowe-dla-pracownikow.html — Bot, który odpowiada pracownikom na pytania z dokumentów firmy
 
 ## Pages
 - https://kreato.tech/ — Main page
