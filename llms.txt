@@ -50,6 +50,7 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 - https://kreato.tech/blog-nieodebrany-telefon-koszt.html — Ile kosztuje nieodebrany telefon i jak to policzyć
 - https://kreato.tech/blog-chatbot-dla-sklepu.html — Chatbot dla sklepu online — kiedy warto
 - https://kreato.tech/blog-chatbot-czy-voicebot.html — Chatbot czy voicebot — od czego zacząć
+- https://kreato.tech/blog-chatbot-messenger-instagram-whatsapp.html — Chatbot in Messenger, Instagram and WhatsApp: how it works, what Meta requires, pricing (pilot)
 - https://kreato.tech/blog-baza-wiedzy-dla-bota.html — Baza wiedzy dla bota — co przygotować
 - https://kreato.tech/blog-pilotaz-ai-krok-po-kroku.html — Pilotaż AI w 2–3 dni — harmonogram wdrożenia
 - https://kreato.tech/blog-czego-bot-nie-powinien-robic.html — Czego bot głosowy nie powinien robić
