@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Powrót uśpionych klientów SMS-em — bot do kampanii win-back | KREATO.AI</title>
+<meta name="description" content="Bot SMS przypomina dawnym klientom o Twojej firmie: lista, podgląd, Twoja akceptacja, STOP i limit 200 SMS. Pilotaż od 199 zł netto/mies.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="powrót uśpionych klientów, win-back SMS, kampania SMS dla klientów, odzyskiwanie klientów, SMS marketing zgoda, bot SMS">
+<meta property="og:title" content="Powrót uśpionych klientów SMS-em — bot do kampanii win-back | KREATO.AI">
+<meta property="og:description" content="Bot SMS przypomina dawnym klientom o Twojej firmie: lista, podgląd, Twoja akceptacja, STOP i limit 200 SMS. Pilotaż od 199 zł netto/mies.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kreato.tech/bot-powrot-klientow-sms.html">
+<link rel="canonical" href="https://kreato.tech/bot-powrot-klientow-sms.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Powrót uśpionych klientów SMS-em KREATO.AI", "serviceType": "Kampanie SMS dla dawnych klientów (win-back) z akceptacją, STOP i limitem wiadomości", "inLanguage": "pl", "description": "Bot wysyła krótkie SMS-y do dawnych klientów, którzy wyrazili zgodę na wiadomości marketingowe: po Twojej akceptacji, w godzinach pracy, z obsługą STOP i limitem 200 SMS miesięcznie. Odpowiedzi trafiają do właściciela na Telegram.", "url": "https://kreato.tech/bot-powrot-klientow-sms.html", "areaServed": {"@type": "Country", "name": "PL"}, "provider": {"@type": "Organization", "name": "KREATO.AI", "url": "https://kreato.tech/"}, "offers": {"@type": "Offer", "name": "Powrót uśpionych klientów — pilotaż", "price": "199", "priceCurrency": "PLN", "description": "199 zł netto miesięcznie, limit 200 SMS; plan roczny 165 zł miesięcznie (10 miesięcy za 12)"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Czy mogę wysłać SMS do wszystkich byłych klientów?", "acceptedAnswer": {"@type": "Answer", "text": "Tylko do tych, którzy wyrazili zgodę na wiadomości marketingowe (art. 398 Prawa komunikacji elektronicznej) i jej nie wycofali. Zgody potwierdzasz Ty: nie sprawdzamy ich za Ciebie, a bez Twojego potwierdzenia nie uruchamiamy kampanii. To nie jest porada prawna; w razie wątpliwości skonsultuj zakres zgód z prawnikiem."}}, {"@type": "Question", "name": "Co się dzieje, gdy klient odpisze STOP?", "acceptedAnswer": {"@type": "Answer", "text": "Numer od razu trafia na listę wykluczeń i nie dostanie kolejnych wiadomości z naszych kampanii tego typu. Oczekujące wiadomości do tego numeru są anulowane, a klient dostaje krótkie potwierdzenie wypisu. Samo „NIE” nie jest traktowane jako wypis, bo bywa odpowiedzią na inne wiadomości."}}, {"@type": "Question", "name": "Co jeśli klient odpisze, że chce wizytę?", "acceptedAnswer": {"@type": "Answer", "text": "Odpowiedź trafia od razu na Twój Telegram razem z numerem telefonu i treścią. Bot nie prowadzi rozmowy ani nie umawia wizyty przez SMS: oddzwaniasz albo umawiasz termin sam."}}, {"@type": "Question", "name": "Z jakiego numeru wychodzą SMS-y?", "acceptedAnswer": {"@type": "Answer", "text": "Obecnie z numeru KREATO +48 459 567 844, a nazwa Twojej firmy jest w treści wiadomości. Własna nazwa nadawcy nie jest na ten moment dostępna. Odpowiedzi klientów wracają na ten numer i trafiają do Ciebie."}}, {"@type": "Question", "name": "Ile to kosztuje i co po wyczerpaniu limitu?", "acceptedAnswer": {"@type": "Answer", "text": "199 zł netto miesięcznie z limitem 200 SMS w miesiącu. W planie rocznym płacisz za 10 miesięcy, a korzystasz 12: 165 zł miesięcznie. Po wyczerpaniu limitu wysyłka zatrzymuje się, a niewysłane wiadomości widać w podsumowaniu kampanii; wyższy limit uzgadniamy indywidualnie przed startem. Ceny netto; domyślnie wystawiamy rachunek bez VAT, na życzenie fakturę z VAT przez platformę Useme."}}, {"@type": "Question", "name": "Czy mogę najpierw zobaczyć, jak to działa?", "acceptedAnswer": {"@type": "Answer", "text": "Tak. Napisz na biuro@kreato.tech: pokażemy podgląd kampanii na przykładowej firmie demonstracyjnej, a pilotaż zaczniemy od krótkiej listy, żeby sprawdzić odbiór wiadomości."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "KREATO.AI", "item": "https://kreato.tech/"}, {"@type": "ListItem", "position": 2, "name": "Jak działają boty", "item": "https://kreato.tech/jak-dzialaja-boty.html"}, {"@type": "ListItem", "position": 3, "name": "Powrót uśpionych klientów SMS", "item": "https://kreato.tech/bot-powrot-klientow-sms.html"}]}</script>
+<style>
+:root{--bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;--purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);--grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.nav-logo{font-size:20px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta{background:var(--grad);color:#fff!important;padding:9px 18px;border-radius:var(--r-sm);font-size:13px!important;font-weight:700!important}
+@media(max-width:768px){.nav-links{display:none}}
+.inner{max-width:1120px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--grad-soft);border:1px solid var(--border-a);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+.breadcrumb{font-size:12px;color:var(--text3);padding:12px 24px;max-width:1120px;margin:0 auto}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--text2)}
+.breadcrumb span{margin:0 6px}
+.blog-hero{padding:72px 24px 48px;text-align:center}
+.blog-hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:16px}
+.blog-hero p{font-size:17px;color:var(--text2);max-width:560px;margin:0 auto;line-height:1.6}
+.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;padding:48px 24px 80px;max-width:1120px;margin:0 auto}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s;text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+.post-card:hover{border-color:var(--border-a);transform:translateY(-3px);box-shadow:0 12px 40px rgba(139,92,246,.1)}
+.post-img{height:160px;background:var(--grad-soft);display:flex;align-items:center;justify-content:center;font-size:48px}
+.post-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
+.post-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(139,92,246,.08);padding:3px 10px;border-radius:100px;width:fit-content}
+.post-title{font-size:16px;font-weight:700;line-height:1.4}
+.post-excerpt{font-size:13px;color:var(--text2);line-height:1.6;flex:1}
+.post-meta{font-size:11px;color:var(--text3);margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+.post-coming{opacity:.5;pointer-events:none}
+.coming-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--text3);background:rgba(255,255,255,.04);padding:2px 8px;border-radius:100px;margin-left:8px;vertical-align:middle}
+footer{padding:32px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
+footer a{color:var(--text3);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--text2)}
+
+.art{max-width:760px;margin:0 auto;padding:40px 24px 24px}
+.art h1{font-size:clamp(28px,4.4vw,42px);font-weight:900;line-height:1.2;letter-spacing:-.02em;margin:10px 0 14px}
+.art .lead{font-size:18px;color:var(--text2);line-height:1.65;margin-bottom:10px}
+.art .meta{font-size:13px;color:var(--text3);margin-bottom:28px}
+.art h2{font-size:22px;font-weight:800;margin:34px 0 12px;line-height:1.3}
+.art p{font-size:16px;line-height:1.75;color:#cbd5e1;margin-bottom:14px}
+.art ul,.art ol{margin:0 0 16px 22px;color:#cbd5e1;font-size:16px;line-height:1.75}
+.art li{margin-bottom:6px}
+.art a{color:var(--purple)}
+.art table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px}
+.art th,.art td{border:1px solid var(--border);padding:9px 12px;text-align:left;color:#cbd5e1}
+.art th{background:var(--card);color:var(--text)}
+.note{background:var(--grad-soft);border:1px solid var(--border-a);border-radius:var(--r-sm);padding:14px 16px;font-size:14px;line-height:1.6;color:#cbd5e1;margin:18px 0}
+.cta{background:var(--card);border:1px solid var(--border-a);border-radius:var(--r);padding:24px;margin:36px 0 12px;text-align:center}
+.cta h3{font-size:19px;margin-bottom:8px}
+.cta p{margin-bottom:14px}
+.cta a.btn{display:inline-block;background:var(--grad);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-sm)}
+.more{max-width:760px;margin:0 auto;padding:0 24px 60px;font-size:14px;color:var(--text2)}
+</style>
+<meta property="og:image" content="https://kreato.tech/og-kreato.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KREATO.AI — Karolina odbiera telefony za Ciebie">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KREATO.AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">KREATO.AI</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Usługi</a></li>
+      <li><a href="dla-klinik.html">Kliniki</a></li>
+      <li><a href="dla-ecommerce.html">E-commerce</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="diagnosta.html">Diagnoza AI</a></li>
+    </ul>
+    <a href="diagnosta.html" class="nav-cta nav-links">Bezpłatna diagnoza →</a>
+  </div>
+</nav>
+<div class="breadcrumb"><a href="index.html">KREATO.AI</a><span>/</span><a href="jak-dzialaja-boty.html">Jak działają boty</a><span>/</span>Powrót uśpionych klientów SMS</div>
+<article class="art">
+<span class="post-tag">SMS · Pilotaż</span>
+<h1>Powrót uśpionych klientów: SMS, który przypomina o Twojej firmie</h1>
+<div class="meta">Aktualizacja: 12 października 2026 · KREATO.AI</div>
+<p class="lead">Masz listę klientów, którzy kiedyś u Ciebie byli, a od dawna się nie pojawiają. Bot KREATO wysyła im krótkie, uprzejme SMS-y, zbiera odpowiedzi i przekazuje je Tobie na Telegram. Nic nie wychodzi bez Twojej akceptacji, a wypisanie się jednym słowem działa od razu.</p>
+
+<h2>Co robi bot</h2>
+<ul>
+<li><strong>Przyjmuje listę klientów:</strong> imię, telefon, data ostatniej wizyty i opcjonalnie segment (np. „stali”, „okazjonalni”). Błędne numery odrzuca, duplikaty łączy.</li>
+<li><strong>Układa kampanię:</strong> wybierasz segment i próg („nie byli od 180 dni”), a z szablonu powstają gotowe wiadomości z imieniem klienta i nazwą Twojej firmy.</li>
+<li><strong>Pokazuje podgląd przed wysyłką:</strong> ilu odbiorców, przykładowy SMS, ilu pominięto (wypisani, już niedawno kontaktowani, za długie wiadomości).</li>
+<li><strong>Wysyła po Twojej akceptacji:</strong> w dni robocze, w ustalonych godzinach, małymi paczkami.</li>
+<li><strong>Obsługuje odpowiedzi:</strong> STOP wypisuje numer, a pozostałe odpowiedzi (np. „TAK, poproszę termin”) trafiają do Ciebie na Telegram.</li>
+<li><strong>Podsumowuje kampanię:</strong> ile wysłano, ile było błędów, ile pominięto i ile kosztowała wysyłka.</li>
+</ul>
+
+<h2>Przykładowe szablony wiadomości</h2>
+<table>
+<tr><th>Branża</th><th>Przykładowy szablon (skrót, 131 znaków lub mniej)</th></tr>
+<tr><td>Gabinet stomatologiczny</td><td>„Dzien dobry Anna, dawno Cie nie widzielismy w Gabinet Nowak. Umow kontrole: zadzwon lub odpisz TAK. Aby sie wypisac, odpisz STOP.”</td></tr>
+<tr><td>Salon beauty</td><td>„Czesc Marta! Minelo troche czasu od ostatniej wizyty w Salon Lilia. Chcesz umowic termin? Odpisz TAK. Aby sie wypisac, odpisz STOP.”</td></tr>
+<tr><td>Warsztat samochodowy</td><td>„Dzien dobry, w Warsztat Kowal mija rok od ostatniego przegladu auta. Umowic termin? Odpisz TAK. Aby sie wypisac, odpisz STOP.”</td></tr>
+</table>
+<p>To szablony ilustracyjne z wymyślonymi nazwami firm, a nie wiadomości do prawdziwych klientów. Każda wiadomość mieści się w jednym SMS-ie, nie zawiera linków i kończy się informacją o wypisaniu.</p>
+
+<h2>Jak to jest zabezpieczone</h2>
+<ul>
+<li><strong>Zgoda:</strong> SMS z zaproszeniem do powrotu to marketing bezpośredni, który wymaga uprzedniej zgody odbiorcy (art. 398 Prawa komunikacji elektronicznej). Przed pierwszą kampanią prosimy o Twoje potwierdzenie, że masz zgody; bez niego nie uruchamiamy wysyłki.</li>
+<li><strong>Akceptacja:</strong> kampania zaczyna jako szkic z podglądem. Wysyłka rusza dopiero po Twoim „zatwierdzam”; do tego momentu możesz ją anulować.</li>
+<li><strong>STOP na stałe:</strong> numer, który odpisał STOP, wypada ze wszystkich kolejnych kampanii.</li>
+<li><strong>Jeden SMS na numer w 31 dni</strong>, nawet gdy ktoś jest na dwóch listach.</li>
+<li><strong>Godziny i tempo:</strong> dni robocze, domyślnie 10:00–18:00, po 10 wiadomości co 10 minut.</li>
+<li><strong>Limit miesięczny 200 SMS.</strong> Po jego wyczerpaniu wysyłka zatrzymuje się, a reszta jest oznaczona w podsumowaniu.</li>
+</ul>
+
+<h2>Cennik (ceny netto za miesiąc)</h2>
+<table>
+<tr><th></th><th>Pilotaż: powrót uśpionych klientów</th></tr>
+<tr><td>Cena miesięczna</td><td><strong>199 zł</strong></td></tr>
+<tr><td>Plan roczny (płacisz za 10 miesięcy, korzystasz 12)</td><td>165 zł miesięcznie (1 990 zł za rok)</td></tr>
+<tr><td>Limit wiadomości</td><td>200 SMS w miesiącu</td></tr>
+<tr><td>W cenie</td><td>podgląd i akceptacja kampanii, obsługa STOP, odpowiedzi na Telegram, podsumowanie kampanii</td></tr>
+</table>
+<p>Ceny netto. Domyślnie wystawiamy rachunek bez VAT; na życzenie faktura z VAT przez platformę Useme. Usługa startuje jako pilotaż: zaczynamy od krótkiej listy i sprawdzamy odbiór wiadomości, zanim zwiększymy skalę.</p>
+
+<h2>Czego bot nie robi</h2>
+<ul>
+<li>Nie sprawdza za Ciebie, czy masz zgody klientów.</li>
+<li>Nie prowadzi rozmowy z klientem i nie umawia wizyt przez SMS: odpowiedź trafia do Ciebie, a decyzję podejmuje człowiek.</li>
+<li>Nie wysyła wiadomości z linkami ani do numerów, które odpisały STOP.</li>
+<li>Nie obiecuje konkretnego wyniku kampanii.</li>
+</ul>
+
+<h2>Jak wygląda wdrożenie</h2>
+<ol>
+<li>Przysyłasz listę klientów (plik lub eksport z Twojego programu) i potwierdzasz, że masz zgody na wiadomości marketingowe.</li>
+<li>Razem ustalamy próg, segmenty i szablon wiadomości (<a href="blog-powrot-spiacych-klientow-sms.html">jak ułożyć SMS, który nie wygląda jak spam</a>).</li>
+<li>Dostajesz podgląd kampanii i zatwierdzasz ją albo prosisz o zmiany.</li>
+<li>Wiadomości wychodzą w dni robocze, a odpowiedzi czekają na Twoim Telegramie.</li>
+</ol>
+
+<h2>Najczęstsze pytania</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy mogę wysłać SMS do wszystkich byłych klientów?</h3><p>Tylko do tych, którzy wyrazili zgodę na wiadomości marketingowe (art. 398 Prawa komunikacji elektronicznej) i jej nie wycofali. Zgody potwierdzasz Ty: nie sprawdzamy ich za Ciebie, a bez Twojego potwierdzenia nie uruchamiamy kampanii. To nie jest porada prawna; w razie wątpliwości skonsultuj zakres zgód z prawnikiem.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Co się dzieje, gdy klient odpisze STOP?</h3><p>Numer od razu trafia na listę wykluczeń i nie dostanie kolejnych wiadomości z naszych kampanii tego typu. Oczekujące wiadomości do tego numeru są anulowane, a klient dostaje krótkie potwierdzenie wypisu. Samo „NIE” nie jest traktowane jako wypis, bo bywa odpowiedzią na inne wiadomości.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Co jeśli klient odpisze, że chce wizytę?</h3><p>Odpowiedź trafia od razu na Twój Telegram razem z numerem telefonu i treścią. Bot nie prowadzi rozmowy ani nie umawia wizyty przez SMS: oddzwaniasz albo umawiasz termin sam.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Z jakiego numeru wychodzą SMS-y?</h3><p>Obecnie z numeru KREATO +48 459 567 844, a nazwa Twojej firmy jest w treści wiadomości. Własna nazwa nadawcy nie jest na ten moment dostępna. Odpowiedzi klientów wracają na ten numer i trafiają do Ciebie.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Ile to kosztuje i co po wyczerpaniu limitu?</h3><p>199 zł netto miesięcznie z limitem 200 SMS w miesiącu. W planie rocznym płacisz za 10 miesięcy, a korzystasz 12: 165 zł miesięcznie. Po wyczerpaniu limitu wysyłka zatrzymuje się, a niewysłane wiadomości widać w podsumowaniu kampanii; wyższy limit uzgadniamy indywidualnie przed startem. Ceny netto; domyślnie wystawiamy rachunek bez VAT, na życzenie fakturę z VAT przez platformę Useme.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy mogę najpierw zobaczyć, jak to działa?</h3><p>Tak. Napisz na biuro@kreato.tech: pokażemy podgląd kampanii na przykładowej firmie demonstracyjnej, a pilotaż zaczniemy od krótkiej listy, żeby sprawdzić odbiór wiadomości.</p>
+
+<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="blog-powrot-spiacych-klientow-sms.html">Uśpieni klienci: jak wrócić do nich SMS-em i nie wyglądać jak spam (artykuł)</a> · <a href="blog-przypomnienia-o-platnosciach-faktury-sms.html">Przypomnienia o nieopłaconych fakturach SMS</a> · <a href="jak-dzialaja-boty.html">Jak działają nasze boty</a> · <a href="blog-rodo-ai-voicebot.html">RODO i AI — lista kontrolna</a></p>
+<div class="cta"><h3>Chcesz zobaczyć podgląd kampanii dla swojej firmy?</h3><p>Napisz do nas — odpiszemy e-mailem i pokażemy demonstrację.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Powrót uśpionych klientów SMS">biuro@kreato.tech</a></div>
+</article>
+<div id="faq-strip" style="max-width:860px;margin:40px auto 24px;padding:18px 20px;background:var(--card,#131c2f);border:1px solid rgba(139,92,246,.35);border-radius:12px;font-family:inherit"><div style="font-size:15px;font-weight:700;color:var(--text,#e8eaf0);margin-bottom:6px">❓ Masz pytania? Zobacz odpowiedzi w FAQ</div><div style="font-size:14px;line-height:1.7;color:var(--text2,#8b92a8)">Najczęstsze pytanie na ten temat: <a href="index.html#faq-boty" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">32. Jakie boty i agentów AI oferuje KREATO?</a><br><a href="index.html#faq" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Wszystkie pytania i odpowiedzi (FAQ) →</a> &nbsp;·&nbsp; <a href="jak-dzialaja-boty.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Jak działają nasze boty (schematy) →</a></div></div>
+<footer>
+  <div>
+    &copy; 2026 KREATO.AI ·
+    <a href="index.html">Strona główna</a> ·
+    <a href="dla-klinik.html">Dla klinik</a> ·
+    <a href="dla-ecommerce.html">E-commerce</a> ·
+    <a href="blog.html">Blog</a> ·
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+  </div>
+  <div style="margin-top:8px">ul. Prądzyńskiego 23, 63-000 Środa Wielkopolska · <a href="mailto:biuro@kreato.tech">biuro@kreato.tech</a></div>
+</footer>
+</body>
+</html>
