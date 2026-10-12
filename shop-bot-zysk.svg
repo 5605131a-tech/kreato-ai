@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" width="960" height="470" role="img" aria-labelledby="t d" font-family="Lato, 'Segoe UI', system-ui, sans-serif">
+<title id="t">Rachunek: jak sklep zyskuje na bocie</title>
+<desc id="d">Przykład ilustracyjny: 400 pytań miesięcznie o zamówienia i zwroty, bot obsługuje połowę, każde pytanie zajmuje 4 minuty, godzina pracy kosztuje 40 zł. Odzyskane 13 godzin daje 533 zł, po odjęciu abonamentu Start 299 zł zostaje 234 zł miesięcznie. To założenia, nie wyniki klientów.</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8b5cf6"/></marker>
+</defs>
+<rect width="960" height="470" rx="18" fill="#0c1221"/>
+<text x="40" y="52" font-size="26" font-weight="900" fill="#f1f5f9">Jak sklep zyskuje na bocie: rachunek</text>
+<text x="40" y="78" font-size="15" fill="#94a3b8">Przykład ilustracyjny. Podstaw własne liczby w kalkulatorze na stronie.</text>
+
+<!-- row 1: time -->
+<rect x="40" y="105" width="190" height="110" rx="14" fill="#131c2f" stroke="#8b5cf6" stroke-opacity=".5"/>
+<text x="135" y="146" font-size="30" font-weight="900" fill="#f1f5f9" text-anchor="middle">400</text>
+<text x="135" y="172" font-size="14" fill="#cbd5e1" text-anchor="middle">pytań w miesiącu</text>
+<text x="135" y="192" font-size="14" fill="#94a3b8" text-anchor="middle">o zamówienia i zwroty</text>
+<text x="252" y="165" font-size="26" font-weight="800" fill="#8b5cf6" text-anchor="middle">×</text>
+
+<rect x="274" y="105" width="190" height="110" rx="14" fill="#131c2f" stroke="#8b5cf6" stroke-opacity=".5"/>
+<text x="369" y="146" font-size="30" font-weight="900" fill="#f1f5f9" text-anchor="middle">50%</text>
+<text x="369" y="172" font-size="14" fill="#cbd5e1" text-anchor="middle">obsługuje bot</text>
+<text x="369" y="192" font-size="14" fill="#94a3b8" text-anchor="middle">(Twoje założenie)</text>
+<text x="486" y="165" font-size="26" font-weight="800" fill="#8b5cf6" text-anchor="middle">×</text>
+
+<rect x="508" y="105" width="190" height="110" rx="14" fill="#131c2f" stroke="#8b5cf6" stroke-opacity=".5"/>
+<text x="603" y="146" font-size="30" font-weight="900" fill="#f1f5f9" text-anchor="middle">4 min</text>
+<text x="603" y="172" font-size="14" fill="#cbd5e1" text-anchor="middle">na jedną odpowiedź</text>
+<text x="603" y="192" font-size="14" fill="#94a3b8" text-anchor="middle">(Twoje założenie)</text>
+<text x="720" y="165" font-size="26" font-weight="800" fill="#8b5cf6" text-anchor="middle">=</text>
+
+<rect x="742" y="105" width="178" height="110" rx="14" fill="#10b981" fill-opacity=".14" stroke="#10b981"/>
+<text x="831" y="146" font-size="30" font-weight="900" fill="#10b981" text-anchor="middle">13 h</text>
+<text x="831" y="172" font-size="14" fill="#cbd5e1" text-anchor="middle">odzyskanego czasu</text>
+<text x="831" y="192" font-size="14" fill="#94a3b8" text-anchor="middle">miesięcznie</text>
+
+<path d="M831 217 V238 H135 V251" fill="none" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#a)"/>
+
+<!-- row 2: money (left to right: 13 h x 40 zl = 533 zl - 299 zl = +234 zl) -->
+<rect x="40" y="255" width="190" height="110" rx="14" fill="#131c2f" stroke="#8b5cf6" stroke-opacity=".5"/>
+<text x="135" y="296" font-size="28" font-weight="900" fill="#f1f5f9" text-anchor="middle">13 h × 40 zł</text>
+<text x="135" y="322" font-size="14" fill="#cbd5e1" text-anchor="middle">czas × wartość Twojej</text>
+<text x="135" y="342" font-size="14" fill="#94a3b8" text-anchor="middle">godziny pracy (założenie)</text>
+<text x="252" y="315" font-size="26" font-weight="800" fill="#8b5cf6" text-anchor="middle">=</text>
+
+<rect x="274" y="255" width="190" height="110" rx="14" fill="#131c2f" stroke="#8b5cf6" stroke-opacity=".5"/>
+<text x="369" y="296" font-size="30" font-weight="900" fill="#f1f5f9" text-anchor="middle">533 zł</text>
+<text x="369" y="322" font-size="14" fill="#cbd5e1" text-anchor="middle">wartość czasu</text>
+<text x="369" y="342" font-size="14" fill="#94a3b8" text-anchor="middle">miesięcznie</text>
+<text x="486" y="315" font-size="26" font-weight="800" fill="#f59e0b" text-anchor="middle">−</text>
+
+<rect x="508" y="255" width="190" height="110" rx="14" fill="#131c2f" stroke="#f59e0b" stroke-opacity=".6"/>
+<text x="603" y="296" font-size="30" font-weight="900" fill="#f1f5f9" text-anchor="middle">299 zł</text>
+<text x="603" y="322" font-size="14" fill="#cbd5e1" text-anchor="middle">abonament Start</text>
+<text x="603" y="342" font-size="14" fill="#94a3b8" text-anchor="middle">netto miesięcznie</text>
+<text x="720" y="315" font-size="26" font-weight="800" fill="#8b5cf6" text-anchor="middle">=</text>
+
+<rect x="742" y="255" width="178" height="110" rx="14" fill="#10b981" fill-opacity=".14" stroke="#10b981"/>
+<text x="831" y="296" font-size="30" font-weight="900" fill="#10b981" text-anchor="middle">+234 zł</text>
+<text x="831" y="322" font-size="14" fill="#cbd5e1" text-anchor="middle">zostaje w kieszeni</text>
+<text x="831" y="342" font-size="14" fill="#94a3b8" text-anchor="middle">w tym przykładzie</text>
+
+<text x="40" y="402" font-size="14" fill="#cbd5e1">To oszczędność czasu, a nie gwarancja przychodu. Dla małego sklepu z kilkoma pytaniami w tygodniu bot się nie zwróci.</text>
+<text x="40" y="426" font-size="14" fill="#94a3b8">Nie wyceniamy tu odpowiedzi w nocy i w weekend ani zebranych kontaktów, bo nie mamy na to danych z wielu sklepów.</text>
+<text x="40" y="450" font-size="14" fill="#94a3b8">Ceny netto. Plan roczny (10 miesięcy za 12): Start 249 zł, Pro 333 zł miesięcznie.</text>
+</svg>

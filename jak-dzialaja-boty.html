@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jak działają boty KREATO</title>
-<meta name="description" content="Zobacz krok po kroku, jak działają boty KREATO: voicebot Karolina, chatbot, raporty, monitoring konkurencji, SMM, reklamy i Serwis. Przykłady z branż i kalkulator.">
+<meta name="description" content="Zobacz krok po kroku, jak działają boty KREATO: voicebot Karolina, chatbot, bot dla sklepu, raporty, monitoring konkurencji, SMM, reklamy i Serwis. Przykłady z branż i kalkulator.">
 <link rel="canonical" href="https://kreato.tech/jak-dzialaja-boty.html">
 <style>
 :root{--bg:#0f1420;--card:#171e2e;--line:#33405c;--txt:#e8ecf5;--mut:#9aa6c0;--acc:#4f8cff;--ok:#3ecf8e;--bot:#1f2c4a;--usr:#243b2f}
@@ -72,6 +72,7 @@ h1{font-size:1.5rem;margin:0 0 6px}p.sub{color:var(--mut);margin:0 0 22px}
 <span class="price" id="price"></span>
 <div class="flow" id="flow"></div>
 <div id="info"><h2>Wybierz krok</h2><p>Opis pojawi się tutaj.</p></div>
+<div id="botimg" style="margin-top:18px"></div>
 <div class="fq" id="fq"><h3>❓ Pytania z FAQ do tego bota</h3><div id="fqlist"></div></div>
 <div id="demo-wrap"><div class="demo">
  <h2>Przykładowa rozmowa: gabinet stomatologiczny</h2>
@@ -157,6 +158,13 @@ var BOTS=[
 ['Zbiera dane zainteresowanych','Kwalifikuje leady','Gotowe kontakty','Pyta o to, co potrzebne, i przekazuje gorący kontakt do sprzedawcy.'],
 ['Umawia wizytę (opcja)','Sprawdza kalendarz, +150 zł netto/mies.','Rezerwacja bez telefonu','Opcjonalnie sprawdza Twój kalendarz Google i sam umawia wizytę.'],
 ['Messenger, Instagram, WhatsApp (pilotaż)','Ten sam bot w komunikatorach, 249 zł netto/mies.','Klienci piszą tam, gdzie są','Pilotaż z pierwszymi klientami. Uruchomienie zależy od zatwierdzeń Meta i Twojego konta firmowego — sprawdzamy to z Tobą przed startem.']]},
+{n:'🛒 Bot dla sklepu',lead:'Czat sklepu, który sprawdza status zamówienia i przyjmuje zwroty.',price:'Start 299 zł / Pro 399 zł netto/mies.',img:'shop-bot-schemat.svg',alt:'Schemat działania bota dla sklepu internetowego',steps:[
+['Klient pyta o paczkę','Czat na stronie sklepu, także w nocy','Odpowiedź od razu','Klient pisze „gdzie jest moja paczka?” i nie czeka z pytaniem do rana.'],
+['Bot prosi o dane','Numer zamówienia + e-mail lub telefon','Bezpieczeństwo danych','Samo odgadnięcie numeru nie wystarczy. Dane muszą pasować do zamówienia.'],
+['Sprawdza w systemie sklepu','WooCommerce (pilotaż), Shoptet i Shopify w przygotowaniu','Prawdziwy status','Status, pozycje, przewoźnik i numer przesyłki pochodzą z systemu sklepu, a nie z domysłów modelu.'],
+['Przyjmuje zwrot lub anulowanie (Pro)','Termin 14 dni od dostawy','Mniej pracy w obsłudze','Bot sprawdza termin i zapisuje zgłoszenie. Wariant Start odsyła takie sprawy do zespołu sklepu.'],
+['Sklep dostaje zgłoszenie','Powiadomienie w Telegramie','Decyzja po Twojej stronie','Zwrot pieniędzy, wymianę i instrukcję wysyłki ustala sklep. Bot niczego nie obiecuje.'],
+['Rachunek zysku','Kalkulator na stronie bota','Wiesz, czy się opłaca','Podstawiasz liczbę pytań, czas i wartość godziny pracy. Dla małego sklepu bot może się nie zwrócić.']]},
 {n:'📊 Raporty automatyczne',lead:'Co poniedziałek o 8:00 masz raport w skrzynce.',price:'od 149 zł netto/mies.',steps:[
 ['Zbieramy dane','CRM, Excel, Google Analytics i inne','Zero ręcznego zbierania','Łączymy się ze źródłami danych Twojej firmy. Konfiguracja raz.'],
 ['Liczymy i układamy','Statystyki gotowe do decyzji','Liczby bez Excela','Dane zamieniają się w czytelny raport.'],
@@ -185,6 +193,7 @@ function show(i){var b=BOTS[i];
 document.querySelectorAll('.tab').forEach(function(t,k){t.classList.toggle('on',k==i)});
 document.getElementById('lead').textContent=b.lead;document.getElementById('price').textContent=b.price;
 document.getElementById('demo-wrap').style.display=b.demo?'':'none';
+document.getElementById('botimg').innerHTML=b.img?'<img src="'+b.img+'" alt="'+b.alt+'" loading="lazy" style="max-width:100%;height:auto;border-radius:12px;border:1px solid var(--line)">':'';
 var f=document.getElementById('flow');f.innerHTML='';
 b.steps.forEach(function(st,k){
  if(k){var a=document.createElement('div');a.className='arrow';f.appendChild(a);}
@@ -227,6 +236,7 @@ var FQ='https://kreato.tech/';
 var FAQMAP=[
  [['faq-jak-dziala','33. Jak dokładnie działa bot głosowy, krok po kroku?'],['faq-boty','32. Jakie boty KREATO oferuje?'],['faq','3. Czy Karolina odbiera telefony całą dobę?'],['faq','4. Czy Karolina może wysyłać SMS-y? Jak to działa z RODO?'],['faq','16. Ile połączeń może obsługiwać jednocześnie?'],['faq','28. Czy muszę zmieniać swój numer? Jak przekierować połączenia?'],['faq','31. Czy Karolina może sama zadzwonić do klienta?']],
  [['faq-chatbot','34. Chatbot AI — co potrafi, jak działa i ile kosztuje?'],['faq-kanaly','44. Czy chatbot działa też w Messengerze, Instagramie i WhatsAppie?'],['faq','30. Czy Chatbot AI może umawiać wizyty w moim kalendarzu?'],['faq','29. Jakie rabaty oferujecie?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
+ [['faq-sklep','45. Bot dla sklepu: status zamówienia, zwroty i ile można zyskać'],['faq-chatbot','34. Chatbot AI — co potrafi, jak działa i ile kosztuje?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-raporty','35. Raporty automatyczne — co dostaję i ile kosztują?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-monitoring','36. Monitoring konkurencji AI — co śledzi?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-smm','37. SMM + Reels AI — co obejmuje usługa?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
