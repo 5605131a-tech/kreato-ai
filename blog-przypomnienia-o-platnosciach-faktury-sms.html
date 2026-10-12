@@ -163,6 +163,8 @@ footer a:hover{color:var(--text2)}
 <li><strong>Odpowiedź „zapłaciłem” wstrzymuje wysyłkę</strong> i daje Ci znać, żebyś sprawdził konto.</li>
 <li><strong>Stare zaległości zostają dla człowieka.</strong> Faktury przeterminowane o ponad dwa miesiące nie są przypominane automatycznie.</li>
 </ul>
+<h2>Schemat działania</h2>
+<img src="przypomnienia-faktury-schemat.svg" width="960" height="580" loading="lazy" style="max-width:100%;height:auto;border-radius:12px;border:1px solid var(--border);margin:6px 0 4px" alt="Schemat: lista faktur, drabinka przypomnień, akceptacja właściciela, SMS do klienta, odpowiedź klienta STOP lub zapłaciłem i raport na Telegramie">
 <h2>Jak to robimy w KREATO</h2>
 <p>Bot przypomnień pracuje na liście faktur, którą mu przekazujesz: numer, kwota, termin, telefon klienta. Dane można zaimportować z pliku lub przez API; format zgodny z eksportem z Fakturowni jest przygotowany, a integracja z innymi programami do fakturowania zależy od ich możliwości. Codziennie bot sprawdza, którym fakturom przypada kolejny krok drabinki, i układa wiadomości.</p>
 <ol>
