@@ -189,6 +189,13 @@ var BOTS=[
 ['Sprawdzenie praw','Filtr w bazie danych, przed modelem AI','Poufne zostaje poufne','Fragmenty spoza uprawnień pracownika nigdy nie trafiają do modelu AI.'],
 ['Odpowiedź ze źródłem','Tytuły dokumentów pod odpowiedzią','Możesz to sprawdzić','Krótka odpowiedź tylko z dozwolonych fragmentów. Przy sprawach ważnych prawnie sprawdź podane źródło.'],
 ['Brak odpowiedzi','„Nie znalazłem” zamiast zgadywania','Widzisz luki w procedurach','Pytania bez odpowiedzi pokazują, czego brakuje w dokumentach.']]},
+{n:'⭐ Opinie w Google',lead:'SMS po wizycie z prośbą o ocenę 1-5, zaproszenie do Google dla każdego i alert przy niskiej ocenie (pilotaż).',price:'Start 99 zł / Plus 149 zł netto/mies.',img:'opinie-google-schemat.svg',alt:'Schemat działania bota do opinii w Google',steps:[
+['Wizyta się kończy','API lub lista wizyt','Bot wie, kogo zapytać','Dostaje numer telefonu i imię klienta z Twojego systemu rezerwacji albo z listy wizyt, którą ustalamy w pilotażu.'],
+['Chwila czekania','Domyślnie 2 godziny, 1 SMS na numer / 30 dni','Bez natrętności','Klient zdąży wyjść z gabinetu. Na ten sam numer prośba wychodzi najwyżej raz na 30 dni, a limit wizyt zależy od pakietu.'],
+['SMS z prośbą o ocenę','Cyfra 1-5, STOP w treści','Prosto i bez linków','Operator SMS nie przepuszcza linków, dlatego klient odpowiada cyfrą. Odpowiedź STOP wypisuje numer na stałe.'],
+['Odpowiedź klienta','Cyfra + opcjonalny komentarz','Ocena zapisana','Bot zapisuje ocenę i komentarz. Odpowiedź bez cyfry jest ignorowana, a brak odpowiedzi nic nie uruchamia.'],
+['Zaproszenie do Google','Dostaje każdy klient','Zgodnie z zasadami Google','Bot podpowiada: w Mapach wpisz nazwę firmy i kliknij „Napisz opinię”. Nie wybiera tylko zadowolonych i nie oferuje nagród.'],
+['Alert przy ocenie 1-3','Telegram: numer i komentarz','Reagujesz od razu','Dostajesz powiadomienie, zanim niezadowolenie trafi do internetu. Bot niczego nie ukrywa ani nie usuwa.']]},
 {n:'📊 Raporty automatyczne',lead:'Co poniedziałek o 8:00 masz raport w skrzynce.',price:'od 149 zł netto/mies.',steps:[
 ['Zbieramy dane','CRM, Excel, Google Analytics i inne','Zero ręcznego zbierania','Łączymy się ze źródłami danych Twojej firmy. Konfiguracja raz.'],
 ['Liczymy i układamy','Statystyki gotowe do decyzji','Liczby bez Excela','Dane zamieniają się w czytelny raport.'],
@@ -263,7 +270,8 @@ var FAQMAP=[
  [['faq-sklep','45. Bot dla sklepu: status zamówienia, zwroty i ile można zyskać'],['faq-chatbot','34. Chatbot AI — co potrafi, jak działa i ile kosztuje?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-faktury','46. Przypomnienia o płatnościach — jak działa i ile kosztuje'],['faq','40. Czy dostanę fakturę VAT? Jak rozliczacie ceny netto'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-dokumenty','47. Asystent dokumentów firmowych — jak działa i ile kosztuje'],['faq-boty','32. Jakie boty KREATO oferuje?']],
- [['faq-raporty','35. Raporty automatyczne — co dostaję i ile kosztują?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
+ [['faq-opinie','48. Opinie w Google po wizycie — jak działa i ile kosztuje'],['faq-boty','32. Jakie boty KREATO oferuje?']],
+[['faq-raporty','35. Raporty automatyczne — co dostaję i ile kosztują?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-monitoring','36. Monitoring konkurencji AI — co śledzi?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-smm','37. SMM + Reels AI — co obejmuje usługa?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-reklama','38. Reklama Facebook / Instagram — co robicie i co płacę osobno?'],['faq-boty','32. Jakie boty KREATO oferuje?']],

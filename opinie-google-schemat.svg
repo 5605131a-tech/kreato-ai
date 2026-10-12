@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" width="960" height="580" role="img" aria-labelledby="t d" font-family="Lato, 'Segoe UI', system-ui, sans-serif">
+<title id="t">Schemat: jak działa bot do zbierania opinii w Google</title>
+<desc id="d">Po wizycie bot czeka ustalony czas, wysyła SMS z prośbą o ocenę 1-5, zapisuje odpowiedź, zaprasza każdego klienta do opinii w Google (Mapy, nazwa firmy, Napisz opinię), a przy ocenie 1-3 dodatkowo wysyła właścicielowi alert na Telegram.</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8b5cf6"/></marker>
+</defs>
+<rect width="960" height="580" rx="18" fill="#0c1221"/>
+<text x="40" y="52" font-size="26" font-weight="900" fill="#f1f5f9">Jak działa bot do opinii w Google</text>
+<text x="40" y="78" font-size="15" fill="#94a3b8">Od wizyty do opinii i alertu. Zaproszenie dostaje każdy klient, niezależnie od oceny.</text>
+<rect x="40" y="105" width="250" height="118" rx="14" fill="#131c2f" stroke="#8b5cf6" stroke-opacity=".5"/>
+<text x="60" y="136" font-size="17" font-weight="800" fill="#f1f5f9">1. Wizyta się kończy</text>
+<text x="60" y="162" font-size="15" fill="#cbd5e1">numer i imię klienta</text>
+<text x="60" y="184" font-size="15" fill="#cbd5e1">API lub lista wizyt</text>
+<text x="60" y="206" font-size="14" fill="#94a3b8">ustalamy w pilotażu</text>
+<rect x="355" y="105" width="250" height="118" rx="14" fill="#131c2f" stroke="#8b5cf6" stroke-opacity=".5"/>
+<text x="375" y="136" font-size="17" font-weight="800" fill="#f1f5f9">2. Chwila czekania</text>
+<text x="375" y="162" font-size="15" fill="#cbd5e1">domyślnie 2 godziny</text>
+<text x="375" y="184" font-size="15" fill="#cbd5e1">1 SMS na numer / 30 dni</text>
+<text x="375" y="206" font-size="14" fill="#94a3b8">limit wizyt wg pakietu</text>
+<rect x="670" y="105" width="250" height="118" rx="14" fill="#131c2f" stroke="#8b5cf6" stroke-opacity=".5"/>
+<text x="690" y="136" font-size="17" font-weight="800" fill="#f1f5f9">3. SMS: prośba o ocenę</text>
+<text x="690" y="162" font-size="15" fill="#cbd5e1">Oceń wizytę cyfrą 1-5</text>
+<text x="690" y="184" font-size="15" fill="#cbd5e1">w treści: odpisz STOP</text>
+<text x="690" y="206" font-size="14" fill="#94a3b8">bez linków i bez rabatów</text>
+<rect x="670" y="275" width="250" height="118" rx="14" fill="#131c2f" stroke="#64748b" stroke-opacity=".7"/>
+<text x="690" y="306" font-size="17" font-weight="800" fill="#f1f5f9">4. Odpowiedź klienta</text>
+<text x="690" y="332" font-size="15" fill="#cbd5e1">cyfra + komentarz: zapis</text>
+<text x="690" y="354" font-size="15" fill="#cbd5e1">STOP: koniec wiadomości</text>
+<text x="690" y="376" font-size="14" fill="#94a3b8">brak: koniec, bez ponagleń</text>
+<rect x="355" y="275" width="250" height="118" rx="14" fill="#131c2f" stroke="#10b981" stroke-opacity=".7"/>
+<text x="375" y="306" font-size="17" font-weight="800" fill="#f1f5f9">5. Zaproszenie Google</text>
+<text x="375" y="332" font-size="15" fill="#cbd5e1">dostaje każdy klient,</text>
+<text x="375" y="354" font-size="15" fill="#cbd5e1">niezależnie od oceny</text>
+<text x="375" y="376" font-size="14" fill="#94a3b8">Mapy &gt; nazwa &gt; Napisz opinię</text>
+<rect x="40" y="275" width="250" height="118" rx="14" fill="#131c2f" stroke="#10b981" stroke-opacity=".7"/>
+<text x="60" y="306" font-size="17" font-weight="800" fill="#f1f5f9">6. Alert (ocena 1-3)</text>
+<text x="60" y="332" font-size="15" fill="#cbd5e1">dodatkowo, na Telegram:</text>
+<text x="60" y="354" font-size="15" fill="#cbd5e1">numer klienta i komentarz</text>
+<text x="60" y="376" font-size="14" fill="#94a3b8">dzwonisz od razu</text>
+<line x1="292" y1="164" x2="351" y2="164" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="607" y1="164" x2="666" y2="164" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="795" y1="225" x2="795" y2="271" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="666" y1="334" x2="609" y2="334" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="351" y1="334" x2="294" y2="334" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="40" y="430" width="880" height="120" rx="14" fill="#131c2f" stroke="#64748b" stroke-opacity=".7"/>
+<text x="60" y="462" font-size="17" font-weight="800" fill="#f1f5f9">Czego bot nie robi (pilotaż)</text>
+<text x="60" y="490" font-size="14.5" fill="#cbd5e1">Nie pisze opinii za klienta i nie ukrywa niskich ocen. Nie oferuje rabatów ani prezentów za opinie.</text>
+<text x="60" y="512" font-size="14.5" fill="#cbd5e1">Nie wysyła linków (operator SMS ich nie przepuszcza), dlatego klient szuka firmy w Mapach po nazwie.</text>
+<text x="60" y="534" font-size="14.5" fill="#cbd5e1">Nie gwarantuje liczby opinii: zwiększa szansę, że klient o nich pomyśli.</text>
+</svg>

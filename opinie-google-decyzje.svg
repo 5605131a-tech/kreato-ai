@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-labelledby="t d" font-family="Lato, 'Segoe UI', system-ui, sans-serif">
+<title id="t">Schemat: co się dzieje po odpowiedzi klienta w bocie do opinii</title>
+<desc id="d">Klient odpowiada cyfrą 1-5. Przy ocenie 4-5 dostaje SMS z zaproszeniem do opinii w Google. Przy ocenie 1-3 dostaje podziękowanie, informację, że właściciel się odezwie, to samo zaproszenie do Google, a właściciel dostaje alert na Telegram. STOP wypisuje numer na stałe.</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8b5cf6"/></marker>
+</defs>
+<rect width="960" height="520" rx="18" fill="#0c1221"/>
+<text x="40" y="52" font-size="26" font-weight="900" fill="#f1f5f9">Co dzieje się po odpowiedzi klienta</text>
+<text x="40" y="78" font-size="15" fill="#94a3b8">Dwie ścieżki, to samo zaproszenie do Google. Różnica jest po Twojej stronie.</text>
+<rect x="330" y="105" width="300" height="100" rx="14" fill="#131c2f" stroke="#8b5cf6" stroke-opacity=".5"/>
+<text x="350" y="136" font-size="17" font-weight="800" fill="#f1f5f9">Odpowiedź klienta</text>
+<text x="350" y="162" font-size="15" fill="#cbd5e1">cyfra 1-5 + komentarz</text>
+<text x="350" y="184" font-size="14" fill="#94a3b8">STOP: numer wypisany na stałe</text>
+<rect x="40" y="250" width="400" height="112" rx="14" fill="#131c2f" stroke="#10b981" stroke-opacity=".7"/>
+<text x="60" y="281" font-size="17" font-weight="800" fill="#f1f5f9">Ocena 4-5</text>
+<text x="60" y="307" font-size="15" fill="#cbd5e1">SMS: dziękujemy za ocenę</text>
+<text x="60" y="329" font-size="15" fill="#cbd5e1">zaproszenie do opinii w Google:</text>
+<text x="60" y="351" font-size="14" fill="#94a3b8">Mapy &gt; nazwa firmy &gt; Napisz opinię</text>
+<rect x="520" y="250" width="400" height="112" rx="14" fill="#131c2f" stroke="#10b981" stroke-opacity=".7"/>
+<text x="540" y="281" font-size="17" font-weight="800" fill="#f1f5f9">Ocena 1-3</text>
+<text x="540" y="307" font-size="15" fill="#cbd5e1">SMS: dziękujemy, właściciel się odezwie</text>
+<text x="540" y="329" font-size="15" fill="#cbd5e1">plus to samo zaproszenie do Google</text>
+<text x="540" y="351" font-size="14" fill="#94a3b8">Mapy &gt; nazwa firmy &gt; Napisz opinię</text>
+<rect x="520" y="395" width="400" height="100" rx="14" fill="#131c2f" stroke="#8b5cf6" stroke-opacity=".5"/>
+<text x="540" y="426" font-size="17" font-weight="800" fill="#f1f5f9">Ty: alert na Telegram</text>
+<text x="540" y="452" font-size="15" fill="#cbd5e1">numer klienta i jego komentarz</text>
+<text x="540" y="474" font-size="14" fill="#94a3b8">zadzwonisz, zanim sprawa trafi do internetu</text>
+<rect x="40" y="395" width="400" height="100" rx="14" fill="#131c2f" stroke="#64748b" stroke-opacity=".7"/>
+<text x="60" y="426" font-size="17" font-weight="800" fill="#f1f5f9">Zasada Google</text>
+<text x="60" y="452" font-size="15" fill="#cbd5e1">zaproszenie dostaje każdy klient</text>
+<text x="60" y="474" font-size="14" fill="#94a3b8">wybieranie tylko zadowolonych jest zabronione</text>
+<line x1="430" y1="207" x2="250" y2="246" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="530" y1="207" x2="710" y2="246" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="720" y1="364" x2="720" y2="391" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#a)"/>
+</svg>
