@@ -157,8 +157,8 @@ footer a:hover{color:var(--text2)}
 
 <h2>Jak działa bot krok po kroku</h2>
 <ol>
-<li><strong>Wizyta się kończy.</strong> Twój system rejestracji (albo recepcja jednym kliknięciem) przekazuje botowi numer telefonu klienta.</li>
-<li><strong>Po ustalonym czasie</strong> (domyślnie 2 godziny) klient dostaje krótki SMS: podziękowanie i prośba o ocenę wizyty cyfrą od 1 do 5.</li>
+<li><strong>Wizyta się kończy.</strong> Twój system rejestracji przekazuje botowi numer telefonu klienta przez API. Jeśli takiego systemu nie masz, na start ustalamy z Tobą prostszą metodę, np. listę wizyt przekazywaną raz dziennie.</li>
+<li><strong>Po ustalonym czasie</strong> (domyślnie 2 godziny) klient dostaje krótki SMS: podziękowanie, prośba o ocenę wizyty cyfrą od 1 do 5 i informacja, jak zrezygnować (odpowiedź STOP).</li>
 <li><strong>Klient odpisuje cyfrą</strong>, np. „5” albo „3 długo czekałem”. Komentarz po cyfrze bot zapisuje.</li>
 <li><strong>Każdy klient dostaje odpowiedź</strong> z zaproszeniem do opinii w Google: wystarczy wpisać w Mapach nazwę firmy i kliknąć „Napisz opinię”.</li>
 <li><strong>Przy ocenie 1–3 właściciel dostaje alert na Telegram</strong> z numerem klienta i komentarzem, żeby zadzwonić, zanim sprawa wyląduje w internecie.</li>
@@ -177,7 +177,8 @@ footer a:hover{color:var(--text2)}
 <tr><td>Ocena 4–5</td><td>Dziękuje i zaprasza do opinii w Google.</td></tr>
 <tr><td>Ocena 1–3</td><td>Dziękuje za szczerość, informuje, że właściciel się odezwie, zaprasza do opinii w Google i wysyła Ci alert na Telegram z numerem i komentarzem.</td></tr>
 <tr><td>Odpowiedź bez cyfry</td><td>Ignoruje wiadomość (nie miesza się w zwykłe SMS-y klientów).</td></tr>
-<tr><td>Brak odpowiedzi</td><td>Nic więcej nie wysyła — jeden SMS na wizytę.</td></tr>
+<tr><td>Odpowiedź STOP</td><td>Wypisuje numer na stałe: kolejne prośby do tego numeru nie są wysyłane.</td></tr>
+<tr><td>Brak odpowiedzi</td><td>Nic więcej nie wysyła — jeden SMS na wizytę, a na ten sam numer najwyżej raz na 30 dni.</td></tr>
 </table>
 
 <h2>Czego bot nie robi</h2>
@@ -189,11 +190,11 @@ footer a:hover{color:var(--text2)}
 </ul>
 
 <h2>Ile to kosztuje</h2>
-<p>Abonament wynosi <strong>od 99 do 149 zł netto miesięcznie</strong>, zależnie od liczby wizyt. Do tego dochodzi koszt SMS-ów rozliczany według zużycia: około 0,18 zł za wiadomość. Przy 200 wizytach miesięcznie samo zaproszenie to ok. 36 zł, a każda odpowiedź zwrotna do klienta to kolejny SMS. Możliwy jest plan roczny — zapytaj o niego w wiadomości. Pilotaż startuje od niewielkiej liczby wizyt, żeby sprawdzić, jak odbierają to Twoi klienci.</p>
+<p>Do wyboru są dwa pakiety, w obu SMS-y są w cenie do limitu: <strong>Start 99 zł netto miesięcznie (do 100 wizyt)</strong> oraz <strong>Plus 149 zł netto miesięcznie (do 300 wizyt)</strong>. W planie rocznym płacisz za 10 miesięcy, a korzystasz 12: odpowiednio 83 zł i 124 zł miesięcznie. Limit liczy się w wizytach, czyli wysłanych prośbach o ocenę; odpowiedź zwrotna do klienta jest wliczona. Po wyczerpaniu limitu wysyłka się zatrzymuje, a dodatkowe wizyty kosztują 0,40 zł za sztukę po wcześniejszym uzgodnieniu. Szczegóły na <a href="bot-opinie-google.html">stronie bota</a>. Pilotaż startuje od niewielkiej liczby wizyt, żeby sprawdzić, jak odbierają to Twoi klienci.</p>
 
 <h2>Najczęstsze pytania</h2>
 <h3 style="font-size:17px;margin:18px 0 6px">Czy bot pisze opinię w Google za klienta?</h3><p>Nie. Bot tylko pyta o ocenę i podpowiada, jak znaleźć firmę w Mapach Google. Opinię klient pisze sam, na swoim koncie Google — tylko tak jest zgodna z zasadami.</p><h3 style="font-size:17px;margin:18px 0 6px">Czy wolno prosić o opinię tylko zadowolonych klientów?</h3><p>Nie. Google nie pozwala wybierać, kogo zapraszasz do wystawienia opinii (tzw. review gating). Dlatego zaproszenie do Google dostaje każdy klient, niezależnie od oceny. Niska ocena dodatkowo uruchamia alert dla właściciela, żeby mógł szybko zareagować.</p><h3 style="font-size:17px;margin:18px 0 6px">Dlaczego w SMS-ie nie ma linku do opinii?</h3><p>Operator SMS, z którego korzystamy, blokuje linki w wiadomościach do polskich numerów. Zamiast linku bot podaje nazwę firmy do wpisania w Mapach i hasło „Napisz opinię”. Jeśli Twoja firma ma inny kanał wysyłki, który przepuszcza linki, można go podpiąć.</p><h3 style="font-size:17px;margin:18px 0 6px">Czy klient musi wyrazić zgodę na takiego SMS-a?</h3><p>Zależy od okoliczności i treści wiadomości. Prośba o opinię może być uznana za informację handlową, więc przed uruchomieniem ustal z prawnikiem, jaką zgodę masz od klientów. Ten artykuł nie jest poradą prawną.</p>
-<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="blog-jak-mierzyc-skutecznosc-bota.html">Jak mierzyć, czy bot działa: 6 wskaźników po pierwszym miesiącu</a> · <a href="blog-telegram-jako-centrum-powiadomien.html">Telegram jako centrum powiadomień firmy</a> · <a href="jak-dzialaja-boty.html">Jak działają nasze boty</a></p>
+<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="bot-opinie-google.html">Bot do opinii w Google — pakiety i cennik</a> · <a href="blog-jak-mierzyc-skutecznosc-bota.html">Jak mierzyć, czy bot działa: 6 wskaźników po pierwszym miesiącu</a> · <a href="blog-telegram-jako-centrum-powiadomien.html">Telegram jako centrum powiadomień firmy</a> · <a href="jak-dzialaja-boty.html">Jak działają nasze boty</a></p>
 <p style="margin-top:22px"><strong>Powiązane na stronie:</strong> <a href="blog.html">Wszystkie artykuły</a></p>
 <div class="cta"><h3>Chcesz zobaczyć, jak to działa u Ciebie?</h3><p>Napisz do nas — odpiszemy e-mailem i zaproponujemy pilotaż.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Pytanie z bloga: blog-opinie-google-sms-bot">biuro@kreato.tech</a></div>
 </article>
