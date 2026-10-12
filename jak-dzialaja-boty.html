@@ -103,7 +103,7 @@ h1{font-size:1.5rem;margin:0 0 6px}p.sub{color:var(--mut);margin:0 0 22px}
 <li><a href="/bot-przypomnienia-o-platnosciach.html" style="color:var(--acc)">Przypomnienia o płatnościach</a>: SMS przed terminem faktury i po nim, ze STOP-em i raportem na Telegram (od 119 zł netto/mies.).</li>
 <li><a href="/bot-dokumenty-firmowe.html" style="color:var(--acc)">Asystent dokumentów firmowych</a>: pracownik pyta w Telegramie, bot odpowiada z Twoich regulaminów i procedur, z prawami dostępu (od 239 zł netto/mies.).</li>
 <li><a href="/bot-opinie-google.html" style="color:var(--acc)">Opinie w Google po wizycie</a>: SMS z prośbą o ocenę 1-5, zaproszenie do opinii dla każdego klienta i alert przy niskiej ocenie (od 99 zł netto/mies.).</li>
-<li><a href="/bot-powrot-klientow-sms.html" style="color:var(--acc)">Powrót uśpionych klientów SMS</a>: kampanie do dawnych klientów, którzy wyrazili zgodę.</li>
+<li><a href="/bot-powrot-klientow-sms.html" style="color:var(--acc)">Powrót uśpionych klientów SMS</a>: kampanie do dawnych klientów, którzy wyrazili zgodę, po Twojej akceptacji i ze STOP-em (od 199 zł netto/mies., limit 200 SMS).</li>
 <li><a href="/bot-dla-sklepu.html" style="color:var(--acc)">Bot dla sklepu</a>: statusy zamówień, zwroty i pytania klientów sklepu internetowego.</li>
 </ul>
 </div>
@@ -197,6 +197,13 @@ var BOTS=[
 ['Odpowiedź klienta','Cyfra + opcjonalny komentarz','Ocena zapisana','Bot zapisuje ocenę i komentarz. Odpowiedź bez cyfry jest ignorowana, a brak odpowiedzi nic nie uruchamia.'],
 ['Zaproszenie do Google','Dostaje każdy klient','Zgodnie z zasadami Google','Bot podpowiada: w Mapach wpisz nazwę firmy i kliknij „Napisz opinię”. Nie wybiera tylko zadowolonych i nie oferuje nagród.'],
 ['Alert przy ocenie 1-3','Telegram: numer i komentarz','Reagujesz od razu','Dostajesz powiadomienie, zanim niezadowolenie trafi do internetu. Bot niczego nie ukrywa ani nie usuwa.']]},
+{n:'📲 Powrót klientów (SMS)',lead:'Uprzejme SMS-y do dawnych klientów (za ich zgodą), po Twojej akceptacji, ze STOP-em (pilotaż).',price:'199 zł netto/mies. (rok 165 zł), limit 200 SMS',img:'winback-schemat.svg',alt:'Schemat działania bota do powrotu uśpionych klientów',steps:[
+['Lista klientów','Imię, telefon, ostatnia wizyta, segment','Bot wie, kogo zapytać','Przesyłasz listę plikiem lub eksportem. Błędne numery odrzucamy, duplikaty łączymy. Potwierdzasz, że masz zgody na wiadomości marketingowe.'],
+['Podgląd kampanii','Ilu odbiorców, przykładowy SMS, wykluczenia','Widzisz, zanim cokolwiek wyjdzie','Wybierasz segment i próg (np. nie byli od 180 dni). Pomijamy numery po STOP i takie, do których pisaliśmy w ostatnich 31 dniach.'],
+['Twoja akceptacja','Bez „tak” nic nie wychodzi','Pełna kontrola','Kampania startuje jako szkic. Zatwierdzasz ją albo anulujesz. Bez potwierdzenia zgód nie wysyłamy.'],
+['SMS-y wychodzą','Dni robocze 10:00-18:00, po 10 co 10 minut','Bez fali spamu','Wiadomość do 160 znaków, bez polskich znaków i bez linków, z informacją „odpisz STOP”. Limit 200 SMS w miesiącu.'],
+['Odpowiedzi klientów','STOP na stałe, reszta do Ciebie','Nic nie ginie','STOP wypisuje numer ze wszystkich kampanii. Inna odpowiedź, np. „TAK, poproszę termin”, trafia na Twój Telegram z numerem.'],
+['Podsumowanie','Wysłane, błędy, pominięte','Wiesz, co się stało','Bot nie umawia wizyt przez SMS: oddzwaniasz Ty. Skuteczność mierzysz po pierwszej kampanii, wyniku nie obiecujemy.']]},
 {n:'📊 Raporty automatyczne',lead:'Co poniedziałek o 8:00 masz raport w skrzynce.',price:'od 149 zł netto/mies.',steps:[
 ['Zbieramy dane','CRM, Excel, Google Analytics i inne','Zero ręcznego zbierania','Łączymy się ze źródłami danych Twojej firmy. Konfiguracja raz.'],
 ['Liczymy i układamy','Statystyki gotowe do decyzji','Liczby bez Excela','Dane zamieniają się w czytelny raport.'],
@@ -272,6 +279,7 @@ var FAQMAP=[
  [['faq-faktury','46. Przypomnienia o płatnościach — jak działa i ile kosztuje'],['faq','40. Czy dostanę fakturę VAT? Jak rozliczacie ceny netto'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-dokumenty','47. Asystent dokumentów firmowych — jak działa i ile kosztuje'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-opinie','48. Opinie w Google po wizycie — jak działa i ile kosztuje'],['faq-boty','32. Jakie boty KREATO oferuje?']],
+ [['faq-winback','49. Powrót uśpionych klientów SMS — jak działa i ile kosztuje'],['faq-boty','32. Jakie boty KREATO oferuje?']],
 [['faq-raporty','35. Raporty automatyczne — co dostaję i ile kosztują?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-monitoring','36. Monitoring konkurencji AI — co śledzi?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
  [['faq-smm','37. SMM + Reels AI — co obejmuje usługa?'],['faq-boty','32. Jakie boty KREATO oferuje?']],
