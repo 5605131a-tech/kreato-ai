@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opinie w Google po wizycie: jak zbierać je SMS-em, bez linków i bez wybierania klientów — KREATO.AI</title>
+<meta name="description" content="Bot wysyła SMS po wizycie, klient odpowiada cyfrą 1–5, a Ty dostajesz alert przy niskiej ocenie. Jak to działa, czego wymaga Google i ile kosztuje (pilotaż).">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="opinie google, jak zbierać opinie google, prośba o opinię SMS, opinie google po wizycie, bot do opinii, ocena wizyty SMS, review gating">
+<meta property="article:section" content="Poradnik">
+<meta property="og:title" content="Opinie w Google po wizycie: jak zbierać je SMS-em, bez linków i bez wybierania klientów">
+<meta property="og:description" content="Bot wysyła SMS po wizycie, klient odpowiada cyfrą 1–5, a Ty dostajesz alert przy niskiej ocenie. Jak to działa, czego wymaga Google i ile kosztuje (pilotaż).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kreato.tech/blog-opinie-google-sms-bot.html">
+<link rel="canonical" href="https://kreato.tech/blog-opinie-google-sms-bot.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Opinie w Google po wizycie: jak zbierać je SMS-em, bez linków i bez wybierania klientów","description":"Bot wysyła SMS po wizycie, klient odpowiada cyfrą 1–5, a Ty dostajesz alert przy niskiej ocenie. Jak to działa, czego wymaga Google i ile kosztuje (pilotaż).","datePublished":"2026-10-12","dateModified":"2026-10-12","inLanguage":"pl","keywords":"opinie google, jak zbierać opinie google, prośba o opinię SMS, opinie google po wizycie, bot do opinii, ocena wizyty SMS, review gating","mainEntityOfPage":"https://kreato.tech/blog-opinie-google-sms-bot.html","author":{"@type":"Organization","name":"KREATO.AI"},"publisher":{"@type":"Organization","name":"KREATO.AI","url":"https://kreato.tech/"}}</script>
+<style>
+:root{--bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;--purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);--grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.nav-logo{font-size:20px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta{background:var(--grad);color:#fff!important;padding:9px 18px;border-radius:var(--r-sm);font-size:13px!important;font-weight:700!important}
+@media(max-width:768px){.nav-links{display:none}}
+.inner{max-width:1120px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--grad-soft);border:1px solid var(--border-a);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+.breadcrumb{font-size:12px;color:var(--text3);padding:12px 24px;max-width:1120px;margin:0 auto}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--text2)}
+.breadcrumb span{margin:0 6px}
+.blog-hero{padding:72px 24px 48px;text-align:center}
+.blog-hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:16px}
+.blog-hero p{font-size:17px;color:var(--text2);max-width:560px;margin:0 auto;line-height:1.6}
+.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;padding:48px 24px 80px;max-width:1120px;margin:0 auto}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s;text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+.post-card:hover{border-color:var(--border-a);transform:translateY(-3px);box-shadow:0 12px 40px rgba(139,92,246,.1)}
+.post-img{height:160px;background:var(--grad-soft);display:flex;align-items:center;justify-content:center;font-size:48px}
+.post-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
+.post-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(139,92,246,.08);padding:3px 10px;border-radius:100px;width:fit-content}
+.post-title{font-size:16px;font-weight:700;line-height:1.4}
+.post-excerpt{font-size:13px;color:var(--text2);line-height:1.6;flex:1}
+.post-meta{font-size:11px;color:var(--text3);margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+.post-coming{opacity:.5;pointer-events:none}
+.coming-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--text3);background:rgba(255,255,255,.04);padding:2px 8px;border-radius:100px;margin-left:8px;vertical-align:middle}
+footer{padding:32px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
+footer a{color:var(--text3);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--text2)}
+
+.art{max-width:760px;margin:0 auto;padding:40px 24px 24px}
+.art h1{font-size:clamp(28px,4.4vw,42px);font-weight:900;line-height:1.2;letter-spacing:-.02em;margin:10px 0 14px}
+.art .lead{font-size:18px;color:var(--text2);line-height:1.65;margin-bottom:10px}
+.art .meta{font-size:13px;color:var(--text3);margin-bottom:28px}
+.art h2{font-size:22px;font-weight:800;margin:34px 0 12px;line-height:1.3}
+.art p{font-size:16px;line-height:1.75;color:#cbd5e1;margin-bottom:14px}
+.art ul,.art ol{margin:0 0 16px 22px;color:#cbd5e1;font-size:16px;line-height:1.75}
+.art li{margin-bottom:6px}
+.art a{color:var(--purple)}
+.art table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px}
+.art th,.art td{border:1px solid var(--border);padding:9px 12px;text-align:left;color:#cbd5e1}
+.art th{background:var(--card);color:var(--text)}
+.note{background:var(--grad-soft);border:1px solid var(--border-a);border-radius:var(--r-sm);padding:14px 16px;font-size:14px;line-height:1.6;color:#cbd5e1;margin:18px 0}
+.cta{background:var(--card);border:1px solid var(--border-a);border-radius:var(--r);padding:24px;margin:36px 0 12px;text-align:center}
+.cta h3{font-size:19px;margin-bottom:8px}
+.cta p{margin-bottom:14px}
+.cta a.btn{display:inline-block;background:var(--grad);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-sm)}
+.more{max-width:760px;margin:0 auto;padding:0 24px 60px;font-size:14px;color:var(--text2)}
+</style>
+<meta property="og:image" content="https://kreato.tech/og-kreato.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KREATO.AI — Karolina odbiera telefony za Ciebie">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KREATO.AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Czy bot pisze opinię w Google za klienta?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Nie. Bot tylko pyta o ocenę i podpowiada, jak znaleźć firmę w Mapach Google. Opinię klient pisze sam, na swoim koncie Google — tylko tak jest zgodna z zasadami."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Czy wolno prosić o opinię tylko zadowolonych klientów?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Nie. Google nie pozwala wybierać, kogo zapraszasz do wystawienia opinii (tzw. review gating). Dlatego zaproszenie do Google dostaje każdy klient, niezależnie od oceny. Niska ocena dodatkowo uruchamia alert dla właściciela, żeby mógł szybko zareagować."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Dlaczego w SMS-ie nie ma linku do opinii?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Operator SMS, z którego korzystamy, blokuje linki w wiadomościach do polskich numerów. Zamiast linku bot podaje nazwę firmy do wpisania w Mapach i hasło „Napisz opinię”. Jeśli Twoja firma ma inny kanał wysyłki, który przepuszcza linki, można go podpiąć."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Czy klient musi wyrazić zgodę na takiego SMS-a?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Zależy od okoliczności i treści wiadomości. Prośba o opinię może być uznana za informację handlową, więc przed uruchomieniem ustal z prawnikiem, jaką zgodę masz od klientów. Ten artykuł nie jest poradą prawną."
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">KREATO.AI</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Usługi</a></li>
+      <li><a href="dla-klinik.html">Kliniki</a></li>
+      <li><a href="dla-ecommerce.html">E-commerce</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="diagnosta.html">Diagnoza AI</a></li>
+    </ul>
+    <a href="diagnosta.html" class="nav-cta nav-links">Bezpłatna diagnoza →</a>
+  </div>
+</nav>
+<div class="breadcrumb"><a href="index.html">KREATO.AI</a><span>/</span><a href="blog.html">Blog</a><span>/</span>Automatyzacja</div>
+<article class="art">
+<span class="post-tag">Poradnik</span>
+<h1>Opinie w Google po wizycie: jak zbierać je SMS-em, bez linków i bez wybierania klientów</h1>
+<div class="meta">12 października 2026 · 6 min czytania · KREATO.AI</div>
+
+<p class="lead">Klienci rzadko piszą opinie sami z siebie, nawet jeśli wizyta im się podobała. Najczęściej wystarczy jedno przypomnienie we właściwym momencie. Poniżej opisujemy bota, który tę prośbę wysyła za Ciebie: prosto, zgodnie z zasadami Google i bez ręcznej pracy recepcji.</p>
+<div class="note"><strong>Status: pilotaż.</strong> Bot działa na naszych danych testowych. Nie podajemy wyników z wdrożeń u klientów, bo jeszcze ich nie mamy. Uruchamiamy go na początek dla jednego gabinetu lub salonu, razem z Tobą.</div>
+
+<h2>Dlaczego opinie w Google mają znaczenie</h2>
+<p>Gdy ktoś szuka w Mapach „dentysta”, „fryzjer” czy „warsztat” w swojej okolicy, patrzy na ocenę i liczbę opinii, zanim zadzwoni. Dla lokalnej firmy to często pierwszy kontakt z marką. Problem w tym, że:</p>
+<ul>
+<li><strong>Prośba o opinię wymaga pamiętania.</strong> W natłoku wizyt recepcja tego nie robi, więc opinie zbierają się przypadkiem.</li>
+<li><strong>Niezadowolony klient pisze chętniej niż zadowolony.</strong> Bez systemu widoczne są głównie skrajne emocje.</li>
+<li><strong>Złą ocenę właściciel często zauważa po tygodniach</strong>, gdy zdążyła już zaszkodzić.</li>
+</ul>
+
+<h2>Jak działa bot krok po kroku</h2>
+<ol>
+<li><strong>Wizyta się kończy.</strong> Twój system rejestracji (albo recepcja jednym kliknięciem) przekazuje botowi numer telefonu klienta.</li>
+<li><strong>Po ustalonym czasie</strong> (domyślnie 2 godziny) klient dostaje krótki SMS: podziękowanie i prośba o ocenę wizyty cyfrą od 1 do 5.</li>
+<li><strong>Klient odpisuje cyfrą</strong>, np. „5” albo „3 długo czekałem”. Komentarz po cyfrze bot zapisuje.</li>
+<li><strong>Każdy klient dostaje odpowiedź</strong> z zaproszeniem do opinii w Google: wystarczy wpisać w Mapach nazwę firmy i kliknąć „Napisz opinię”.</li>
+<li><strong>Przy ocenie 1–3 właściciel dostaje alert na Telegram</strong> z numerem klienta i komentarzem, żeby zadzwonić, zanim sprawa wyląduje w internecie.</li>
+</ol>
+
+<h2>Dlaczego zaproszenie dostaje każdy, nie tylko zadowoleni</h2>
+<p>Wiele narzędzi działa tak: zadowolony klient trafia do Google, a niezadowolony na prywatny formularz. To wygląda sprytnie, ale Google tego zabrania (zasady dotyczące opinii w Mapach: nie wolno wybiórczo zachęcać do pisania opinii wyłącznie zadowolonych klientów). Konsekwencją może być usunięcie opinii, a w skrajnych przypadkach problemy z profilem firmy.</p>
+<p>Dlatego nasz bot nie filtruje. Różnica jest tylko po Twojej stronie: niska ocena uruchamia alert, więc możesz od razu naprawić problem z klientem. Opinia w Google to jego decyzja.</p>
+
+<h2>Dlaczego nie wysyłamy linku</h2>
+<p>Operator SMS, z którego korzystamy, blokuje wiadomości z linkami do polskich numerów. Zamiast linku bot podaje nazwę firmy do wpisania w Mapach. To nieco mniej wygodne dla klienta, ale działa niezawodnie i nie trafia do filtrów antyspamowych.</p>
+
+<h2>Co dostaje właściciel</h2>
+<table>
+<tr><th>Zdarzenie</th><th>Co robi bot</th></tr>
+<tr><td>Ocena 4–5</td><td>Dziękuje i zaprasza do opinii w Google.</td></tr>
+<tr><td>Ocena 1–3</td><td>Dziękuje za szczerość, informuje, że właściciel się odezwie, zaprasza do opinii w Google i wysyła Ci alert na Telegram z numerem i komentarzem.</td></tr>
+<tr><td>Odpowiedź bez cyfry</td><td>Ignoruje wiadomość (nie miesza się w zwykłe SMS-y klientów).</td></tr>
+<tr><td>Brak odpowiedzi</td><td>Nic więcej nie wysyła — jeden SMS na wizytę.</td></tr>
+</table>
+
+<h2>Czego bot nie robi</h2>
+<ul>
+<li>Nie pisze opinii za klienta i nie podszywa się pod niego.</li>
+<li>Nie oferuje rabatów ani prezentów za opinie (Google tego zabrania).</li>
+<li>Nie usuwa i nie ukrywa niskich ocen, bo nie ma do tego dostępu.</li>
+<li>Nie gwarantuje liczby opinii. Zwiększa szansę, że klient o nich pomyśli.</li>
+</ul>
+
+<h2>Ile to kosztuje</h2>
+<p>Abonament wynosi <strong>od 99 do 149 zł netto miesięcznie</strong>, zależnie od liczby wizyt. Do tego dochodzi koszt SMS-ów rozliczany według zużycia: około 0,18 zł za wiadomość. Przy 200 wizytach miesięcznie samo zaproszenie to ok. 36 zł, a każda odpowiedź zwrotna do klienta to kolejny SMS. Możliwy jest plan roczny — zapytaj o niego w wiadomości. Pilotaż startuje od niewielkiej liczby wizyt, żeby sprawdzić, jak odbierają to Twoi klienci.</p>
+
+<h2>Najczęstsze pytania</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy bot pisze opinię w Google za klienta?</h3><p>Nie. Bot tylko pyta o ocenę i podpowiada, jak znaleźć firmę w Mapach Google. Opinię klient pisze sam, na swoim koncie Google — tylko tak jest zgodna z zasadami.</p><h3 style="font-size:17px;margin:18px 0 6px">Czy wolno prosić o opinię tylko zadowolonych klientów?</h3><p>Nie. Google nie pozwala wybierać, kogo zapraszasz do wystawienia opinii (tzw. review gating). Dlatego zaproszenie do Google dostaje każdy klient, niezależnie od oceny. Niska ocena dodatkowo uruchamia alert dla właściciela, żeby mógł szybko zareagować.</p><h3 style="font-size:17px;margin:18px 0 6px">Dlaczego w SMS-ie nie ma linku do opinii?</h3><p>Operator SMS, z którego korzystamy, blokuje linki w wiadomościach do polskich numerów. Zamiast linku bot podaje nazwę firmy do wpisania w Mapach i hasło „Napisz opinię”. Jeśli Twoja firma ma inny kanał wysyłki, który przepuszcza linki, można go podpiąć.</p><h3 style="font-size:17px;margin:18px 0 6px">Czy klient musi wyrazić zgodę na takiego SMS-a?</h3><p>Zależy od okoliczności i treści wiadomości. Prośba o opinię może być uznana za informację handlową, więc przed uruchomieniem ustal z prawnikiem, jaką zgodę masz od klientów. Ten artykuł nie jest poradą prawną.</p>
+<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="blog-jak-mierzyc-skutecznosc-bota.html">Jak mierzyć, czy bot działa: 6 wskaźników po pierwszym miesiącu</a> · <a href="blog-telegram-jako-centrum-powiadomien.html">Telegram jako centrum powiadomień firmy</a> · <a href="jak-dzialaja-boty.html">Jak działają nasze boty</a></p>
+<p style="margin-top:22px"><strong>Powiązane na stronie:</strong> <a href="blog.html">Wszystkie artykuły</a></p>
+<div class="cta"><h3>Chcesz zobaczyć, jak to działa u Ciebie?</h3><p>Napisz do nas — odpiszemy e-mailem i zaproponujemy pilotaż.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Pytanie z bloga: blog-opinie-google-sms-bot">biuro@kreato.tech</a></div>
+</article>
+<div class="more"><strong>Czytaj dalej:</strong> <a href="blog-nieodebrany-telefon-koszt.html">Ile kosztuje nieodebrany telefon — i jak to policzyć dla swojej firmy</a> · <a href="blog-rodo-ai-voicebot.html">RODO i AI — lista kontrolna przed wdrożeniem voicebota</a> · <a href="blog-pilotaz-ai-krok-po-kroku.html">Pilotaż AI w 2–3 dni</a></div>
+<div id="faq-strip" style="max-width:860px;margin:40px auto 24px;padding:18px 20px;background:var(--card,#131c2f);border:1px solid rgba(139,92,246,.35);border-radius:12px;font-family:inherit"><div style="font-size:15px;font-weight:700;color:var(--text,#e8eaf0);margin-bottom:6px">❓ Masz pytania? Zobacz odpowiedzi w FAQ</div><div style="font-size:14px;line-height:1.7;color:var(--text2,#8b92a8)">Najczęstsze pytanie na ten temat: <a href="index.html#faq-boty" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">32. Jakie boty i agentów AI oferuje KREATO?</a><br><a href="index.html#faq" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Wszystkie pytania i odpowiedzi (FAQ) →</a> &nbsp;·&nbsp; <a href="jak-dzialaja-boty.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Jak działają nasze boty (schematy) →</a></div></div>
+<footer>
+  <div>
+    &copy; 2026 KREATO.AI ·
+    <a href="index.html">Strona główna</a> ·
+    <a href="dla-klinik.html">Dla klinik</a> ·
+    <a href="dla-ecommerce.html">E-commerce</a> ·
+    <a href="blog.html">Blog</a> ·
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+  </div>
+  <div style="margin-top:8px">ul. Prądzyńskiego 23, 63-000 Środa Wielkopolska · <a href="mailto:biuro@kreato.tech">biuro@kreato.tech</a></div>
+</footer>
+</body>
+</html>
