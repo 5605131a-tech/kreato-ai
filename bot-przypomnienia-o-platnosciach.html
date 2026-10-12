@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Przypomnienia o nieopłaconych fakturach SMS-em — bot do terminów płatności | KREATO.AI</title>
+<meta name="description" content="Bot SMS przypomina klientom o terminie płatności faktury: lista faktur, przypomnienia przed i po terminie, STOP i limit SMS. Pilotaż od 119 zł netto/mies.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="przypomnienia o płatnościach, przypomnienie o fakturze SMS, nieopłacone faktury, automatyczne przypomnienia o płatnościach, bot do faktur">
+<meta property="og:title" content="Przypomnienia o nieopłaconych fakturach SMS-em — bot do terminów płatności | KREATO.AI">
+<meta property="og:description" content="Bot SMS przypomina klientom o terminie płatności faktury: lista faktur, przypomnienia przed i po terminie, STOP i limit SMS. Pilotaż od 119 zł netto/mies.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kreato.tech/bot-przypomnienia-o-platnosciach.html">
+<link rel="canonical" href="https://kreato.tech/bot-przypomnienia-o-platnosciach.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Przypomnienia o płatnościach", "description": "Bot SMS przypomina klientom o terminie płatności faktury: lista faktur, przypomnienia przed i po terminie, STOP i limit SMS. Pilotaż od 119 zł netto/mies.", "url": "https://kreato.tech/bot-przypomnienia-o-platnosciach.html", "provider": {"@type": "Organization", "name": "KREATO.AI", "url": "https://kreato.tech/"}, "areaServed": "PL", "inLanguage": "pl", "offers": [{"@type": "Offer", "name": "Start", "price": "119", "priceCurrency": "PLN", "description": "do 100 SMS miesięcznie (netto, miesięcznie)"}, {"@type": "Offer", "name": "Plus", "price": "159", "priceCurrency": "PLN", "description": "do 300 SMS miesięcznie (netto, miesięcznie)"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Czy SMS z przypomnieniem o fakturze to spam?", "acceptedAnswer": {"@type": "Answer", "text": "Przypomnienie o terminie płatności dotyczy istniejącej umowy z klientem i nie zawiera treści reklamowych. Mimo to każda wiadomość ma prostą możliwość rezygnacji (odpowiedź STOP). To nie jest porada prawna; przy wątpliwościach skonsultuj zakres z prawnikiem."}}, {"@type": "Question", "name": "Co jeśli klient napisze, że już zapłacił?", "acceptedAnswer": {"@type": "Answer", "text": "Przypomnienia dla tej faktury zostają wstrzymane, a Ty dostajesz alert na Telegram, żeby sprawdzić wpływ na koncie. Fakturę oznaczasz jako opłaconą Ty albo import statusu z Twojego programu."}}, {"@type": "Question", "name": "Czy bot łączy się z Fakturownią lub iFirmą?", "acceptedAnswer": {"@type": "Answer", "text": "Przygotowaliśmy import w formacie eksportu z Fakturowni; ze względu na pilotaż integracje z programami do fakturowania ustalamy indywidualnie, a na razie dane trafiają do bota z pliku lub przez API."}}, {"@type": "Question", "name": "Ile kosztuje i co po wyczerpaniu limitu?", "acceptedAnswer": {"@type": "Answer", "text": "Start 119 zł netto miesięcznie (do 100 SMS) albo Plus 159 zł (do 300 SMS). W planie rocznym płacisz za 10 miesięcy, a korzystasz 12: odpowiednio 99 zł i 133 zł miesięcznie. Po wyczerpaniu limitu wysyłka się zatrzymuje, a dodatkowe SMS-y kosztują 0,25 zł za sztukę po uzgodnieniu. Ceny netto; domyślnie rachunek bez VAT, na życzenie faktura z VAT przez Useme."}}]}</script>
+<style>
+:root{--bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;--purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);--grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.nav-logo{font-size:20px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta{background:var(--grad);color:#fff!important;padding:9px 18px;border-radius:var(--r-sm);font-size:13px!important;font-weight:700!important}
+@media(max-width:768px){.nav-links{display:none}}
+.inner{max-width:1120px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--grad-soft);border:1px solid var(--border-a);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+.breadcrumb{font-size:12px;color:var(--text3);padding:12px 24px;max-width:1120px;margin:0 auto}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--text2)}
+.breadcrumb span{margin:0 6px}
+.blog-hero{padding:72px 24px 48px;text-align:center}
+.blog-hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:16px}
+.blog-hero p{font-size:17px;color:var(--text2);max-width:560px;margin:0 auto;line-height:1.6}
+.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;padding:48px 24px 80px;max-width:1120px;margin:0 auto}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s;text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+.post-card:hover{border-color:var(--border-a);transform:translateY(-3px);box-shadow:0 12px 40px rgba(139,92,246,.1)}
+.post-img{height:160px;background:var(--grad-soft);display:flex;align-items:center;justify-content:center;font-size:48px}
+.post-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
+.post-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(139,92,246,.08);padding:3px 10px;border-radius:100px;width:fit-content}
+.post-title{font-size:16px;font-weight:700;line-height:1.4}
+.post-excerpt{font-size:13px;color:var(--text2);line-height:1.6;flex:1}
+.post-meta{font-size:11px;color:var(--text3);margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+.post-coming{opacity:.5;pointer-events:none}
+.coming-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--text3);background:rgba(255,255,255,.04);padding:2px 8px;border-radius:100px;margin-left:8px;vertical-align:middle}
+footer{padding:32px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
+footer a{color:var(--text3);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--text2)}
+
+.art{max-width:760px;margin:0 auto;padding:40px 24px 24px}
+.art h1{font-size:clamp(28px,4.4vw,42px);font-weight:900;line-height:1.2;letter-spacing:-.02em;margin:10px 0 14px}
+.art .lead{font-size:18px;color:var(--text2);line-height:1.65;margin-bottom:10px}
+.art .meta{font-size:13px;color:var(--text3);margin-bottom:28px}
+.art h2{font-size:22px;font-weight:800;margin:34px 0 12px;line-height:1.3}
+.art p{font-size:16px;line-height:1.75;color:#cbd5e1;margin-bottom:14px}
+.art ul,.art ol{margin:0 0 16px 22px;color:#cbd5e1;font-size:16px;line-height:1.75}
+.art li{margin-bottom:6px}
+.art a{color:var(--purple)}
+.art table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px}
+.art th,.art td{border:1px solid var(--border);padding:9px 12px;text-align:left;color:#cbd5e1}
+.art th{background:var(--card);color:var(--text)}
+.note{background:var(--grad-soft);border:1px solid var(--border-a);border-radius:var(--r-sm);padding:14px 16px;font-size:14px;line-height:1.6;color:#cbd5e1;margin:18px 0}
+.cta{background:var(--card);border:1px solid var(--border-a);border-radius:var(--r);padding:24px;margin:36px 0 12px;text-align:center}
+.cta h3{font-size:19px;margin-bottom:8px}
+.cta p{margin-bottom:14px}
+.cta a.btn{display:inline-block;background:var(--grad);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-sm)}
+.more{max-width:760px;margin:0 auto;padding:0 24px 60px;font-size:14px;color:var(--text2)}
+</style>
+<meta property="og:image" content="https://kreato.tech/og-kreato.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KREATO.AI — Karolina odbiera telefony za Ciebie">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KREATO.AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">KREATO.AI</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Usługi</a></li>
+      <li><a href="dla-klinik.html">Kliniki</a></li>
+      <li><a href="dla-ecommerce.html">E-commerce</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="diagnosta.html">Diagnoza AI</a></li>
+    </ul>
+    <a href="diagnosta.html" class="nav-cta nav-links">Bezpłatna diagnoza →</a>
+  </div>
+</nav>
+<div class="breadcrumb"><a href="index.html">KREATO.AI</a><span>/</span><a href="jak-dzialaja-boty.html">Jak działają boty</a><span>/</span>Przypomnienia o płatnościach</div>
+<article class="art">
+<span class="post-tag">SMS · Pilotaż</span>
+<h1>Przypomnienia o płatnościach: SMS, który pilnuje terminu faktury za Ciebie</h1>
+<div class="meta">Aktualizacja: 12 października 2026 · KREATO.AI</div>
+<p class="lead">Faktura wystawiona, termin mija, a Ty nie masz czasu pisać „czy już opłacone?”. Bot KREATO sam wysyła klientom krótkie, uprzejme przypomnienia przed terminem i po nim, a Ty dostajesz wieczorem podsumowanie na Telegram. Pierwsze wiadomości możesz zatwierdzić ręcznie, a klient może zrezygnować jednym słowem.</p>
+
+<h2>Co robi bot</h2>
+<ul>
+<li><strong>Przyjmuje listę faktur:</strong> numer, kwota, termin płatności, imię i telefon klienta. Dane przesyłasz plikiem lub przez API; przygotowaliśmy też format zgodny z eksportem z Fakturowni.</li>
+<li><strong>Układa przypomnienia według stałej drabinki:</strong> 3 dni przed terminem, w dniu terminu oraz 3, 7 i 14 dni po nim. Ton rośnie od uprzejmego do stanowczego, ale zawsze z furtką „jeśli opłacona, zignoruj”.</li>
+<li><strong>Czeka na Twoją akceptację</strong> (na początku): widzisz, co i do kogo pójdzie. Gdy zaufasz schematowi, włączamy wysyłkę automatyczną.</li>
+<li><strong>Wysyła SMS-y</strong> w dni robocze, w ustalonych godzinach (domyślnie 9:00–18:00), małymi paczkami.</li>
+<li><strong>Obsługuje odpowiedzi:</strong> „STOP” wypisuje numer, a odpowiedź w stylu „zapłaciłem” wstrzymuje przypomnienia dla tej faktury i wysyła Ci alert, żebyś sprawdził wpływ na koncie.</li>
+<li><strong>Raportuje:</strong> wieczorem na Telegramie: ile SMS-ów wysłano, ile faktur jest po terminie i na jaką kwotę.</li>
+</ul>
+<h2>Przykładowe wiadomości</h2>
+<table>
+<tr><th>Moment</th><th>Przykład (skrót, do 160 znaków)</th></tr>
+<tr><td>3 dni przed terminem</td><td>„Firma Demo: faktura FV 12/2026 na 1230,00 zl - termin platnosci 20.10.2026. Dziekujemy! Odpisz STOP aby zrezygnowac.”</td></tr>
+<tr><td>W dniu terminu</td><td>„Firma Demo: dzis termin platnosci faktury FV 12/2026 (1230,00 zl). Jesli oplacona, prosimy zignorowac. Odpisz STOP aby zrezygnowac.”</td></tr>
+<tr><td>7 dni po terminie</td><td>„Firma Demo: ponownie prosimy o wplate 1230,00 zl za fakture FV 12/2026 (termin 20.10.2026). Odpisz STOP aby zrezygnowac.”</td></tr>
+</table>
+<p>To szablony ilustracyjne z wymyślonymi nazwami i kwotami, a nie wiadomości do prawdziwych klientów.</p>
+<h2>Jak to jest zabezpieczone</h2>
+<ul>
+<li><strong>Jeden SMS na numer w ciągu dwóch dni</strong>, nawet gdy klient ma kilka zaległych faktur.</li>
+<li><strong>STOP na stałe:</strong> numer, który odpisał STOP, nie dostanie kolejnych wiadomości.</li>
+<li><strong>Brak gróźb i odsetek:</strong> to miękkie przypomnienia, a nie windykacja. Faktury przeterminowane o ponad dwa miesiące zostają dla człowieka.</li>
+<li><strong>Bot nie ocenia, czy klient zapłacił.</strong> Fakturę oznaczasz jako opłaconą Ty (albo import statusu z Twojego programu); samo „zapłaciłem” od klienta tylko wstrzymuje wysyłkę.</li>
+<li><strong>Limit miesięczny SMS</strong> zależny od pakietu; po jego wyczerpaniu wysyłka się zatrzymuje.</li>
+<li><strong>Potwierdzenie podstawy kontaktu:</strong> przed startem prosimy o Twoje potwierdzenie, że kontaktujesz się z klientami w sprawie ich faktur. Treść wiadomości nie zawiera reklam.</li>
+</ul>
+<h2>Cennik (ceny netto za miesiąc)</h2>
+<table>
+<tr><th></th><th>Start</th><th>Plus</th></tr>
+<tr><td>Cena miesięczna</td><td><strong>119 zł</strong></td><td><strong>159 zł</strong></td></tr>
+<tr><td>Plan roczny (płacisz za 10 miesięcy, korzystasz 12)</td><td>99 zł miesięcznie (1 190 zł za rok)</td><td>133 zł miesięcznie (1 590 zł za rok)</td></tr>
+<tr><td>Limit SMS w miesiącu</td><td>100</td><td>300</td></tr>
+<tr><td>Ponad limit</td><td colspan="2">0,25 zł za SMS (po wcześniejszym uzgodnieniu)</td></tr>
+<tr><td>W cenie</td><td colspan="2">import faktur, drabinka przypomnień, akceptacja, obsługa STOP, alerty o odpowiedziach, raport dzienny na Telegram</td></tr>
+</table>
+<p>Ceny netto. Domyślnie wystawiamy rachunek bez VAT; na życzenie faktura z VAT przez platformę Useme. Usługa startuje jako pilotaż: zaczynamy od kilku faktur i sprawdzamy odbiór wiadomości, zanim zwiększymy skalę.</p>
+<h2>Czego bot nie robi</h2>
+<ul>
+<li>Nie prowadzi windykacji, nie grozi i nie nalicza odsetek.</li>
+<li>Nie łączy się jeszcze automatycznie z programami do fakturowania (import z pliku lub API; integracje ustalamy indywidualnie).</li>
+<li>Nie wysyła e-maili (na razie tylko SMS) ani wiadomości z linkami.</li>
+<li>Nie gwarantuje, że klient zapłaci szybciej.</li>
+</ul>
+<h2>Jak wygląda wdrożenie</h2>
+<ol>
+<li>Przysyłasz kilka faktur do pilotażu (plik lub eksport) i potwierdzasz podstawę kontaktu z klientami.</li>
+<li>Ustalamy godziny wysyłki, drabinkę i limit.</li>
+<li>Pierwsze przypomnienia zatwierdzasz ręcznie; potem możesz włączyć wysyłkę automatyczną.</li>
+<li>Co wieczór widzisz podsumowanie na Telegramie.</li>
+</ol>
+<h2>Najczęstsze pytania</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy SMS z przypomnieniem o fakturze to spam?</h3><p>Przypomnienie o terminie płatności dotyczy istniejącej umowy z klientem i nie zawiera treści reklamowych. Mimo to każda wiadomość ma prostą możliwość rezygnacji (odpowiedź STOP). To nie jest porada prawna; przy wątpliwościach skonsultuj zakres z prawnikiem.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Co jeśli klient napisze, że już zapłacił?</h3><p>Przypomnienia dla tej faktury zostają wstrzymane, a Ty dostajesz alert na Telegram, żeby sprawdzić wpływ na koncie. Fakturę oznaczasz jako opłaconą Ty albo import statusu z Twojego programu.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy bot łączy się z Fakturownią lub iFirmą?</h3><p>Przygotowaliśmy import w formacie eksportu z Fakturowni; ze względu na pilotaż integracje z programami do fakturowania ustalamy indywidualnie, a na razie dane trafiają do bota z pliku lub przez API.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">Ile kosztuje i co po wyczerpaniu limitu?</h3><p>Start 119 zł netto miesięcznie (do 100 SMS) albo Plus 159 zł (do 300 SMS). W planie rocznym płacisz za 10 miesięcy, a korzystasz 12: odpowiednio 99 zł i 133 zł miesięcznie. Po wyczerpaniu limitu wysyłka się zatrzymuje, a dodatkowe SMS-y kosztują 0,25 zł za sztukę po uzgodnieniu. Ceny netto; domyślnie rachunek bez VAT, na życzenie faktura z VAT przez Useme.</p>
+<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="blog-przypomnienia-o-platnosciach-faktury-sms.html">Przypomnienia o nieopłaconych fakturach — jak nie psuć relacji (artykuł)</a> · <a href="bot-dokumenty-firmowe.html">Asystent dokumentów firmowych</a> · <a href="jak-dzialaja-boty.html">Jak działają nasze boty</a> · <a href="blog-rodo-ai-voicebot.html">RODO i AI — lista kontrolna</a></p>
+<div class="cta"><h3>Chcesz zobaczyć, jak to działa u Ciebie?</h3><p>Napisz do nas — odpiszemy e-mailem i pokażemy demonstrację.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Przypomnienia o płatnościach">biuro@kreato.tech</a></div>
+</article>
+<div id="faq-strip" style="max-width:860px;margin:40px auto 24px;padding:18px 20px;background:var(--card,#131c2f);border:1px solid rgba(139,92,246,.35);border-radius:12px;font-family:inherit"><div style="font-size:15px;font-weight:700;color:var(--text,#e8eaf0);margin-bottom:6px">❓ Masz pytania? Zobacz odpowiedzi w FAQ</div><div style="font-size:14px;line-height:1.7;color:var(--text2,#8b92a8)">Najczęstsze pytanie na ten temat: <a href="index.html#faq-boty" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">32. Jakie boty i agentów AI oferuje KREATO?</a><br><a href="index.html#faq" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Wszystkie pytania i odpowiedzi (FAQ) →</a> &nbsp;·&nbsp; <a href="jak-dzialaja-boty.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Jak działają nasze boty (schematy) →</a></div></div>
+<footer>
+  <div>
+    &copy; 2026 KREATO.AI ·
+    <a href="index.html">Strona główna</a> ·
+    <a href="dla-klinik.html">Dla klinik</a> ·
+    <a href="dla-ecommerce.html">E-commerce</a> ·
+    <a href="blog.html">Blog</a> ·
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+  </div>
+  <div style="margin-top:8px">ul. Prądzyńskiego 23, 63-000 Środa Wielkopolska · <a href="mailto:biuro@kreato.tech">biuro@kreato.tech</a></div>
+</footer>
+</body>
+</html>
