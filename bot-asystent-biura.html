@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asystent biura AI w Telegramie: raport, SMS do dłużników, faktury | KREATO.AI</title>
+<meta name="description" content="Asystent AI dla właściciela małej firmy: w Telegramie pytasz o zaległe faktury, przygotowujesz przypomnienia SMS dla dłużników i dodajesz faktury. Każde działanie po Twoim „TAK”. 199 zł netto/mies., pilotaż.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="asystent biura AI, asystent AI w Telegramie, przypomnienia o płatnościach, zaległe faktury, SMS do dłużników, agent AI dla małej firmy, asystent dla właściciela firmy">
+<meta property="og:title" content="Asystent biura AI w Telegramie: raport, SMS do dłużników, faktury | KREATO.AI">
+<meta property="og:description" content="Asystent AI dla właściciela małej firmy: w Telegramie pytasz o zaległe faktury, przygotowujesz przypomnienia SMS dla dłużników i dodajesz faktury. Każde działanie po Twoim „TAK”. 199 zł netto/mies., pilotaż.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kreato.tech/bot-asystent-biura.html">
+<link rel="canonical" href="https://kreato.tech/bot-asystent-biura.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Asystent biura AI (Telegram)", "description": "Asystent AI dla właściciela małej firmy: raport o fakturach i SMS-ach, przygotowanie przypomnień SMS dla dłużników, dodawanie faktur i oznaczanie ich jako opłaconych. Każde działanie wymaga potwierdzenia TAK. Pilotaż.", "url": "https://kreato.tech/bot-asystent-biura.html", "provider": {"@type": "Organization", "name": "KREATO.AI", "url": "https://kreato.tech/"}, "areaServed": "PL", "inLanguage": "pl", "offers": [{"@type": "Offer", "name": "Asystent biura, płatność miesięczna", "price": "199", "priceCurrency": "PLN", "description": "netto, miesięcznie; 600 wiadomości do asystenta miesięcznie; działa na liście faktur bota Przypomnienia o płatnościach"}, {"@type": "Offer", "name": "Asystent biura, plan roczny", "price": "165", "priceCurrency": "PLN", "description": "netto, miesięcznie; płacisz za 10 miesięcy, korzystasz 12 (1 990 zł za rok)"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Czym Asystent biura różni się od zwykłego czatu z AI?", "acceptedAnswer": {"@type": "Answer", "text": "Asystent zna Twoje dane: listę faktur, terminy, limity SMS. Odpowiada na ich podstawie i nie zmyśla liczb. Nie ogranicza się do rozmowy: potrafi przygotować przypomnienia SMS dla dłużników lub dodać fakturę. Każde takie działanie wykona dopiero po Twoim potwierdzeniu słowem TAK."}}, {"@type": "Question", "name": "Czy asystent może coś wysłać albo zmienić bez mojej zgody?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. Asystent najpierw przygotowuje działanie (np. „wysłać 3 SMS-y z przypomnieniem”) i pokazuje je w czacie. Dopiero Twoje TAK uruchamia wykonanie, a NIE je anuluje. Propozycja wygasa po 15 minutach. Asystent nie płaci, nie usuwa danych i nie wysyła wiadomości poza przypomnieniami o płatnościach. Przedstawia się jako asystent AI."}}, {"@type": "Question", "name": "Ile kosztuje Asystent biura i co z limitem wiadomości?", "acceptedAnswer": {"@type": "Answer", "text": "199 zł netto miesięcznie, w planie rocznym płacisz za 10 miesięcy, a korzystasz 12: 165 zł miesięcznie (1 990 zł za rok). W cenie jest 600 wiadomości do asystenta miesięcznie; po przekroczeniu asystent odmawia kolejnych poleceń do końca miesiąca lub zwiększenia limitu, a potwierdzanie przygotowanych działań (TAK/NIE) nadal działa. Asystent korzysta z listy faktur bota „Przypomnienia o płatnościach” (od 119 zł netto), dlatego w pilotażu działają razem; cenę zestawu ustalamy indywidualnie. To pilotaż, ceny netto; domyślnie rachunek bez VAT, na życzenie faktura z VAT przez Useme."}}]}</script>
+<style>
+:root{--bg:#1f1040;--bg1:#251350;--bg2:#2b1858;--card:#34205f;--card-h:#3f2a73;--purple:#a78bfa;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#6c43bf 0%,#6c43bf 100%);--grad-text:linear-gradient(135deg,#c4b5fd 0%,#a78bfa 100%);--grad-soft:linear-gradient(135deg,rgba(167,139,250,.16) 0%,rgba(108,67,191,.16) 100%);--text:#f5f3ff;--text2:#d9d0f2;--text3:#bfb2e6;--border:rgba(167,139,250,.22);--border-a:rgba(167,139,250,.45);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(31,16,64,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.nav-logo{font-size:20px;font-weight:900;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta{background:var(--grad);color:#fff!important;padding:9px 18px;border-radius:var(--r-sm);font-size:13px!important;font-weight:700!important}
+@media(max-width:768px){.nav-links{display:none}}
+.breadcrumb{font-size:12px;color:var(--text3);padding:12px 24px;max-width:1120px;margin:0 auto}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--text2)}
+.breadcrumb span{margin:0 6px}
+.post-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(139,92,246,.08);padding:3px 10px;border-radius:100px;width:fit-content}
+footer{padding:32px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
+footer a{color:var(--text3);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--text2)}
+.art{max-width:760px;margin:0 auto;padding:40px 24px 24px}
+.art h1{font-size:clamp(28px,4.4vw,42px);font-weight:900;line-height:1.2;letter-spacing:-.02em;margin:10px 0 14px}
+.art .lead{font-size:18px;color:var(--text2);line-height:1.65;margin-bottom:10px}
+.art .meta{font-size:13px;color:var(--text3);margin-bottom:28px}
+.art h2{font-size:22px;font-weight:800;margin:34px 0 12px;line-height:1.3}
+.art p{font-size:16px;line-height:1.75;color:#cbd5e1;margin-bottom:14px}
+.art ul,.art ol{margin:0 0 16px 22px;color:#cbd5e1;font-size:16px;line-height:1.75}
+.art li{margin-bottom:6px}
+.art a{color:var(--purple)}
+.art table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px}
+.art th,.art td{border:1px solid var(--border);padding:9px 12px;text-align:left;color:#cbd5e1}
+.art th{background:var(--card);color:var(--text)}
+.note{background:var(--grad-soft);border:1px solid var(--border-a);border-radius:var(--r-sm);padding:14px 16px;font-size:14px;line-height:1.6;color:#cbd5e1;margin:18px 0}
+.cta{background:var(--card);border:1px solid var(--border-a);border-radius:var(--r);padding:24px;margin:36px 0 12px;text-align:center}
+.cta h3{font-size:19px;margin-bottom:8px}
+.cta p{margin-bottom:14px}
+.cta a.btn{display:inline-block;background:var(--grad);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-sm)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:16px 0 22px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px}
+.step b{display:block;font-size:13px;color:var(--purple);margin-bottom:6px}
+.step span{font-size:14px;line-height:1.55;color:#cbd5e1}
+.price-box{background:var(--card);border:1px solid var(--border-a);border-radius:var(--r);padding:22px;margin:18px 0}
+.price-box .old{color:var(--text3);text-decoration:line-through;font-size:16px}
+.price-box .now{font-size:36px;font-weight:900}
+.price-box .sub{font-size:14px;color:var(--text2);margin-top:6px;line-height:1.6}
+</style>
+<meta property="og:image" content="https://kreato.tech/og-kreato.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KREATO.AI — Karolina odbiera telefony za Ciebie">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KREATO.AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">KREATO.AI</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Usługi</a></li>
+      <li><a href="dla-klinik.html">Kliniki</a></li>
+      <li><a href="dla-ecommerce.html">E-commerce</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="diagnosta.html">Diagnoza AI</a></li>
+    </ul>
+    <a href="diagnosta.html" class="nav-cta nav-links">Bezpłatna diagnoza →</a>
+  </div>
+</nav>
+<div class="breadcrumb"><a href="index.html">KREATO.AI</a><span>/</span><a href="jak-dzialaja-boty.html">Jak działają boty</a><span>/</span>Asystent biura</div>
+<article class="art">
+<span class="post-tag">Asystent AI · Pilotaż</span>
+<h1>Asystent biura: pytasz w Telegramie, a on sprawdza faktury i przygotowuje przypomnienia</h1>
+<div class="meta">Aktualizacja: 13 października 2026 · KREATO.AI</div>
+<p class="lead">Właściciel małej firmy nie ma czasu otwierać arkuszy, żeby sprawdzić, kto jest winien pieniądze. Asystent biura siedzi w Telegramie: piszesz „raport” albo „przypomnij dłużnikom” i dostajesz odpowiedź na podstawie Twoich prawdziwych danych. Nic nie zostanie wysłane ani zmienione, dopóki nie odpowiesz TAK.</p>
+
+<div class="steps">
+<div class="step"><b>① Piszesz</b><span>Zwykłym językiem, po polsku lub rosyjsku: „ile mam zaległych faktur?”</span></div>
+<div class="step"><b>② Asystent sprawdza</b><span>Czyta listę faktur i limit SMS Twojej firmy. Liczb nie zmyśla.</span></div>
+<div class="step"><b>③ Proponuje</b><span>Np. „wysłać 3 SMS-y z przypomnieniem”. Pokazuje to w czacie.</span></div>
+<div class="step"><b>④ Ty decydujesz</b><span>TAK wykonuje, NIE anuluje. Bez odpowiedzi propozycja wygasa po 15 minutach.</span></div>
+</div>
+
+<h2>Co potrafi asystent</h2>
+<table>
+<tr><th>Polecenie</th><th>Co się dzieje</th></tr>
+<tr><td>„Raport”</td><td>Liczba i suma otwartych oraz przeterminowanych faktur, płatności z ostatnich 7 dni, wykorzystanie limitu SMS i wiadomości do asystenta.</td></tr>
+<tr><td>„Przypomnij dłużnikom”</td><td>Przygotowuje SMS-y z przypomnieniem o płatności i pokazuje, ile wyjdzie. Wysyłka dopiero po Twoim TAK, w godzinach okna SMS.</td></tr>
+<tr><td>„Dodaj fakturę FV 12/10/2026, 1 500 zł, termin 30.10”</td><td>Zapisuje fakturę na liście (numer, kwota i termin są wymagane; nazwa klienta i telefon opcjonalnie). Po potwierdzeniu.</td></tr>
+<tr><td>„Faktura FV 12/10/2026 opłacona”</td><td>Oznacza fakturę jako opłaconą i anuluje dalsze przypomnienia. Po potwierdzeniu.</td></tr>
+<tr><td>Krótkie pytanie o fakt z internetu</td><td>Asystent wyszuka odpowiedź i potraktuje wynik jako dane, nie polecenie.</td></tr>
+</table>
+
+<h2>Jak zaczynasz</h2>
+<p>Po zamówieniu dostajesz od nas jednorazowy <strong>kod połączenia</strong> (8 znaków, ważny 7 dni). Piszesz do asystenta w Telegramie <code>/start KOD</code> i Twój czat zostaje połączony z Twoją firmą. Od tej chwili tylko ten czat ma dostęp do danych firmy; obcy użytkownik dostaje komunikat, że czat nie jest połączony. Po pięciu błędnych kodach w ciągu godziny czat jest blokowany na godzinę.</p>
+
+<h2>Cena</h2>
+<div class="price-box">
+<div class="now">199 zł <span style="font-size:16px;font-weight:700;color:var(--text2)">netto / miesiąc</span></div>
+<div class="sub">W planie rocznym płacisz za 10 miesięcy, a korzystasz 12: <strong>165 zł miesięcznie</strong> (1 990 zł za rok), cena zablokowana na 12 miesięcy. W cenie 600 wiadomości do asystenta miesięcznie.</div>
+</div>
+<p>Asystent korzysta z listy faktur bota <a href="bot-przypomnienia-o-platnosciach.html">Przypomnienia o płatnościach</a> (od 119 zł netto miesięcznie), dlatego w pilotażu działają razem. Cenę zestawu ustalamy indywidualnie z pierwszymi firmami. Ceny netto. Domyślnie wystawiamy rachunek bez VAT; na życzenie faktura z VAT przez platformę Useme.</p>
+<div class="cta"><h3>Chcesz wejść do pilotażu?</h3><p>Napisz do nas. Odpiszemy e-mailem i pokażemy, jak wygląda rozmowa z asystentem na przykładzie Twojej firmy.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Asystent biura — pilotaż">biuro@kreato.tech</a></div>
+
+<h2>Zasady bezpieczeństwa</h2>
+<ul>
+<li><strong>Asystent przedstawia się jako AI.</strong> Rozmawiasz z programem, nie z człowiekiem.</li>
+<li><strong>Nic bez Twojego TAK.</strong> Wysyłka SMS, dodanie faktury i zmiana statusu wymagają potwierdzenia. Potwierdzenie rozpoznajemy po samym słowie, a nie po tym, co „zrozumiał” model.</li>
+<li><strong>Dane tylko Twojej firmy.</strong> Firma jest rozpoznawana po połączonym czacie, a nie po tym, co ktoś napisze w wiadomości.</li>
+<li><strong>Wąski zakres.</strong> Asystent nie płaci, nie usuwa danych i nie wysyła wiadomości poza przypomnieniami o płatnościach. Polecenia spoza zakresu odrzuca.</li>
+<li><strong>SMS do dłużników:</strong> STOP działa od razu i na stałe, a podstawy kontaktu z klientami potwierdzasz Ty (to nie jest porada prawna; przy wątpliwościach skonsultuj zakres z prawnikiem).</li>
+<li><strong>Dane i RODO:</strong> asystent przetwarza dane Twoich klientów (nazwa, telefon, numer i kwota faktury) wyłącznie na Twoje polecenie. Treść wiadomości trafia do modelu językowego dostawcy AI w zakresie potrzebnym do odpowiedzi; zasady opisuje umowa powierzenia przetwarzania danych (art. 28 RODO) zawierana przed startem. Szczegóły: <a href="blog-rodo-ai-voicebot.html">RODO i AI — lista kontrolna</a>.</li>
+</ul>
+
+<h2>Czego asystent jeszcze nie robi</h2>
+<ul>
+<li>Nie wystawia faktur ani rachunków w PDF; „dodaj fakturę” tylko zapisuje wpis na liście, żeby można było wysyłać przypomnienia.</li>
+<li>Nie łączy się automatycznie z programami księgowymi; faktury trafiają na listę przez asystenta albo przez import.</li>
+<li>Nie dzwoni do klientów. Na razie komunikuje się tylko z Tobą i, po Twoim TAK, wysyła przypomnienia SMS.</li>
+<li>Nie gwarantuje odzyskania należności; skraca czas, w którym o zaległości w ogóle się dowiadujesz.</li>
+</ul>
+<p>To pilotaż z pierwszymi firmami. Nie podajemy przykładów wyników, bo nie chcemy ich zmyślać. Zobacz też <a href="jak-dzialaja-boty.html">schematy wszystkich botów</a> i <a href="pakiet-gabinet.html">pakiet „Gabinet”</a>.</p>
+
+<h2>Najczęstsze pytania</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">Czym Asystent biura różni się od zwykłego czatu z AI?</h3><p>Asystent zna Twoje dane: listę faktur, terminy, limity SMS. Odpowiada na ich podstawie i nie zmyśla liczb. Nie ogranicza się do rozmowy: potrafi przygotować przypomnienia SMS dla dłużników lub dodać fakturę. Każde takie działanie wykona dopiero po Twoim potwierdzeniu słowem TAK.</p><h3 style="font-size:17px;margin:18px 0 6px">Czy asystent może coś wysłać albo zmienić bez mojej zgody?</h3><p>Nie. Asystent najpierw przygotowuje działanie (np. „wysłać 3 SMS-y z przypomnieniem”) i pokazuje je w czacie. Dopiero Twoje TAK uruchamia wykonanie, a NIE je anuluje. Propozycja wygasa po 15 minutach. Asystent nie płaci, nie usuwa danych i nie wysyła wiadomości poza przypomnieniami o płatnościach. Przedstawia się jako asystent AI.</p><h3 style="font-size:17px;margin:18px 0 6px">Ile kosztuje Asystent biura i co z limitem wiadomości?</h3><p>199 zł netto miesięcznie, w planie rocznym płacisz za 10 miesięcy, a korzystasz 12: 165 zł miesięcznie (1 990 zł za rok). W cenie jest 600 wiadomości do asystenta miesięcznie; po przekroczeniu asystent odmawia kolejnych poleceń do końca miesiąca lub zwiększenia limitu, a potwierdzanie przygotowanych działań (TAK/NIE) nadal działa. Asystent korzysta z listy faktur bota „Przypomnienia o płatnościach” (od 119 zł netto), dlatego w pilotażu działają razem; cenę zestawu ustalamy indywidualnie. To pilotaż, ceny netto; domyślnie rachunek bez VAT, na życzenie faktura z VAT przez Useme.</p>
+<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="bot-przypomnienia-o-platnosciach.html">Przypomnienia o płatnościach</a> · <a href="bot-dokumenty-firmowe.html">Asystent dokumentów</a> · <a href="jak-dzialaja-boty.html">Jak działają nasze boty</a> · <a href="index.html#faq-asystent-biura">FAQ nr 51</a></p>
+</article>
+<div id="faq-strip" style="max-width:860px;margin:40px auto 24px;padding:18px 20px;background:var(--card,#34205f);border:1px solid rgba(139,92,246,.35);border-radius:12px;font-family:inherit"><div style="font-size:15px;font-weight:700;color:var(--text,#e8eaf0);margin-bottom:6px">❓ Masz pytania? Zobacz odpowiedzi w FAQ</div><div style="font-size:14px;line-height:1.7;color:var(--text2,#8b92a8)">Najczęstsze pytanie na ten temat: <a href="index.html#faq-asystent-biura" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">51. Asystent biura AI w Telegramie: raport, przypomnienia i faktury po Twoim TAK</a><br><a href="index.html#faq" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Wszystkie pytania i odpowiedzi (FAQ) →</a> &nbsp;·&nbsp; <a href="jak-dzialaja-boty.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Jak działają nasze boty (schematy) →</a></div></div>
+<footer>
+  <div>
+    &copy; 2026 KREATO.AI ·
+    <a href="index.html">Strona główna</a> ·
+    <a href="dla-klinik.html">Dla klinik</a> ·
+    <a href="dla-ecommerce.html">E-commerce</a> ·
+    <a href="blog.html">Blog</a> ·
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+  </div>
+  <div style="margin-top:8px">ul. Prądzyńskiego 23, 63-000 Środa Wielkopolska · <a href="mailto:biuro@kreato.tech">biuro@kreato.tech</a></div>
+</footer>
+</body>
+</html>
