@@ -23,20 +23,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;
-  --purple:#8b5cf6;--blue:#3b82f6;--green:#10b981;--red:#ef4444;
-  --grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);
-  --grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);
-  --text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;
-  --border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;
+  --bg:#1f1040;--bg1:#251350;--bg2:#2b1858;--card:#34205f;--card-h:#3f2a73;
+  --purple:#a78bfa;--blue:#3b82f6;--green:#10b981;--red:#ef4444;
+  --grad:linear-gradient(135deg,#6c43bf 0%,#6c43bf 100%);--grad-text:linear-gradient(135deg,#c4b5fd 0%,#a78bfa 100%);
+  --grad-soft:linear-gradient(135deg,rgba(167,139,250,.16) 0%,rgba(108,67,191,.16) 100%);
+  --text:#f5f3ff;--text2:#d9d0f2;--text3:#bfb2e6;
+  --border:rgba(167,139,250,.22);--border-a:rgba(167,139,250,.45);--r:14px;--r-sm:8px;
   --font:'Lato',system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden}
-nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(31,16,64,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
 .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
-.nav-logo{font-size:20px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-logo{font-size:20px;font-weight:900;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:24px;list-style:none}
 .nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
 .nav-links a:hover{color:var(--text)}
@@ -50,7 +50,7 @@ section{padding:72px 24px}
 h1{font-size:clamp(32px,6vw,62px);font-weight:900;line-height:1.12;letter-spacing:-.02em}
 h2{font-size:clamp(26px,4vw,42px);font-weight:900;line-height:1.15;letter-spacing:-.01em}
 h3{font-size:18px;font-weight:700}
-.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad-text{background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--r-sm);font-family:var(--font);font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;transition:all .2s;border:none}
 .btn-primary{background:var(--grad);color:#fff}
 .btn-primary:hover{opacity:.88;transform:translateY(-1px);box-shadow:0 8px 30px rgba(139,92,246,.4)}
@@ -65,7 +65,7 @@ h3{font-size:18px;font-weight:700}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .hero-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:48px;padding-top:40px;border-top:1px solid var(--border)}
 .hs{text-align:center}
-.hs strong{display:block;font-size:clamp(26px,4vw,38px);font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hs strong{display:block;font-size:clamp(26px,4vw,38px);font-weight:900;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hs span{font-size:13px;color:var(--text2)}
 
 /* PAINS */
@@ -425,7 +425,7 @@ var g=document.createElement('script');g.async=true;g.src='https://www.googletag
   </div>
 </section>
 
-<div id="faq-strip" style="max-width:860px;margin:40px auto 24px;padding:18px 20px;background:var(--card,#131c2f);border:1px solid rgba(139,92,246,.35);border-radius:12px;font-family:inherit"><div style="font-size:15px;font-weight:700;color:var(--text,#e8eaf0);margin-bottom:6px">❓ Masz pytania? Zobacz odpowiedzi w FAQ</div><div style="font-size:14px;line-height:1.7;color:var(--text2,#8b92a8)">Najczęstsze pytanie na ten temat: <a href="index.html#faq-jak-dziala" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">33. Jak dokładnie działa bot głosowy, krok po kroku?</a><br><a href="index.html#faq" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Wszystkie pytania i odpowiedzi (FAQ) →</a> &nbsp;·&nbsp; <a href="jak-dzialaja-boty.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Jak działają nasze boty (schematy) →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-gabinet-stomatologiczny.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">AI recepcjonistka dla gabinetu stomatologicznego →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-salon-beauty.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Salon beauty →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-kancelaria-prawna.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Kancelaria prawna →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-warsztat-samochodowy.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Warsztat samochodowy →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-gabinet-weterynaryjny.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Gabinet weterynaryjny →</a></div></div>
+<div id="faq-strip" style="max-width:860px;margin:40px auto 24px;padding:18px 20px;background:var(--card,#34205f);border:1px solid rgba(139,92,246,.35);border-radius:12px;font-family:inherit"><div style="font-size:15px;font-weight:700;color:var(--text,#e8eaf0);margin-bottom:6px">❓ Masz pytania? Zobacz odpowiedzi w FAQ</div><div style="font-size:14px;line-height:1.7;color:var(--text2,#8b92a8)">Najczęstsze pytanie na ten temat: <a href="index.html#faq-jak-dziala" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">33. Jak dokładnie działa bot głosowy, krok po kroku?</a><br><a href="index.html#faq" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Wszystkie pytania i odpowiedzi (FAQ) →</a> &nbsp;·&nbsp; <a href="jak-dzialaja-boty.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Jak działają nasze boty (schematy) →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-gabinet-stomatologiczny.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">AI recepcjonistka dla gabinetu stomatologicznego →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-salon-beauty.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Salon beauty →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-kancelaria-prawna.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Kancelaria prawna →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-warsztat-samochodowy.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Warsztat samochodowy →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-gabinet-weterynaryjny.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Gabinet weterynaryjny →</a></div></div>
 <footer>
   <div>
     &copy; 2026 KREATO.AI ·

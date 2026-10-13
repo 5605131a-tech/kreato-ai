@@ -13,20 +13,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#070b14;--bg1:#0c1221;--bg2:#101829;--card:#131c2f;--card-h:#192036;
-  --purple:#8b5cf6;--purple-d:#7c3aed;--blue:#3b82f6;--green:#10b981;--red:#ef4444;
-  --grad:linear-gradient(135deg,#8b5cf6 0%,#3b82f6 100%);
-  --grad-soft:linear-gradient(135deg,rgba(139,92,246,.12) 0%,rgba(59,130,246,.12) 100%);
-  --text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;
-  --border:rgba(255,255,255,.06);--border-a:rgba(139,92,246,.3);--r:14px;--r-sm:8px;
+  --bg:#1f1040;--bg1:#251350;--bg2:#2b1858;--card:#34205f;--card-h:#3f2a73;
+  --purple:#a78bfa;--purple-d:#6c43bf;--blue:#3b82f6;--green:#10b981;--red:#ef4444;
+  --grad:linear-gradient(135deg,#6c43bf 0%,#6c43bf 100%);--grad-text:linear-gradient(135deg,#c4b5fd 0%,#a78bfa 100%);
+  --grad-soft:linear-gradient(135deg,rgba(167,139,250,.16) 0%,rgba(108,67,191,.16) 100%);
+  --text:#f5f3ff;--text2:#d9d0f2;--text3:#bfb2e6;
+  --border:rgba(167,139,250,.22);--border-a:rgba(167,139,250,.45);--r:14px;--r-sm:8px;
   --font:'Lato',system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;min-height:100vh}
-nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(31,16,64,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
 .nav-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-logo{font-size:18px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-logo{font-size:18px;font-weight:900;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
 .nav-back{color:var(--text2);text-decoration:none;font-size:13px;font-weight:400;display:flex;align-items:center;gap:6px;transition:color .2s}
 .nav-back:hover{color:var(--text)}
 .wrap{max-width:640px;margin:0 auto;padding:48px 24px 80px}
@@ -94,7 +94,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,.95);backdrop-filt
 
 .plan-card{background:rgba(139,92,246,.07);border:1.5px solid rgba(139,92,246,.3);border-radius:var(--r);padding:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .plan-name{font-size:17px;font-weight:900}
-.plan-price strong{font-size:22px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.plan-price strong{font-size:22px;font-weight:900;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .plan-price span{font-size:12px;color:var(--text2);display:block;margin-top:2px;text-align:right}
 
 /* ── Lead Form ── */
@@ -160,7 +160,7 @@ var g=document.createElement('script');g.async=true;g.src='https://www.googletag
       <span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block"></span>
       Bezpłatna · Bez rejestracji · 2 minuty
     </div>
-    <h1 style="font-size:clamp(24px,5vw,36px);font-weight:900;line-height:1.15;margin-bottom:10px">Ile tracisz <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">bez AI</span> w firmie?</h1>
+    <h1 style="font-size:clamp(24px,5vw,36px);font-weight:900;line-height:1.15;margin-bottom:10px">Ile tracisz <span style="background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">bez AI</span> w firmie?</h1>
     <p style="font-size:15px;color:var(--text2);max-width:420px;margin:0 auto;line-height:1.6">5 pytań → spersonalizowany Raport Automatyzacji z konkretnymi rekomendacjami dla Twojej firmy</p>
   </div>
 
