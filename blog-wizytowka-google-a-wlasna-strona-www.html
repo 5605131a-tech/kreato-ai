@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizytówka Google a własna strona: jak połączyć — KREATO.AI</title>
+<meta name="description" content="Jak połączyć wizytówkę Google z własną stroną: spójne dane, link, opinie, pomiar ruchu i najczęstsze błędy.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="wizytówka Google a strona internetowa, Profil Firmy w Google, opinie Google, SEO lokalne, link do strony w wizytówce">
+<meta property="article:section" content="Poradnik">
+<meta property="og:title" content="Wizytówka Google a własna strona: jak połączyć">
+<meta property="og:description" content="Jak połączyć wizytówkę Google z własną stroną: spójne dane, link, opinie, pomiar ruchu i najczęstsze błędy.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kreato.tech/blog-wizytowka-google-a-wlasna-strona-www.html">
+<link rel="canonical" href="https://kreato.tech/blog-wizytowka-google-a-wlasna-strona-www.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1f1040;--bg1:#251350;--bg2:#2b1858;--card:#34205f;--card-h:#3f2a73;--purple:#a78bfa;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#6c43bf 0%,#6c43bf 100%);--grad-text:linear-gradient(135deg,#c4b5fd 0%,#a78bfa 100%);--grad-soft:linear-gradient(135deg,rgba(167,139,250,.16) 0%,rgba(108,67,191,.16) 100%);--text:#f5f3ff;--text2:#d9d0f2;--text3:#bfb2e6;--border:rgba(167,139,250,.22);--border-a:rgba(167,139,250,.45);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(31,16,64,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.nav-logo{font-size:20px;font-weight:900;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta{background:var(--grad);color:#fff!important;padding:9px 18px;border-radius:var(--r-sm);font-size:13px!important;font-weight:700!important}
+@media(max-width:768px){.nav-links{display:none}}
+.inner{max-width:1120px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--grad-soft);border:1px solid var(--border-a);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+.breadcrumb{font-size:12px;color:var(--text3);padding:12px 24px;max-width:1120px;margin:0 auto}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--text2)}
+.breadcrumb span{margin:0 6px}
+.blog-hero{padding:72px 24px 48px;text-align:center}
+.blog-hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:16px}
+.blog-hero p{font-size:17px;color:var(--text2);max-width:560px;margin:0 auto;line-height:1.6}
+.grad-text{background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;padding:48px 24px 80px;max-width:1120px;margin:0 auto}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s;text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+.post-card:hover{border-color:var(--border-a);transform:translateY(-3px);box-shadow:0 12px 40px rgba(139,92,246,.1)}
+.post-img{height:160px;background:var(--grad-soft);display:flex;align-items:center;justify-content:center;font-size:48px}
+.post-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
+.post-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(139,92,246,.08);padding:3px 10px;border-radius:100px;width:fit-content}
+.post-title{font-size:16px;font-weight:700;line-height:1.4}
+.post-excerpt{font-size:13px;color:var(--text2);line-height:1.6;flex:1}
+.post-meta{font-size:11px;color:var(--text3);margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+.post-coming{opacity:.5;pointer-events:none}
+.coming-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--text3);background:rgba(255,255,255,.04);padding:2px 8px;border-radius:100px;margin-left:8px;vertical-align:middle}
+footer{padding:32px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
+footer a{color:var(--text3);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--text2)}
+
+.art{max-width:760px;margin:0 auto;padding:40px 24px 24px}
+.art h1{font-size:clamp(28px,4.4vw,42px);font-weight:900;line-height:1.2;letter-spacing:-.02em;margin:10px 0 14px}
+.art .lead{font-size:18px;color:var(--text2);line-height:1.65;margin-bottom:10px}
+.art .meta{font-size:13px;color:var(--text3);margin-bottom:28px}
+.art h2{font-size:22px;font-weight:800;margin:34px 0 12px;line-height:1.3}
+.art p{font-size:16px;line-height:1.75;color:#cbd5e1;margin-bottom:14px}
+.art ul,.art ol{margin:0 0 16px 22px;color:#cbd5e1;font-size:16px;line-height:1.75}
+.art li{margin-bottom:6px}
+.art a{color:var(--purple)}
+.art table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px}
+.art th,.art td{border:1px solid var(--border);padding:9px 12px;text-align:left;color:#cbd5e1}
+.art th{background:var(--card);color:var(--text)}
+.note{background:var(--grad-soft);border:1px solid var(--border-a);border-radius:var(--r-sm);padding:14px 16px;font-size:14px;line-height:1.6;color:#cbd5e1;margin:18px 0}
+.cta{background:var(--card);border:1px solid var(--border-a);border-radius:var(--r);padding:24px;margin:36px 0 12px;text-align:center}
+.cta h3{font-size:19px;margin-bottom:8px}
+.cta p{margin-bottom:14px}
+.cta a.btn{display:inline-block;background:var(--grad);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-sm)}
+.more{max-width:760px;margin:0 auto;padding:0 24px 60px;font-size:14px;color:var(--text2)}
+.art pre{background:#1a0d38;border:1px solid var(--border);border-radius:8px;padding:14px;overflow:auto;font-size:13px;line-height:1.5;color:#e9e3ff;margin:0 0 16px;white-space:pre-wrap}.art code{font-size:.92em;color:#e9e3ff}
+</style>
+<meta property="og:image" content="https://kreato.tech/og-kreato.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KREATO.AI — Karolina odbiera telefony za Ciebie">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KREATO.AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Wizytówka Google a własna strona WWW: jak je połączyć, żeby się wzajemnie wspierały", "description": "Wizytówka firmy w Google i własna strona robią różne rzeczy. Jak je połączyć: spójne dane, link do strony, opinie, pomiar ruchu i błędy, których warto uniknąć.", "datePublished": "2026-10-15", "dateModified": "2026-10-15", "inLanguage": "pl", "keywords": "wizytówka Google a strona internetowa, Profil Firmy w Google, opinie Google, SEO lokalne, link do strony w wizytówce", "mainEntityOfPage": "https://kreato.tech/blog-wizytowka-google-a-wlasna-strona-www.html", "author": {"@type": "Organization", "name": "KREATO.AI"}, "publisher": {"@type": "Organization", "name": "KREATO.AI", "url": "https://kreato.tech/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Czy muszę mieć stronę, żeby mieć wizytówkę w Google?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. Wizytówka działa bez strony, ale wtedy klient nie ma dokąd przejść po więcej informacji."}}, {"@type": "Question", "name": "Czy link do strony poprawia pozycję wizytówki?", "acceptedAnswer": {"@type": "Answer", "text": "Nie da się tego uczciwie obiecać. Link na pewno ułatwia klientom dotarcie do oferty, a spójne dane pomagają Google poprawnie zrozumieć firmę."}}, {"@type": "Question", "name": "Czy opinie z Google przeniosą się na moją stronę?", "acceptedAnswer": {"@type": "Answer", "text": "Nie automatycznie. Możesz pokazać ocenę i liczbę opinii prawdziwymi liczbami oraz link do wizytówki, gdzie klienci widzą wszystkie opinie."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "KREATO.AI", "item": "https://kreato.tech/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kreato.tech/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Wizytówka Google a własna strona WWW: jak je połączyć, żeby się wzajemnie wspierały", "item": "https://kreato.tech/blog-wizytowka-google-a-wlasna-strona-www.html"}]}</script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">KREATO.AI</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Usługi</a></li>
+      <li><a href="dla-klinik.html">Kliniki</a></li>
+      <li><a href="dla-ecommerce.html">E-commerce</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="diagnosta.html">Diagnoza AI</a></li>
+    </ul>
+    <a href="diagnosta.html" class="nav-cta nav-links">Bezpłatna diagnoza →</a>
+  </div>
+</nav>
+<div class="breadcrumb"><a href="index.html">KREATO.AI</a><span>/</span><a href="blog.html">Blog</a><span>/</span>Poradnik</div>
+<article class="art">
+<span class="post-tag">Poradnik</span>
+<h1>Wizytówka Google a własna strona WWW: jak je połączyć, żeby się wzajemnie wspierały</h1>
+<div class="meta">15 października 2026 · 5 min czytania · KREATO.AI</div>
+
+<p class="lead">Wizytówka firmy w Mapach Google i własna strona to dwa różne narzędzia. Wizytówka pokazuje się, gdy ktoś szuka firmy w okolicy. Strona opowiada o ofercie i prowadzi do kontaktu. Najlepiej działają razem.</p>
+<h2>Co robi wizytówka, a co strona</h2>
+<table><tr><th></th><th>Wizytówka Google</th><th>Własna strona</th></tr><tr><td>Gdzie widać</td><td>Mapy i wyniki lokalne</td><td>Wyniki wyszukiwania, linki, reklamy</td></tr><tr><td>Co pokazuje</td><td>Adres, telefon, godziny, opinie, zdjęcia</td><td>Pełna oferta, pytania, zasady, dojazd</td></tr><tr><td>Kto kontroluje</td><td>Ty, w ramach zasad Google</td><td>Ty</td></tr></table>
+<h2>Jak je połączyć</h2>
+<ol><li><strong>Dodaj adres strony do wizytówki.</strong> Klient, który zobaczy Cię w Mapach, jednym kliknięciem przejdzie do oferty.</li><li><strong>Zadbaj o spójność danych (NAP).</strong> Nazwa, adres i telefon muszą być takie same na stronie i w wizytówce.</li><li><strong>Linkuj ze strony do wizytówki</strong> (np. przycisk „Dojazd” lub „Zobacz opinie w Google”).</li><li><strong>Mierz ruch.</strong> Dodaj do linku w wizytówce parametry UTM, a w Google Analytics zobaczysz, ilu odwiedzających przychodzi z wizytówki.</li></ol>
+<h2>Opinie: jak je pokazywać uczciwie</h2>
+<p>Na stronie pokazuj tylko prawdziwe liczby (ocena i liczba opinii) i podawaj ich źródło. Nie wymyślaj opinii. Zwróć też uwagę, że Google nie wyświetla gwiazdek z danych strukturalnych dla opinii o własnej firmie umieszczonych na jej stronie, więc nie opieraj na tym strategii. Opinie zbieraj tam, gdzie klienci i tak ich szukają, czyli w Google.</p>
+<h2>Najczęstsze błędy</h2>
+<ul><li>różne numery telefonu na stronie i w wizytówce,</li><li>nieaktualne godziny pracy w jednym z miejsc,</li><li>brak linku do strony w wizytówce,</li><li>brak odpowiedzi na opinie, także negatywne.</li></ul>
+<p>Nie masz jeszcze strony? Zobacz <a href="blog-firma-bez-strony-internetowej.html">co tracisz bez własnej strony</a> oraz <a href="strona-internetowa.html">szkic strony KREATO od 599 zł netto</a>.</p>
+<h2>Strona i boty: lepiej razem</h2>
+<p>Strona przyciąga odwiedzających, ale zapytania przychodzą także wtedy, gdy nie możesz odebrać telefonu ani odpisać. Dlatego najlepiej działa w zestawie z botami: <a href="index.html#services">Karolina AI</a> odbiera telefony 24/7 i zapisuje wizyty, a <a href="index.html#faq-chatbot">chatbot AI</a> (taki jak Asia na naszej stronie) odpowiada na pytania odwiedzających i zbiera kontakt. Do tego opinie w Google i powrót dawnych klientów w <a href="pakiet-gabinet.html">pakiecie „Gabinet”</a>. To pilotaże, bez obietnic konkretnych wyników; wszystko opisujemy na stronie <a href="jak-dzialaja-boty.html">Jak działają boty</a>.</p>
+
+<h2>Najczęstsze pytania</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy muszę mieć stronę, żeby mieć wizytówkę w Google?</h3><p>Nie. Wizytówka działa bez strony, ale wtedy klient nie ma dokąd przejść po więcej informacji.</p><h3 style="font-size:17px;margin:18px 0 6px">Czy link do strony poprawia pozycję wizytówki?</h3><p>Nie da się tego uczciwie obiecać. Link na pewno ułatwia klientom dotarcie do oferty, a spójne dane pomagają Google poprawnie zrozumieć firmę.</p><h3 style="font-size:17px;margin:18px 0 6px">Czy opinie z Google przeniosą się na moją stronę?</h3><p>Nie automatycznie. Możesz pokazać ocenę i liczbę opinii prawdziwymi liczbami oraz link do wizytówki, gdzie klienci widzą wszystkie opinie.</p>
+<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="blog-strona-widoczna-w-google-i-wyszukiwarkach-ai.html">Jak sprawić, żeby Google i wyszukiwarki AI znalazły stronę małej firmy: lista kontrolna</a> · <a href="blog-firma-bez-strony-internetowej.html">Firma bez strony internetowej: co tracisz i jak to naprawić w kilka dni</a> · <a href="strona-internetowa.html">Strona internetowa od 599 zł</a></p>
+<p style="margin-top:22px"><strong>Powiązane na stronie:</strong> <a href="index.html#faq-strona-internetowa">FAQ nr 52: strona internetowa</a> · <a href="blog.html">Wszystkie artykuły</a></p>
+<div class="cta"><h3>Chcesz zobaczyć szkic strony dla swojej firmy?</h3><p>Napisz do nas nazwę firmy. Odpiszemy e-mailem.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Pytanie z bloga: Wizytówka Google a własna strona WWW: jak je połączyć, żeby ">biuro@kreato.tech</a></div>
+</article>
+<div class="more"><strong>Czytaj dalej:</strong> <a href="blog-ile-kosztuje-strona-internetowa-dla-malej-firmy.html">Ile kosztuje strona internetowa dla małej firmy w 2026 roku? Ceny i ukryte koszty</a> · <a href="blog-firma-bez-strony-internetowej.html">Firma bez strony internetowej: co tracisz i jak to naprawić w kilka dni</a> · <a href="blog-strona-widoczna-w-google-i-wyszukiwarkach-ai.html">Jak sprawić, żeby Google i wyszukiwarki AI znalazły stronę małej firmy: lista kontrolna</a> · <a href="blog-podglad-linku-facebook-open-graph.html">Jak wygląda link do Twojej firmy na Facebooku i w Messengerze? Open Graph w prostych słowach</a> · <a href="blog-czy-ai-moze-zrobic-strone-internetowa.html">Czy AI może zrobić stronę internetową dla firmy? Co potrafi, czego nie i dlaczego nie zmyślamy treści</a></div>
+<div id="faq-strip" style="max-width:860px;margin:40px auto 24px;padding:18px 20px;background:var(--card,#34205f);border:1px solid rgba(139,92,246,.35);border-radius:12px;font-family:inherit"><div style="font-size:15px;font-weight:700;color:var(--text,#e8eaf0);margin-bottom:6px">❓ Masz pytania? Zobacz odpowiedzi w FAQ</div><div style="font-size:14px;line-height:1.7;color:var(--text2,#8b92a8)">Najczęstsze pytanie na ten temat: <a href="index.html#faq-strona-internetowa" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">52. Strona internetowa dla małej firmy od 599 zł: szkic AI w kilka minut, treści uzupełniasz Ty</a><br><a href="index.html#faq" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Wszystkie pytania i odpowiedzi (FAQ) →</a></div></div>
+<footer>
+  <div>
+    &copy; 2026 KREATO.AI ·
+    <a href="index.html">Strona główna</a> ·
+    <a href="dla-klinik.html">Dla klinik</a> ·
+    <a href="dla-ecommerce.html">E-commerce</a> ·
+    <a href="blog.html">Blog</a> ·
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+  </div>
+  <div style="margin-top:8px">ul. Prądzyńskiego 23, 63-000 Środa Wielkopolska · <a href="mailto:biuro@kreato.tech">biuro@kreato.tech</a></div>
+</footer>
+</body>
+</html>
