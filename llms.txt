@@ -66,6 +66,7 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 - https://kreato.tech/blog-firma-bez-strony-internetowej.html — Firma bez strony internetowej: co tracisz i jak to naprawić w kilka dni
 - https://kreato.tech/blog-strona-widoczna-w-google-i-wyszukiwarkach-ai.html — Jak sprawić, żeby Google i wyszukiwarki AI znalazły stronę małej firmy: lista kontrolna
 - https://kreato.tech/blog-przeglad-konta-google-ads-gdzie-ucieka-budzet.html — Przegląd konta Google Ads: gdzie ucieka budżet i co sprawdzić samemu w godzinę. Usługa: bezpłatny (do 31.12.2026, pilotaż) przegląd konta Google Ads, dostęp tylko do odczytu, krótki raport; kontakt biuro@kreato.tech
+- https://kreato.tech/geo-audyt-ai.html — Free mini-audit of how a local business appears in Google and in AI assistants (ChatGPT, Perplexity): Google Business profile, structured data (schema.org), data consistency, 5 customer questions checked in AI assistants; short report by e-mail with 3–5 fixes. Free pilot, public data only, no passwords, no results guaranteed; contact biuro@kreato.tech
 - https://kreato.tech/blog-wizytowka-google-a-wlasna-strona-www.html — Wizytówka Google a własna strona WWW: jak je połączyć, żeby się wzajemnie wspierały
 - https://kreato.tech/blog-podglad-linku-facebook-open-graph.html — Jak wygląda link do Twojej firmy na Facebooku i w Messengerze? Open Graph w prostych słowach
 - https://kreato.tech/blog-czy-ai-moze-zrobic-strone-internetowa.html — Czy AI może zrobić stronę internetową dla firmy? Co potrafi, czego nie i dlaczego nie zmyślamy treści
