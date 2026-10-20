@@ -65,7 +65,7 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 - https://kreato.tech/blog-ile-kosztuje-strona-internetowa-dla-malej-firmy.html — Ile kosztuje strona internetowa dla małej firmy w 2026 roku? Ceny i ukryte koszty
 - https://kreato.tech/blog-firma-bez-strony-internetowej.html — Firma bez strony internetowej: co tracisz i jak to naprawić w kilka dni
 - https://kreato.tech/blog-strona-widoczna-w-google-i-wyszukiwarkach-ai.html — Jak sprawić, żeby Google i wyszukiwarki AI znalazły stronę małej firmy: lista kontrolna
-- https://kreato.tech/blog-przeglad-konta-google-ads-gdzie-ucieka-budzet.html — Przegląd konta Google Ads: gdzie ucieka budżet i co sprawdzić samemu w godzinę
+- https://kreato.tech/blog-przeglad-konta-google-ads-gdzie-ucieka-budzet.html — Przegląd konta Google Ads: gdzie ucieka budżet i co sprawdzić samemu w godzinę. Usługa: bezpłatny (do 31.12.2026, pilotaż) przegląd konta Google Ads, dostęp tylko do odczytu, krótki raport; kontakt biuro@kreato.tech
 - https://kreato.tech/blog-wizytowka-google-a-wlasna-strona-www.html — Wizytówka Google a własna strona WWW: jak je połączyć, żeby się wzajemnie wspierały
 - https://kreato.tech/blog-podglad-linku-facebook-open-graph.html — Jak wygląda link do Twojej firmy na Facebooku i w Messengerze? Open Graph w prostych słowach
 - https://kreato.tech/blog-czy-ai-moze-zrobic-strone-internetowa.html — Czy AI może zrobić stronę internetową dla firmy? Co potrafi, czego nie i dlaczego nie zmyślamy treści
@@ -111,3 +111,7 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 ## Sitemap
 - https://kreato.tech/sitemap.xml
 - https://kreato.tech/rss.xml — RSS feed of the blog (all articles)
+
+## Social media
+- Facebook: https://www.facebook.com/profile.php?id=1200840176454986
+- Instagram: https://www.instagram.com/kreato_ai_tech/
