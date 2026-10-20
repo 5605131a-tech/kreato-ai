@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI recepcjonistka dla gabinetu fizjoterapii: umawianie wizyt przez telefon | KREATO.AI</title>
+<meta name="description" content="Karolina AI odbiera telefony w gabinecie fizjoterapii, gdy prowadzisz zabieg. Umawia wizyty w kalendarzu, wysyła SMS, nie udziela porad medycznych. 7 dni próby za 0 zł.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://kreato.tech/ai-recepcjonistka-gabinet-fizjoterapii.html">
+<meta property="og:title" content="AI recepcjonistka dla: Gabinet fizjoterapii — KREATO.AI">
+<meta property="og:description" content="Karolina AI odbiera telefony w gabinecie fizjoterapii i umawia wizyty. 7 dni próby za 0 zł.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kreato.tech/ai-recepcjonistka-gabinet-fizjoterapii.html">
+<meta property="og:image" content="https://kreato.tech/og-kreato.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KREATO.AI — Karolina odbiera telefony za Ciebie">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KREATO.AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1f1040;--bg1:#251350;--bg2:#2b1858;--card:#34205f;--card-h:#3f2a73;
+  --purple:#a78bfa;--blue:#3b82f6;--green:#10b981;--red:#ef4444;
+  --grad:linear-gradient(135deg,#6c43bf 0%,#6c43bf 100%);--grad-text:linear-gradient(135deg,#c4b5fd 0%,#a78bfa 100%);
+  --grad-soft:linear-gradient(135deg,rgba(167,139,250,.16) 0%,rgba(108,67,191,.16) 100%);
+  --text:#f5f3ff;--text2:#d9d0f2;--text3:#bfb2e6;
+  --border:rgba(167,139,250,.22);--border-a:rgba(167,139,250,.45);--r:14px;--r-sm:8px;
+  --font:'Lato',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(31,16,64,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.nav-logo{font-size:20px;font-weight:900;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--grad);color:#fff!important;padding:9px 18px;border-radius:var(--r-sm);font-size:13px!important;font-weight:700!important}
+@media(max-width:768px){.nav-links{display:none}}
+section{padding:72px 24px}
+.inner{max-width:1120px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--grad-soft);border:1px solid var(--border-a);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+h1{font-size:clamp(32px,6vw,62px);font-weight:900;line-height:1.12;letter-spacing:-.02em}
+h2{font-size:clamp(26px,4vw,42px);font-weight:900;line-height:1.15;letter-spacing:-.01em}
+h3{font-size:18px;font-weight:700}
+.grad-text{background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--r-sm);font-family:var(--font);font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;transition:all .2s;border:none}
+.btn-primary{background:var(--grad);color:#fff}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px);box-shadow:0 8px 30px rgba(139,92,246,.4)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--border-a)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px}
+
+/* HERO */
+#hero{padding:80px 24px 60px;text-align:center}
+#hero h1{max-width:820px;margin:0 auto 16px}
+#hero p{font-size:17px;color:var(--text2);max-width:580px;margin:0 auto 32px;line-height:1.6}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:48px;padding-top:40px;border-top:1px solid var(--border)}
+.hs{text-align:center}
+.hs strong{display:block;font-size:clamp(26px,4vw,38px);font-weight:900;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hs span{font-size:13px;color:var(--text2)}
+
+/* PAINS */
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:40px}
+.pain-card{background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.15);border-radius:var(--r);padding:20px 22px}
+.pain-card .pc-icon{font-size:28px;margin-bottom:12px}
+.pain-card h3{margin-bottom:8px}
+.pain-card p{font-size:14px;color:var(--text2);line-height:1.5}
+
+/* AGENTS */
+.agents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:40px}
+.agent-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;transition:all .25s}
+.agent-card:hover{border-color:var(--border-a);transform:translateY(-3px);box-shadow:0 12px 40px rgba(139,92,246,.1)}
+.ac-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;background:var(--grad-soft)}
+.ac-badge{display:inline-block;font-size:11px;font-weight:700;color:var(--green);background:rgba(16,185,129,.08);padding:3px 10px;border-radius:100px;margin-bottom:10px}
+.ac-points{list-style:none;margin-top:14px}
+.ac-points li{font-size:13px;color:var(--text2);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px}
+.ac-points li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+
+/* HOW */
+.how-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:40px;counter-reset:step}
+.how-step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;counter-increment:step;position:relative}
+.how-step::before{content:counter(step);position:absolute;top:16px;right:16px;font-size:28px;font-weight:900;color:rgba(139,92,246,.15)}
+.how-step h3{margin-bottom:8px;font-size:15px}
+.how-step p{font-size:13px;color:var(--text2);line-height:1.5}
+
+/* TESTI */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:40px}
+.testi{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px}
+.testi .stars{color:#f59e0b;font-size:13px;margin-bottom:12px}
+.testi p{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:16px}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff}
+.testi-name strong{display:block;font-size:13px;font-weight:700}
+.testi-name span{font-size:11px;color:var(--text3)}
+
+/* CTA */
+#cta{padding:80px 24px}
+.cta-box{background:linear-gradient(135deg,rgba(139,92,246,.1) 0%,rgba(59,130,246,.1) 100%);border:1px solid var(--border-a);border-radius:20px;padding:60px 40px;text-align:center;max-width:700px;margin:0 auto}
+.cta-box h2{margin-bottom:12px}
+.cta-box p{font-size:16px;color:var(--text2);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+footer{padding:32px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
+footer a{color:var(--text3);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--text2)}
+
+/* Schema breadcrumb */
+.breadcrumb{font-size:12px;color:var(--text3);padding:12px 24px;max-width:1120px;margin:0 auto}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--text2)}
+.breadcrumb span{margin:0 6px}
+</style>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Service", "name": "AI recepcjonistka: Gabinet fizjoterapii (Karolina)", "description": "Karolina AI odbiera telefony w gabinecie fizjoterapii, gdy prowadzisz zabieg. Umawia wizyty w kalendarzu, wysyła SMS, nie udziela porad medycznych. 7 dni próby za 0 zł.", "url": "https://kreato.tech/ai-recepcjonistka-gabinet-fizjoterapii.html", "provider": {"@type": "Organization", "name": "KREATO.AI", "url": "https://kreato.tech/"}, "areaServed": "PL", "serviceType": "Voicebot AI", "offers": {"@type": "Offer", "price": "249", "priceCurrency": "PLN", "description": "od 249 zł netto miesięcznie (plan roczny), 7 dni próby za 0 zł"}}, {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "pl", "mainEntity": [{"@type": "Question", "name": "Czy Karolina udziela porad medycznych?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. Karolina nie diagnozuje, nie doradza w sprawie leczenia i nie ocenia objawów. Umawia wizytę, odpowiada na pytania organizacyjne z Twojej bazy wiedzy, a sprawy medyczne zostawia Tobie."}}, {"@type": "Question", "name": "Czy zbiera dane o zdrowiu pacjenta?", "acceptedAnswer": {"@type": "Answer", "text": "Nie ma takiej potrzeby. Do umówienia wizyty wystarczą imię, numer telefonu i rodzaj wizyty. Zakres zbieranych informacji ustalamy z Tobą przed pilotażem, tak aby ograniczyć dane wrażliwe."}}, {"@type": "Question", "name": "Czy Karolina wpisuje terminy do mojego kalendarza?", "acceptedAnswer": {"@type": "Answer", "text": "Tak. Umawia, przekłada i odwołuje terminy w Google Calendar, a pacjent dostaje SMS z potwierdzeniem. Jeśli pracujesz na innym systemie do rejestracji, sprawdzamy możliwość połączenia przed pilotażem — nie obiecujemy integracji, której wcześniej nie zweryfikowaliśmy."}}, {"@type": "Question", "name": "Czy poradzi sobie, gdy dzwoni kilku pacjentów naraz?", "acceptedAnswer": {"@type": "Answer", "text": "Karolina może prowadzić kilka rozmów jednocześnie, więc pacjenci nie trafiają na zajętą linię. Liczbę równoległych połączeń ustalamy z Tobą przy wyborze pakietu."}}, {"@type": "Question", "name": "Czy AI recepcjonistka jest zgodna z RODO?", "acceptedAnswer": {"@type": "Answer", "text": "Rozmówca jest informowany na początku, że rozmawia z asystentem AI i że rozmowa może być rejestrowana. Dane przetwarzamy zgodnie z RODO, a umowę powierzenia danych ustalamy przed wdrożeniem."}}, {"@type": "Question", "name": "Ile kosztuje AI recepcjonistka?", "acceptedAnswer": {"@type": "Answer", "text": "Pakiety zaczynają się od 249 zł netto miesięcznie (plan roczny), przy płatności miesięcznej od 279 zł netto. Pierwsze 7 dni to próba za 0 zł (bez karty, 100 minut rozmów). Konfiguracja (normalnie 599 zł netto) dla pierwszych 10 firm kosztuje 0 zł. Bez długiej umowy, rezygnacja z miesięcznym wyprzedzeniem."}}, {"@type": "Question", "name": "Jak szybko można ruszyć?", "acceptedAnswer": {"@type": "Answer", "text": "Pilotaż jest gotowy w 2–3 dni od otrzymania materiałów. Testujesz Karolinę, zgłaszasz poprawki i dopiero wtedy włączamy ją na Twoim numerze."}}, {"@type": "Question", "name": "Czy mogę najpierw sprawdzić, jak Karolina brzmi?", "acceptedAnswer": {"@type": "Answer", "text": "Tak. Zadzwoń na numer demonstracyjny +48 459 567 844 — to ta sama Karolina, którą skonfigurujemy dla Ciebie. Rozmowa jest bezpłatna."}}]}]</script>
+<!-- GA4 + Facebook Pixel — uruchamiane tylko po zgodzie na cookies (zgoda zapisana w localStorage na stronie głównej) -->
+<script>(function(){var ok=false;try{ok=localStorage.getItem('cookieConsent')==='accepted'}catch(e){}if(!ok)return;
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','G-B9QH1CPDDS');
+var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id=G-B9QH1CPDDS';document.head.appendChild(g);
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','934494976050338');fbq('track','PageView');})();</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">KREATO.AI</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Usługi</a></li>
+      <li><a href="agenci.html">Agenci AI</a></li>
+      <li><a href="dla-ecommerce.html">E-commerce</a></li>
+      <li><a href="diagnosta.html">Diagnoza AI</a></li>
+          <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="diagnosta.html" class="btn btn-primary" style="font-size:13px;padding:9px 18px">Bezpłatna diagnoza →</a>
+  </div>
+</nav>
+<div class="breadcrumb">
+  <a href="index.html">KREATO.AI</a><span>/</span>
+  <a href="dla-klinik.html">Dla klinik i gabinetów</a><span>/</span>
+  <a href="#">Gabinet fizjoterapii</a>
+</div>
+<section id="hero">
+  <div class="badge"><div class="badge-dot"></div>Dla gabinetów fizjoterapii i rehabilitacji</div>
+  <h1>AI recepcjonistka<br>dla <span class="grad-text">gabinetu fizjoterapii</span></h1>
+  <p>Podczas zabiegu nie odbierzesz telefonu, a pacjent, który nie dodzwoni się za pierwszym razem, często dzwoni do kolejnego gabinetu. Karolina odbierze, zapyta, na jaką wizytę pacjent chce się umówić, wpisze termin do kalendarza i wyśle SMS z potwierdzeniem. Nie udziela porad medycznych.</p>
+  <div class="hero-btns">
+    <a href="tel:+48459567844" class="btn btn-primary">📞 Zadzwoń do Karoliny: +48 459 567 844</a>
+    <a href="index.html#pricing" class="btn btn-outline">7 dni za 0 zł →</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hs"><strong>24/7</strong><span>odbiera telefony</span></div>
+    <div class="hs"><strong>249 zł</strong><span>netto od miesiąca</span></div>
+    <div class="hs"><strong>7 dni</strong><span>próby za 0 zł, bez karty</span></div>
+    <div class="hs"><strong>2–3 dni</strong><span>do pilotażu</span></div>
+  </div>
+</section>
+<section style="padding:60px 24px">
+  <div class="inner">
+    <div class="badge"><div class="badge-dot" style="background:var(--red)"></div>Znane problemy</div>
+    <h2>Gdzie gabinet <span class="grad-text">traci pacjentów</span></h2>
+    <div class="pain-grid">
+      <div class="pain-card"><div class="pc-icon">🦴</div><h3>Telefon dzwoni w trakcie zabiegu</h3><p>Przerywanie sesji, żeby odebrać, psuje zabieg i komfort pacjenta. Nieodebrany telefon to z kolei pacjent, który szuka dalej.</p></div>
+      <div class="pain-card"><div class="pc-icon">📆</div><h3>Odwołane i przełożone wizyty</h3><p>Zmiany terminów zabierają czas. Puste okno w grafiku to strata, której można było uniknąć, gdyby termin został szybko zwolniony i uzupełniony.</p></div>
+      <div class="pain-card"><div class="pc-icon">💬</div><h3>Te same pytania</h3><p>Czy przyjmujecie bez skierowania, ile trwa wizyta, jak dojechać, gdzie zaparkować. Odpowiedzi się powtarzają i zabierają czas przy rejestracji.</p></div>
+      <div class="pain-card"><div class="pc-icon">🕗</div><h3>Dzwonią po godzinach</h3><p>Pacjenci dzwonią wieczorem i w weekend, kiedy gabinet jest zamknięty. Rano wiadomość zwykle ginie wśród innych spraw.</p></div>
+      </div>
+  </div>
+</section>
+<section style="padding:60px 24px;background:var(--bg1)">
+  <div class="inner">
+    <div class="badge"><div class="badge-dot"></div>Co robi Karolina</div>
+    <h2>Recepcja na telefon, <span class="grad-text">bez urlopów i L4</span></h2>
+    <div class="agents-grid">
+      <div class="agent-card"><div class="ac-icon">🎙️</div><h3>Przyjmuje zgłoszenia</h3><ul class="ac-points"><li>Odbiera każdy telefon po polsku</li><li>Zbiera imię, numer telefonu i rodzaj wizyty</li><li>Umawia, przekłada i odwołuje termin w Google Calendar</li><li>Wysyła SMS z potwierdzeniem</li></ul></div>
+      <div class="agent-card"><div class="ac-icon">📋</div><h3>Odpowiada na pytania</h3><ul class="ac-points"><li>Godziny pracy, adres, dojazd</li><li>Cennik wizyt z Twojej bazy wiedzy</li><li>Czy potrzebne skierowanie (zgodnie z Twoimi zasadami)</li><li>Czego nie wie, nie zgaduje i przekazuje Tobie</li></ul></div>
+      <div class="agent-card"><div class="ac-icon">📲</div><h3>Informuje Ciebie</h3><ul class="ac-points"><li>Lista zgłoszeń na Telegramie lub e-mailem</li><li>Pilne sprawy oznaczone do oddzwonienia</li><li>Mniej przerywania zabiegów</li><li>Przejrzysty grafik na dzień</li></ul></div>
+      </div>
+  </div>
+</section>
+<section style="padding:60px 24px">
+  <div class="inner">
+    <div class="badge"><div class="badge-dot"></div>Przykładowa rozmowa (demo)</div>
+    <h2>Tak brzmi <span class="grad-text">rozmowa z klientem</span></h2>
+    <div style="margin-top:32px;background:var(--card);border:1px solid var(--border-a);border-radius:var(--r);padding:28px 32px;line-height:1.8;color:var(--text2);font-size:15px">
+      <p><strong style="color:var(--text)">Karolina:</strong> Dzień dobry, gabinet fizjoterapii. Jestem Karolina, asystent AI. Rozmowa może być rejestrowana, dane przetwarzamy zgodnie z RODO. W czym mogę pomóc?</p>
+      <p><strong style="color:var(--text)">Pacjent:</strong> Chciałbym umówić wizytę, bolą mnie plecy od kilku tygodni.</p>
+      <p><strong style="color:var(--text)">Karolina:</strong> Nie udzielam porad medycznych, ale chętnie umówię pierwszą wizytę. Mam wolne terminy w czwartek o 16:00 lub w piątek o 10:00. Który pasuje?</p>
+      <p><strong style="color:var(--text)">Pacjent:</strong> Piątek o 10.</p>
+      <p><strong style="color:var(--text)">Karolina:</strong> Poproszę o imię, nazwisko i numer telefonu, wyślę SMS z potwierdzeniem.</p>
+      <p style="font-size:12px;color:var(--text3);margin-top:12px">To scenariusz demonstracyjny. Możesz sprawdzić Karolinę sam, dzwoniąc pod numer +48 459 567 844.</p>
+    </div>
+  </div>
+</section>
+<section style="padding:60px 24px;background:var(--bg1)">
+  <div class="inner">
+    <div class="badge"><div class="badge-dot"></div>Szybka kalkulacja</div>
+    <h2>Ile warte jest <span class="grad-text">jedno nieodebrane połączenie</span></h2>
+    <div style="margin-top:32px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px 32px;line-height:1.75;color:var(--text2);font-size:15px">
+      <p>Przykład do policzenia na własnych liczbach (to ilustracja, a nie dane klientów): jeśli nie odbierasz <strong style="color:var(--text)">8 telefonów tygodniowo</strong>, to w miesiącu jest to około 32 rozmowy. Gdyby tylko co czwarta z nich zakończyła się wizytą o wartości <strong style="color:var(--text)">150 zł</strong>, to daje to <strong style="color:var(--text)">około 1 200 zł</strong> miesięcznie. Pakiet Karoliny zaczyna się od <strong style="color:var(--text)">249 zł netto</strong>.</p>
+      <p style="margin-top:12px">Wstaw własne liczby: ile telefonów nie odbierasz, jaka jest średnia wartość wizyty i ile osób faktycznie się umawia. Na tej podstawie ocenisz, czy pilotaż ma sens. Dlatego pierwsze 7 dni jest bezpłatne.</p>
+    </div>
+  </div>
+</section>
+<section style="padding:60px 24px">
+  <div class="inner">
+    <div class="badge"><div class="badge-dot"></div>Jak to działa</div>
+    <h2>Od rozmowy do pilotażu — <span class="grad-text">2–3 dni</span></h2>
+    <div class="how-steps">
+      <div class="how-step"><h3>1. Materiały</h3><p>Przekazujesz cennik wizyt, godziny, listę usług i zasady umawiania (np. skierowania).</p></div>
+      <div class="how-step"><h3>2. Konfiguracja</h3><p>Uczymy Karolinę gabinetu i łączymy ją z kalendarzem oraz numerem telefonu.</p></div>
+      <div class="how-step"><h3>3. Testy</h3><p>Dzwonimy jako pacjenci: pierwsza wizyta, zmiana terminu, pytanie o cenę. Ty zatwierdzasz.</p></div>
+      <div class="how-step"><h3>4. Start</h3><p>Karolina odbiera telefony, a zgłoszenia widzisz na Telegramie.</p></div>
+      </div>
+  </div>
+</section>
+<section style="padding:60px 24px;background:var(--bg1)">
+  <div class="inner">
+    <div class="badge"><div class="badge-dot"></div>FAQ</div>
+    <h2>Pytania o <span class="grad-text">AI recepcjonistkę</span></h2>
+    <div style="margin-top:32px;display:flex;flex-direction:column;gap:16px">
+      <details style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;cursor:pointer">
+        <summary style="font-size:16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Czy Karolina udziela porad medycznych?
+          <span style="color:var(--purple);font-size:20px">+</span>
+        </summary>
+        <p style="margin-top:12px;color:var(--text2);font-size:14px;line-height:1.6">Nie. Karolina nie diagnozuje, nie doradza w sprawie leczenia i nie ocenia objawów. Umawia wizytę, odpowiada na pytania organizacyjne z Twojej bazy wiedzy, a sprawy medyczne zostawia Tobie.</p>
+      </details>
+      <details style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;cursor:pointer">
+        <summary style="font-size:16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Czy zbiera dane o zdrowiu pacjenta?
+          <span style="color:var(--purple);font-size:20px">+</span>
+        </summary>
+        <p style="margin-top:12px;color:var(--text2);font-size:14px;line-height:1.6">Nie ma takiej potrzeby. Do umówienia wizyty wystarczą imię, numer telefonu i rodzaj wizyty. Zakres zbieranych informacji ustalamy z Tobą przed pilotażem, tak aby ograniczyć dane wrażliwe.</p>
+      </details>
+      <details style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;cursor:pointer">
+        <summary style="font-size:16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Czy Karolina wpisuje terminy do mojego kalendarza?
+          <span style="color:var(--purple);font-size:20px">+</span>
+        </summary>
+        <p style="margin-top:12px;color:var(--text2);font-size:14px;line-height:1.6">Tak. Umawia, przekłada i odwołuje terminy w Google Calendar, a pacjent dostaje SMS z potwierdzeniem. Jeśli pracujesz na innym systemie do rejestracji, sprawdzamy możliwość połączenia przed pilotażem — nie obiecujemy integracji, której wcześniej nie zweryfikowaliśmy.</p>
+      </details>
+      <details style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;cursor:pointer">
+        <summary style="font-size:16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Czy poradzi sobie, gdy dzwoni kilku pacjentów naraz?
+          <span style="color:var(--purple);font-size:20px">+</span>
+        </summary>
+        <p style="margin-top:12px;color:var(--text2);font-size:14px;line-height:1.6">Karolina może prowadzić kilka rozmów jednocześnie, więc pacjenci nie trafiają na zajętą linię. Liczbę równoległych połączeń ustalamy z Tobą przy wyborze pakietu.</p>
+      </details>
+      <details style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;cursor:pointer">
+        <summary style="font-size:16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Czy AI recepcjonistka jest zgodna z RODO?
+          <span style="color:var(--purple);font-size:20px">+</span>
+        </summary>
+        <p style="margin-top:12px;color:var(--text2);font-size:14px;line-height:1.6">Rozmówca jest informowany na początku, że rozmawia z asystentem AI i że rozmowa może być rejestrowana. Dane przetwarzamy zgodnie z RODO, a umowę powierzenia danych ustalamy przed wdrożeniem.</p>
+      </details>
+      <details style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;cursor:pointer">
+        <summary style="font-size:16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Ile kosztuje AI recepcjonistka?
+          <span style="color:var(--purple);font-size:20px">+</span>
+        </summary>
+        <p style="margin-top:12px;color:var(--text2);font-size:14px;line-height:1.6">Pakiety zaczynają się od 249 zł netto miesięcznie (plan roczny), przy płatności miesięcznej od 279 zł netto. Pierwsze 7 dni to próba za 0 zł (bez karty, 100 minut rozmów). Konfiguracja (normalnie 599 zł netto) dla pierwszych 10 firm kosztuje 0 zł. Bez długiej umowy, rezygnacja z miesięcznym wyprzedzeniem.</p>
+      </details>
+      <details style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;cursor:pointer">
+        <summary style="font-size:16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Jak szybko można ruszyć?
+          <span style="color:var(--purple);font-size:20px">+</span>
+        </summary>
+        <p style="margin-top:12px;color:var(--text2);font-size:14px;line-height:1.6">Pilotaż jest gotowy w 2–3 dni od otrzymania materiałów. Testujesz Karolinę, zgłaszasz poprawki i dopiero wtedy włączamy ją na Twoim numerze.</p>
+      </details>
+      <details style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;cursor:pointer">
+        <summary style="font-size:16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Czy mogę najpierw sprawdzić, jak Karolina brzmi?
+          <span style="color:var(--purple);font-size:20px">+</span>
+        </summary>
+        <p style="margin-top:12px;color:var(--text2);font-size:14px;line-height:1.6">Tak. Zadzwoń na numer demonstracyjny +48 459 567 844 — to ta sama Karolina, którą skonfigurujemy dla Ciebie. Rozmowa jest bezpłatna.</p>
+      </details>
+    </div>
+    <p style="margin-top:24px;font-size:14px;color:var(--text2)">Inne branże: <a href="ai-recepcjonistka-gabinet-stomatologiczny.html" style="color:var(--purple)">Gabinet stomatologiczny</a> · <a href="ai-recepcjonistka-salon-beauty.html" style="color:var(--purple)">Salon beauty</a> · <a href="ai-recepcjonistka-kancelaria-prawna.html" style="color:var(--purple)">Kancelaria prawna</a> · <a href="ai-recepcjonistka-warsztat-samochodowy.html" style="color:var(--purple)">Warsztat samochodowy</a> · <a href="ai-recepcjonistka-gabinet-weterynaryjny.html" style="color:var(--purple)">Gabinet weterynaryjny</a> · <a href="ai-recepcjonistka-hotel.html" style="color:var(--purple)">Hotel i pensjonat</a> · <a href="ai-recepcjonistka-fitness-club.html" style="color:var(--purple)">Fitness club i siłownia</a> · <a href="ai-recepcjonistka-biuro-rachunkowe.html" style="color:var(--purple)">Biuro rachunkowe</a> · <a href="ai-recepcjonistka-firma-instalacyjna.html" style="color:var(--purple)">Firma instalacyjna</a> · <a href="ai-recepcjonistka-szkola-jazdy.html" style="color:var(--purple)">Szkoła jazdy</a></p>
+    <p style="margin-top:8px;font-size:14px;color:var(--text2)">Więcej: <a href="dla-klinik.html" style="color:var(--purple)">Voicebot dla klinik</a> · <a href="blog-nieodebrany-telefon-koszt.html" style="color:var(--purple)">Ile kosztuje nieodebrany telefon</a> · <a href="blog-rodo-ai-voicebot.html" style="color:var(--purple)">RODO i voicebot</a> · <a href="jak-dzialaja-boty.html" style="color:var(--purple)">Jak działają nasze boty</a></p>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="inner">
+    <div class="cta-box">
+      <div class="badge" style="margin-bottom:24px"><div class="badge-dot"></div>7 dni za 0 zł</div>
+      <h2>Sprawdź Karolinę <span class="grad-text">u siebie</span></h2>
+      <p>Bez karty i bez zobowiązań. 100 minut rozmów w pakiecie próbnym, potem od 249 zł netto miesięcznie.</p>
+      <div class="cta-btns">
+        <a href="tel:+48459567844" class="btn btn-primary" style="font-size:16px;padding:16px 32px">📞 Zadzwoń: +48 459 567 844</a>
+        <a href="mailto:biuro@kreato.tech" class="btn btn-outline">✉️ biuro@kreato.tech</a>
+      </div>
+      <p style="font-size:12px;color:var(--text3);margin-top:16px">Ceny netto · Bez długiej umowy · Rachunek za usługę · RODO</p>
+    </div>
+  </div>
+</section>
+
+<div id="faq-strip" style="max-width:860px;margin:40px auto 24px;padding:18px 20px;background:var(--card,#34205f);border:1px solid rgba(139,92,246,.35);border-radius:12px;font-family:inherit"><div style="font-size:15px;font-weight:700;color:var(--text,#e8eaf0);margin-bottom:6px">❓ Masz pytania? Zobacz odpowiedzi w FAQ</div><div style="font-size:14px;line-height:1.7;color:var(--text2,#8b92a8)">Najczęstsze pytanie na ten temat: <a href="index.html#faq-jak-dziala" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">33. Jak dokładnie działa bot głosowy, krok po kroku?</a><br><a href="index.html#faq" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Wszystkie pytania i odpowiedzi (FAQ) →</a> &nbsp;·&nbsp; <a href="jak-dzialaja-boty.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Jak działają nasze boty (schematy) →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-gabinet-stomatologiczny.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">AI recepcjonistka dla gabinetu stomatologicznego →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-salon-beauty.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Salon beauty →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-kancelaria-prawna.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Kancelaria prawna →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-warsztat-samochodowy.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Warsztat samochodowy →</a> &nbsp;·&nbsp; <a href="ai-recepcjonistka-gabinet-weterynaryjny.html" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Gabinet weterynaryjny →</a></div></div>
+<footer>
+  <div>
+    &copy; 2026 KREATO.AI ·
+    <a href="index.html">Strona główna</a> ·
+    <a href="agenci.html">Agenci AI</a> ·
+    <a href="dla-ecommerce.html">E-commerce</a> ·
+    <a href="diagnosta.html">Diagnoza AI</a> ·
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+  </div>
+  <div style="margin-top:8px">ul. Prądzyńskiego 23, 63-000 Środa Wielkopolska · <a href="tel:+48459567844">+48 459 567 844</a> · <a href="mailto:biuro@kreato.tech">biuro@kreato.tech</a> · <a href="https://www.facebook.com/profile.php?id=1200840176454986" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/kreato_ai_tech/" target="_blank" rel="noopener">Instagram</a></div>
+</footer>
+
+</body>
+</html>
