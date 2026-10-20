@@ -109,3 +109,4 @@ Monthly billing (no annual contract), PLN net per month: Lite 279, Starter 379, 
 
 ## Sitemap
 - https://kreato.tech/sitemap.xml
+- https://kreato.tech/rss.xml — RSS feed of the blog (all articles)
