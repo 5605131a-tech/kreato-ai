@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Przegląd konta Google Ads: gdzie ucieka budżet i co sprawdzić samemu — KREATO.AI</title>
+<meta name="description" content="Lista kontrolna przeglądu konta Google Ads: konwersje, wyszukiwane hasła, budżet, godziny. Jak połączyć wnioski z botami i jak zamówić przegląd (pilotaż).">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="przegląd konta Google Ads, audyt Google Ads, budżet Google Ads, słowa wykluczające, konwersje Google Ads, nieodebrane telefony z reklamy">
+<meta property="article:section" content="Poradnik">
+<meta property="og:title" content="Przegląd konta Google Ads: gdzie ucieka budżet i co sprawdzić samemu">
+<meta property="og:description" content="Lista kontrolna przeglądu konta Google Ads: konwersje, wyszukiwane hasła, budżet, godziny. Jak połączyć wnioski z botami i jak zamówić przegląd (pilotaż).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kreato.tech/blog-przeglad-konta-google-ads-gdzie-ucieka-budzet.html">
+<link rel="canonical" href="https://kreato.tech/blog-przeglad-konta-google-ads-gdzie-ucieka-budzet.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1f1040;--bg1:#251350;--bg2:#2b1858;--card:#34205f;--card-h:#3f2a73;--purple:#a78bfa;--blue:#3b82f6;--green:#10b981;--grad:linear-gradient(135deg,#6c43bf 0%,#6c43bf 100%);--grad-text:linear-gradient(135deg,#c4b5fd 0%,#a78bfa 100%);--grad-soft:linear-gradient(135deg,rgba(167,139,250,.16) 0%,rgba(108,67,191,.16) 100%);--text:#f5f3ff;--text2:#d9d0f2;--text3:#bfb2e6;--border:rgba(167,139,250,.22);--border-a:rgba(167,139,250,.45);--r:14px;--r-sm:8px;--font:'Lato',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(31,16,64,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.nav-logo{font-size:20px;font-weight:900;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta{background:var(--grad);color:#fff!important;padding:9px 18px;border-radius:var(--r-sm);font-size:13px!important;font-weight:700!important}
+@media(max-width:768px){.nav-links{display:none}}
+.inner{max-width:1120px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--grad-soft);border:1px solid var(--border-a);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+.breadcrumb{font-size:12px;color:var(--text3);padding:12px 24px;max-width:1120px;margin:0 auto}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--text2)}
+.breadcrumb span{margin:0 6px}
+.blog-hero{padding:72px 24px 48px;text-align:center}
+.blog-hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:16px}
+.blog-hero p{font-size:17px;color:var(--text2);max-width:560px;margin:0 auto;line-height:1.6}
+.grad-text{background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;padding:48px 24px 80px;max-width:1120px;margin:0 auto}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s;text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+.post-card:hover{border-color:var(--border-a);transform:translateY(-3px);box-shadow:0 12px 40px rgba(139,92,246,.1)}
+.post-img{height:160px;background:var(--grad-soft);display:flex;align-items:center;justify-content:center;font-size:48px}
+.post-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
+.post-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(139,92,246,.08);padding:3px 10px;border-radius:100px;width:fit-content}
+.post-title{font-size:16px;font-weight:700;line-height:1.4}
+.post-excerpt{font-size:13px;color:var(--text2);line-height:1.6;flex:1}
+.post-meta{font-size:11px;color:var(--text3);margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+.post-coming{opacity:.5;pointer-events:none}
+.coming-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--text3);background:rgba(255,255,255,.04);padding:2px 8px;border-radius:100px;margin-left:8px;vertical-align:middle}
+footer{padding:32px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
+footer a{color:var(--text3);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--text2)}
+
+.art{max-width:760px;margin:0 auto;padding:40px 24px 24px}
+.art h1{font-size:clamp(28px,4.4vw,42px);font-weight:900;line-height:1.2;letter-spacing:-.02em;margin:10px 0 14px}
+.art .lead{font-size:18px;color:var(--text2);line-height:1.65;margin-bottom:10px}
+.art .meta{font-size:13px;color:var(--text3);margin-bottom:28px}
+.art h2{font-size:22px;font-weight:800;margin:34px 0 12px;line-height:1.3}
+.art p{font-size:16px;line-height:1.75;color:#cbd5e1;margin-bottom:14px}
+.art ul,.art ol{margin:0 0 16px 22px;color:#cbd5e1;font-size:16px;line-height:1.75}
+.art li{margin-bottom:6px}
+.art a{color:var(--purple)}
+.art table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px}
+.art th,.art td{border:1px solid var(--border);padding:9px 12px;text-align:left;color:#cbd5e1}
+.art th{background:var(--card);color:var(--text)}
+.note{background:var(--grad-soft);border:1px solid var(--border-a);border-radius:var(--r-sm);padding:14px 16px;font-size:14px;line-height:1.6;color:#cbd5e1;margin:18px 0}
+.cta{background:var(--card);border:1px solid var(--border-a);border-radius:var(--r);padding:24px;margin:36px 0 12px;text-align:center}
+.cta h3{font-size:19px;margin-bottom:8px}
+.cta p{margin-bottom:14px}
+.cta a.btn{display:inline-block;background:var(--grad);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-sm)}
+.more{max-width:760px;margin:0 auto;padding:0 24px 60px;font-size:14px;color:var(--text2)}
+.art pre{background:#1a0d38;border:1px solid var(--border);border-radius:8px;padding:14px;overflow:auto;font-size:13px;line-height:1.5;color:#e9e3ff;margin:0 0 16px;white-space:pre-wrap}.art code{font-size:.92em;color:#e9e3ff}
+</style>
+<meta property="og:image" content="https://kreato.tech/og-kreato.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KREATO.AI — Karolina odbiera telefony za Ciebie">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KREATO.AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kreato.tech/og-kreato.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Przegląd konta Google Ads: gdzie ucieka budżet i co sprawdzić samemu w godzinę", "description": "Lista kontrolna przeglądu konta Google Ads: konwersje, wyszukiwane hasła, budżet, godziny. Jak połączyć wnioski z botami i jak zamówić przegląd (pilotaż).", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "inLanguage": "pl", "keywords": "przegląd konta Google Ads, audyt Google Ads, budżet Google Ads, słowa wykluczające, konwersje Google Ads, nieodebrane telefony z reklamy", "mainEntityOfPage": "https://kreato.tech/blog-przeglad-konta-google-ads-gdzie-ucieka-budzet.html", "author": {"@type": "Organization", "name": "KREATO.AI"}, "publisher": {"@type": "Organization", "name": "KREATO.AI", "url": "https://kreato.tech/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Czy przegląd zmienia coś w moim koncie Google Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. Dostęp jest tylko do odczytu, więc nie możemy niczego zmienić ani wyłączyć."}}, {"@type": "Question", "name": "Czy muszę podawać hasło do Google Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. Dostęp nadajesz zaproszeniem e-mailem, ze swojego konta, i możesz go w każdej chwili cofnąć."}}, {"@type": "Question", "name": "Czy przegląd gwarantuje lepsze wyniki reklam?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. Przegląd wskazuje, co warto sprawdzić. Efekt zależy od decyzji podjętych w koncie."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "KREATO.AI", "item": "https://kreato.tech/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kreato.tech/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Przegląd konta Google Ads: gdzie ucieka budżet i co sprawdzić samemu w godzinę", "item": "https://kreato.tech/blog-przeglad-konta-google-ads-gdzie-ucieka-budzet.html"}]}</script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">KREATO.AI</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Usługi</a></li>
+      <li><a href="dla-klinik.html">Kliniki</a></li>
+      <li><a href="dla-ecommerce.html">E-commerce</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="diagnosta.html">Diagnoza AI</a></li>
+    </ul>
+    <a href="diagnosta.html" class="nav-cta nav-links">Bezpłatna diagnoza →</a>
+  </div>
+</nav>
+<div class="breadcrumb"><a href="index.html">KREATO.AI</a><span>/</span><a href="blog.html">Blog</a><span>/</span>Poradnik</div>
+<article class="art">
+<span class="post-tag">Poradnik</span>
+<h1>Przegląd konta Google Ads: gdzie ucieka budżet i co sprawdzić samemu w godzinę</h1>
+<div class="meta">20 października 2026 · 6 min czytania · KREATO.AI</div>
+
+<p class="lead">Konto Google Ads potrafi działać tygodniami bez niczyjej uwagi: reklamy się wyświetlają, budżet się zużywa, a raport mówi o kliknięciach, nie o klientach. Krótki przegląd konta pokazuje, na co idą pieniądze i czego brakuje. Część rzeczy sprawdzisz sam w godzinę.</p>
+<h2>Lista kontrolna: co sprawdzić w koncie</h2>
+<ol><li><strong>Pomiar konwersji.</strong> Czy konto liczy to, co naprawdę ważne: telefony, formularze, wiadomości. Sprawdź też, czy to samo zdarzenie nie jest liczone dwa razy. Bez tego nie wiesz, co działa.</li><li><strong>Raport wyszukiwanych haseł.</strong> Zobacz, jakie frazy wpisywali ludzie, zanim kliknęli. Frazy bez związku z ofertą dodaj do słów wykluczających.</li><li><strong>Typy dopasowania słów kluczowych.</strong> Dopasowanie szerokie potrafi wyświetlać reklamę na hasła tylko luźno związane z ofertą. Sprawdź, czy to świadoma decyzja.</li><li><strong>Lokalizacja i godziny.</strong> Czy reklama wyświetla się tam, gdzie obsługujesz klientów, i wtedy, gdy ktoś odbiera telefon.</li><li><strong>Podział budżetu.</strong> Która kampania pochłania najwięcej i co z tego wychodzi. Przy kampaniach automatycznych (np. Performance Max) sprawdź, czy raporty pozwalają zrozumieć, gdzie poszły pieniądze.</li><li><strong>Strona docelowa.</strong> Czy numer telefonu i formularz działają na telefonie i czy strona ładuje się szybko.</li><li><strong>Zasoby reklam (dawniej rozszerzenia).</strong> Czy zasoby połączeń i lokalizacji mają aktualne dane.</li></ol>
+<h2>Co dzieje się po kliknięciu: ostatni odcinek drogi</h2>
+<p>Przegląd konta kończy się na kliknięciu albo na połączeniu. A co dalej? Jeśli reklama prowadzi do numeru, pod którym nikt nie odbiera, albo do strony, na której nikt nie odpisuje, budżet idzie na reklamę, a klient do konkurencji. Więcej o tym piszemy w artykule <a href="blog-nieodebrany-telefon-koszt.html">Ile kosztuje nieodebrany telefon — i jak to policzyć dla swojej firmy</a>.</p>
+<h2>Jak połączyć wnioski z przeglądu z botami</h2>
+<table><tr><th>Co widać w przeglądzie</th><th>Co może pomóc</th></tr><tr><td>Klienci dzwonią poza godzinami pracy albo w trakcie zabiegu i nikt nie odbiera</td><td><a href="index.html#services">Karolina AI</a> odbiera telefon po polsku i wpisuje wizytę do kalendarza</td></tr><tr><td>Ludzie wchodzą na stronę i wychodzą bez kontaktu</td><td><a href="index.html#faq-chatbot">Chatbot AI</a> na stronie (taki jak Asia u nas) odpowiada na pytania i zbiera kontakt</td></tr><tr><td>Nie wiesz, ile połączeń i zapytań naprawdę przyszło</td><td><a href="blog-raport-n8n.html">Raporty automatyczne</a> z Twoich danych, wysyłane regularnie</td></tr><tr><td>Wizytówka firmy ma mało opinii, choć klienci są zadowoleni</td><td><a href="bot-opinie-google.html">Prośba o opinię w Google po wizycie</a></td></tr></table>
+<p>To pilotaże, bez obietnic konkretnych wyników. Wszystko opisujemy na stronie <a href="jak-dzialaja-boty.html">Jak działają boty</a>.</p>
+<h2>Przegląd konta Google Ads od KREATO (pilotaż)</h2>
+<p>Robimy krótkie przeglądy kont Google Ads. Wygląda to tak:</p>
+<ul><li>dajesz nam dostęp <strong>tylko do odczytu</strong> (zaproszenie e-mailem, bez podawania hasła),</li><li>niczego w koncie nie zmieniamy,</li><li>dostajesz krótki raport: gdzie ucieka budżet, które frazy nic nie dają, czego brakuje i co sprawdzić w pierwszej kolejności,</li><li>zakres i warunki ustalamy e-mailem, zanim zaczniemy.</li></ul>
+<p>Jak nadać dostęp tylko do odczytu: w Google Ads wejdź w <em>Administracja → Dostęp i zabezpieczenia</em>, dodaj użytkownika i wybierz poziom „Tylko do odczytu”. Nazwy w menu mogą się nieznacznie różnić. Nie obiecujemy poprawy wyników ani konkretnych oszczędności.</p>
+
+<h2>Najczęstsze pytania</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">Czy przegląd zmienia coś w moim koncie Google Ads?</h3><p>Nie. Dostęp jest tylko do odczytu, więc nie możemy niczego zmienić ani wyłączyć.</p><h3 style="font-size:17px;margin:18px 0 6px">Czy muszę podawać hasło do Google Ads?</h3><p>Nie. Dostęp nadajesz zaproszeniem e-mailem, ze swojego konta, i możesz go w każdej chwili cofnąć.</p><h3 style="font-size:17px;margin:18px 0 6px">Czy przegląd gwarantuje lepsze wyniki reklam?</h3><p>Nie. Przegląd wskazuje, co warto sprawdzić. Efekt zależy od decyzji podjętych w koncie.</p>
+<p style="margin-top:18px"><strong>Zobacz też:</strong> <a href="blog-wizytowka-google-a-wlasna-strona-www.html">Wizytówka Google a własna strona WWW: jak je połączyć, żeby się wzajemnie wspierały</a> · <a href="blog-strona-widoczna-w-google-i-wyszukiwarkach-ai.html">Jak sprawić, żeby Google i wyszukiwarki AI znalazły stronę małej firmy: lista kontrolna</a></p>
+<p style="margin-top:22px"><strong>Powiązane na stronie:</strong> <a href="jak-dzialaja-boty.html">Jak działają boty</a> · <a href="blog.html">Wszystkie artykuły</a></p>
+<div class="cta"><h3>Chcesz przegląd swojego konta Google Ads?</h3><p>Napisz do nas. Odpiszemy e-mailem i ustalimy zakres.</p><a class="btn" href="mailto:biuro@kreato.tech?subject=Przegląd konta Google Ads">biuro@kreato.tech</a></div>
+</article>
+<div class="more"><strong>Czytaj dalej:</strong> <a href="blog-nieodebrany-telefon-koszt.html">Ile kosztuje nieodebrany telefon — i jak to policzyć dla swojej firmy</a> · <a href="blog-wizytowka-google-a-wlasna-strona-www.html">Wizytówka Google a własna strona WWW: jak je połączyć, żeby się wzajemnie wspierały</a> · <a href="blog-strona-widoczna-w-google-i-wyszukiwarkach-ai.html">Jak sprawić, żeby Google i wyszukiwarki AI znalazły stronę małej firmy: lista kontrolna</a> · <a href="blog-raport-n8n.html">Automatyczny raport biznesowy w n8n — jak go zbudować krok po kroku</a> · <a href="blog-opinie-google-sms-bot.html">Opinie w Google po wizycie: jak zbierać je SMS-em, bez linków i bez wybierania klientów</a></div>
+<div id="faq-strip" style="max-width:860px;margin:40px auto 24px;padding:18px 20px;background:var(--card,#34205f);border:1px solid rgba(139,92,246,.35);border-radius:12px;font-family:inherit"><div style="font-size:15px;font-weight:700;color:var(--text,#e8eaf0);margin-bottom:6px">❓ Masz pytania? Zobacz odpowiedzi w FAQ</div><div style="font-size:14px;line-height:1.7;color:var(--text2,#8b92a8)"><a href="index.html#faq" style="color:var(--purple,#8b5cf6);font-weight:700;text-decoration:none">Wszystkie pytania i odpowiedzi (FAQ) →</a></div></div>
+<footer>
+  <div>
+    &copy; 2026 KREATO.AI ·
+    <a href="index.html">Strona główna</a> ·
+    <a href="dla-klinik.html">Dla klinik</a> ·
+    <a href="dla-ecommerce.html">E-commerce</a> ·
+    <a href="blog.html">Blog</a> ·
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+  </div>
+  <div style="margin-top:8px">ul. Prądzyńskiego 23, 63-000 Środa Wielkopolska · <a href="mailto:biuro@kreato.tech">biuro@kreato.tech</a></div>
+</footer>
+</body>
+</html>
