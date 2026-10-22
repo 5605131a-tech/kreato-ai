@@ -17894,6 +17894,48 @@ function gotoFaq(id){
 }
 </script>
 
+<script>
+/* Przycisk e-mail: wybór programu pocztowego (Gmail / Outlook / domyślny / kopiuj) */
+(function(){
+  var TO='biuro@kreato.tech';
+  if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) return; // na telefonie mailto otwiera aplikację
+  var box;
+  function build(subject,body,mailto){
+    if(box) box.remove();
+    var q='to='+encodeURIComponent(TO)+(subject?'&su='+encodeURIComponent(subject):'')+(body?'&body='+encodeURIComponent(body):'');
+    var gm='https://mail.google.com/mail/?view=cm&fs=1&'+q;
+    var ol='https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(TO)+(subject?'&subject='+encodeURIComponent(subject):'')+(body?'&body='+encodeURIComponent(body):'');
+    box=document.createElement('div');
+    box.setAttribute('role','dialog');box.setAttribute('aria-label','Napisz do nas');
+    box.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(15,8,35,.7);display:flex;align-items:center;justify-content:center;padding:16px';
+    var st='display:block;width:100%;box-sizing:border-box;text-align:center;padding:13px 16px;margin-top:10px;border-radius:10px;font-weight:700;text-decoration:none;font-size:16px;cursor:pointer;border:0;';
+    box.innerHTML='<div style="background:#34205f;color:#f5f3ff;border:1px solid #a78bfa;border-radius:16px;max-width:380px;width:100%;padding:22px;font-family:inherit">'
+     +'<div style="font-size:19px;font-weight:800;margin-bottom:4px">Napisz do nas</div>'
+     +'<div style="color:#c4b5fd;font-size:14px">'+TO+' · odpiszemy w 5 minut</div>'
+     +'<a href="'+gm+'" target="_blank" rel="noopener" style="'+st+'background:#22d3ee;color:#1f1040">Otwórz w Gmailu</a>'
+     +'<a href="'+ol+'" target="_blank" rel="noopener" style="'+st+'background:#3b82f6;color:#fff">Otwórz w Outlooku (web)</a>'
+     +'<a href="'+mailto+'" style="'+st+'background:#6c43bf;color:#fff">Program pocztowy na komputerze</a>'
+     +'<button type="button" data-copy style="'+st+'background:transparent;color:#f5f3ff;border:1px solid #a78bfa">Skopiuj adres e-mail</button>'
+     +'<button type="button" data-close style="'+st+'background:transparent;color:#c4b5fd;font-weight:400">Zamknij</button></div>';
+    document.body.appendChild(box);
+    box.addEventListener('click',function(e){
+      if(e.target===box||e.target.hasAttribute('data-close')) box.remove();
+      if(e.target.hasAttribute('data-copy')){
+        var b=e.target;
+        (navigator.clipboard?navigator.clipboard.writeText(TO):Promise.reject()).then(function(){b.textContent='Skopiowano ✓';},function(){b.textContent=TO;});
+      }
+    });
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="mailto:'+TO+'"]');
+    if(!a) return;
+    e.preventDefault();
+    var u=new URL(a.getAttribute('href').replace(/ /g,'%20'));
+    build(u.searchParams.get('subject')||'',u.searchParams.get('body')||'',a.getAttribute('href'));
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&box)box.remove();});
+})();
+</script>
 </body>
 
 
